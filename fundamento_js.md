@@ -10,7 +10,7 @@ Recomenda-se que os códigos de JavaScript oferecidos neste texto sejam testados
 
 Alguns dos exemplos de código JavaScript podem precisar de adaptações para serem executados na console do navegador Chrome.
 
-Exemplo (first.html)
+Exemplo [first.html](first.html)
 
 ```html
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ Exemplo (first.html)
 
 <button type="button"
 onclick="document.getElementById('demo').innerHTML = Date()">
-Acione-me para ver a Data e a Hora.</button>
+Acione-me para ver a Data e o Horário atual.</button>
 
 <p id="demo"></p>
 
