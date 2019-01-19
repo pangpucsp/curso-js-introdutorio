@@ -114,13 +114,13 @@ Por exemplo, uma função é chamada quando um evento ocorre, como quando um usu
 
     Veremos funções e eventos com mais detalhes na sequência do texto.
 
-### JavaScript no <head> ou no <body>
+### JavaScript no \<head\> ou no \<body\>
 
 Você pode colocar tantos scripts quantos você quiser num documento HTML.
 
-Scripts podem ser colocados na seção de <body>, ou na seção de <head> de uma página HTML, ou em ambas.
+Scripts podem ser colocados na seção de \<body\>, ou na seção de \<head\> de uma página HTML, ou em ambas.
 
-#### JavaScript no <head>
+#### JavaScript no \<head\>
 
 Exemplo: (where_demo2.html)
 ```html
@@ -143,7 +143,7 @@ function myFunction() {
 </html>
 ```
 
-#### JavaScript no <body>
+#### JavaScript no \<body\>
 
 Example: (where_demo3.html)
 ```html
@@ -234,7 +234,8 @@ document.write(5 + 6);
 </script>
 ```
 
-    Ao usar document.write\(\) depois que um documento HTML foi carregado, irá apagar todo o conteúdo do documento HTML (output_demo3.html).
+    Ao usar document.write\(\) depois que um documento HTML foi carregado,
+    irá apagar todo o conteúdo do documento HTML (output_demo3.html).
     O método document.write\(\) deve ser usado apenas para testes.
 
 #### Uso do window.alert\(\)
@@ -339,7 +340,7 @@ As instruções de JavaScript, em geral, começam com uma palavra-chave para ide
 A tabela abaixo fornece alguns exemplos de aplicações das palavras-chaves em JavaScript.
 
 Palavra-Chave  | Descrição
---------------------------------------------------------------------------------
+---------------|----------------------------------------------------------------
 break          | Termina a execução de um **switch** ou de uma malha de repetição
 continue       | Salta para o início da malha de repetição e começa a executar a partir dali
 debugger       | Para a execução do programa em JavaScript e chama \(se disponível\) a função de depuração
