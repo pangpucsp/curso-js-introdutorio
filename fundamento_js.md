@@ -33,33 +33,33 @@ Acione-me para ver a Data e o Horário atual.</button>
 
 JavaScript é uma das 3 linguagens que todo desenvolvedor web deve aprender:
 
-   1. HTML para definir o conteúdo das páginas web;
+   1. **HTML** para definir o conteúdo das páginas web;
 
-   2. CSS para especificar o layout, a aparência, das páginas web; e
+   2. **CSS** para especificar o layout, a aparência, das páginas web; e
 
-   3. JavaScript para programar o comportamento das páginas web.
+   3. **JavaScript** para programar o comportamento das páginas web.
 
 Referências:
 [Javascript reference](https://www.w3schools.com/jsref/default.asp)
 
 ### JavaScript Pode Mudar o Conteúdo do HTML
 
-Demo: (intro_demo1.html)
+Demo: [intro_demo1.html](intro_demo1.html)
 ```javascript
 document.getElementById("demo").innerHTML = "Alo JavaScript!";
 ```
 
-Strings em JS podem ser definidas com aspas \("\) ou apóstrofes \('\):
+**Strings** em JS podem ser definidas com aspas \("\) ou apóstrofes \('\):
 
 Demo:
 ```javascript
-document.getElementById('demo').innerHTML = 'Hello JavaScript!'; // é o mesmo que
-document.getElementById("demo").innerHTML = "Hello JavaScript!";
+document.getElementById('demo').innerHTML = 'Alo JavaScript!'; // é o mesmo que
+document.getElementById("demo").innerHTML = "Alo JavaScript!";
 ```
 
 ### JavaScript Pode Mudar os Valores de Atributos do HTML
 
-Demo: (intro_demo2.html)
+Demo: [Demo 2: mudança de valor de atributo](intro_demo2.html)
 
 ```html
 <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Acenda a luz</button>
@@ -70,7 +70,7 @@ Demo: (intro_demo2.html)
 ```
 ### JavaScript Pode Mudar Estilos do HTML \(CSS\)
 
-Demo: (intro_demo3.html)
+Demo: [Demo 3: mudança de estilo](intro_demo3.html)
 
 ```javascript
 document.getElementById("demo").style.fontSize = "35px";
@@ -78,7 +78,7 @@ document.getElementById("demo").style.fontSize = "35px";
 
 ### JavaScript Pode Esconder Elementos do HTML
 
-Demo: (intro_demo4.html)
+Demo: [Demo 4: escondendo elemento](intro_demo4.html)
 
 ```javascript
 document.getElementById("demo").style.display = "none";
@@ -86,19 +86,19 @@ document.getElementById("demo").style.display = "none";
 
 ### JavaScript Pode Mostrar Elementos do HTML
 
-Demo: (intro_demo5.html)
+Demo: [Demo 5: mostrando elementos escondidos](intro_demo5.html)
 
 ```javascript
 document.getElementById('demo').style.display = 'block';
 ```
 
-## Onde Vai o JavaScript ? \([Where To](https://www.w3schools.com/js/js_whereto.asp)\)
+## Onde Fica o JavaScript ? \([Where To](https://www.w3schools.com/js/js_whereto.asp)\)
 
 ### O Tag <script>
 
 Em HTML, o código JavaScript deve ser inserido entre as tags <script> e </script>.
 
-Exemplo: (where_demo1.html)
+Exemplo: [Demo](where_demo1.html)
 
 ```html
 <script>
@@ -112,8 +112,6 @@ Uma função JavaScript é um bloco de código JavaScript que pode ser executado
 
 Por exemplo, uma função é chamada quando um evento ocorre, como quando um usuário aciona um botão.
 
-    Veremos funções e eventos com mais detalhes na sequência do texto.
-
 ### JavaScript no \<head\> ou no \<body\>
 
 Você pode colocar tantos scripts quantos você quiser num documento HTML.
@@ -122,14 +120,14 @@ Scripts podem ser colocados na seção de \<body\>, ou na seção de \<head\> de
 
 #### JavaScript no \<head\>
 
-Exemplo: (where_demo2.html)
+Exemplo: [Demo: JS no head](where_demo2.html)
 ```html
 <!DOCTYPE html>
 <html>
 <head>
 <script>
 function myFunction() {
-  document.getElementById("demo").innerHTML = "Parágrafo Modificado.";
+  document.getElementById("demo").innerHTML = "Parágrafo Mudou.";
 }
 </script>
 </head>
@@ -165,7 +163,8 @@ function myFunction() {
 </html>
 ```
 
-    Colocar scripts no final do elemento <body> melhora a velocidade para exibir a página, pois a compilação do script retarda a exibição.
+    Colocar scripts no final do elemento <body> melhora a velocidade para exibir
+    a página, pois a compilação do script retarda a exibição.
 
 ### JavaScript Externo
 
@@ -234,9 +233,9 @@ document.write(5 + 6);
 </script>
 ```
 
-    Ao usar document.write\(\) depois que um documento HTML foi carregado,
+    Ao usar document.write() depois que um documento HTML foi carregado,
     irá apagar todo o conteúdo do documento HTML (output_demo3.html).
-    O método document.write\(\) deve ser usado apenas para testes.
+    O método document.write() deve ser usado apenas para testes.
 
 #### Uso do window.alert\(\)
 
@@ -287,9 +286,9 @@ A maioria dos programas em JavaScript são compostos por muitos instruções de 
 
 As instruções são executadas, uma-a-uma, na mesma ordem em elas estão escritas.
 
-#### Ponto-e-vírgulas ;
+#### Ponto-e-vírgula ;
 
-Ponto-e-vírgula separam as instruções de JavaScript.
+Ponto-e-vírgula\(;\) separa as instruções de JavaScript.
 
 Quando separadas por ponto-e-vírgula, várias instruções numa única linha são permitidas:
 
@@ -298,13 +297,14 @@ a = 5; b = 6; c = a + b;
 ```
 
    Na web, você pode encontrar exemplos sem ponto-e-vírgula.
-   Terminar instruções com ponto-e-vírgula não é obrigatório, mas é altamente recomendado.
+   Terminar instruções com ponto-e-vírgula não é *obrigatório*,
+   mas é altamente recomendado.
 
 #### Espaço em Branco no JavaScript
 
 JavaScript ignora múltiplos espaços entre os elementos da linguagem, óbvio que espaço no meio de um elemento não pode. Você pode adicionar espaços entre os elementos para tornar o texto mais compreensível.
 
-Uma prática interessante é separar os operadores \( = + - \* / \) com espaços:
+Uma prática recomendada é separar os operadores \( = + - \* / \) com espaços:
 
 ```javascript
 var x = y + z;
@@ -361,7 +361,8 @@ x = 5 + 6;
 y = x * 10;
 ```
 
-    Palavras-chaves em JavaScript são palavras reservadas. Palavras reservadas não podem ser usadas como nomes de variáveis.
+    Palavras-chaves em JavaScript são palavras reservadas.
+    Palavras reservadas não podem ser usadas como nomes de variáveis.
 
 ## Sintaxe do JS (https://www.w3schools.com/js/js_syntax.asp)
 
@@ -372,7 +373,7 @@ Valores fixos são chamados de **literais**. Valores variáveis são chamados de
 
 #### Literais em JavaScript
 
-**Numbers** são escritos com ou sem parte decimal \(valor depois da vírgula\):
+**Números** são escritos com ou sem parte decimal \(valor depois da vírgula\):
 
 ```javascript
 10.50
@@ -430,7 +431,7 @@ Por exemplo, "José" + " " + "da" + " " + "Silva", é calculado como "José da S
 
 ### Comentários em JavaScript
 
-Texto depois de // até o final da linha ou entre /\* and \*/ é tratado como **comentário**.
+Texto depois de // até o final da linha ou entre /\* e \*/ é tratado como **comentário**.
 Isto é, do ponto de vista do código, ele não existe. Ele serve para tornar o código mais compreensível para alguém que o leia.
 
 ### Identificadores em JavaScript
@@ -441,7 +442,7 @@ Em JavaScript, identificadores são usados para dar nome a variáveis \(e palavr
 
 Em JavaScript, o primeiro caracter deve ser uma letra, ou um sublinhado (\_), ou um dolar ($).
 
-### JavaScript é Sensível Maiúsculas e Minúsculas
+### JavaScript é Sensível à Diferença entre Maiúsculas e Minúsculas
 
 Todos os identificadores de JavaScript identifiers diferenciam maiúsculas de minúsculas.
 
@@ -455,7 +456,7 @@ Programadores de JavaScript tendem a usar identificadores em notação camelo co
 
 primeiroNome, ultimoNome, masterCard, interCidade.
 
-### Conjunto de Caracteres do JavaScript Character
+### Conjunto de Caracteres do JavaScript
 
 JavaScript usa o conjunto de caracteres Unicode. Veja (https://www.w3schools.com/charsets/ref_html_utf8.asp) para uma referência mais completa sobre unicode.
 
@@ -476,43 +477,40 @@ Qualquer texto entre /\* e \*/ será ignorado pelo JavaScript.
 
 ### Uso de Comentários para Evitar Execução
 
-Use comments to prevent execution of code is suitable for code testing.
+Comente uma ou mais linhas de código que você não deseja executar na fase de teste do código. Isto evita ter de reescrever se precisar inserí-las de novo. Esta é uma maneira de testar diferentes possibilidades de códigos sem ter de reescrever muita coisa.
 
-## JavaScript Variables
+## Variáveis de JavaScript
 
-JavaScript variables are containers for storing data values.
+Variáveis de JavaScript são reservatórios para armazenar valores dos dados.
 
-### Much Like Algebra
+### Parece Muito com Álgebra
 
-In this example, price1, price2, and total, are variables:
+No exemplo abaixo, preco1, preco2 e total são variáveis:
 
 ```javascript
-var price1 = 5;
-var price2 = 6;
-var total = price1 + price2;
+var preco1 = 5;
+var preco2 = 6;
+var total = preco1 + preco2;
 ```
 
-    JavaScript variables are containers for storing data values.
+### Identificadores de JavaScript
 
-### JavaScript Identifiers
+Todas as **variáveis** em JavaScript devem ser identificadas por **nomes únicos**. Estes nomes únicos são chamados de **identificadores**.
 
-All JavaScript **variables** must be identified with **unique names**. These unique names are called **identifiers**.
+As regras gerais para a escolha de nomes para variáveis \(identificadores únicos\) são:
 
-The general rules for constructing names for variables (unique identifiers) are:
+  * Os nomes devem ser  compostos por letras, dígitos, sublinhados e dolars;
+  * Os nomes devem começar com uma letra, um $ ou um \_;
+  * Os nomes diferenciam maiúsculas de minúsculas \(a e A são variáveis diferentes); e
+  * Palavras reservadas não podem ser usadas como nomes de variáveis.
 
-  * Names can contain letters, digits, underscores, and dollar signs.
-  * Names must begin with a letter
-  * Names can also begin with $ and \_ (but we will not use it in this tutorial)
-  * Names are case sensitive (y and Y are different variables)
-  * Reserved words (like JavaScript keywords) cannot be used as names.
+### O Operador de Atribuição
 
-### The Assignment Operator
+Em JavaScript, o sinal de igual \(=\) é um operador de *atribuição*, não um operador de igualdade.
 
-  In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.
+    O operador de comparação "igual a" é escrito \(==\), ou \(===\) em JavaScript.
 
-    The "equal to" operator is written like == in JavaScript.
-
-### JavaScript Data Types
+### Tipos de Dados em JavaScript
 
 JavaScript variables can hold numbers like 100 and text values like "John Doe".
 
