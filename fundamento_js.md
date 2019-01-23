@@ -234,12 +234,12 @@ document.write(5 + 6);
 ```
 
     Ao usar document.write() depois que um documento HTML foi carregado,
-    irá apagar todo o conteúdo do documento HTML (output_demo3.html).
+    irá apagar todo o conteúdo do documento HTML [Demo: document.write\(\)](output_demo3.html).
     O método document.write() deve ser usado apenas para testes.
 
 #### Uso do window.alert\(\)
 
-Example: (output_demo4.html)
+Exemplo: [Demo: window.alert\(\)](output_demo4.html)
 
 ```html
 <script>
@@ -249,9 +249,9 @@ window.alert(5 + 6);
 
 #### Uso do console.log\(\)
 
-Para fins de depuração \(debugging\), você pode usar o método console.log() para exibir dados.
+Para fins de depuração \(debugging\), você pode usar o método console.log\(\) para exibir dados.
 
-Exemplo: (output_demo5.html)
+Exemplo: [Demo: uso do console.log](output_demo5.html)
 
 ```html
 <script>
