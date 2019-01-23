@@ -143,7 +143,7 @@ function myFunction() {
 
 #### JavaScript no \<body\>
 
-Example: (where_demo3.html)
+Example: [Demo: JS no body](where_demo3.html)
 ```html
 <!DOCTYPE html>
 <html>
@@ -155,7 +155,7 @@ Example: (where_demo3.html)
 
 <script>
 function myFunction() {
- document.getElementById("demo").innerHTML = "Parágrafo Modificado.";
+ document.getElementById("demo").innerHTML = "Parágrafo Mudou.";
 };
 </script>
 
@@ -168,7 +168,7 @@ function myFunction() {
 
 ### JavaScript Externo
 
-Scripts podem ser colocados em arquivos externos, também: (myScript1.js)
+Scripts podem ser colocados em arquivos externos, também: [arquivo JS externo](myScript1.js)
 
 ```javascript
 function myFunction() {
@@ -176,7 +176,7 @@ function myFunction() {
 }
 ```
 
-E carregados em arquivos HTML com: (where_demo4.html)
+E carregados em arquivos HTML com: [Demo: JS em outro arquivo](where_demo4.html)
 
 ```html
 <script src="myScript.js"></script>
@@ -194,10 +194,10 @@ E carregados em arquivos HTML com: (where_demo4.html)
 
 Os arquivos de JavaScript podem está em outros sites \(servidores\).
 
-Exemplo: (where_demo5.html)
+Exemplo: [Demo: JS em link externo](where_demo5.html)
 
 ```html
-<script src="https://www.w3schools.com/js/myScript1.js"></script>
+<script src="https://www.w3schools.com/js/myScript.js"></script>
 ```
 
 ## Saída do JS  (https://www.w3schools.com/js/js_output.asp)
@@ -215,7 +215,7 @@ JavaScript pode "exibir" os dados de saída de diferentes maneiras:
 
 Para acessar um elemento do HTML, JavaScript pode usar o método document.getElementById\(id\).
 
-Example: (output_demo1.html)
+Exemplo: [Demo: innerHTML](output_demo1.html)
 
 ```html
 <script>
@@ -225,7 +225,7 @@ document.getElementById("demo").innerHTML = 5 + 6;
 
 #### Uso do document.write\(\)
 
-Example: (output_demo2.html)
+Exemplo: [Demo: document.write\(\)](output_demo2.html)
 
 ```html
 <script>
