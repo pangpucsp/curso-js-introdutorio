@@ -503,7 +503,7 @@ As regras gerais para a escolha de nomes para variáveis \(identificadores únic
 
   * Os nomes devem ser  compostos por letras, dígitos, sublinhados e dolars;
   * Os nomes devem começar com uma letra, um $ ou um \_;
-  * Os nomes diferenciam maiúsculas de minúsculas \(a e A são variáveis diferentes); e
+  * Os nomes diferenciam maiúsculas de minúsculas \(a e A são variáveis diferentes\); e
   * Palavras reservadas não podem ser usadas como nomes de variáveis.
 
 ### O Operador de Atribuição
@@ -523,17 +523,17 @@ JavaScript pode trabalhar com vários tipos de dados, mas, por enquanto, só se 
 
 Strings são escritos entre aspas ou apóstrofes. Números são escritos diretamente. Números entre aspas são strings.
 
-### Declarando (Criando) Variáveis JavaScript
+### Declarando \(Criando\) Variáveis JavaScript
 
 A criação de uma variável em JavaScript é chamada de *declaração* de uma variável.
 
 Você declara uma variável JavaScript com a palavra-chave **var**:
 
 ```javascript
-var carName;
+var marcaCarro;
 ```
 
-Depois da declaração, a variável não tem nenhum valor. (Tecnicamente seu valor é **undefined**)
+Depois da declaração, a variável não tem nenhum valor. \(Tecnicamente seu valor é **undefined**\)
 
     É uma boa prática de programação declarar todas as variáveis no início de um script.
     Um programa JavaScript é, frequentemente, chamado de script.
@@ -545,7 +545,7 @@ Depois da declaração, a variável não tem nenhum valor. (Tecnicamente seu val
 Inicie a instrução com **var** e separe as variáveis com vírgulas:
 
 ```javascript
-var person = "John Doe", carName = "Volvo", price = 200;
+var pessoa = "José da Silva", marcaCarro = "Volvo", preco = 200;
 ```
 
 Uma declaração pode se espalhar por várias linhas:
@@ -556,7 +556,7 @@ marcaCarro = "Volvo",
 preco = 200;
 ```
 
-### Value = undefined
+### Valor = undefined
 
 Uma variável declarada sem um valor terá o valor **undefined**.
 
@@ -566,54 +566,53 @@ Se você redeclarar uma variável JavaScript, ela não perderá seu valor. [Rede
 
 ### Aritmética no JavaScript
 
-As with algebra, you can do arithmetic with JavaScript variables, using operators like = and +:
+Como na álgebra, você pode fazer contas (aritmética) com as variáveis de JavaScript, usando operadores como + e\*:
 
 ```javascript
 var x = 5 + 2 * 3;
 ```
 
-You can also add strings, but strings will be concatenated:
+Você também pode adicionar strings, mas as strings serão concatenadas:
 
 ```javascript
-var x = "John" + " " + "Doe";
+var x = "José" + " " + "Maria";
 ```
 
-Also try this:
+Tente isto também:
 
 ```javascript
 var x = "5" + 2 + 3;
 ```
 
-    If you put a number in quotes, the rest of the numbers will be treated as strings, and concatenated.
+    Se você colocar aspas em torno de um número, ele será considerado um string
+    e os próximos números da adição serão *convertidos* em strings, também.
 
-What next code evaluate to?
+Teste na Console para ver o resultado de:
 
 ```javascript
 var x = 2 + 3 + "5";
 ```
 
-## JavaScript Operators (https://www.w3schools.com/js/js_operators.asp)
+## Operadores no JavaScript \([JS Operators](https://www.w3schools.com/js/js_operators.asp)\)
 
-The assignment operator (=) assigns a value to a variable.
+O operador de atribuição \(=\) atribui um valor a uma variável, isto é, o valor é armazenado na variável.
 
-The addition operator (+) adds numbers and concatenates strings.
+O operador de adição \(+\) adiciona números e concatena strings.
 
-### JavaScript Arithmetic Operators
+### Operadores Aritméticos em JavaScript
 
-Arithmetic operators are used to perform arithmetic on numbers:
+Operadores aritméticos são usados para realizar aritmética com números:
 
-Operator  | Description
+Operador  | Descrição
 -----------------------------------------------------------
-+         | Addition
--         | Subtraction
-*         | Multiplication
-**        | Exponentiation (ES6)
-/         | Division
-%         | Modulus (Division Remainder)
-++        | Increment
---        | Decrement
-
-    Arithmetic operators are fully described in the JS Arithmetic chapter.
+\+        | Adição
+\-        | Subtração
+\*        | Multiplicação
+\*\*      | Exponenciação (ES6)
+/         | Divisão
+%         | Módulo (Resto da Divisão)
+++        | Incremento
+--        | Decremento
 
 ### JavaScript Assignment Operators
 
