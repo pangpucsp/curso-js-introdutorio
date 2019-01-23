@@ -614,66 +614,67 @@ Operador  | Descrição
 ++        | Incremento
 --        | Decremento
 
-### JavaScript Assignment Operators
+### Operadores de atribuição do JavaScript
 
-Operator | Example | Same As
----------|---------|---------
+Operador | Exemplo | O mesmo que
+---------|---------|------------
 =        | x = y   | x = y
 +=       | x += y  | x = x + y
 -=       | x -= y  | x = x - y
-\*=       | x \*= y  | x = x * y
+\*=      | x \*= y | x = x * y
 /=       | x /= y  | x = x / y
 %=       | x %= y  | x = x % y
 
-### JavaScript String Operators
+### Operadores de Strings no JavaScript
 
-The + operator can also be used to add (concatenate) strings.
+O operador + também pode ser usado para "adicionar" \(concatenar\) strings.
 
-The += assignment operator can also be used to add (concatenate) strings.
+O operador de atribuição += pode ser usado para concatenar uma string com o valor atual de uma variável.
 
-    If you add a number and a string, the result will be a string!
+    Se você adicionar um número a uma string, o resultado é uma string!
 
-### JavaScript Comparison Operators
+### Operadores de Comparação em JavaScript
 
-Operator | Description
---------------------------------------------------------
-==       | equal to
-===      | equal value and equal type
-!=       | not equal
-!==      | not equal value or not equal type
->        | greater than
-<        | less than
->=       | greater than or equal to
-<=       | less than or equal to
-?        | ternary operator
+Operador | Descrição
+---------|------------------------------------
+==       | Igual a
+===      | valor igual e tipo igual
+!=       | diferente
+!==      | valor diferente ou tipo diferente
+\>       | maior que
+<        | menor que
+\>=      | maior ou igual a
+<=       | menor ou igual a
+?        | operador ternário
 
-## JavaScript Logical Operators
+## Operadores Lógicos em JavaScript
 
-Operator | Description
-------------------------------
-&&       | logical and
-||       | logical or
-!        | logical not
+Operador | Descrição
+---------|--------------------
+&&       | e lógico
+||       | ou lógico
+!        | negação lógica
 
-### JavaScript Type Operators
+### Operadores de Tipo do JavaScript
 
-Operator   | Description
--------------------------------------------------------------
-typeof     | Returns the type of a variable
-instanceof | Returns true if an object is an instance of an object type
+Operador   | Descrição
+-----------|-------------------------------------------------
+typeof     | Returna uma string com o tipo do valor na variável
+instanceof | Returna true \(verdadeiro\) se um objeto é uma instância de um tipo de objeto
 
-### JavaScript Bitwise Operators
+### Operadores de Bits no JavaScript
 
-Any numeric operand in the operation is converted into a 32 bit number. The result is converted back to a JavaScript number.
+Os números em JavaScript são representado por pontos flutuantes, mas quando estas operações são realizadas, os valores em ponto flutuante são convertidos para inteiros de 32 bits antes da operação bit-a-bit. Depois da operação, o número é reconvertido para ponto flutuante.
 
-Operator | Description |  Example  |   Same as   | Result | Decimal
-&        | AND         | 5 & 1     | 0101 & 0001 | 0001   | 1
-\|       | OR          | 5 \| 1    | 0101 \| 0001 | 0101   | 5
-~        | NOT         | ~ 5       | ~0101       | 1010   | 10
-^        | XOR         | 5 ^ 1     | 0101 ^ 0001 | 0100 |   | 4
-<<       | Zero fill left shift | 5 << 1 | 0101 << 1 | 1010 | 10
->>       | Signed right shift | 5 >> 1 | 0101 >> 1 | 0010 | 2
->>>      | Zero fill right shift | 5 >>> 1 | 0101 >>> 1 | 0010 | 2
+Operador | Descrição   | Exemplo   | O mesmo que | Resultado | Decimal
+---------|-------------|-----------|-------------|-----------|----------
+&        | E         | 5 & 1     | 0101 & 0001 | 0001   | 1
+\|       | OU          | 5 \| 1    | 0101 \| 0001 | 0101   | 5
+~        | NÃO         | ~ 5       | ~0101       | 1010   | 10
+^        | XOU         | 5 ^ 1     | 0101 ^ 0001 | 0100 |   | 4
+<<       | Deslocamento para a esquerda | 5 << 1 | 0101 << 1 | 1010 | 10
+\>>      | Deslocamento para a direta com sinal | 5 >> 1 | 0101 >> 1 | 0010 | 2
+\>>>     | Deslocamento para a direita com zeros | 5 >>> 1 | 0101 >>> 1 | 0010 | 2
 
 ### Arithmetic Operations
 
@@ -694,7 +695,7 @@ The numbers (in an arithmetic operation) are called **operands**.
 The operation (to be performed between the two operands) is defined by an **operator**.
 
 Operand | Operator | Operand
------------------------------
+--------|----------|---------
 100     | +        | 50
 
     In arithmetic, the division of two integers produces a quotient and a remainder.
@@ -708,7 +709,7 @@ Operator precedence describes the order in which operations are performed in an 
 var x = 100 + 50 * 3;
 ```
 
-Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-).
+Multiplication (\*) and division (/) have higher precedence than addition (+) and subtraction (-).
 
 And (as in school mathematics) the precedence can be changed by using parentheses:
 
@@ -725,7 +726,7 @@ var x = 100 + 50 - 3;
 ### JavaScript Operator Precedence Values
 
 Value | Operator    | Description               | Example
---------------------------------------------------------------
+------|-------------|---------------------------|-------------
 20    | ( )         | Expression grouping       | (3 + 4)
   |   |   |  
 19    | .           | Member                    | person.name
