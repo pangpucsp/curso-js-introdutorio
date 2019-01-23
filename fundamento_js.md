@@ -1,6 +1,6 @@
 # Fundamentos de JavaScript
 
-Este texto é baseado no [W3CSchools javascript tutorial](https://www.w3schools.com/js/).
+Este texto é baseado no [W3Schools javascript tutorial](https://www.w3schools.com/js/).
 
   JavaScript é a linguagem de programação para HTML e a Web.
 
@@ -143,7 +143,7 @@ function myFunction() {
 
 #### JavaScript no \<body\>
 
-Example: [Demo: JS no body](where_demo3.html)
+Exemplo: [Demo: JS no body](where_demo3.html)
 ```html
 <!DOCTYPE html>
 <html>
@@ -200,7 +200,7 @@ Exemplo: [Demo: JS em link externo](where_demo5.html)
 <script src="https://www.w3schools.com/js/myScript.js"></script>
 ```
 
-## Saída do JS  (https://www.w3schools.com/js/js_output.asp)
+## Saída do JS \([JS Output](https://www.w3schools.com/js/js_output.asp)\)
 
 ### Possibilidade de Exibição das Saídas do JavaScript
 
@@ -233,9 +233,11 @@ document.write(5 + 6);
 </script>
 ```
 
-    Ao usar document.write() depois que um documento HTML foi carregado,
-    irá apagar todo o conteúdo do documento HTML [Demo: document.write\(\)](output_demo3.html).
+    Usar document.write() depois que um documento HTML foi carregado,
+    irá apagar todo o conteúdo do documento HTML.
     O método document.write() deve ser usado apenas para testes.
+
+Exemplo:  [Demo: document.write()](output_demo3.html)
 
 #### Uso do window.alert\(\)
 
@@ -251,7 +253,7 @@ window.alert(5 + 6);
 
 Para fins de depuração \(debugging\), você pode usar o método console.log\(\) para exibir dados.
 
-Exemplo: [Demo: uso do console.log](output_demo5.html)
+Exemplo: [Demo: uso do console.log\(\)](output_demo5.html)
 
 ```html
 <script>
@@ -259,9 +261,9 @@ console.log(5 + 6);
 </script>
 ```
 
-## Instruções de JavaScript (https://www.w3schools.com/js/js_statements.asp)
+## Instruções de JavaScript \([JS statements](https://www.w3schools.com/js/js_statements.asp)\)
 
-Exemplo: (stmt_demo1.html)
+Exemplo: [Demo: programa JS num HTML](stmt_demo1.html)
 
 ```javascript
 var x, y, z;    // Instrução 1
@@ -282,9 +284,9 @@ Instruções em JavaScript são compostas de:
 
 Valores, Operadores, Expressões, Palavras-Chaves, e Comentários.
 
-A maioria dos programas em JavaScript são compostos por muitos instruções de  JavaScript.
+A maioria dos programas em JavaScript são compostos por muitas instruções de  JavaScript.
 
-As instruções são executadas, uma-a-uma, na mesma ordem em elas estão escritas.
+As instruções são executadas, uma-a-uma, na mesma ordem em que elas estão escritas.
 
 #### Ponto-e-vírgula ;
 
@@ -351,7 +353,7 @@ if ... else    | Seleciona um bloco de instruções para ser executado ou outro,
 return         | Termina uma função
 switch         | Seleciona um bloco de instruções para ser executado, dependendo de diferentes casos
 try ... catch  | Implementa a manipulação de erros para um bloco de instruções
-var            | Declara uma variável
+var            | Declara \(cria\) uma, ou várias variáveis
 
 Por exemplo, a palavra-chave **var** diz para o navegador para criar variáveis:
 
@@ -364,7 +366,7 @@ y = x * 10;
     Palavras-chaves em JavaScript são palavras reservadas.
     Palavras reservadas não podem ser usadas como nomes de variáveis.
 
-## Sintaxe do JS (https://www.w3schools.com/js/js_syntax.asp)
+## Sintaxe do JS \([JS Syntax](https://www.w3schools.com/js/js_syntax.asp)\)
 
 ### Valores em JavaScript
 
@@ -381,7 +383,7 @@ Valores fixos são chamados de **literais**. Valores variáveis são chamados de
 1001
 ```
 
-    Observe que no lugar da vírgula para separar a parte decimal da parte inteira, JS usa . \(ponto\).
+    Observe que no lugar da vírgula para separar a parte decimal da parte inteira, JS usa . (ponto).
 
 **Strings** são textos, escritos entre aspas \( " \) ou apóstrofes \( ' \):
 
@@ -440,27 +442,27 @@ Identificadores são nomes.
 
 Em JavaScript, identificadores são usados para dar nome a variáveis \(e palavras-chaves e funções e rótulos\).
 
-Em JavaScript, o primeiro caracter deve ser uma letra, ou um sublinhado (\_), ou um dolar ($).
+Em JavaScript, o primeiro caracter deve ser uma letra, um sublinhado \(\_\), ou um dolar \($\).
 
 ### JavaScript é Sensível à Diferença entre Maiúsculas e Minúsculas
 
-Todos os identificadores de JavaScript identifiers diferenciam maiúsculas de minúsculas.
+Todos os identificadores de JavaScript diferenciam maiúsculas de minúsculas.
 
-### JavaScript a nomenclatura em Camelo
+### JavaScript usa nomes em notação Camelo
 
-A notação camelo é usada quando um identificador é composto por mais de uma palavra, neste caso as palavras não podem ser separadas por um espaço \(o que caracterizaria dois identificadores e não um\). Na notação camelo, a primeira letra de cada palavra é escrita em maiúsculo e as outras em minúsculo.
+A notação camelo é usada quando um identificador é composto por mais de uma palavra, neste caso, as palavras não podem ser separadas por um espaço \(o que caracterizaria dois identificadores e não um\). Na notação camelo, a primeira letra de cada palavra é escrita em maiúsculo e as outras em minúsculo.
 
 Camelo com minúscula:
 
-Programadores de JavaScript tendem a usar identificadores em notação camelo com a primeira palavra em minúsculo:
+Programadores de JavaScript tendem a usar identificadores em notação camelo com a primeira letra da primeira palavra em minúsculo:
 
-primeiroNome, ultimoNome, masterCard, interCidade.
+primeiroNome, ultimoNome, masterCard, interCidade, corFavorita.
 
 ### Conjunto de Caracteres do JavaScript
 
-JavaScript usa o conjunto de caracteres Unicode. Veja (https://www.w3schools.com/charsets/ref_html_utf8.asp) para uma referência mais completa sobre unicode.
+JavaScript usa o conjunto de caracteres Unicode. Veja [Referência UTF8 na W3Schools](https://www.w3schools.com/charsets/ref_html_utf8.asp) para uma referência mais completa sobre unicode.
 
-## Comentários em JS (https://www.w3schools.com/js/js_comments.asp)
+## Comentários em JS \([JS Comments](https://www.w3schools.com/js/js_comments.asp)\)
 
 ### Comentários Numa Linha
 
@@ -509,56 +511,60 @@ As regras gerais para a escolha de nomes para variáveis \(identificadores únic
 Em JavaScript, o sinal de igual \(=\) é um operador de *atribuição*, não um operador de igualdade.
 
     O operador de comparação "igual a" é escrito \(==\), ou \(===\) em JavaScript.
+    O segundo comparador, só dar verdadeiro se o valor e o tipo dos operandos for igual.
 
 ### Tipos de Dados em JavaScript
 
-JavaScript variables can hold numbers like 100 and text values like "John Doe".
+Variáveis de JavaScript podem armazenar números, como 100, e texto, como "José da Silva".
 
-In programming, text values are called text strings.
+Em programação, valores textuais são chamados de *strings*.
 
-JavaScript can handle many types of data, but for now, just think of numbers and strings.
+JavaScript pode trabalhar com vários tipos de dados, mas, por enquanto, só se preocupe com números e strings.
 
-Strings are written inside double or single quotes. Numbers are written without quotes.
+Strings são escritos entre aspas ou apóstrofes. Números são escritos diretamente. Números entre aspas são strings.
 
-### Declaring (Creating) JavaScript Variables
+### Declarando (Criando) Variáveis JavaScript
 
-Creating a variable in JavaScript is called "declaring" a variable.
+A criação de uma variável em JavaScript é chamada de *declaração* de uma variável.
 
-You declare a JavaScript variable with the var keyword:
+Você declara uma variável JavaScript com a palavra-chave **var**:
 
 ```javascript
 var carName;
 ```
 
-After the declaration, the variable has no value. (Technically it has the value of **undefined**)
+Depois da declaração, a variável não tem nenhum valor. (Tecnicamente seu valor é **undefined**)
 
-    It's a good programming practice to declare all variables at the beginning of a script.
+    É uma boa prática de programação declarar todas as variáveis no início de um script.
+    Um programa JavaScript é, frequentemente, chamado de script.
 
-### One Statement, Many Variables
+    Em JavaScript, a declaração das variáveis não é obrigatória, mas é fortemente recomendada.
 
-Start the statement with var and separate the variables by comma:
+### Uma Instrução, Muitas Variáveis
+
+Inicie a instrução com **var** e separe as variáveis com vírgulas:
 
 ```javascript
 var person = "John Doe", carName = "Volvo", price = 200;
 ```
 
-A declaration can span multiple lines:
+Uma declaração pode se espalhar por várias linhas:
 
 ```javascript
-var person = "John Doe",
-carName = "Volvo",
-price = 200;
+var pessoa = "José da Silva",
+marcaCarro = "Volvo",
+preco = 200;
 ```
 
 ### Value = undefined
 
-A variable declared without a value will have the value **undefined**.
+Uma variável declarada sem um valor terá o valor **undefined**.
 
-### Re-Declaring JavaScript Variables
+### Redeclaração de Variáveis JavaScript
 
-If you re-declare a JavaScript variable, it will not lose its value. (var_demo1.html)
+Se você redeclarar uma variável JavaScript, ela não perderá seu valor. [Redeclaração.](var_demo1.html)
 
-### JavaScript Arithmetic
+### Aritmética no JavaScript
 
 As with algebra, you can do arithmetic with JavaScript variables, using operators like = and +:
 
