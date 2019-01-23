@@ -510,7 +510,7 @@ As regras gerais para a escolha de nomes para variáveis \(identificadores únic
 
 Em JavaScript, o sinal de igual \(=\) é um operador de *atribuição*, não um operador de igualdade.
 
-    O operador de comparação "igual a" é escrito \(==\), ou \(===\) em JavaScript.
+    O operador de comparação "igual a" é escrito ==, ou === em JavaScript.
     O segundo comparador, só dar verdadeiro se o valor e o tipo dos operandos for igual.
 
 ### Tipos de Dados em JavaScript
@@ -566,7 +566,7 @@ Se você redeclarar uma variável JavaScript, ela não perderá seu valor. [Rede
 
 ### Aritmética no JavaScript
 
-Como na álgebra, você pode fazer contas (aritmética) com as variáveis de JavaScript, usando operadores como + e\*:
+Como na álgebra, você pode fazer contas (aritmética) com as variáveis de JavaScript, usando operadores como + e \*:
 
 ```javascript
 var x = 5 + 2 * 3;
@@ -604,7 +604,7 @@ O operador de adição \(+\) adiciona números e concatena strings.
 Operadores aritméticos são usados para realizar aritmética com números:
 
 Operador  | Descrição
------------------------------------------------------------
+----------|-----------------------------------
 \+        | Adição
 \-        | Subtração
 \*        | Multiplicação
@@ -617,11 +617,11 @@ Operador  | Descrição
 ### JavaScript Assignment Operators
 
 Operator | Example | Same As
------------------------------
+---------|---------|---------
 =        | x = y   | x = y
 +=       | x += y  | x = x + y
 -=       | x -= y  | x = x - y
-*=       | x *= y  | x = x * y
+\*=       | x \*= y  | x = x * y
 /=       | x /= y  | x = x / y
 %=       | x %= y  | x = x % y
 
