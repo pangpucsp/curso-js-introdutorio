@@ -773,7 +773,7 @@ Valor | Operador    | Descrição                 | Exemplo
 6     | &&          | E lógico                  | x && y
 5     | \|\|        | OU lógico                 | x \|\| y
 4     | ? :         | Condição                  | \(x == y\) ? "Sim" : "Não"
-
+  |   |  |
 3     | +=          | Atribuição                | x += y
 3     | +=          | Atribuição                | x += y
 3     | -=          | Atribuição                | x -= y
@@ -785,7 +785,7 @@ Valor | Operador    | Descrição                 | Exemplo
 3     | &=          | Atribuição                | x &= y
 3     | ^=          | Atribuição                | x ^= y
 3     | \|=         | Atribuição                | x \|= y
-
+   |  |   |
 2     | yield       | Função Pausa              | yield x
 1     | ,           | Vírgula                   | 5 , 6
 
