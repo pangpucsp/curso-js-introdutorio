@@ -671,7 +671,7 @@ Operador | Descrição   | Exemplo   | O mesmo que | Resultado | Decimal
 &        | E           | 5 & 1     | 0101 & 0001 | 0001   | 1
 \|       | OU          | 5 \| 1    | 0101 \| 0001 | 0101   | 5
 ~        | NÃO         | ~ 5       | ~0101       | 1010   | 10
-^        | XOU         | 5 ^ 1     | 0101 ^ 0001 | 0100 |   | 4
+^        | XOU         | 5 ^ 1     | 0101 ^ 0001 | 0100 | 4
 <<       | Deslocamento para a esquerda | 5 << 1 | 0101 << 1 | 1010 | 10
 \>>      | Deslocamento para a direta com sinal | 5 >> 1 | 0101 >> 1 | 0010 | 2
 \>>>     | Deslocamento para a direita com zeros | 5 >>> 1 | 0101 >>> 1 | 0010 | 2
@@ -717,7 +717,7 @@ E (como nas aulas de matemática) a precedência muda com o uso de parenteses:
 var x = (100 + 50) * 3;
 ```
 
-Quando muitas operaçõees têm a mesma precedência (como adição e subtração), elas são calculadas da esquerda para a direita:
+Quando muitas operações têm a mesma precedência (como adição e subtração), elas são calculadas da esquerda para a direita:
 
 ```javascript
 var x = 100 + 50 - 3;
@@ -811,3 +811,5 @@ Operador | Exemplo  | Mesmo que
 ^=       | x ^= y   | x = x ^ y
 \|=      | x \|= y  | x = x \| y
 \*\*=    | x \*\*= y  | x = x \*\* y
+
+[Continuação do texto](fundametos2_js.md)
