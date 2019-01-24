@@ -812,4 +812,4 @@ Operador | Exemplo  | Mesmo que
 \|=      | x \|= y  | x = x \| y
 \*\*=    | x \*\*= y  | x = x \*\* y
 
-[Continuação do texto](fundametos2_js.md)
+[Continuação do texto](fundamentos2_js.md)
