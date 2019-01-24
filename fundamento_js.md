@@ -652,7 +652,7 @@ Operador | Descrição
 Operador | Descrição
 ---------|--------------------
 &&       | e lógico
-||       | ou lógico
+\|\|     | ou lógico
 !        | negação lógica
 
 ### Operadores de Tipo do JavaScript
@@ -668,7 +668,7 @@ Os números em JavaScript são representado por pontos flutuantes, mas quando es
 
 Operador | Descrição   | Exemplo   | O mesmo que | Resultado | Decimal
 ---------|-------------|-----------|-------------|-----------|----------
-&        | E         | 5 & 1     | 0101 & 0001 | 0001   | 1
+&        | E           | 5 & 1     | 0101 & 0001 | 0001   | 1
 \|       | OU          | 5 \| 1    | 0101 \| 0001 | 0101   | 5
 ~        | NÃO         | ~ 5       | ~0101       | 1010   | 10
 ^        | XOU         | 5 ^ 1     | 0101 ^ 0001 | 0100 |   | 4
@@ -676,11 +676,11 @@ Operador | Descrição   | Exemplo   | O mesmo que | Resultado | Decimal
 \>>      | Deslocamento para a direta com sinal | 5 >> 1 | 0101 >> 1 | 0010 | 2
 \>>>     | Deslocamento para a direita com zeros | 5 >>> 1 | 0101 >>> 1 | 0010 | 2
 
-### Arithmetic Operations
+### Operações Aritméticas
 
-A typical arithmetic operation operates on two numbers.
+Um operação aritmética opera tipicamente em dois números.
 
-The two numbers can be literals:
+Os dois números podem ser literais ou valores de variáveis:
 
 ```javascript
 var a = 6;
@@ -688,125 +688,126 @@ var x = 100 + 50;
 var y = (100 + 50) * a;
 ```
 
-### Operators and Operands
+### Operadores e Operandos
 
-The numbers (in an arithmetic operation) are called **operands**.
+Os números \(numa operação aritmética\) são chamados de **operandos**.
 
-The operation (to be performed between the two operands) is defined by an **operator**.
+A operação \(a ser realizada entre os dois operandos\) é definida por um **operador**.
 
-Operand | Operator | Operand
+Operando | Operador | Operando
 --------|----------|---------
 100     | +        | 50
 
-    In arithmetic, the division of two integers produces a quotient and a remainder.
-    In mathematics, the result of a modulo operation is the remainder of an arithmetic division.
+    Em aritmética, a divisão de dois inteiros produz um quociente e um resto.
+    Em matemática, o resultado de uma operação módulo é o resto da divisão aritmética.
 
-### Operator Precedence
+### Precedência de Operadores
 
-Operator precedence describes the order in which operations are performed in an arithmetic expression.
+A precedência de operadores descreve a ordem em que as operações são realizadas numa expressão aritmética.
 
 ```javascript
 var x = 100 + 50 * 3;
 ```
 
-Multiplication (\*) and division (/) have higher precedence than addition (+) and subtraction (-).
+Multiplicação (\*) e divisão (/) têm precedência maior do que adição (+) e subtração (-).
 
-And (as in school mathematics) the precedence can be changed by using parentheses:
+E (como nas aulas de matemática) a precedência muda com o uso de parenteses:
 
 ```javascript
 var x = (100 + 50) * 3;
 ```
 
-When many operations have the same precedence (like addition and subtraction), they are computed from left to right:
+Quando muitas operaçõees têm a mesma precedência (como adição e subtração), elas são calculadas da esquerda para a direita:
 
 ```javascript
 var x = 100 + 50 - 3;
 ```
 
-### JavaScript Operator Precedence Values
+### Valores de Precedência dos Operadores em JavaScript
 
-Value | Operator    | Description               | Example
+Valor | Operador    | Descrição                 | Exemplo
 ------|-------------|---------------------------|-------------
-20    | ( )         | Expression grouping       | (3 + 4)
+20    | \( \)       | Agrupamento de Expressão  | \(3 + 4\)
   |   |   |  
-19    | .           | Member                    | person.name
-19    | []          | Member                    | person["name"]
-19    | ()          | Function call             | myFunction()
-19    | new         | Create                    | new Date()
+19    | .           | Membro                    | pessoa.nome
+19    | \[\]        | Membro                    | pessoa\["nome"\]
+19    | \(\)        | Chamada de função         | myFunction\(\)
+19    | new         | Criação                   | new Date()
   |   |   |  
-17    | ++          | Postfix Increment         | i++
-17    | --          | Postfix Decrement         | i--
+17    | ++          | Incremento pós-fixado     | i++
+17    | --          | Decremento pós-fixado     | i--
   |   |   |  
-16    | ++          | Prefix Increment          | ++i
-16    | --          | Prefix Decrement          | --i
-16    | !           | Logical not               | !(x==y)
-16    | typeof      | Type                      | typeof x
+16    | ++          | Incremento pré-fixado     | ++i
+16    | --          | Decremento pré-fixado     | --i
+16    | !           | Negação lógica            | !\(x==y\)
+16    | typeof      | Tipo                      | typeof x
   |   |   |  
-15    | **          | Exponentiation (ES7)          | 10 ** 2
+15    | \*\*        | Exponenciação (ES7)       | 10 \*\* 2
   |   |   |  
-14    | *           | Multiplication            | 10 * 5
-14    | /           | Division                  | 10 / 5
-14    | %           | Division Remainder        | 10 % 5
+14    | \*          | Multiplicação             | 10 \* 5
+14    | /           | Divisão                   | 10 / 5
+14    | %           | Resto da divisão          | 10 % 5
   |   |   |  
-13    | +           | Addition                  | 10 + 5
-13    | -           | Subtraction               | 10 - 5
+13    | +           | Adição                    | 10 + 5
+13    | -           | Subtração                 | 10 - 5
   |   |   |  
-12    | <<          | Shift left                | x << 2
-12    | >>          | Shift right               | x >> 2
-12    | >>>         | Shift right (unsigned)    | x >>> 2
+12    | <<          | Deslocamento esquerda     | x << 2
+12    | \>\>        | Deslocamento direita      | x \>\> 2
+12    | \>\>\>      | Deslocamento direita (sem sinal)    | x \>\>\> 2
   |   |   |  
-11    | <           | Less than                 | x < y
-11    | <=          | Less than or equal        | x <= y
-11    | >           | Greater than              | x > y
-11    | >=          | Greater than or equal     | x >= y
-11    | in          | Property in Object        | "PI" in Math
-11    | instanceof  | Instance of Object        | instanceof Array
+11    | <           | Menor que                 | x < y
+11    | <=          | Menor ou igual a          | x <= y
+11    | \>          | Maior que                 | x \> y
+11    | \>=         | Maior ou igual a          | x \>= y
+11    | in          | Propriedade do Objeto     | "PI" in Math
+11    | instanceof  | Instância do Objeto       | instanceof Array
   |   |   |  
-10    | ==          | Equal                     | x == y
-10    | ===         | Strict equal              | x === y
-10    | !=          | Unequal                   | x != y
-10    | !==         | Strict unequal            | x !== y
+10    | ==          | Igual a                   | x == y
+10    | ===         | Igual estrito             | x === y
+10    | !=          | Diferente                 | x != y
+10    | !==         | Diferente estrito         | x !== y
   |   |   |  
-9     | &           | Bitwise AND               | x & y
-8     | ^           | Bitwise XOR               | x ^ y
-7     | \|          | Bitwise OR                | x \| y
-6     | &&          | Logical AND               | x && y
-5     | \|\|        | Logical OR                | x \|\| y
-4     | ? :         | Condition                 | (x == y) ? "Yes" : "No"
+9     | &           | E bit-a-bit               | x & y
+8     | ^           | XOU bit-a-bit             | x ^ y
+7     | \|          | OU bit-a-bit              | x \| y
+6     | &&          | E lógico                  | x && y
+5     | \|\|        | OU lógico                 | x \|\| y
+4     | ? :         | Condição                  | \(x == y\) ? "Sim" : "Não"
 
-3     | +=          | Assignment                | x += y
-3     | +=          | Assignment                | x += y
-3     | -=          | Assignment                | x -= y
-3     | *=          | Assignment                | x *= y
-3     | %=          | Assignment                | x %= y
-3     | <<=         | Assignment                | x <<= y
-3     | >>=         | Assignment                | x >>= y
-3     | >>>=        | Assignment                | x >>>= y
-3     | &=          | Assignment                | x &= y
-3     | ^=          | Assignment                | x ^= y
-3     | \|=         | Assignment                | x \|= y
+3     | +=          | Atribuição                | x += y
+3     | +=          | Atribuição                | x += y
+3     | -=          | Atribuição                | x -= y
+3     | \*=         | Atribuição                | x \*= y
+3     | %=          | Atribuição                | x %= y
+3     | <<=         | Atribuição                | x <<= y
+3     | \>\>=       | Atribuição                | x \>\>= y
+3     | \>\>\>=     | Atribuição                | x \>\>\>= y
+3     | &=          | Atribuição                | x &= y
+3     | ^=          | Atribuição                | x ^= y
+3     | \|=         | Atribuição                | x \|= y
 
-2     | yield       | Pause Function            | yield x
-1     | ,           | Comma                     | 5 , 6
+2     | yield       | Função Pausa              | yield x
+1     | ,           | Vírgula                   | 5 , 6
 
-    Expressions in parentheses are fully computed before the value is used in the rest of the expression.
+    Expressões em parenteses são totalmente calculadas antes do valor ser usado
+    no restante da expressão.
 
-## JavaScript Assignment (https://www.w3schools.com/js/js_assignment.asp)
+## Atribuições em JavaScript [JS Assignment](https://www.w3schools.com/js/js_assignment.asp)
 
-Assignment operators assign values to JavaScript variables.
+Operadores de atribuição atribuem valores a variáveis de JavaScript.
 
-Operator | Example  | Same As
--------------------------------------------------
+Operador | Exemplo  | Mesmo que
+---------|----------|--------------------
 =        | x = y    | x = y
 +=       | x += y   | x = x + y
 -=       | x -= y   | x = x - y
-*=       | x *= y   | x = x * y
+\*=      | x \*= y   | x = x \* y
 /=       | x /= y   | x = x / y
 %=       | x %= y   | x = x % y
 <<=      | x <<= y  | x = x << y
->>=      | x >>= y  | x = x >> y
->>>=     | x >>>= y | x = x >>> y
+\>\>=    | x \>>= y  | x = x >> y
+\>\>\>=  | x \>\>\>= y | x = x \>\>\> y
 &=       | x &= y   | x = x & y
 ^=       | x ^= y   | x = x ^ y
 \|=      | x \|= y  | x = x \| y
-**=      | x **= y  | x = x ** y
+\*\*=    | x \*\*= y  | x = x \*\* y
