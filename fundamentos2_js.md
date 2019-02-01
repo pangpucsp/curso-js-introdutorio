@@ -447,7 +447,7 @@ var z = new Boolean();       // declara z como um objeto Boolean
 ```
 
     Evite objetos String, Number e Boolean.
-    Eles complicam seu código e retardam a velocidade de execução.
+    Eles complicam seu código e retardam a execução.
 
 ## Eventos de JavaScript (https://www.w3schools.com/js/js_events.asp)
 
@@ -487,7 +487,7 @@ No exemplo a seguir, um atributo *onclick* \(com código\), é adicionado ao ele
 
 ```html
 <button onclick="document.getElementById('demo').innerHTML =
- Date()">The time is?</button>
+ Date()">Que hora são?</button>
 ```
 
     Código JavaScript em geral tem várias linhas.
@@ -497,22 +497,22 @@ No exemplo a seguir, um atributo *onclick* \(com código\), é adicionado ao ele
 <button onclick="displayDate()">Que horas são?</button>
 ```
 
-### Common HTML Events
+### Eventos HTML Comuns
 
-Here is a list of some common HTML events:
+Eis uma lista de alguns eventos HTML comuns:
 
-Event       | Description
-----------------------------------------------------------------------
-onchange    | An HTML element has been changed
-onclick     | The user clicks an HTML element
-onmouseover | The user moves the mouse over an HTML element
-onmouseout  | The user moves the mouse away from an HTML element
-onkeydown   | The user pushes a keyboard key
-onload      | The browser has finished loading the page
+Evento      | Descrição
+------------|---------------------------------------------------------
+onchange    | Um elemento HTML mudou
+onclick     | O usuário clicou num elemento de HTML
+onmouseover | O usuário moveu o mouse sobre um elemento de HTML
+onmouseout  | O usuário moveu o mouse para fora de um elemento de HTML
+onkeydown   | O usuário acionou uma tecla do teclado
+onload      | O navegador acabou de carregar uma página
 
-A complete list of HTML events may be found on (https://www.w3schools.com/jsref/dom_obj_event.asp)
+Uma lista completa de eventos de HTML pode ser encontradad em [Eventos de HTML](https://www.w3schools.com/jsref/dom_obj_event.asp)
 
-### What can JavaScript Do?
+### O Que o JavaScript Pode Fazer?
 
 Event handlers can be used to handle, and verify, user input, user actions, and browser actions:
 
