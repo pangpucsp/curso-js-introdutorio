@@ -16,134 +16,137 @@ var x = {primeiroNome:"João", ultimoNome:"Carvalho"};    // Objeto
 
 Em programação, tipos de dados é um conceito importante.
 
-To be able to operate on variables, it is important to know something about the type.
+Para ser capaz de trabalhar com as variáveis, é importante conhecer o tipo da valor armazenado na variável.
 
-Without data types, a computer cannot safely solve this:
+Sem tipo de dados, um computador não pode resolver com segurança a instrução:
 
 ```javascript
 var x = 16 + "Volvo";
 ```
 
-JavaScript evaluates expressions from left to right. Different sequences can produce different results:
+JavaScript calcula as expressões da esquerda para a direita. Sequências diferentes podem produzir resultados diferentes.
+    Em computação, a ordem dos fatores é importante.
 
 ```javascript
-var x = 16 + 4 + "Volvo";    // == "20Volvo" -- is different of
+var x = 16 + 4 + "Volvo";    // == "20Volvo" -- é diferente de
 var y = "Volvo" + 16 + 4;    // == "Volvo164"
 ```
 
-### JavaScript Types are Dynamic
+### Tipos em JavaScript São Dinâmicos
 
-JavaScript has dynamic types. This means that the same variable can be used to hold different data types:
-
-```javascript
-var x;           // Now x is *undefined*
-x = 5;           // Now x is a Number
-x = "John";      // Now x is a String
-```
-
-### JavaScript Strings
-
-A string (or a text string) is a series of characters like "John Doe".
-
-Strings are written with quotes. You can use single or double quotes:
+JavaScript tem tipos dinâmicos. Isto é, uma mesma variável pode ser usada para armazenar diferentes tipos de dados:
 
 ```javascript
-var carName = "Volvo XC60";   // Using double quotes
-var carName = 'Volvo XC60';   // Using single quotes
-var answer = "It's alright";             // Single quote inside double quotes
-var answer = "He is called 'Johnny'";    // Single quotes inside double quotes
-var answer = 'He is called "Johnny"';    // Double quotes inside single quotes
+var x;           // x é *undefined*
+x = 5;           // x é um Number
+x = "John";      // x é um String
 ```
 
-### JavaScript Numbers
+### Strings em JavaScript
 
-JavaScript has only one type of numbers.
+Um string \(ou um string de texto\) é uma sequência de caracteres como "John Doe".
+    Observe que JavaScript não tem um tipo de dado carácter como outras linguagens.
 
-Numbers can be written with, or without decimals:
+Strings são escritas com aspas ou apóstrofes:
 
 ```javascript
-var x1 = 34.00;     // Written with decimals
-var x2 = 34;        // Written without decimals
+var carName = "Volvo XC60";   // com aspas
+var carName = 'Volvo XC60';   // com apóstrofes
+var answer = "It's alright";             // apóstrofe dentro de aspas
+var answer = "He is called 'Johnny'";    // apóstrofes dentro de aspas
+var answer = 'He is called "Johnny"';    // aspas dentro de apóstrofes
 ```
 
-Extra large or extra small numbers can be written with scientific (exponential) notation:
+### Números em JavaScript
+
+JavaScript só tem um tipo de número \(number\).
+
+Números podem ser escritos com ou sem parte decimal:
 
 ```javascript
-var y = 123e5;      // 12300000
-var z = 123e-5;     // 0.00123
+var x1 = 34.00;     // número com parte decimal
+var x2 = 34;        // número sem parte decimal
 ```
 
-### JavaScript Booleans
+Números muito grandes ou próximos de zero podem ser escritos com notação científica:
 
-Booleans can only have two values: true or false.
+```javascript
+var y = 123e5;      // 12300000 | observe que o número inteiro após o e é o
+var z = 123e-5;     // 0.00123  | expoente do 10 na notação científica
+```
+
+### Booleanos em JavaScript
+
+Valores booleanos \(lógicos\) só podem ter dois valores: **true** ou **false**.
 
 ```javascript
 var x = 5;
 var y = 5;
 var z = 6;
-(x == y)       // Returns true
-(x == z)       // Returns false
+(x == y)       // retorna true
+(x == z)       // retorna false
 ```
 
-Booleans are often used in conditional testing.
+Booleanos são, em geral, usados para o teste condicional.
 
-### JavaScript arrays are written with square brackets.
+### Arrays em JavaScript são escritos com cochetes.
 
-Array items are separated by commas.
+Itens de um array são separados por vírgulas.
 
-The following code declares (creates) an array called cars, containing three items (car names):
+O código a seguir declara \(cria\) um array chamado de carros, contendo três itens \(nomes dos carros\):
 
 ```javascript
-var cars = ["Saab", "Volvo", "BMW"];
+var carros = ["Ford", "Kia", "BMW"];
 ```
 
-Array indexes are zero-based, which means the first item is [0], second is [1], and so on.
+Indices de um array começam com zero, isto é, o primeiro item é [0], o segundo is [1] e assim por diante.
 
-### JavaScript Objects
+### Objetos em JavaScript
 
-JavaScript objects are written with curly braces.
+Objetos em JavaScript são escritos com chaves.
 
-Object properties are written as name:value pairs, separated by commas.
+Propriedades de objetos são escritas como pares nome:valor, separadas por vírgulas.
 
 ```javascript
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+var pessoa = {nome:"José", sobrenome:"Siva", idade:50, corDosOlhos:"azul"};
 ```
 
-The object (person) in the example above has 4 properties: firstName, lastName, age, and eyeColor.
+O objeto \(pessoa\) no exemplo acima tem 4 propriedades: nome, sobrenome, idade e corDosOlhos.
 
-### The typeof Operator
+### O Operador **typeof**
 
-You can use the JavaScript typeof operator to find the type of a JavaScript variable.
+Você pode usar o operador **typeof** do JavaScript para achar o tipo de uma variável no JavaScript.
 
-The typeof operator returns the type of a variable or an expression:
+O operador typeof retorna o tipo de uma variable (do valor em uma variável) ou uma expressão:
 
 ```javascript
-typeof ""                  // Returns "string"
-typeof "John"              // Returns "string"
-typeof "John Doe"          // Returns "string"
+typeof ""                  // retorna "string"
+typeof "José"              // retorna "string"
+typeof "José Silva"          // retorna "string"
 ```
 
 ### Undefined
 
-In JavaScript, a variable without a value, has the value undefined. The type is also undefined.
+Em JavaScript, uma variável sem um valor, tem o valor **undefined**. O tipo também é **undefined**.
 
 ```javascript
-car = undefined;        // Value is undefined, type is undefined
+carro = undefined;        // Valor é undefined, tipo é undefined
 ```
 
-### Empty Values
+### Valores Vazios
 
-An empty value has nothing to do with undefined.
+Um valor vazio não tem nada a ver com **undefined**.
 
-An empty string has both a legal value and a type.
+Um string vazio tem um valor e um tipo válidos.
 
 ```javascript
-var car = "";              // The value is "", the typeof is "string"
+var carro = "";              // O valor é "", o typeof é "string"
 ```
 
-    You can consider it a bug in JavaScript that typeof null is an object. It should be null.
+    Você pode considerar um bug no JavaScript que o typeof de null é um
+    objeto (objet). Deveria ser null.
 
-### Difference Between Undefined and Null
+### Diferenças entre Undefined e Null
 
 Undefined and null are equal in value but different in type:
 
