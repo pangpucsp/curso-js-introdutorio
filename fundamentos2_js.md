@@ -559,61 +559,62 @@ var x = "Somos os "Guerreiros" do sul.";
 
 A string será truncada em "Somos os ".
 
-A solução para evitar este problema é usar o caracter barra invertida \(\\\),  caracter de escape.
+A solução para evitar este problema é usar o carácter barra invertida \(\\\),  carácter de escape.
 
-The backslash \(\\\) escape character turns special characters into string characters:
+O carácter de escape, \(\\\), faz que caracteres especiaispossam ser usados como caracteres de string:
 
-Code | Result | Description
-----------------------------
-\\'  | '      | Single quote
-\\"  | "      | Double quote
-\\\\ | \\     | Backslash
+Código | Resultado | Descrição
+-----|--------|-------------
+\\'  | '      | Apóstrofe
+\\"  | "      | Aspas
+\\\\ | \\     | Barra invertida
 
-The sequence \\"  inserts a double quote in a string:
+A sequência \\"  insere uma aspas numa string:
 
 ```javascript
-var x = "We are the so-called \"Vikings\" from the north.";
+var x = "Somos os \"Gerreiros\" do sul.";
 ```
 
-Six other escape sequences are valid in JavaScript:
+Outras seis sequências de escape que são válidas em JavaScript:
 
-Code | Result
+Código | Resultado
 --------------------------
-\\b  | Backspace
-\\f  | Form Feed
-\\n  | New Line
-\\r  | Carriage Return
-\\t	 | Horizontal Tabulator
-\\v  | Vertical Tabulator
+\\b  | Retorno de um espaço
+\\f  | Salto de Folha
+\\n  | Linha Nova
+\\r  | Retorno do Carro
+\\t	 | Tabulador Horizontal
+\\v  | Tabulador Vertical
 
-    The 6 escape characters above were originally designed to control typewriters, teletypes, and fax machines. They do not make any sense in HTML.
+    Estes 6 caracteres de escape foram originalmente projetados para teletipos,
+    telegrafos e máquinas de FAX. Eles não têm sentido no HTML.
 
-### Breaking Long Code Lines
+### Quebra de Linhas Longas de Código
 
-For best readability, programmers often like to avoid code lines longer than 80 characters.
+Para melhor legibilidade, programadores, em geral, evitam linhas de código mais longas que 80 caracteres.
 
-If a JavaScript statement does not fit on one line, the best place to break it is after an operator:
+Se uma instrução JavaScript não cabe numa linha, o melhor lugar para quebrá-la é depois de um operador:
 
 ```javascript
 document.getElementById("demo").innerHTML =
-"Hello Dolly!";
+"Alo Teresinha!";
 ```
 
-You can also break up a code line within a text string with a single backslash:
+Você também pode quebrar uma linha de código usando uma barra invertida antes de saltar a linha:
 
 ```javascript
-document.getElementById("demo").innerHTML = "Hello \
-Dolly!";
+document.getElementById("demo").innerHTML = "Alo \
+Teresinha!";
 ```
 
-    The \\ method is not the preferred method. It might not have universal support.
-    Some browsers do not allow spaces behind the \\ character.
+    O método da \\ não é o método preferido. É melhor evitá-lo,
+    alguns navegadores podem não entender espaços após o \.
 
-A safer way to break up a string, is to use string addition:
+Uma maneira mais segura é quebrar a string e concatenar as partes:
 
 ```javascript
-document.getElementById("demo").innerHTML = "Hello " +
-"Dolly!";
+document.getElementById("demo").innerHTML = "Alo " +
+"Teresinha!";
 ```
 
 You **cannot break up** a code line with a backslash:
