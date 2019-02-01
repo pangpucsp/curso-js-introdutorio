@@ -514,54 +514,54 @@ Uma lista completa de eventos de HTML pode ser encontradad em [Eventos de HTML](
 
 ### O Que o JavaScript Pode Fazer?
 
-Event handlers can be used to handle, and verify, user input, user actions, and browser actions:
+Manipuladores de eventos podem ser usados para manipular e verificar entradas e ações dos usuários e do navegador:
 
-  * Things that should be done every time a page loads
-  * Things that should be done when the page is closed
-  * Action that should be performed when a user clicks a button
-  * Content that should be verified when a user inputs data
-  * And more ...
+  * Coisas que devem ser feitas toda vez que uma página é carregada;
+  * Coisas que devem ser feitas quando uma página é fechada;
+  * Ação que deve ser realizada quando um usuário clica um botão;
+  * Conteúdo que deve ser verificado quando um usuário fornece dados de entrada; e
+  * Mais ...
 
-Many different methods can be used to let JavaScript work with events:
+Muitos métodos diferentes podem ser usados para deixar o JavaScript trabalhar com os eventos:
 
-  * HTML event attributes can execute JavaScript code directly
-  * HTML event attributes can call JavaScript functions
-  * You can assign your own event handler functions to HTML elements
-  * You can prevent events from being sent or being handled
-  * And more ...
+  * atributos de eventos de HTML pode executar código JavaScript diretamente;
+  * atributos de eventos de HTML podem chamar funções de JavaScript;
+  * você pode atribuir suas próprias funções manipuladoras de eventos a elementos de HTML;
+  * você pode evitar que eventos sejam enviados ou manipulados; e
+  * Mais ...
 
-## JavaScript Strings (https://www.w3schools.com/js/js_strings.asp)
+## Strings em JavaScript (https://www.w3schools.com/js/js_strings.asp)
 
-### JavaScript Strings
+### Strings de JavaScript
 
-A JavaScript string is zero or more characters written inside quotes.
+Um string de JavaScript composto por zero ou mais caracteres entre aspas, ou apóstrofes.
 
 ```javascript
 var x = "John Doe";
 ```
 
-### String Length
+### Comprimento da String
 
-The length of a string is found in the built in property length:
+O comprimento de uma string é encontrado na propriedade comprimento interna da string:
 
 ```javascript
 var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var sln = txt.length;
 ```
 
-### Special Characters
+### Caracteres Especiais
 
-Because strings must be written within quotes, JavaScript will misunderstand this string:
+Porque strings devem ser escritas entre aspas, JavaScript não vai entender a string abaixo:
 
 ```javascript
-var x = "We are the so-called "Vikings" from the north.";
+var x = "Somos os "Guerreiros" do sul.";
 ```
 
-The string will be chopped to "We are the so-called ".
+A string será truncada em "Somos os ".
 
-The solution to avoid this problem, is to use the backslash escape character.
+A solução para evitar este problema é usar o caracter barra invertida \(\\\),  caracter de escape.
 
-The backslash (\\) escape character turns special characters into string characters:
+The backslash \(\\\) escape character turns special characters into string characters:
 
 Code | Result | Description
 ----------------------------
