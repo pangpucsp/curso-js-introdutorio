@@ -607,7 +607,7 @@ document.getElementById("demo").innerHTML = "Alo \
 Teresinha!";
 ```
 
-    O método da \\ não é o método preferido. É melhor evitá-lo,
+    O método da \ não é o método preferido. É melhor evitá-lo,
     alguns navegadores podem não entender espaços após o \.
 
 Uma maneira mais segura é quebrar a string e concatenar as partes:
@@ -617,58 +617,58 @@ document.getElementById("demo").innerHTML = "Alo " +
 "Teresinha!";
 ```
 
-You **cannot break up** a code line with a backslash:
+Você **não pode quebrar** uma linha de código com uma barra invertida:
 
 ```javascript
 document.getElementById("demo").innerHTML = \
-"Hello Dolly!";
+"Alo Teresinha!";
 ```
 
-### Strings Can be Objects
+### Strings Podem Ser Objetos
 
-Normally, JavaScript strings are primitive values, created from literals:
+Normalmente, strings de JavaScript são valores primitivos, criados de literais:
 
-**var firstName = "John";**
+**var nome = "Maria";**
 
-But strings can also be defined as objects with the keyword new:
+Mas strings podem também ser definidas como objetos com a palavra-chave **new**:
 
-**var firstName = new String("John");**
+**var firstName = new String("Maria");**
 
 ```javascript
-var x = "John";
-var y = new String("John");
+var x = "Maria";
+var y = new String("Maria");
 
-// typeof x will return string
-// typeof y will return object
+// typeof x vai retornar string
+// typeof y vai retornar object
 ```
 
-    Don't create strings as objects. It slows down execution speed.
-    The new keyword complicates the code. This can produce some unexpected results:
+    NÃO crie strings como objetos. Isto retarda a execução.
+    A palavra-chave **new** complica o código.
+    Isto pode produzir resultados inesperados:
 
 ```javascript
-var x = "John";             
-var y = new String("John");
+var x = "Maria";             
+var y = new String("Maria");
 
-// (x == y) is true because x and y have equal values
-// (x === y) is false because x and y have different types (string and object)
+// (x == y) é true porque x e y tem valores iguais
+// (x === y) é false porque x e y têm tipos diferentes (string e object)
 ```
 
-When using the === operator, equal strings are not equal, because the === operator expects equality in both type and value.
+Ao usar o operador ===, valores de strings iguais não resultam em igualdade porque o operador === espera a igualdade de tipo e valor.
 
-
-Or even worse. Objects cannot be compared:
+Ou pior: Objetos não podem ser comparados:
 
 ```javascript
 var x = new String("John");             
 var y = new String("John");
 
-// (x == y) is false because x and y are different objects
-// (x === y) is false because x and y are different objects
+// (x == y) é false porque x e y são objetos diferentes
+// (x === y) é false porque x e y são objetos diferentes
 ```
 
-## JavaScript String Methods (https://www.w3schools.com/js/js_string_methods.asp)
+## Métodos de Strings em JavaScript (https://www.w3schools.com/js/js_string_methods.asp)
 
-## String Methods and Properties
+## Métodos e Propriedades de Strings
 
 Primitive values, like "John Doe", cannot have properties or methods \(because they are not objects\).
 
