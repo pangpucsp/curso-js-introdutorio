@@ -561,7 +561,7 @@ A string será truncada em "Somos os ".
 
 A solução para evitar este problema é usar o carácter barra invertida \(\\\),  carácter de escape.
 
-O carácter de escape, \(\\\), faz que caracteres especiaispossam ser usados como caracteres de string:
+O carácter de escape, \(\\\), faz que caracteres especiais possam ser usados como caracteres de string:
 
 Código | Resultado | Descrição
 -----|--------|-------------
@@ -578,7 +578,7 @@ var x = "Somos os \"Gerreiros\" do sul.";
 Outras seis sequências de escape que são válidas em JavaScript:
 
 Código | Resultado
---------------------------
+-------|------------------
 \\b  | Retorno de um espaço
 \\f  | Salto de Folha
 \\n  | Linha Nova
