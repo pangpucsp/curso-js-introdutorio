@@ -328,97 +328,97 @@ Variáveis locais são criadas quando uma função começa a executar e removida
 
 Na vida real, um carro é um **objeto**.
 
-Um carro tem propriedades como peso e cor e métodos como avançar e parar.
+Um carro tem *propriedades* como peso e cor e *métodos* como avançar e parar.
 
 Todos os carros têm as mesmas propriedades, mas os valores diferem de carro para carro.
 
 Todos carros têm os mesmos métodos, mas os métodos são executados em momentos diferentes.
 
-### Objeto em JavaScript
+### Objetos em JavaScript
 
-You have already learned that JavaScript variables are containers for data values.
+Você já aprendeu que variáveis em JavaScript são depósitos de valores de dados.
 
-This code assigns a simple value (Fiat) to a variable named car:
-
-```javascript
-var car = "Fiat";
-```
-
-Objects are variables too. But objects can contain many values.
-
-This code assigns many values (Fiat, 500, white) to a variable named car:
+O código a seguir atribui um único valor \(Fiat\) para uma variável chamada de carro:
 
 ```javascript
-var car = {type:"Fiat", model:"500", color:"white"};
+var carro = "Fiat";
 ```
 
-The values are written as name:value pairs (name and value separated by a colon).
+Objetos são variáveis, também. Mas objetos podem ter muitos valores.
+
+Este código atribui muitos valores \(Fiat, 500, white\) a uma variável chamada de carro:
+
+```javascript
+var carro = {marca:"Fiat", modelo:"500", cor:"white"};
+```
+
+Os valores estão escritos como pares nome:valor (nome e valor separados por uma vírgula).
 
     JavaScript objects are containers for named values called properties or methods.
 
-### Object Definition
+### Definição de Objeto
 
-You define (and create) a JavaScript object with an object literal:
+Você define (e cria) um objeto JavaScript com um *objeto literal*:
 
 ```javascript
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+var pessoa = {nome:"Maria", sobrenome:"Carvalho", idade:50, corDeOlhos:"Azul"};
 ```
 
-### Object Properties
+### Propriedades de Objetos
 
-The name:values pairs in JavaScript objects are called properties:
+Os pares nome:valor em objetos de JavaScript são chamados de propriedades:
 
-Property  | Property Value
----------------------------
-firstName | John
-lastName  | Doe
-age       | 50
-eyeColor  | blue
+Propriedade  | Valor Propriedade
+----------|----------------
+nome | Maria
+sobrenome  | Carvalho
+idade       | 50
+corDeOlhos  | azul
 
-## Accessing Object Properties
+## Acesso à Propriedade de Objetos
 
-You can access object properties in two ways:
+Você pode acessar propriedades de objetos de duas maneiras:
 
 ```javascript
-objectName.propertyName
+nomeDoObjeto.nomePropriedade
 ```
 
-or
+ou
 
 ```javascript
-objectName["propertyName"]
+nomeDoObjeto["nomePropriedade"]
 ```
 
-### Object Methods
+### Métodos de Objetos
 
-Objects can also have methods.
+Objetos podem ter também métodos.
 
-Methods are actions that can be performed on objects.
+Métodos são ações que podem ser realizadas sobre objetos.
 
-Methods are stored in properties as function definitions.
+Métodos são armazenados em propriedades como definições de funções.
 
-Property  | Property Value
----------------------------
-firstName | John
-lastName  | Doe
-age       | 50
-eyeColor  | blue
-fullName  | function() {return this.firstName + " " + this.lastName;}
+Propriedade  | Valor Propriedade
+-------------|-------------
+nome | Maria
+sobrenome  | Carvalho
+idade       | 50
+corDeOlhos  | azul
+nomeCompleto  | function() {return this.nome + " " + this.sobrenome;}
 
-    A method is a function stored as a property.
+    Um método é uma função armazenada como uma propriedade.
 
 ```javascript
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  id       : 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
+var pessoa = {
+  nome: "Maria",
+  sobrenome : "Carvalho",
+  idade     : 50,
+  nomeCompleto : function() {
+    return this.nome + " " + this.sobrenome;
   }
 };
 ```
 
-### The this Keyword
+### A Palavra-Chave this
 
 In a function definition, this refers to the "owner" of the function.
 
