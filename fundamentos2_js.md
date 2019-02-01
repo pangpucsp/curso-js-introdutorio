@@ -418,67 +418,69 @@ var pessoa = {
 };
 ```
 
-### A Palavra-Chave this
+### A Palavra-Chave **this**
 
-In a function definition, this refers to the "owner" of the function.
+Na definição de uma função, **this** refere-se ao "proprietário" da função.
 
-In the example above, this is the person object that "owns" the fullName function.
+No exemplo acima, este é o objeto *pessoa* que "possui" a função  nomeCompleto.
 
-In other words, this.firstName means the firstName property of this object.
+Ou seja, this.nome significa a propriedade *nome* deste objeto.
 
-### Accessing Object Methods
+### Acesso de Métodos de Objeto
 
-You access an object method with the following syntax:
-
-```javascript
-objectName.methodName()
-```
-
-Example: (obj_demo1.html)
-
-### **Do Not** Declare Strings, Numbers, and Booleans as Objects!
-
-When a JavaScript variable is declared with the keyword "new", the variable is created as an object:
+Você acessa um método de objeto com a seguinte sintaxe:
 
 ```javascript
-var x = new String();        // Declares x as a String object
-var y = new Number();        // Declares y as a Number object
-var z = new Boolean();       // Declares z as a Boolean object
+nomeObjeto.nomeMetodo()
 ```
 
-    Avoid String, Number, and Boolean objects. They complicate your code and slow down execution speed.
+Exemplo: [Demo: objeto](obj_demo1.html)
 
-## JavaScript Events (https://www.w3schools.com/js/js_events.asp)
+### **NÃO** Declare Strings, Números e Booleanos como Objetos!
 
-HTML events are "things" that happen to HTML elements.
+Quando uma variável JavaScript é declarada com a palavra-chave "new", a variável é  criada como um objeto:
 
-When JavaScript is used in HTML pages, JavaScript can "react" on these events.
-
-### HTML Events
-
-An HTML event can be something the browser does, or something a user does.
-
-Here are some examples of HTML events:
-
-  * An HTML web page has finished loading
-  * An HTML input field was changed
-  * An HTML button was clicked
-  * Often, when events happen, you may want to do something.
-
-JavaScript lets you execute code when events are detected.
-
-HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.
-
-With single quotes:
-
-```html
-<element event='some JavaScript'>
+```javascript
+var x = new String();        // declara x como um objeto String
+var y = new Number();        // declara y como um objeto Number
+var z = new Boolean();       // declara z como um objeto Boolean
 ```
 
-With double quotes:
+    Evite objetos String, Number e Boolean.
+    Eles complicam seu código e retardam a velocidade de execução.
+
+## Eventos de JavaScript (https://www.w3schools.com/js/js_events.asp)
+
+Eventos HTML são "coisas" que acontecem com elementos de HTML.
+
+Quando o JavaScript é usado em páginas de HTML, o JavaScript pode "reagi" a estes eventos.
+
+### Eventos de HTML
+
+Um evento de HTML pode ser alguma coisa que o navegador faz, ou alguma coisa que o usuário faz.
+
+Eis alguns exemplos de eventos de HTML:
+
+  * Uma página web em HTML acabou de ser carregada;
+  * Um campo de entrada de HTML mudou; e
+  * Um botão de HTML foi acionado.
+
+Em geral, quando um evento acontece, você pode querer fazer alguma coisa.
+
+JavaScript permite que você execute código quando eventos são detectados.
+
+HTML permite que atributos de manipuladores de eventos, com código de JavaScript, sejam adicionados a elementos de HTML.
+
+Com apóstrofes:
 
 ```html
-<element event="some JavaScript">
+<element evento='algum JavaScript'>
+```
+
+Com aspas:
+
+```html
+<element evento="algum JavaScript">
 ```
 
 In the following example, an onclick attribute (with code), is added to a button element: (ev_demo1.html)
