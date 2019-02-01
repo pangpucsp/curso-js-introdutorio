@@ -422,7 +422,7 @@ var pessoa = {
 
 Na definição de uma função, **this** refere-se ao "proprietário" da função.
 
-No exemplo acima, este é o objeto *pessoa* que "possui" a função  nomeCompleto.
+No exemplo acima, **this** é o objeto *pessoa* que "possui" a função  nomeCompleto.
 
 Ou seja, this.nome significa a propriedade *nome* deste objeto.
 
@@ -483,16 +483,18 @@ Com aspas:
 <element evento="algum JavaScript">
 ```
 
-In the following example, an onclick attribute (with code), is added to a button element: (ev_demo1.html)
+No exemplo a seguir, um atributo *onclick* \(com código\), é adicionado ao elemento botão: [Demo: evento](ev_demo1.html)
 
 ```html
-<button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+<button onclick="document.getElementById('demo').innerHTML =
+ Date()">The time is?</button>
 ```
 
-    JavaScript code is often several lines long. It is more common to see event attributes calling functions: (ev.demo2.html)
+    Código JavaScript em geral tem várias linhas.
+    O usual é atributos de eventos chamarem funções: [Demo: evento2](ev.demo2.html)
 
 ```javascript
-<button onclick="displayDate()">The time is?</button>
+<button onclick="displayDate()">Que horas são?</button>
 ```
 
 ### Common HTML Events
