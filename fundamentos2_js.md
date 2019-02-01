@@ -148,7 +148,7 @@ var carro = "";              // O valor é "", o typeof é "string"
 
 ### Diferenças entre Undefined e Null
 
-Undefined and null are equal in value but different in type:
+Undefined e null são iguais em valor, mas diferentes no tipo:
 
 ```javascript
 typeof undefined           // undefined
@@ -158,11 +158,11 @@ null === undefined         // false
 null == undefined          // true
 ```
 
-### Primitive Data
+### Dados Primitivos
 
-A primitive data value is a single simple data value with no additional properties and methods.
+Um valor de dados primitivo é um valor de dados simples único sem propriedades e métodos adicionais.
 
-The typeof operator can return one of these primitive types:
+O operador typeof pode retornar um dos seguintes tipos primitivos:
 
 * string
 * number
@@ -170,87 +170,89 @@ The typeof operator can return one of these primitive types:
 * undefined
 
 ```javascript
-typeof "John"              // Returns "string"
-typeof 3.14                // Returns "number"
-typeof true                // Returns "boolean"
-typeof false               // Returns "boolean"
-typeof x                   // Returns "undefined" (if x has no value)
+typeof "José"              // retorna "string"
+typeof 3.14                // retorna "number"
+typeof true                // retorna "boolean"
+typeof false               // retorna "boolean"
+typeof x                   // retorna "undefined" (se x não tem nenhum valor)
 ```
 
-### Complex Data
+### Dados Complexos
 
-The typeof operator can return one of two complex types:
+O operador typeof pode retornar um dos dois tipos complexos:
 
 * function
 * object
 
-The typeof operator returns object for both objects, arrays, and null.
+O operador typeof retorna object para ambos objetos: **arrays** e **null**.
 
-The typeof operator does not return object for functions.
+O operador typeof não retorna object para funções.
 
 ```javascript
-typeof {name:'John', age:34} // Returns "object"
-typeof [1,2,3,4]             // Returns "object" (not "array", see note below)
-typeof null                  // Returns "object"
-typeof function myFunc(){}   // Returns "function"
+typeof {name:'John', age:34} // retorna "object"
+typeof [1,2,3,4]             // retorna "object" (não "array")
+typeof null                  // retorna "object"
+typeof function myFunc(){}   // retorna "function"
 ```
 
-    The typeof operator returns "object" for arrays because in JavaScript arrays are objects.
+    O operador typeof retorna "object" para arrays porque em JavaScript arrays
+    são objetos.
 
-## JavaScript Functions (https://www.w3schools.com/js/js_functions.asp)
+## Funções em JavaScript (https://www.w3schools.com/js/js_functions.asp)
 
-A JavaScript function is a block of code designed to perform a particular task.
+Uma função JavaScript é um bloco de código projetado para realizar uma tearefa particular.
 
-A JavaScript function is executed when "something" invokes it (calls it).
+Uma função JavaScript é executada quando *algo* a invoca \(a chama\).
 
 ```javascript
 function myFunction(p1, p2) {
-  return p1 * p2;    // The function returns the product of p1 and p2
+  return p1 * p2;    // A function retorna o produto de p1 com p2
 }
 ```
 
-### JavaScript Function Syntax
+### Sintaxe da Função em JavaScript
 
-A JavaScript function is defined with the **function** keyword, followed by a name, followed by parentheses \(\).
+Uma função em JavaScript é definida com a palavra-chavee **function**, seguida de um nome, seguido por \(\).
 
-Function names can contain letters, digits, underscores, and dollar signs \(same rules as variables\).
+Nomes de função pode conter letras, dígitos, sinais de subscrito e dollar \(mesmas regras para nomesde variáveis\).
 
-The parentheses may include parameter names separated by commas:
-**\(parameter1, parameter2, ...\)**
+Os parenteses podem incluir nomes de variáveis esparadas por vírgulas:
+**\(parametro1, parametro2, ...\)**
 
-The code to be executed, by the function, is placed inside curly brackets: \{\}
+O código a ser executado pela função é colocado dentro de chaves: \{\}, \(ele é chamado de corpo da função\)
 
 ```javascript
-function name(parameter1, parameter2, parameter3) {
-  // code to be executed
+function nome(parametro1, parametro2, parametro3) {
+  // código a ser executado
 }
 ```
 
-Function **parameters** are listed inside the parentheses \(\) in the function definition.
+**Parâmetros** de função são listados dentro dos parenteses \(\) na definição da função.
 
-Function **arguments** are the **values** received by the function when it is invoked.
+Valores de **argumentos** são os **valores** recebidos pela função quando ela é invocada.
 
-Inside the function, the arguments \(the parameters\) behave as local variables.
+Dentro das funções, os argumentos \(os parâmetros\) comportam-se como variáveis locais.
 
-    A Function is much the same as a Procedure or a Subroutine, in other programming languages.
+    Uma Function (função) é o mesmo que Procedure (procedimento) ou uma
+    Subroutine (subrotina), de outras linguagens de programação.
 
-### Function Invocation
+### Invocação de Funções
 
-The code inside the function will execute when "something" invokes \(calls\) the function:
+O código dentro da função será executado quando "algo" invoca \(chama\) a função:
 
-  * When an event occurs \(when a user clicks a button\)
-  * When it is invoked \(called\) from JavaScript code
-  * Automatically \(self invoked\)
+  * Quando um evento ocorre \(p.e.x, um usuário clica um botão\)
+  * Quando é invocada \(called\) por um código de JavaScript
+  * Automaticamente \(auto invocação\)
 
-### Function Return
+### Retorno da Função
 
-When JavaScript reaches a **return statement**, the function will stop executing.
+Quando o JavaScript encontra uma **instrução return**, a função para de executar.
 
-If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.
+Se a função foi invocada por uma instrução, o JavaScript retorna para executar o código após a instrução de invocação.
 
-Functions often compute a return value. The **return value** is "returned" back to the "caller".
+Funções sempre calculam o valor de retorno. O **valor de retorno** é "retornado" para o "chamador".
 
-Example: Calculate the sum of two number and return it.
+Exemplo: Calcular a soma de dois números e retorná-lo.
 
 ```javascript
 var x = myFunction(4, 3);   // Function is called, return value will end up in x
@@ -260,13 +262,12 @@ function myFunction(a, b) {
 }
 ```
 
-### Why Functions?
+### Para que Funções?
 
-You can reuse code: Define the code once, and use it many times.
+  * Você pode reutilisar o código: Defina o código uma vez e use ele muitas vezes.
+  * Você pode usar o mesmo código muitas vezes com diferentes argumentos, para produzir resultados diferentes.
 
-You can use the same code many times with different arguments, to produce different results.
-
-Example: Convert Fahrenheit to Celsius: (funct_demo1.html)
+Exemplo: Converta Fahrenheit em Celsius: [Demo: função1](funct_demo1.html)
 
 ```javascript
 function toCelsius(fahrenheit) {
@@ -275,10 +276,10 @@ function toCelsius(fahrenheit) {
 document.getElementById("demo").innerHTML = toCelsius(77);
 ```
 
-### The () Operator Invokes the Function
-Using the example above, toCelsius refers to the function object, and toCelsius() refers to the function result.
+### O Operador \(\) Invoca a Função
+Do exemplo acima, toCelsius refere-se ao objeto função e toCelsius() refere-se ao resultado da applicação da função.
 
-Accessing a function without () will return the function definition instead of the function result: (funct_demo2.html)
+Acessar uma função sem \(\) retorna a definição da função em vez do resultado da função: [Demo: função2](funct_demo2.html)
 
 ```javascript
 function toCelsius(fahrenheit) {
@@ -287,50 +288,53 @@ function toCelsius(fahrenheit) {
 document.getElementById("demo").innerHTML = toCelsius;
 ```
 
-### Functions Used as Variable Values
+### Funções Usadas como Valores de Variáveis
 
-Functions can be used the same way as you use variables, in all types of formulas, assignments, and calculations.
+As funções podem ser usadas do mesmo jeito que você usa variáveis, em todos os tipos de fórmulas, atribuições e cálculos.
 
 ```javascript
-var text = "The temperature is " + toCelsius(77) + " Celsius";
+var texto = "A temperatura é " + toCelsius(77) + " Celsius";
 ```
 
-### Local Variables
+### Variáveis Locais
 
-Variables declared within a JavaScript function, become **LOCAL** to the function.
+Variáveis declaradas dentro de uma função de JavaScript tornam-se **LOCAIS** à função.
 
-Local variables can only be accessed from within the function.
+Variáveis locais só podem ser acessadas de dentro da função.
 
 ```javascript
-// code here can NOT use carName
+// código aqui NÃO pode usar marcaCarro
 
 function myFunction() {
-  var carName = "Volvo";
-  // code here CAN use carName
+  var marcaCarro = "Ford";
+  // código aqui PODE usar marcaCarro
 }
 
-// code here can NOT use carName
+// código aqui NÃO pode usar marcaCarro
 ```
 
-Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
+Como variáveis locais só podem ser reconhecidas dentro de funções, variáveis com o mesmo nome podem ser usadas em diferentes funções.
 
-Local variables are created when a function starts, and deleted when the function is completed.
+    O JavaScript não exige que as variáveis sejam declaradas antes de serem
+    usadas. Evite fazer isto. Como será visto mais para frente, as variáveis
+    não declaradas, são, implitamente, globais e podem provocar erros muito
+    sutis.
 
-## JavaScript Objects (https://www.w3schools.com/js/js_objects.asp)
+Variáveis locais são criadas quando uma função começa a executar e removidas quando a função termina.
 
-### Real Life Objects, Properties, and Methods
+## Objetos em JavaScript (https://www.w3schools.com/js/js_objects.asp)
 
-In real life, a car is an **object**.
+### Objetos na Vida Real: Propriedades e Métodos
 
-A car has properties like weight and color, and methods like start and stop:
+Na vida real, um carro é um **objeto**.
 
-![Object Explained](images/objectExplained.gif)
+Um carro tem propriedades como peso e cor e métodos como avançar e parar.
 
-All cars have the same properties, but the property values differ from car to car.
+Todos os carros têm as mesmas propriedades, mas os valores diferem de carro para carro.
 
-All cars have the same methods, but the methods are performed at different times.
+Todos carros têm os mesmos métodos, mas os métodos são executados em momentos diferentes.
 
-### JavaScript Objects
+### Objeto em JavaScript
 
 You have already learned that JavaScript variables are containers for data values.
 
