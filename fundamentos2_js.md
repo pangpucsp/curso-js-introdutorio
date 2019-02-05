@@ -117,7 +117,7 @@ O objeto \(pessoa\) no exemplo acima tem 4 propriedades: nome, sobrenome, idade 
 
 Você pode usar o operador **typeof** do JavaScript para achar o tipo de uma variável no JavaScript.
 
-O operador typeof retorna o tipo de uma variable (do valor em uma variável) ou uma expressão:
+O operador typeof retorna o tipo de uma variable \(do valor em uma variável\) ou uma expressão:
 
 ```javascript
 typeof ""                  // retorna "string"
@@ -422,9 +422,9 @@ var pessoa = {
 
 Na definição de uma função, **this** refere-se ao "proprietário" da função.
 
-No exemplo acima, **this** é o objeto *pessoa* que "possui" a função  nomeCompleto.
+No exemplo acima, **this** é o objeto **pessoa** que "possui" a função  nomeCompleto.
 
-Ou seja, this.nome significa a propriedade *nome* deste objeto.
+Ou seja, **this.nome** significa a propriedade *nome* deste objeto.
 
 ### Acesso de Métodos de Objeto
 
@@ -453,7 +453,7 @@ var z = new Boolean();       // declara z como um objeto Boolean
 
 Eventos HTML são "coisas" que acontecem com elementos de HTML.
 
-Quando o JavaScript é usado em páginas de HTML, o JavaScript pode "reagi" a estes eventos.
+Quando o JavaScript é usado em páginas de HTML, o JavaScript pode "reagir" a estes eventos.
 
 ### Eventos de HTML
 
@@ -461,8 +461,8 @@ Um evento de HTML pode ser alguma coisa que o navegador faz, ou alguma coisa que
 
 Eis alguns exemplos de eventos de HTML:
 
-  * Uma página web em HTML acabou de ser carregada;
-  * Um campo de entrada de HTML mudou; e
+  * Uma página web em HTML terminou de ser carregada;
+  * Um campo de entrada de HTML foi modificado; ou
   * Um botão de HTML foi acionado.
 
 Em geral, quando um evento acontece, você pode querer fazer alguma coisa.
@@ -491,9 +491,11 @@ No exemplo a seguir, um atributo *onclick* \(com código\), é adicionado ao ele
 ```
 
     Código JavaScript em geral tem várias linhas.
-    O usual é atributos de eventos chamarem funções: [Demo: evento2](ev.demo2.html)
 
-```javascript
+    O usual é atributos de eventos chamarem funções:
+[Demo: evento2](ev.demo2.html)
+
+```html
 <button onclick="displayDate()">Que horas são?</button>
 ```
 
@@ -508,7 +510,7 @@ onclick     | O usuário clicou num elemento de HTML
 onmouseover | O usuário moveu o mouse sobre um elemento de HTML
 onmouseout  | O usuário moveu o mouse para fora de um elemento de HTML
 onkeydown   | O usuário acionou uma tecla do teclado
-onload      | O navegador acabou de carregar uma página
+onload      | O navegador terminou de carregar uma página
 
 Uma lista completa de eventos de HTML pode ser encontradad em [Eventos de HTML](https://www.w3schools.com/jsref/dom_obj_event.asp)
 
@@ -524,17 +526,17 @@ Manipuladores de eventos podem ser usados para manipular e verificar entradas e 
 
 Muitos métodos diferentes podem ser usados para deixar o JavaScript trabalhar com os eventos:
 
-  * atributos de eventos de HTML pode executar código JavaScript diretamente;
-  * atributos de eventos de HTML podem chamar funções de JavaScript;
-  * você pode atribuir suas próprias funções manipuladoras de eventos a elementos de HTML;
-  * você pode evitar que eventos sejam enviados ou manipulados; e
+  * Atributos de eventos de HTML pode executar código JavaScript diretamente;
+  * Atributos de eventos de HTML podem chamar funções de JavaScript;
+  * Você pode atribuir suas próprias funções manipuladoras de eventos a elementos de HTML;
+  * Você pode evitar que eventos sejam enviados ou manipulados; e
   * Mais ...
 
 ## Strings em JavaScript (https://www.w3schools.com/js/js_strings.asp)
 
-### Strings de JavaScript
+### Strings em JavaScript
 
-Um string de JavaScript composto por zero ou mais caracteres entre aspas, ou apóstrofes.
+Um string em JavaScript é composto por zero ou mais caracteres entre aspas, ou apóstrofes.
 
 ```javascript
 var x = "John Doe";
@@ -551,15 +553,15 @@ var sln = txt.length;
 
 ### Caracteres Especiais
 
-Porque strings devem ser escritas entre aspas, JavaScript não vai entender a string abaixo:
+Como strings devem ser escritas entre aspas, JavaScript não vai entender a string abaixo:
 
 ```javascript
 var x = "Somos os "Guerreiros" do sul.";
 ```
 
-A string será truncada em "Somos os ".
+A string será truncada em "Somos os ". *Guerreiros* poderia ser interpretado como um operador binário de duas strings, numa linguagem compilada, o compilador poderia reclamar que este operador não existe.
 
-A solução para evitar este problema é usar o carácter barra invertida \(\\\),  carácter de escape.
+A solução para evitar este problema é usar o carácter barra invertida \(\\\), chamado de carácter de escape.
 
 O carácter de escape, \(\\\), faz que caracteres especiais possam ser usados como caracteres de string:
 
@@ -600,6 +602,8 @@ document.getElementById("demo").innerHTML =
 "Alo Teresinha!";
 ```
 
+    Lembre-se de que exceto dentro de uma string, um salto de linha é igual a um espaço nas instruções de JavaScript.
+
 Você também pode quebrar uma linha de código usando uma barra invertida antes de saltar a linha:
 
 ```javascript
@@ -607,8 +611,8 @@ document.getElementById("demo").innerHTML = "Alo \
 Teresinha!";
 ```
 
-    O método da \ não é o método preferido. É melhor evitá-lo,
-    alguns navegadores podem não entender espaços após o \.
+    É melhor evitar o método da \, alguns navegadores podem não entender
+    espaços após o \.
 
 Uma maneira mais segura é quebrar a string e concatenar as partes:
 
@@ -654,7 +658,7 @@ var y = new String("Maria");
 // (x === y) é false porque x e y têm tipos diferentes (string e object)
 ```
 
-Ao usar o operador ===, valores de strings iguais não resultam em igualdade porque o operador === espera a igualdade de tipo e valor.
+Ao usar o operador ===, valores de strings iguais não resultam em igualdade porque o operador === espera a igualdade do tipo **e** do valor.
 
 Ou pior: Objetos não podem ser comparados:
 
@@ -666,81 +670,85 @@ var y = new String("John");
 // (x === y) é false porque x e y são objetos diferentes
 ```
 
+Neste caso, foram criados 2 objetos, com o mesmo conteúdo, mas eles são diferentes. Lembre-se que em matemática um algo só é igual a si mesmo. Isto é, um objeto só é igual a ele próprio.
+
 ## Métodos de Strings em JavaScript (https://www.w3schools.com/js/js_string_methods.asp)
 
 ## Métodos e Propriedades de Strings
 
-Primitive values, like "John Doe", cannot have properties or methods \(because they are not objects\).
+Valores primitivos, como "Maria das Graças", não podem ter propriedades ou métodos \(porque eles não são objetos\).
 
-But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.
+Mas em JavaScript, métodos e propriedades também estão disponíveis para valores primitivos, porque JavaScript trata valores primitivos como objetos quando executam métodos e propriedades.
 
-### String Length
+### Comprimento da String
 
-The length property returns the length of a string:
+A propriedade comprimento retorna o comprimento de uma string \(como no Java, onde, String é uma classe e, portanto, as strings são objetos, confuso?\):
 
 ```javascript
 var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var sln = txt.length;
 ```
 
-### Finding a String in a String
+### Encontrando uma String Dentro de uma String
 
-The indexOf\(\) method returns the index of \(the position of\) the first occurrence of a specified text in a string: (str_demo1.html)
-
-```javascript
-var str = "Please locate where 'locate' occurs!";
-var pos = str.indexOf("locate");
-```
-
-The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:
+O método indexOf\(\) retorna o índice  \(a posição\) da primeira ocorrência de um texto especificado numa string: [Demo: String indexOf\(\)](str_demo1.html)
 
 ```javascript
-var str = "Please locate where 'locate' occurs!";
-var pos = str.lastIndexOf("locate");
+var str = "Por favor, localize onde 'localize' ocorre!";
+var pos = str.indexOf("localize");
+document.getElementById("demo").innerHTML = pos;
 ```
 
-Both indexOf\(\), and lastIndexOf\(\) return -1 if the text is not found.
+O método lastIndexOf\(\) retorna o índice da última ocorrência de um texto especificado numa string:
 
 ```javascript
-var str = "Please locate where 'locate' occurs!";
-var pos = str.lastIndexOf("John");
+var str = "Por favor, localize onde 'localize' ocorre!";
+var pos = str.lastIndexOf("localize");
 ```
 
-Both methods accept a second parameter as the starting position for the search: (str_demo3.html)
+Tanto indexOf\(\), quanto lastIndexOf\(\) retornam -1 se o texto não for encontrado.
 
 ```javascript
-var str = "Please locate where 'locate' occurs!";
-var pos = str.indexOf("locate",15);
+var str = "Por favor, localize onde 'localize' ocorre!";
+var pos = str.lastIndexOf("João");
 ```
 
-### Searching for a String in a String
-
-The search\(\) method searches a string for a specified value and returns the position of the match:
+Ambos os métodos aceitam um segundo parâmetro \(opcional\) com a posição de início da busca: [Demo: String indexOf() com segundo parâmetro](str_demo3.html)
 
 ```javascript
-var str = "Please locate where 'locate' occurs!";
-var pos = str.search("locate");
+var str = "Por favor, localize onde 'localize' ocorre!";
+var pos = str.indexOf("localize",15);
 ```
 
-The two methods, indexOf\(\) and search\(\), *are equal*?
+### Busca de uma String Dentro de uma String
 
-They accept the same arguments \(parameters\), and return the same value?
+O método search\(\) busca numa string um valor especificado e retorna a posição onde ocorre um casamento:
 
-The two methods are NOT equal. These are the differences:
+```javascript
+var str = "Por favor, localize onde 'localize' ocorre!";
+var pos = str.search("localize");
+```
 
-  * The search\(\) method cannot take a second start position argument.
-  * The indexOf\(\) method cannot take powerful search values \(regular expressions\).
+Os dois métodos, indexOf\(\) e search\(\), *são iguais*?
 
-### Extracting String Parts
-There are 3 methods for extracting a part of a string:
+Eles aceitam os mesmo argumentos \(possuem os mesmos parameters\) e retornam o mesmo valor?
 
-  - slice\(start, end\)
-  - substring\(start, end\)
-  - substr\(start, length\)
+Os dois métodos **NÃO** são iguais. As diferenças são:
 
-#### The slice\(\) Method
+  * O método search\(\) não tem um segundo parâmetro para a posição de início da busca; e
+  * O método indexOf\(\) não pode usar valores de busca *poderosos* \(expressões regulares\).
 
-slice\(\) extracts a part of a string and returns the extracted part in a new string.
+### Extração de Partes da String
+
+Existem 3 métodos para extrair um trecho de uma string:
+
+  - slice\(início, fim\)
+  - substring\(início, fim\)
+  - substr\(início, comprimento\)
+
+#### O Método slice\(\)
+
+slice\(\) extrai um trecho de uma string e retorna o trecho extraído numa nova string.
 
 The method takes 2 parameters: the start position, and the end position \(end not included\).
 
