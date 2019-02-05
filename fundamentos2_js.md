@@ -749,213 +749,214 @@ Existem 3 métodos para extrair um trecho de uma string:
 #### O Método slice\(\)
 
 slice\(\) extrai um trecho de uma string e retorna o trecho extraído numa nova string.
+Extrair é um pouco forte, na verdade, os métodos copiam partes da string original que notação que não muda, pois os valores primitivos são imutáveis.
 
-The method takes 2 parameters: the start position, and the end position \(end not included\).
+O método tem 2 parâmetros: a posição de início e a posição de fim \(o fim é a primeira posição não incluida na extração\).
 
-Example: (str_demo2.html)
+Exemplo: [Demo: String slice\(\)](str_demo2.html)
 
 ```javascript
-var str = "Apple, Banana, Kiwi";
-var res = str.slice(7, 13);
+var str = "Maçã, Banana, Kiwi";
+var res = str.slice(6, 12);   // res == "Banana"
 ```
 
-If a parameter is negative, the position is counted from the end of the string. (str_demo4.html)
+Se um parâmetro é negativo, a posição é contada a partir do final da string. [Demo: String posição negativa](str_demo4.html)
 
 ```javascript
-var str = "Apple, Banana, Kiwi";
+var str = "Maçã, Banana, Kiwi";
 var res = str.slice(-12, -6);
 ```
 
-If you omit the second parameter, the method will slice out the rest of the string:
+Se você omitir o segundo parâmetro, o método extrairá o restante da string:
 
 ```javascript
-var res = str.slice(7);  // same as (in this case): var res = str.slice(-12);
+var res = str.slice(7);  // o mesmo que (neste caso): var res = str.slice(-12);
 ```
 
-    Negative positions do not work in Internet Explorer 8 and earlier.
+    Posições negativas não funcionam no IE8 ou anteriores.
 
-#### The substring\(\) Method
+#### O Método substring\(\)
 
-**substring\(\)** is similar to slice\(\).
+**substring\(\)** é similar ao slice\(\).
 
-The difference is that substring() cannot accept negative indexes.
+A diferença é que substring() não aceita índices negativos.
 
 ```javascript
-var str = "Apple, Banana, Kiwi";
-var res = str.substring(7, 13);
+var str = "Maçã, Banana, Kiwi";
+var res = str.substring(6, 12);
 ```
 
-#### The substr\(\) Method
+#### O Método substr\(\)
 
-**substr\(\)** is similar to slice\(\).
+**substr\(\)** é similar ao slice\(\).
 
-The difference is that the second parameter specifies the length of the extracted part.
+A diferença é que o segundo parâmetro especifica o comprimento do trecho extraido.
 
 ```javascript
-var str = "Apple, Banana, Kiwi";
-var res = str.substr(7, 6);
+var str = "Maçã, Banana, Kiwi";
+var res = str.substr(6, 6);
 ```
 
-If you omit the second parameter, substr() will slice out the rest of the string.
+Se você omitir o segundo parâmetro, substr\(\) extrai o restante da string.
 
-#### Replacing String Content
+#### Substituição do Conteúdo da String
 
-The replace() method replaces a specified value with another value in a string:
+O método replace() substitui um valor especificado por um outro valor numa string:
 
 ```javascript
-str = "Please visit Microsoft!";
-var n = str.replace("Microsoft", "W3Schools");
+str = "Por favor, visite o Municipal!";
+var n = str.replace("Municipal", "Aquário");
 ```
 
-    The replace\(\) method does not change the string it is called on. It returns a new string.
+    O método replace\(\) não muda a string original. Ele retorna uma nova.
 
-To replace case insensitive, use a regular expression with an /i flag \(insensitive\):
+Para substituir sem levar em conta maiúsculas e minúsculas, use uma expressão regular com um flag /i  \(insensível\):
 
 ```javascript
-str = "Please visit Microsoft!";
-var n = str.replace(/MICROSOFT/i, "W3Schools");
+str = "Por favor, visite o Municipal!";
+var n = str.replace(/MUNICIPAL/i, "Aquário");
 ```
 
-    Note that regular expressions are written without quotes.
+    Observe que expressões regulares são sempre escritas sem aspas.
 
-To replace all matches, use a regular expression with a /g flag \(global match\):
+Para substituir todos os casamentos (srings com a mesma lei de formação da expressão regular), use uma expressão regular com uma flag /g \(casamento global\):
 
 ```javascript
-str = "Please visit Microsoft and Microsoft!";
-var n = str.replace(/Microsoft/g, "W3Schools");
+str = "Por favor, visite o Municipal e o Municipal!";
+var n = str.replace(/Municipal/g, "Aquário");
 ```
 
-#### Converting to Upper and Lower Case
+#### Conversão de Maiúsculas e Minúsculas
 
-A string is converted to upper case with toUpperCase\(\):
+Uma string é convertida para maiúsculas com toUpperCase\(\):
 
 ```javascript
-var text1 = "Hello World!";       // String
-var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+var texto1 = "Alo Teresinha!";       // String
+var texto2 = texto1.toUpperCase();   // texto2 é texto1 em maiúsculas
 ```
 
-A string is converted to lower case with toLowerCase():
+Uma string é conevrtida para minúsculas com toLowerCase\(\):
 
 ```javascript
-var text1 = "Hello World!";       // String
-var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+var texto1 = "Alo Teresinha!";       // String
+var texto2 = texto1.toLowerCase();   // texto2 é texto1 em minúsculas
 ```
 
-#### The concat\(\) Method
+#### O Método concat\(\)
 
-concat\(\) joins two or more strings:
+concat\(\) junta duas ou mais strings:
 
 ```javascript
-var text1 = "Hello";
-var text2 = "World";
-var text3 = text1.concat(" ", text2);
+var texto1 = "Alo";
+var texto2 = "Teresinha";
+var texto3 = texto1.concat(" ", texto2);
 ```
 
-The concat() method can be used instead of the plus operator. These two lines do the same:
+O método concat() pode ser usado no lugar do operador mais. As duas linhas a seguir fazem a mesma coisa:
 
 ```javascript
-var text = "Hello" + " " + "World!";
-var text = "Hello".concat(" ", "World!");
+var texto = "Alo" + " " + "Teresinha!";
+var texto = "Alo".concat(" ", "Teresinha!");
 ```
 
-    All string methods return a new string. They don't modify the original string.
-    Formally said: Strings are immutable: Strings cannot be changed, only replaced.
+    Todos os métodos de string retornam uma nova string. Eles não modificam a string original.
+    Formalmente: Strings são imutáveis: Strings não podem ser alteradas, só substituidas por novas.
 
 #### String.trim\(\)
 
-String.trim\(\) removes whitespace from both sides of a string.
+String.trim\(\) remove espaços de ambos os lados (antes e depois) de uma string.
 
 ```javascript
-var str = "       Hello World!        ";
+var str = "       Alô Teresinha!        ";
 alert(str.trim());
 ```
 
-    String.trim() is not supported in Internet Explorer 8 or lower.
+    IE 8 e anteriores não têm String.trim().
 
-If you need to support IE 8, you can use String.replace with a regular expression instead:
+Se você precisa dessa funcionalidade, você pode usar o String.replace com uma expressão regular como abaixo:
 
 ```javascript
-var str = "       Hello World!        ";
+var str = "       Alô Teresinha!        ";
 alert(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));
 ```
 
-### Extracting String Characters
+### Extração de Caracteres da String
 
-There are 3 methods for extracting string characters:
+Existem 3 métodos para a extração de caracteres de strings:
 
-  * charAt\(position\)
-  * charCodeAt(position)
-  * Property access \[ \]
+  * charAt\(posição\)
+  * charCodeAt(posição)
+  * Acesso de propriedade \[ \]
 
-#### The charAt\(\) Method
+#### O Método charAt\(\)
 
-The charAt\(\) method returns the character at a specified index \(position\) in a string:
-
-```javascript
-var str = "HELLO WORLD";
-str.charAt(0);            // returns H
-```
-
-#### The charCodeAt\(\) Method
-
-The charCodeAt\(\) method returns the unicode of the character at a specified index in a string:
-
-The method returns a UTF-16 code \(an integer between 0 and 65535\).
+O método charAt\(\) retorna o carácter com um ídice especifico \(posição\) duma string:
 
 ```javascript
-var str = "HELLO WORLD";
-
-str.charCodeAt(0);         // returns 72
+var str = "ALÔ TERESINHA";
+str.charAt(0);            // retorna A
 ```
 
-#### Property Access
+#### O Método charCodeAt\(\)
 
-ECMAScript 5 \(2009\) allows property access \[ \] on strings:
+O método charCodeAt\(\) retorna o código unicode do carácter com o índice especificado duma string:
+
+O método retorna um código UTF-16 \(um inteiro entre 0 e 65535\).
 
 ```javascript
-var str = "HELLO WORLD";
-str[0];                   // returns H
+var str = "ALÔ TERESINHA";
+
+str.charCodeAt(0);         // retorna 65 (código do A em UTF-16, mesmo do ASCII)
 ```
 
-    Property access might be a little unpredictable:
+#### Acesso de Propriedade
 
-    * It does not work in Internet Explorer 7 or earlier
-    * It makes strings look like arrays (but they are not)
-    * If no character is found, [ ] returns undefined, while charAt() returns an empty string.
-    * It is read only. str[0] = "A" gives no error (but does not work!)
+ECMAScript 5 \(2009\) permite o acesso de propriedade \[ \] nas strings:
 
-    If you want to work with a string as an array, you can convert it to an array.
+```javascript
+var str = "ALÔ TERESINHA";
+str[2];                   // retorna Ô
+```
 
-#### Converting a String to an Array
+    Acesso de propriedade pode ser um pouco imprevisível:
 
-A string can be converted to an array with the split() method:
+    * Ele não funciona no IE 7 ou anteriores.
+    * Ele faz strings parecerem arrays (mas elas não são).
+    * Se nenhum carácter for encontrado, \[ \] retorna **undefined**, enquanto charAt\(\) retorna uma string vazia.
+    * O acesso é de leitura apenas. str[0] = "A" provoca erro (ele não funciona!)
+
+    Se você deseja trabalhar com uma string como um array, converta-a num array.
+
+#### Conversão de uma String num Array
+
+Uma string pode ser convertida num array com o método split():
 
 ```javascript
 var txt = "a,b,c,d,e";   // String
-txt.split(",");          // Split on commas
-txt.split(" ");          // Split on spaces
-txt.split("|");          // Split on pipe
+txt.split(",");          // Separe nas vírgulas
+txt.split(" ");          // Separe nos espaços
+txt.split("|");          // Separe nas barras verticais
 ```
 
-If the separator is "", the returned array will be an array of single characters:
+Se o separador for "", o array retornado é um array com um carácter em cada elemento:
 
 ```javascript
-var txt = "Hello";       // String
-txt.split("");           // Split in characters
+var txt = "Alô";         // String
+txt.split("");           // Separado em caracteres: ["A","l","ô"]
 ```
 
-For a complete reference on JavaScript strings see (https://www.w3schools.com/jsref/jsref_obj_string.asp).
+Para uma referência mais completa sobre strings em JavaScript veja [Strings em JS na W3Schools](https://www.w3schools.com/jsref/jsref_obj_string.asp).
 
-## JavaScript Numbers (https://www.w3schools.com/js/js_numbers.asp)
+## Números JavaScript (https://www.w3schools.com/js/js_numbers.asp)
 
-JavaScript has only one type of number. Numbers can be written with or without decimals.
+JavaScript só tem um tipo de número. Números podem ser escritos com ou sem vírgula (ponto).
 
 ```javascript
-var x = 3.14;    // A number with decimals
-var y = 3;       // A number without decimals
+var x = 3.14;    // Um número com vírgula (ponto)
+var y = 3;       // Um número sem vírgula
 ```
 
-### JavaScript Numbers are Always 64-bit Floating Point
+### Números em JavaScript são sempre Ponto Flutuante de 64 bits
 
 Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.
 
@@ -964,7 +965,7 @@ JavaScript numbers are always stored as double precision floating point numbers,
 This format stores numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63:
 
 Value (aka Fraction/Mantissa) | Exponent          | Sign
---------------------------------------------------------------
+------------------------------|-------------------|-----------
 52 bits (0 - 51)              | 11 bits (52 - 62) | 1 bit (63)
 
 ### Precision
