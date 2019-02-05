@@ -958,179 +958,180 @@ var y = 3;       // Um número sem vírgula
 
 ### Números em JavaScript são sempre Ponto Flutuante de 64 bits
 
-Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.
+Diferente de outras linguagens de programação, JavaScript não define diferentes tipos de números como: integers, short, long, floating-point, double, etc.
 
-JavaScript numbers are always stored as double precision floating point numbers, following the international IEEE 754 standard.
+Números em JavaScript são sempre armazenados como números de ponto flutuante de dupla precisão, seguindo o padrão internacional IEEE 754.
 
-This format stores numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63:
+Este formato armazena números em 64 bits, onde o número \(a fração\) é armazenado nos bits 0 a 51, o expoentes nos bits 52 a 62, e o sinal no bit 63:
 
-Value (aka Fraction/Mantissa) | Exponent          | Sign
-------------------------------|-------------------|-----------
-52 bits (0 - 51)              | 11 bits (52 - 62) | 1 bit (63)
+Valor (Fração/Mantissa) | Expoente          | Sinal
+------------------------|-------------------|-----------
+52 bits (0 - 51)        | 11 bits (52 - 62) | 1 bit (63)
 
-### Precision
+### Precisão
 
-Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
-
-```javascript
-var x = 999999999999999;   // x will be 999999999999999
-var y = 9999999999999999;  // y will be 10000000000000000
-```
-
-The maximum number of decimals is 17, but floating point arithmetic is not always 100% accurate:
+Inteiros (números sem vírgula ou notação com expoente) são precisos até 15 digitos.
 
 ```javascript
-var x = 0.2 + 0.1;         // x will be 0.30000000000000004
+var x = 999999999999999;   // x será 999999999999999
+var y = 9999999999999999;  // y será 10000000000000000
 ```
 
-To solve the problem above, it helps to multiply and divide:
+O número máximo de decimais é 17, mas aritmética de ponto flutuante nem sempre é 100% precisa:
 
 ```javascript
-var x = (0.2 * 10 + 0.1 * 10) / 10;       // x will be 0.3
+var x = 0.2 + 0.1;         // x será 0.30000000000000004
 ```
 
-### Adding Numbers and Strings
+Para resolver o problema acima, pode-se multiplicar e dividir:
 
-    WARNING !!
-    JavaScript uses the \+ operator for both addition and concatenation.
-    Numbers are added. Strings are concatenated.
+```javascript
+var x = (0.2 * 10 + 0.1 * 10) / 10;       // x será 0.3
+```
 
-If you add two numbers, the result will be a number, if you add two strings, the result will be string:
+### Adição de Números e Strings
+
+    ATENÇÃO !!
+    JavaScript usa o operador + tanto para a adição, quanto para a concatenação.
+    Números são adicionados. Strings são concatenados.
+
+Se você adicionar dois números, o resultado é um número. Se você adicionar duas strings, o resultado é uma string:
 
 ```javascript
 var x = 10;
 var y = 20;
-var z = x + y;           // z will be 30 (a number)
+var z = x + y;           // z é 30 (um número)
 var x = 10;
 var y = "20";
-var z = x + y;           // z will be 1020 (a string)
+var z = x + y;           // z é 1020 (uma string)
 ```
 
-A common mistake is to expect this result to be 102030:
+Um erro comum é esperar que o resultado abaixo seja 102030:
 
 ```javascript
 var x = 10;
 var y = 20;
 var z = "30";
-var result = x + y + z;  // z will be "3030"
+var result = x + y + z;  // z é "3030"
 ```
 
-### Numeric Strings
+### Strings Numéricas
 
-JavaScript strings can have numeric content:
+String em JavaScript podem ter conteúdo numérico:
 
 ```javascript
-var x = 100;         // x is a number
+var x = 100;         // x é um número
 
-var y = "100";       // y is a string
+var y = "100";       // y é uma string
 ```
 
-JavaScript will try to convert strings to numbers in all numeric operations:
+JavaScript tenta converter strings em números nas operações numéricas:
 
-This will work:
-
-```javascript
-var x = "100";
-var y = "10";
-var z = x / y;       // z will be 10
-```
-
-This will also work:
+Isto funciona:
 
 ```javascript
 var x = "100";
 var y = "10";
-var z = x * y;       // z will be 1000
+var z = x / y;       // z é 10
 ```
 
-But this will not work:
+Isto também funciona:
 
 ```javascript
 var x = "100";
 var y = "10";
-var z = x + y;       // z will not be 110 (It will be 10010)
+var z = x * y;       // z é 1000
 ```
 
-    In the last example JavaScript uses the + operator to concatenate the strings.
-
-### NaN - Not a Number
-
-**NaN** is a JavaScript reserved word indicating that a number is not a legal number.
-
-Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):
+Mas isto não funciona:
 
 ```javascript
-var x = 100 / "Apple";  // x will be NaN (Not a Number)
+var x = "100";
+var y = "10";
+var z = x + y;       // z não é 110 (ele é "10010")
 ```
-However, if the string contains a numeric value , the result will be a number:
+
+    No último exemplo, JavaScript usa o operador + para concatenar as strings.
+
+### NaN - Not a Number (Não Número)
+
+**NaN** é uma palavra reservada do JavaScript que indica que um número não é um número legal.
+
+Tentar realizar operações aritméticas com uma string não numérica resulta em NaN (Not a Number):
+
+```javascript
+var x = 100 / "Maçã";  // x é NaN (Not a Number)
+```
+Entretanto, se a  string contem um valor numérico, o resultado é um número:
 
 ```javascript
 var x = 100 / "10";     // x will be 10
 ```
 
-You can use the global JavaScript function isNaN() to find out if a value is a number:
+Você pode usar a função global do JavaScript isNaN\(\) para descobrir se um valor é um número:
 
 ```javascript
-var x = 100 / "Apple";
-isNaN(x);               // returns true because x is Not a Number
+var x = 100 / "Maçã";
+isNaN(x);               // retorna true porque x é NaN - Not a Number
 ```
 
-Watch out for NaN. If you use NaN in a mathematical operation, the result will also be NaN:
+Cuidado com NaN. Se você usar NaN numa operação matemática, o resultado também será NaN:
 
 ```javascript
 var x = NaN;
 var y = 5;
-var z = x + y;         // z will be NaN
+var z = x + y;         // z será NaN
 ```
 
-Or the result might be a concatenation:
+No caso da concatenação:
 
 ```javascript
 var x = NaN;
 var y = "5";
-var z = x + y;         // z will be NaN5
+var z = x + y;         // z será NaN5
 ```
 
-NaN is a number: typeof NaN returns number:
+NaN é um número: typeof NaN retorna number:
 
 ```javascript
-typeof NaN;            // returns "number"
+typeof NaN;            // retorna "number"
 ```
 
-### Infinity
+### Infinito \(Infinity\)
 
-Infinity \(or -Infinity\) is the value JavaScript will return if you calculate a number outside the largest possible number.
+Infinito \(ou -Infinito\) é o valor que JavaScript retorna se você calcular um número além do maior possível \(para a representação de dupla precisão em ponto flutuante\).
 
 ```javascript
-var myNumber = 2;
-while (myNumber != Infinity) {          // Execute until Infinity
-  myNumber = myNumber * myNumber;
+var meuNumero = 2;
+while (meuNumero != Infinity) {          // Executa até Infinito
+  meuNumero = meuNumero * meuNumero;
 }
 ```
 
-### Division by 0 \(zero\) also generates Infinity:
+### Divisão por 0 \(zero\) também Gera Infinity:
 
 ```javascript
-var x =  2 / 0;          // x will be Infinity
-var y = -2 / 0;          // y will be -Infinity
+var x =  2 / 0;          // x será Infinity
+var y = -2 / 0;          // y será -Infinity
 ```
 
-Infinity is a number: typeof Infinity returns number.
+Infinity é um número: typeof Infinity retorna número.
 
 ```javascript
-typeof Infinity;        // returns "number"
+typeof Infinity;        // retorna "number"
 ```
 
 ### Hexadecimal
 
-JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.
+JavaScript interpreta constantes numéricas como hexadecimais se eles são precedidas por 0x.
 
 ```javascript
-var x = 0xFF;           // x will be 255
+var x = 0xFF;           // x será 255
 ```
 
-    Never write a number with a leading zero (like 07).
-    Some JavaScript versions interpret numbers as octal if they are written with a leading zero.
+    Nunca escreva um número com um zero no início (como 07).
+    Algumas versões de JavaScript interpreta números como octal se elas começam
+    com zero.
 
 By default, JavaScript displays numbers as base 10 decimals.
 
