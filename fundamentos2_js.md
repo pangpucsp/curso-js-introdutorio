@@ -258,7 +258,7 @@ Exemplo: Calcular a soma de dois números e retorná-lo.
 var x = myFunction(4, 3);   // Function is called, return value will end up in x
 
 function myFunction(a, b) {
-  return a * b;             // Function returns the product of a and b
+  return a * b;             // Function retorna the product of a and b
 }
 ```
 
@@ -1130,10 +1130,10 @@ var x = 0xFF;           // x será 255
 ```
 
     Nunca escreva um número com um zero no início (como 07).
-    Algumas versões de JavaScript interpreta números como octal se elas começam
-    com zero.
+    Algumas versões de JavaScript interpretam números como octais se eles começam
+    com zero, outras não.
 
-By default, JavaScript displays numbers as base 10 decimals.
+Como norma, JavaScript mostra os números na base 10 \(decimal\).
 
 But you can use the toString() method to output numbers from base 2 to base 36.
 
@@ -1141,22 +1141,22 @@ Hexadecimal is base 16. Decimal is base 10. Octal is base 8. Binary is base 2.
 
 ```javascript
 var myNumber = 32;
-myNumber.toString(10);  // returns 32
-myNumber.toString(32);  // returns 10
-myNumber.toString(16);  // returns 20
-myNumber.toString(8);   // returns 40
-myNumber.toString(2);   // returns 100000
+myNumber.toString(10);  // retorna 32
+myNumber.toString(32);  // retorna 10
+myNumber.toString(16);  // retorna 20
+myNumber.toString(8);   // retorna 40
+myNumber.toString(2);   // retorna 100000
 ```
 
-### Numbers Can be Objects
+### Números Podem Ser Objetos
 
-Normally JavaScript numbers are primitive values created from literals:
+Normalmente números em JavaScript são valores primitivos criados a partir de literais:
 
 ```javascript
 var x = 123;
 ```
 
-But numbers can also be defined as objects with the keyword new:
+Mas números podem ser também definidos como objetos com a palavra-chave new:
 
 ```javascript
 var y = new Number(123);
@@ -1166,190 +1166,192 @@ var y = new Number(123);
 var x = 123;
 var y = new Number(123);
 
-// typeof x returns number
-// typeof y returns object
+// typeof x retorna number
+// typeof y retorna object
 ```
 
-    Do not create Number objects. It slows down execution speed.
-    The new keyword complicates the code. This can produce some unexpected results:
+    Não crie números como objetos. Isto reduz a velocidade de execução.
+    A palavra-chave new complica o código. Isto pode produzir resultados inesperados:
 
-When using the == operator, equal numbers are equal:
+Ao usar o operador igual ==, números iguais são iguais:
 
 ```javascript
 var x = 500;             
 var y = new Number(500);
 
-// (x == y) is true because x and y have equal values
-// (x === y) is false because x and y have different types
+// (x == y) é true porque x e y têm valores iguais
+// (x === y) é false porque x e y têm tipos diferentes
 ```
 
-When using the === operator, equal numbers are not equal, because the === operator expects equality in both type and value.
+Ao usar o operador ===, números iguais podem não serem iguais, porque o operador === determina a igualdade tanto do tipo, quanto do valor.
 
-## JavaScript Number Methods (https://www.w3schools.com/js/js_number_methods.asp)
+## Métodos em Números em JavaScript (https://www.w3schools.com/js/js_number_methods.asp)
 
-### Number Methods and Properties
-Primitive values (like 3.14 or 2014), cannot have properties and methods (because they are not objects).
+### Métodos e Propriedades de Números
 
-But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.
+Valores primitivos \(como 3.14 or 2014\) não podem ter propriedades e métodos (porque eles não são objetos).
 
-### The toString\(\) Method
+Mas em JavaScript, métodos e propriedades também estão diponíveis para valores primitivos, porque JavaScript trata valores primitivos como objetos ao executar métodos e propriedades.
 
-toString\(\) returns a number as a string.
+### O Método toString\(\)
 
-All number methods can be used on any type of numbers \(literals, variables, or expressions\):
+toString\(\) retorna um número como uma string.
+
+Todos os métodos para números podem ser usados em qualquer tipo de números \(literais, variáveis ou expressões\):
 
 ```javascript
 var x = 123;
-x.toString();            // returns 123 from variable x
-(123).toString();        // returns 123 from literal 123
-(100 + 23).toString();   // returns 123 from expression 100 + 23
+x.toString();            // retorna 123 da variável x
+(123).toString();        // retorna 123 do literal 123
+(100 + 23).toString();   // retorna 123 da expressão 100 + 23
 ```
 
-### The toExponential\(\) Method
+### O Método toExponential\(\)
 
-toExponential\(\) returns a string, with a number rounded and written using exponential notation.
+toExponential\(\) retorna uma string, com um número arredondado e escrito em notação científica.
 
-A parameter defines the number of characters behind the decimal point:
+Um parâmetro define o número de caracteres depois da vírgula \(ponto\):
 
 ```javascript
 var x = 9.656;
-x.toExponential(2);     // returns 9.66e+0
-x.toExponential(4);     // returns 9.6560e+0
-x.toExponential(6);     // returns 9.656000e+0
+x.toExponential(2);     // retorna 9.66e+0
+x.toExponential(4);     // retorna 9.6560e+0
+x.toExponential(6);     // retorna 9.656000e+0
 ```
 
-The parameter is optional. If you don't specify it, JavaScript will not round the number.
+O parâmetro é opcional. Se você não especificá-lo, o JavaScript não arredonda o número.
 
-### The toFixed\(\) Method
+### O Método toFixed\(\)
 
-toFixed\(\) returns a string, with the number written with a specified number of decimals:
+toFixed\(\) retorna uma string com o número escrito com um número especificado de dígitos decimais:
 
 ```javascript
 var x = 9.656;
-x.toFixed(0);           // returns 10
-x.toFixed(2);           // returns 9.66
-x.toFixed(4);           // returns 9.6560
-x.toFixed(6);           // returns 9.656000
+x.toFixed(0);           // retorna 10
+x.toFixed(2);           // retorna 9.66
+x.toFixed(4);           // retorna 9.6560
+x.toFixed(6);           // retorna 9.656000
 ```
 
-    toFixed(2) is perfect for working with money.
+    toFixed(2) é perfeito para trabalhar com valores monetários.
 
-### The toPrecision\(\) Method
-toPrecision\(\) returns a string, with a number written with a specified length:
+### O Método toPrecision\(\)
+
+toPrecision\(\) retorna uma string com um número escrito com um comprimento especificado:
 
 ```javascript
 var x = 9.656;
-x.toPrecision();        // returns 9.656
-x.toPrecision(2);       // returns 9.7
-x.toPrecision(4);       // returns 9.656
-x.toPrecision(6);       // returns 9.65600
+x.toPrecision();        // retorna 9.656
+x.toPrecision(2);       // retorna 9.7
+x.toPrecision(4);       // retorna 9.656
+x.toPrecision(6);       // retorna 9.65600
 ```
 
-### The valueOf\(\) Method
+### O Método valueOf\(\)
 
-valueOf\(\) returns a number as a number.
+valueOf\(\) retorna um número como um número.
 
 ```javascript
 var x = 123;
-x.valueOf();            // returns 123 from variable x
-(123).valueOf();        // returns 123 from literal 123
-(100 + 23).valueOf();   // returns 123 from expression 100 + 23
+x.valueOf();            // retorna 123 da variável x
+(123).valueOf();        // retorna 123 da literal 123
+(100 + 23).valueOf();   // retorna 123 expressão 100 + 23
 ```
 
-In JavaScript, a number can be a primitive value \(typeof = number\) or an object \(typeof = object\).
+Em JavaScript, um número pode ser um valor primitivo \(typeof = number\) ou um objeto \(typeof = object\).
 
-The valueOf\(\) method is used internally in JavaScript to convert Number objects to primitive values.
+O método valueOf\(\) é usado internamente pelo JavaScript para converter objetos Number em valores primitivos.
 
-There is no reason to use it in your code.
+Não há razão para usar isto no seu código.
 
-    All JavaScript data types have a valueOf() and a toString() method.
+    Todos os tipos de dados do JavaScript tem métodos valueOf\(\) e toString().
 
-### Converting Variables to Numbers
+### Conversão de Variáveis em Números
 
-There are 3 JavaScript methods that can be used to convert variables to numbers:
+Existem 3 métodos JavaScript que podem ser usados para converter variáveis em números:
 
-  * The Number\(\) method
-  * The parseInt\(\) method
-  * The parseFloat\(\) method
+  * O método Number\(\)
+  * O método parseInt\(\)
+  * O método parseFloat\(\)
 
-These methods are not number methods, but global JavaScript methods.
+Estes métodos são métodos de números, mas métodos globais JavaScript.
 
-### Global JavaScript Methods
+### Métodos de JavaScript de Números
 
-JavaScript global methods can be used on all JavaScript data types.
+Métodos globais em JavaScript podem ser usados em todos os tipos de dados em JavaScript.
 
-These are the most relevant methods, when working with numbers:
+Estes são os métodos mais relevantes ao trabalhar com números:
 
-Method          | Description
---------------------------------------------------------------------------
-Number\(\)      | Returns a number, converted from its argument.
-parseFloat\(\)  | Parses its argument and returns a floating point number
-parseInt\(\)    | Parses its argument and returns an integer
+Método          | Descrição
+----------------|---------------------------------------------------------
+Number\(\)      | Retorna um número, convertido do seu argumento.
+parseFloat\(\)  | Analisa seu argumento e retorna um número em ponto flutuante
+parseInt\(\)    | Analisa seu argumento e retorna um inteiro
 
-#### The Number\(\) Method
+#### O Number\(\)
 
-Number\(\) can be used to convert JavaScript variables to numbers:
+Number\(\) pode ser usado para converter variáveis JavaScript em números:
 
 ```javascript
-Number(true);          // returns 1
-Number(false);         // returns 0
-Number("10");          // returns 10
-Number("  10");        // returns 10
-Number("10  ");        // returns 10
-Number(" 10  ");       // returns 10
-Number("10.33");       // returns 10.33
-Number("10,33");       // returns NaN
-Number("10 33");       // returns NaN
-Number("John");        // returns NaN
+Number(true);          // retorna 1
+Number(false);         // retorna 0
+Number("10");          // retorna 10
+Number("  10");        // retorna 10
+Number("10  ");        // retorna 10
+Number(" 10  ");       // retorna 10
+Number("10.33");       // retorna 10.33
+Number("10,33");       // retorna NaN
+Number("10 33");       // retorna NaN
+Number("John");        // retorna NaN
 ```
 
-    If the number cannot be converted, NaN (Not a Number) is returned.
+    Se o número não puder ser convertido, NaN (Not a Number) é retornado.
 
-#### The Number\(\) Method Used on Dates
+#### O Método Number\(\) Usado em Datas \(Dates\)
 
-Number\(\) can also convert a date to a number:
+Number\(\) também pode converter uma data num número:
 
 ```javascript
-Number(new Date("2017-09-30"));    // returns 1506729600000
+Number(new Date("2017-09-30"));    // retorna 1506729600000
 ```
 
-    The Number() method above returns the number of milliseconds since 1.1.1970.
+    O método Number() retorna o número de milisegundos desde a 0 horas de 1.1.1970.
 
-#### The parseInt\(\) Method
+#### O Método parseInt\(\)
 
-parseInt\(\) parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:
+parseInt\(\) percorre uma string e retorna um número inteiro. Espaços são permitidos. Só o primeiro número é retornado:
 
 ```javascript
-parseInt("10");         // returns 10
-parseInt("10.33");      // returns 10
-parseInt("10 20 30");   // returns 10
-parseInt("10 years");   // returns 10
-parseInt("years 10");   // returns NaN
+parseInt("10");         // retorna 10
+parseInt("10.33");      // retorna 10
+parseInt("10 20 30");   // retorna 10
+parseInt("10 years");   // retorna 10
+parseInt("years 10");   // retorna NaN
 ```
 
-If the number cannot be converted, NaN (Not a Number) is returned.
+Se o número não pode ser convertido, NaN \(Not a Number\) é retornado.
 
-#### The parseFloat\(\) Method
+#### O Método parseFloat\(\)
 
-parseFloat\(\) parses a string and returns a number. Spaces are allowed. Only the first number is returned:
+parseFloat\(\) percorre uma string e retorna um número. Espaços são permitidos. Só o primeiro número é retornado:
 
 ```javascript
-parseFloat("10");        // returns 10
-parseFloat("10.33");     // returns 10.33
-parseFloat("10 20 30");  // returns 10
-parseFloat("10 years");  // returns 10
-parseFloat("years 10");  // returns NaN
+parseFloat("10");        // retorna 10
+parseFloat("10.33");     // retorna 10.33
+parseFloat("10 20 30");  // retorna 10
+parseFloat("10 years");  // retorna 10
+parseFloat("years 10");  // retorna NaN
 ```
 
-### Number Properties
+### Propriedades de Números
 
-Property           | Description
--------------------------------------------------------------------------------
-MAX_VALUE          | Returns the largest number possible in JavaScript
-MIN_VALUE          | Returns the smallest number possible in JavaScript
-POSITIVE_INFINITY  | Represents infinity (returned on overflow)
-NEGATIVE_INFINITY  | Represents negative infinity (returned on overflow)
-NaN                | Represents a "Not-a-Number" value
+Propriedade        | Descrição
+-------------------|---------------------------------------------------------
+MAX_VALUE          | retorna o maior número possível em JavaScript
+MIN_VALUE          | retorna o menor número possível em JavaScript
+POSITIVE_INFINITY  | Representa infinito (retornado quando acontece um overflow)
+NEGATIVE_INFINITY  | Representa infinito negativo (retornado no overflow)
+NaN                | Representa um valor "Not-a-Number"
 
 #### JavaScript MIN_VALUE and MAX_VALUE
 
