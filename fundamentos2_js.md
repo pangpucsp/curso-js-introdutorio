@@ -1353,9 +1353,9 @@ POSITIVE_INFINITY  | Representa infinito (retornado quando acontece um overflow)
 NEGATIVE_INFINITY  | Representa infinito negativo (retornado no overflow)
 NaN                | Representa um valor "Not-a-Number"
 
-#### JavaScript MIN_VALUE and MAX_VALUE
+#### JavaScript MIN_VALUE e MAX_VALUE
 
-Example: (num_demo1.html)
+Exemplo: [Demo: Maior e menor número positivo](num_demo1.html)
 
 ```javascript
 var x = Number.MAX_VALUE;
@@ -1368,7 +1368,7 @@ var y = Number.MIN_VALUE;
 var x = Number.POSITIVE_INFINITY;
 ```
 
-POSITIVE_INFINITY is returned on overflow:
+POSITIVE_INFINITY é retornado quando ocorre estouro positivo:
 
 ```javascript
 var x = 1 / 0;
@@ -1378,29 +1378,31 @@ var x = 1 / 0;
 
 ```javascript
 var x = Number.NEGATIVE_INFINITY;
-// NEGATIVE_INFINITY is returned on overflow:
+// NEGATIVE_INFINITY é retornado quando ocorre estouro negativo:
 var y = -1 / 0;
 ```
 
-#### JavaScript NaN - Not a Number
+#### JavaScript NaN - Not a Number \(não é número\)
 
 ```javascript
 var x = Number.NaN;
-// Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):
-var x = 100 / "Apple";  // x will be NaN (Not a Number)
+// Tentar realizar operações aritméticas com uma string não numérica resulta em NaN (Not a Number):
+var x = 100 / "Apple";  // x é NaN (Not a Number)
 ```
 
-#### Number Properties Cannot be Used on Variables
+#### Propriedades de Number Não Podem Ser Usadas em Variáveis
 
-Number properties belongs to the JavaScript's number object wrapper called Number.
+Propriedades de Number pertencem ao objeto envelopador chamado de Number.
 
-These properties can only be accessed as Number.MAX_VALUE.
+Estas propriedades podem ser acessadas apenas como em Number.MAX_VALUE.
 
-Using myNumber.MAX_VALUE, where myNumber is a variable, expression, or value, will return undefined:
+Usar myNumber.MAX_VALUE, onde myNumber é uma variável, expressão ou valor retorna **undefined**:
 
 ```javascript
 var x = 6;
-var y = x.MAX_VALUE;    // y becomes undefined
+var y = x.MAX_VALUE;    // y é undefined
 ```
 
-A complete reference to JavaScript numbers can be seen on (https://www.w3schools.com/jsref/jsref_obj_number.asp).
+Uma referência completa para números em JavaScript pode ser encontrada em [W3Schools Referência para Números](https://www.w3schools.com/jsref/jsref_obj_number.asp).
+
+[Próxima unidade](fundamentos3_js.md)
