@@ -175,7 +175,8 @@ Short Date | "03/25/2015"
 Long Date  | "Mar 25 2015" or "25 Mar 2015"
 
     O formato ISO segue um padrão estrito em JavaScript.
-    Os outros formatos não são tão bem definidos e podem ser específicos do navegador.
+    Os outros formatos não são tão bem definidos e
+    podem mudar de navegador para navegador.
 
 ### Saída de Date no JavaScript
 
@@ -183,7 +184,7 @@ Independente do formato de entrada, JavaScript \(por norma\) faz a saída de dat
 
   Tue Feb 24 2019 21:00:00 GMT-0300 (Brasilia Standard Time)
 
-### Dates em ISO no JavaScript
+### Datas em ISO no JavaScript
 
 ISO 8601 é o padrão internacional para a representação de datas e horas.
 
@@ -196,98 +197,105 @@ var d = new Date("2019-09-25");
 ```
 
     O horário calculado será em relação à sua zona de tempo.
-    Dependendo da sua zona de tempo, o resultado acima irá variar entre *24 Março*  e *25 Março*.
+    Dependendo da sua zona de tempo, o resultado acima irá variar entre *24 de Março*  e *25 de Março*.
 
-### ISO Dates \(Year and Month\)
+### Datas em ISO \(Ano e Mes\)
 
-ISO dates can be written without specifying the day \(YYYY-MM\):
+Datas em ISO dates podem ser escritas sem o dia \(YYYY-MM\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("2015-03");
 ```
 
-### ISO Dates \(Only Year\)
+### Datas em ISO \(Só o Ano\)
 
-ISO dates can be written without month and day \(YYYY\):
+Datas em ISO podem ser escritas sem o mes e o dia \(YYYY\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("2015");
 ```
 
-    Time zones will vary the result above between December 31 2014 and January 01 2015.
+    Zonas de tempo podem mudar o resultado acima entre 31 de Dezembro
+    de 2014 e 01 de Janeiro de 2015.
 
-### ISO Dates \(Date-Time\)
+### Datas em ISO \(Data-Hora\)
 
-ISO dates can be written with added hours, minutes, and seconds \(YYYY-MM-DDTHH:MM:SSZ\):
+Datas em ISO podem ser escritas incluindo horas, minutos e segundos
+\(YYYY-MM-DDTHH:MM:SSZ\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("2015-03-25T12:00:00Z");
 ```
 
-Date and time is separated with a capital T.
+Data e Hora são separados pela letra T maiúscula.
 
-UTC time is defined with a capital letter Z.
+Hora em UTC é definido pela letra maiúscula Z.
 
-If you want to modify the time relative to UTC, remove the Z and add +HH:MM or -HH:MM instead:
+Se quiser mudar a hora em relação à UTC, remova o Z e adicione +HH:MM ou -HH:MM,
+no lugar:
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("2015-03-25T12:00:00-06:30");
 ```
 
-    UTC (Universal Time Coordinated) is the same as GMT (Greenwich Mean Time).
+    UTC (Universal Time Coordinated) é o mesmo que GMT (Greenwich Mean Time).
 
-    Omitting T or Z in a date-time string can give different result in different browser.
+    Omitir T ou Z numa string de data-hora pode dar resultados diferentes
+    dependendo do navegador.
 
-### Time Zones
+### Zonas de Tempo, Timezone
 
-When setting a date, without specifying the time zone, JavaScript will use the browser's time zone.
+Ao ajustar uma data, sem especificar a zona de tempo, JavaScript usará a zona de
+tempo do navegador.
 
-When getting a date, without specifying the time zone, the result is converted to the browser's time zone.
+Ao obter uma data, sem especificar a zona de tempo, o resultado será convertido
+para a zona de tempodo navegador.
 
-In other words: If a date/time is created in GMT \(Greenwich Mean Time\), the date/time will be converted to CDT \(Central US Daylight Time\) if a user browses from central US.
+Ou seja, se uma data/hora é criada em GMT, a data/hora será convertida para BRT
+\(Brazilian Time, ou UTC-3\) se o navegador estiver na maior parte do Brasil.
 
-### JavaScript Short Dates.
+### Datas Abrevidas em JavaScript
 
-Short dates are written with an "MM/DD/YYYY" syntax like this:
+Datas abreviadas são escritas com uma sintaxe do tipo "MM/DD/YYYY":
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("03/25/2015");
 ```
 
-### WARNINGS !
+### Alerta !
 
-In some browsers, months or days with no leading zeroes may produce an error:
+Em alguns navegadores, meses e dias sem zeros iniciais podem produzir um erro:
 
 ```javascript
-var d = new Date("2015-3-25");
+var d = new Date("3/25/2015");
 ```
 
-The behavior of "YYYY/MM/DD" is undefined.
-Some browsers will try to guess the format. Some will return NaN.
+O comprtamento de "YYYY/MM/DD" é indefinido.
+Alguns navegadores tentam advinhar o formato. Alguns retornam **NaN**.
 
 ```javascript
 var d = new Date("2015/03/25");
 ```
 
 
-The behavior of  "DD-MM-YYYY" is also undefined.
-Some browsers will try to guess the format. Some will return NaN.
+O comportamento de "DD-MM-YYYY"também é indefinido.
+Alguns navegadores tentam advinhar o formato. Alguns retornam **NaN**.
 
 ```javascript
 var d = new Date("25-03-2015");
 ```
 
-### JavaScript Long Dates
+### Datas Longas em JavaScript
 
 Long dates are most often written with a "MMM DD YYYY" syntax like this:
 
