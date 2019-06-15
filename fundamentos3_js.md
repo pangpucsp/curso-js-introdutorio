@@ -280,7 +280,7 @@ Em alguns navegadores, meses e dias sem zeros iniciais podem produzir um erro:
 var d = new Date("3/25/2015");
 ```
 
-O comprtamento de "YYYY/MM/DD" é indefinido.
+O comportamento de "YYYY/MM/DD" é indefinido.
 Alguns navegadores tentam advinhar o formato. Alguns retornam **NaN**.
 
 ```javascript
@@ -297,49 +297,51 @@ var d = new Date("25-03-2015");
 
 ### Datas Longas em JavaScript
 
-Long dates are most often written with a "MMM DD YYYY" syntax like this:
+Datas longas são escritas, em geral, com a sintaxe "MMM DD YYYY":
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("Mar 25 2015");
 ```
 
-Month and day can be in any order:
+Mes e dia podem estar em qualquer ordem:
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("25 Mar 2015");
 ```
 
-And, month can be written in full (January), or abbreviated (Jan):
+E o mes pode ser escrito completo \(January\), ou abreviado \(Jan\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("January 25 2015");
 ```
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("Jan 25 2015");
 ```
 
-Commas are ignored. Names are case insensitive:
+Vírgulas são ignoradas. Nomes podem ser em maiúsculas, ou minúsculas:
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date("JANUARY, 25, 2015");
 ```
 
-### Date Input - Parsing Dates
+### Entrada de Datas - Percorrendo \(parsing\) datas
 
-If you have a valid date string, you can use the Date.parse\(\) method to convert it to milliseconds.
+Se você tiver uma string de data válida, você pode usar o método Date.parse\(\)
+para convertê-la em milisegundos.
 
-Date.parse\(\) returns the number of milliseconds between the date and January 1, 1970:
+Date.parse\(\) retorna o número de milisegundos entre 1&ordm; de janeiro de 1970
+e a data:
 
 Example
 
@@ -348,9 +350,10 @@ var msec = Date.parse("March 21, 2012");
 document.getElementById("demo").innerHTML = msec;
 ```
 
-You can then use the number of milliseconds to convert it to a date object:
+Você pode, então, usar o número de milisegundos para convertê-lo num objeto de
+data:
 
-Example
+Exemplo
 
 ```javascript
 var msec = Date.parse("March 21, 2012");
@@ -358,28 +361,28 @@ var d = new Date(msec);
 document.getElementById("demo").innerHTML = d;
 ```
 
-## JavaScript Get Date Methods (https://www.w3schools.com/js/js_date_methods.asp)
+## Métodos de JavaScript para Obter Datas [JS Date Methods](https://www.w3schools.com/js/js_date_methods.asp)
 
-These methods can be used for getting information from a date object:
+Os métodos abaixo podem ser usados para obter informações de objetos de data:
 
-Method              | Description
------------------------------------------------------------------------------
-getFullYear\(\)     | Get the year as a four digit number \(yyyy\)
-getMonth\(\)        | Get the month as a number \(0-11\)
-getDate\(\)         | Get the day as a number \(1-31\)
-getHours\(\)        | Get the hour \(0-23\)
-getMinutes\(\)      | Get the minute \(0-59\)
-getSeconds\(\)      | Get the second \(0-59\)
-getMilliseconds\(\) | Get the millisecond \(0-999\)
-getTime\(\)         | Get the time \(milliseconds since January 1, 1970\)
-getDay\(\)          | Get the weekday as a number \(0-6\)
-Date.now\(\)        | Get the time. ECMAScript 5.
+|Método              | Descrição |
+|--------------------|-------------------------------------------------------|
+|getFullYear\(\)     | Obtém o ano com 4 dígitos \(yyyy\) |
+|getMonth\(\)        | Obtém o mes como um número \(0-11\) |
+|getDate\(\)         | Obtém o dia como um número \(1-31\) |
+|getHours\(\)        | Obtém a hora \(0-23\) |
+|getMinutes\(\)      | Obtém os minutos \(0-59\) |
+|getSeconds\(\)      | Obtém os segundos \(0-59\) |
+|getMilliseconds\(\) | Obtém os milisegundos \(0-999\) |
+|getTime\(\)         | Obtém a hora \(milisegundos desde 1&ordm; de janeiro de 1970\) |
+|getDay\(\)          | Obtém o dia da semana como um número \(0-6\) |
+|Date.now\(\)        | Obtém a hora. ECMAScript 5. |
 
-### The getTime\(\) Method
+### O Método getTime\(\)
 
-The getTime\(\) method returns the number of milliseconds since January 1, 1970:
+O método getTime\(\) retorna o número de milisegundos desde 1&ordm; de janeiro de 1970:
 
-Example: (date_demo2.html)
+Exemplo: [Demo: date 2](date_demo2.html)
 
 ```javascript
 var d = new Date();
