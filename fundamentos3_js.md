@@ -335,7 +335,7 @@ Exemplo
 var d = new Date("JANUARY, 25, 2015");
 ```
 
-### Entrada de Datas - Percorrendo \(parsing\) datas
+### Entrada de Datas - Análise Léxica \(parsing\) de Datas
 
 Se você tiver uma string de data válida, você pode usar o método Date.parse\(\)
 para convertê-la em milisegundos.
@@ -343,7 +343,7 @@ para convertê-la em milisegundos.
 Date.parse\(\) retorna o número de milisegundos entre 1&ordm; de janeiro de 1970
 e a data:
 
-Example
+Exemplo
 
 ```javascript
 var msec = Date.parse("March 21, 2012");
@@ -389,155 +389,161 @@ var d = new Date();
 document.getElementById("demo").innerHTML = d.getTime();
 ```
 
-### The getFullYear\(\) Method
+### O Método getFullYear\(\)
 
-The getFullYear\(\) method returns the year of a date as a four digit number:
+O método getFullYear\(\) retorna o ano de uma dara como um número de 4 dígitos:
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
 document.getElementById("demo").innerHTML = d.getFullYear();
 ```
 
-### The getMonth\(\) Method
+### O Método getMonth\(\)
 
-The getMonth\(\) method returns the month of a date as a number \(0-11\):
+O método getMonth\(\) retorna o mes de uma data como um número \(0-11\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
 document.getElementById("demo").innerHTML = d.getMonth();
 ```
 
-You can use an array of names, and getMonth() to return the month as a name:
+Você pode usar um vetor de nomes e getMonth\(\) para obter o mes como um nome:
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-document.getElementById("demo").innerHTML = months[d.getMonth()];
+var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+"Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+document.getElementById("demo").innerHTML = meses[d.getMonth()];
 ```
 
-### The getDate\(\) Method
+### O Método getDate\(\)
 
-The getDate\(\) method returns the day of a date as a number \(1-31\):
+O método getDate\(\) retorna o dia de uma data como um número \(1-31\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
 document.getElementById("demo").innerHTML = d.getDate();
 ```
 
-### The getHours\(\) Method
+### O Método getHours\(\)
 
-The getHours\(\) method returns the hours of a date as a number \(0-23\):
+O método getHours\(\) retorna as horas de uma data como um número \(0-23\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
 document.getElementById("demo").innerHTML = d.getHours();
 ```
 
-### The getMinutes\(\) Method
+### O Método getMinutes\(\)
 
-The getMinutes\(\) method returns the minutes of a date as a number \(0-59\):
+O método getMinutes\(\) retorna os minutos de uma data como um número \(0-59\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
 document.getElementById("demo").innerHTML = d.getMinutes();
 ```
 
-### The getSeconds\(\) Method
+### O Método getSeconds\(\)
 
-The getSeconds\(\) method returns the seconds of a date as a number \(0-59\):
+O método getSeconds\(\) retorna os segundos de uma data como um número \(0-59\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
 document.getElementById("demo").innerHTML = d.getSeconds();
 ```
 
-### The getMilliseconds\(\) Method
+### O Método getMilliseconds\(\)
 
-The getMilliseconds\(\) method returns the milliseconds of a date as a number \(0-999\):
+O método getMilliseconds\(\) retorna os milisegundos de uma data como um número \(0-999\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
 document.getElementById("demo").innerHTML = d.getMilliseconds();
 ```
 
-### The getDay\(\) Method
+### O Método getDay\(\)
 
-The getDay\(\) method returns the weekday of a date as a number \(0-6\):
+O método getDay\(\) retorna o dia da semana de uma data como um número \(0-6\):
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
 document.getElementById("demo").innerHTML = d.getDay();
 ```
 
-    In JavaScript, the first day of the week (0) means "Sunday", even if some countries in the world consider the first day of the week to be "Monday"
+    Em JavaScript, O primeiro dia da semana (0) é o *Domingo*, apesar de alguns
+    países considerarem que o primeiro dia da semana é a *Segunda-feira*.
 
-You can use an array of names, and getDay() to return the weekday as a name:
+Como com os meses, você pode usar um vetor de nomes e obter os dias da semana
+pelo nome:
 
-Example
+Exemplo
 
 ```javascript
 var d = new Date();
-var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var dias = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira",
+            "Quinta-feira", "Sexta-feira", "Sábado"];
 document.getElementById("demo").innerHTML = days[d.getDay()];
 ```
 
-### UTC Date Methods
+### Métodos de Datas em UTC
 
-UTC date methods are used for working with UTC dates (Universal Time Zone dates):
+Métodos de dadtas em UTC são usados para trabalhar com datas em UTC
+(datas na Zona de Tempo Universal):
 
-Method                  | Description
----------------------------------------------------------------------------------------
-getUTCDate\(\)          | Same as getDate\(\), but returns the UTC date
-getUTCDay\(\)           | Same as getDay\(\), but returns the UTC day
-getUTCFullYear\(\)      | Same as getFullYear\(\), but returns the UTC year
-getUTCHours\(\)         | Same as getHours\(\), but returns the UTC hour
-getUTCMilliseconds\(\)  | Same as getMilliseconds\(\), but returns the UTC milliseconds
-getUTCMinutes\(\)       | Same as getMinutes\(\), but returns the UTC minutes
-getUTCMonth\(\)         | Same as getMonth\(\), but returns the UTC month
-getUTCSeconds\(\)       | Same as getSeconds\(\), but returns the UTC seconds
+|Método                  | Descrição |
+|------------------------|----------------------------------------------------|
+|getUTCDate\(\)          | O mesmo que getDate\(\), mas retorna a data UTC |
+|getUTCDay\(\)           | O mesmo que getDay\(\), mas retorna o dia UTC |
+|getUTCFullYear\(\)      | O mesmo que getFullYear\(\), mas retorna o ano UTC |
+|getUTCHours\(\)         | O mesmo que getHours\(\), mas retorna a hora UTC |
+|getUTCMilliseconds\(\)  | O mesmo que getMilliseconds\(\), mas retorna os milisegundos UTC |
+|getUTCMinutes\(\)       | O mesmo que getMinutes\(\), mas retorna os minutos UTC |
+|getUTCMonth\(\)         | O mesmo que getMonth\(\), mas retorna o mes UTC |
+|getUTCSeconds\(\)       | O mesmo que getSeconds\(\), mas retorna os segundos UTC |
 
-## JavaScript Set Date Methods (https://www.w3schools.com/js/js_date_methods_set.asp)
+## Métodos para Ajustar as Datas em JavaScript [JS date set methods](https://www.w3schools.com/js/js_date_methods_set.asp)
 
-Set Date methods let you set date values \(years, months, days, hours, minutes, seconds, milliseconds\) for a Date Object.
+Os métodos Set de datas permite ajustar os valores de data \(anos, meses, dias,
+horas, minutos, segundos, milisegundos\) de um Objeto Date.
 
-### Set Date Methods
+### Métodos Set para Datas
 
-Set Date methods are used for setting a part of a date:
+Os métodos Set para datas são usados para ajustar uma parte de uma data:
 
-Method              | Description
---------------------------------------------------------------------
-setDate\(\)         | Set the day as a number \(1-31\)
-setFullYear\(\)     | Set the year \(optionally month and day\)
-setHours\(\)        | Set the hour \(0-23\)
-setMilliseconds\(\) | Set the milliseconds \(0-999\)
-setMinutes\(\)      | Set the minutes \(0-59\)
-setMonth\(\)        | Set the month \(0-11\)
-setSeconds\(\)      | Set the seconds \(0-59\)
-setTime\(\)         | Set the time \(milliseconds since January 1, 1970\)
+| Método              | Descrição |
+|---------------------|----------------------------------------------|
+| setDate\(\)         | Set the day as a number \(1-31\) |
+| setFullYear\(\)     | Set the year \(optionally month and day\) |
+| setHours\(\)        | Set the hour \(0-23\) |
+| setMilliseconds\(\) | Set the milliseconds \(0-999\) |
+| setMinutes\(\)      | Set the minutes \(0-59\) |
+| setMonth\(\)        | Set the month \(0-11\) |
+| setSeconds\(\)      | Set the seconds \(0-59\) |
+| setTime\(\)         | Set the time \(milliseconds since January 1, 1970\) |
 
 ### The setFullYear\(\) Method
 
-The setFullYear\(\) method sets the year of a date object. In this example to 2020:
+The setFullYear\(\) method sets the year of a date object. In this Exemplo to 2020:
 
-Example
+Exemplo
 
 ```html
 <script>
@@ -549,7 +555,7 @@ document.getElementById("demo").innerHTML = d;
 
 The setFullYear\(\) method can optionally set month and day:
 
-Example
+Exemplo
 
 ```html
 <script>
@@ -563,7 +569,7 @@ document.getElementById("demo").innerHTML = d;
 
 The setMonth\(\) method sets the month of a date object \(0-11\):
 
-Example
+Exemplo
 
 ```html
 <script>
@@ -577,7 +583,7 @@ document.getElementById("demo").innerHTML = d;
 
 The setDate\(\) method sets the day of a date object \(1-31\):
 
-Example
+Exemplo
 
 ```html
 <script>
@@ -589,7 +595,7 @@ document.getElementById("demo").innerHTML = d;
 
 The setDate\(\) method can also be used to add days to a date:
 
-Example
+Exemplo
 
 ```html
 <script>
@@ -605,7 +611,7 @@ document.getElementById("demo").innerHTML = d;
 
 The setHours\(\) method sets the hours of a date object \(0-23\):
 
-Example
+Exemplo
 
 ```html
 <script>
@@ -619,7 +625,7 @@ document.getElementById("demo").innerHTML = d;
 
 The setMinutes\(\) method sets the minutes of a date object \(0-59\):
 
-Example
+Exemplo
 
 ```html
 var d = new Date();
@@ -633,7 +639,7 @@ document.getElementById("demo").innerHTML = d;
 
 The setSeconds\(\) method sets the seconds of a date object \(0-59\):
 
-Example
+Exemplo
 
 ```html
 <script>
@@ -647,9 +653,9 @@ document.getElementById("demo").innerHTML = d;
 
 Dates can easily be compared.
 
-The following example compares today's date with January 14, 2100:
+The following Exemplo compares today's date with January 14, 2100:
 
-Example: (date_demo3.html)
+Exemplo: (date_demo3.html)
 
 ```javascript
 var today, someday, text;
