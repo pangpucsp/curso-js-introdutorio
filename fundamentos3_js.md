@@ -530,18 +530,18 @@ Os métodos Set para datas são usados para ajustar uma parte de uma data:
 
 | Método              | Descrição |
 |---------------------|----------------------------------------------|
-| setDate\(\)         | Set the day as a number \(1-31\) |
-| setFullYear\(\)     | Set the year \(optionally month and day\) |
-| setHours\(\)        | Set the hour \(0-23\) |
-| setMilliseconds\(\) | Set the milliseconds \(0-999\) |
-| setMinutes\(\)      | Set the minutes \(0-59\) |
-| setMonth\(\)        | Set the month \(0-11\) |
-| setSeconds\(\)      | Set the seconds \(0-59\) |
-| setTime\(\)         | Set the time \(milliseconds since January 1, 1970\) |
+| setDate\(\)         | Ajusta o dia como um número \(1-31\) |
+| setFullYear\(\)     | Ajusta o ano \(opcionalmente mes e dia\) |
+| setHours\(\)        | Ajusta as horas \(0-23\) |
+| setMilliseconds\(\) | Ajusta os milisegundos \(0-999\) |
+| setMinutes\(\)      | Ajusta os minutos \(0-59\) |
+| setMonth\(\)        | Ajusta o mes \(0-11\) |
+| setSeconds\(\)      | Ajusta os segundos \(0-59\) |
+| setTime\(\)         | Ajuste o tempo \(milisegundos desde 1&ordm; de janeiro de 1970\) |
 
-### The setFullYear\(\) Method
+### O Método setFullYear\(\)
 
-The setFullYear\(\) method sets the year of a date object. In this Exemplo to 2020:
+O método setFullYear\(\) ajusta o ano do objeto data. No Exemplo abaixo para 2020:
 
 Exemplo
 
@@ -553,7 +553,7 @@ document.getElementById("demo").innerHTML = d;
 </script>
 ```
 
-The setFullYear\(\) method can optionally set month and day:
+O método setFullYear\(\) pode, opcionalmente, ajusta o mes e o dia:
 
 Exemplo
 
@@ -565,9 +565,9 @@ document.getElementById("demo").innerHTML = d;
 </script>
 ```
 
-### The setMonth\(\) Method
+### O Método setMonth\(\)
 
-The setMonth\(\) method sets the month of a date object \(0-11\):
+O método setMonth\(\) ajusta o mes de um objeto de data \(0-11\):
 
 Exemplo
 
@@ -579,9 +579,9 @@ document.getElementById("demo").innerHTML = d;
 </script>
 ```
 
-### The setDate\(\) Method
+### O Método setDate\(\)
 
-The setDate\(\) method sets the day of a date object \(1-31\):
+O método setDate\(\) ajusta o dia de um objeto de data \(1-31\):
 
 Exemplo
 
@@ -593,7 +593,7 @@ document.getElementById("demo").innerHTML = d;
 </script>
 ```
 
-The setDate\(\) method can also be used to add days to a date:
+O método setDate\(\) pode ser usado também para adicionar dia a uma data:
 
 Exemplo
 
@@ -605,11 +605,12 @@ document.getElementById("demo").innerHTML = d;
 </script>
 ```
 
-    If adding days, shifts the month or year, the changes are handled automatically by the Date object.
+    Se a adição de dias modifica o mes ou o ano, as mudanças serão
+    manipuladas automaticamentepelo objeto Date.
 
-### The setHours\(\) Method
+### O Método setHours\(\)
 
-The setHours\(\) method sets the hours of a date object \(0-23\):
+O método setHours\(\) ajusta as horas de um objeto de data \(0-23\):
 
 Exemplo
 
@@ -621,23 +622,23 @@ document.getElementById("demo").innerHTML = d;
 </script>
 ```
 
-### The setMinutes\(\) Method
+### O Método setMinutes\(\)
 
-The setMinutes\(\) method sets the minutes of a date object \(0-59\):
+O método setMinutes\(\) ajusta os minutos de um objeto de data \(0-59\):
 
 Exemplo
 
 ```html
+<script>
 var d = new Date();
 d.setMinutes(30);
 document.getElementById("demo").innerHTML = d;
 </script>
 ```
-<script>
 
-### The setSeconds\(\) Method
+### O Método setSeconds\(\)
 
-The setSeconds\(\) method sets the seconds of a date object \(0-59\):
+O método setSeconds\(\) ajusta os segundos de um objeto de data \(0-59\):
 
 Exemplo
 
@@ -649,26 +650,26 @@ document.getElementById("demo").innerHTML = d;
 </script>
 ```
 
-### Compare Dates
+### Comparação de Datas
 
-Dates can easily be compared.
+Datas podem ser comparadas facilmente.
 
-The following Exemplo compares today's date with January 14, 2100:
+O Exemplo abaixo compara a data de hoje com 14 de janeiro de 2100:
 
 Exemplo: (date_demo3.html)
 
 ```javascript
-var today, someday, text;
-today = new Date();
-someday = new Date();
-someday.setFullYear(2100, 0, 14);
+var hoje, algum_dia, texto;
+hoje = new Date();
+algum_dia = new Date();
+algum_dia.setFullYear(2100, 0, 14);
 
-if (someday > today) {
-  text = "Today is before January 14, 2100.";
+if (algum_dia > hoje) {
+  texto = "Hoje é antes de 14 de janeiro de 2100.";
 } else {
-  text = "Today is after January 14, 2100.";
+  texto = "Hoje é depois de 14 de janeiro de 2100.";
 }
-document.getElementById("demo").innerHTML = text;
+document.getElementById("demo").innerHTML = texto;
 ```
 
-    JavaScript counts months from 0 to 11. January is 0. December is 11.
+    JavaScript conta os meses de 0 a 11. Janeiro é 0. Dezembro é 11.
