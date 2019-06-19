@@ -922,7 +922,8 @@ str[2];                   // retorna Ô
 
     * Ele não funciona no IE 7 ou anteriores.
     * Ele faz strings parecerem arrays (mas elas não são).
-    * Se nenhum carácter for encontrado, \[ \] retorna **undefined**, enquanto charAt\(\) retorna uma string vazia.
+    * Se nenhum carácter for encontrado, [ ] retorna undefined, enquanto charAt()
+      retorna uma string vazia.
     * O acesso é de leitura apenas. str[0] = "A" provoca erro (ele não funciona!)
 
     Se você deseja trabalhar com uma string como um array, converta-a num array.
@@ -956,7 +957,7 @@ var x = 3.14;    // Um número com vírgula (ponto)
 var y = 3;       // Um número sem vírgula
 ```
 
-### Números em JavaScript são sempre Ponto Flutuante de 64 bits
+### Números em JavaScript estão sempre em representação de Ponto Flutuante de 64 bits
 
 Diferente de outras linguagens de programação, JavaScript não define diferentes tipos de números como: integers, short, long, floating-point, double, etc.
 
