@@ -396,7 +396,7 @@ var y = new Boolean(false);
 // (x == y) é false porque objetos não podem ser comparados
 ```
 
-    Observe a diferença entre \(x==y\) e \(x===y\).
+    Observe a diferença entre (x==y) e (x===y).
     Comparar dois objetos JavaScript sempre retorna false.
 
 ## Operadores de Comparação e Lógicos em JavaScript (https://www.w3schools.com/js/js_comparisons.asp)
@@ -418,7 +418,7 @@ comparação:
 |            |                                   | x == "5"  | true |
 | ===        | mesmo valor e mesmo tipo          | x === 5   | true |
 |            |                                   | x === "5" | false |
-| !=         | diferente                         | x != 8    | true |
+| !=         | diferente de                      | x != 8    | true |
 | !==        | valor ou tipo diferente           | x !== 5   | false |
 |            |                                   | x !== "5" | true |
 |            |                                   | x !== 8   | true |
@@ -445,7 +445,7 @@ Dado que x = 6 e y = 3, a tabela abaixo explica os operadores lógicos:
 | Operador | Descrição | Exemplo |
 |----------|-----------|-------------------|
 | &&       | e         | \(x < 10 && y > 1\) é true |
-| \|\|     | ou        | \(x == 5 || y == 5\) é false |
+| \|\|     | ou        | \(x == 5 \|\| y == 5\) é false |
 | !        | negação   | !\(x == y\) é true |
 
 ### Conditional \(Ternary\) Operator
