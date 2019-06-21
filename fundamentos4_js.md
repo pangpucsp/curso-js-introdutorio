@@ -448,281 +448,314 @@ Dado que x = 6 e y = 3, a tabela abaixo explica os operadores lógicos:
 | \|\|     | ou        | \(x == 5 \|\| y == 5\) é false |
 | !        | negação   | !\(x == y\) é true |
 
-### Conditional \(Ternary\) Operator
+### Operador Ternário Condicional
 
-JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.
+JavaScript também possui um operador condicional cujo cálculo resulta num
+valor determinado por alguma condição.
 
-Syntax
+Sintaxe
 
 ```javascript
-variablename = (condition) ? value1:value2
+nomedevariavel = (condição) ? valor1:valor2
 ```
 
 Exemplo: (comp_demo1.html)
 
 ```javascript
-var voteable = (age < 18) ? "Too young":"Old enough";
+var votante = (idade < 18) ? "Jovem demais":"Velho o suficiente";
 ```
 
-If the variable age is a value below 18, the value of the variable voteable will be "Too young", otherwise the value of voteable will be "Old enough".
-Observe use of \(\) is not obrigatory in this case since conditional operator precedence is less than comparison operation but it is usual that condition be between \(\).
+Se a variável *idade* tiver valor menor do que 18, o valor da variável
+*votante* será *"Jovem demais"*, senão, será *"Velho o suficiente"*.
 
-### Comparing Different Types
+Observe que o uso dos parenteses, \(\), não é obrigatório no caso, já que a
+precedência do operador condicional é menor do que as operações condicionais e
+lógicas. Mas, em respeito ao C, C++ e Java, normalmente a condição fica entre
+\(\).
 
-Comparing data of different types may give unexpected results.
+### Compração de Tipos Diferentes
 
-When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison. An empty string converts to 0. A non-numeric string converts to NaN which is always false.
+A comparação de dados de tipos diferentes pode dar resultados inesperados.
 
-Case        | Value
----------------------
-2 < 12      | true
-2 < "John"  | false
-2 > "John"  | false
-2 == "John" | false
-"2" < "12"  | false
-"2" > "12"  | true
-"2" == "12" | false
+Ao comparar uma string com um número, JavaScript converte a string num número
+para realizar a comparação. Uma string vazia \(""\) converte em 0. Uma string
+não numérica converte para NaN que sempre tem o valor Booleano false.
 
-When comparing two strings, "2" will be greater than "12", because \(alphabetically\) 1 is less than 2.
+| Caso        | Valor |
+|-------------|-------|
+| 2 < 12      | true |
+| 2 < "John"  | false |
+| 2 > "John"  | false |
+| 2 == "John" | false |
+| "2" < "12"  | false |
+| "2" > "12"  | true |
+| "2" == "12" | false |
 
-To secure a proper result, variables should be converted to the proper type before comparison:
+Ao comparar dois string, "2" é maior do que "12", porque *alfabeticamente* 1
+é menor do que 2.
+
+Para assegurar um resultado apropriado, variáveis devem ser convertidas num
+tipo adequado antes da comparação:
 
 ```javascript
-age = Number(age);
-if (isNaN(age)) {
-  voteable = "Input is not a number";
+idade = Number(idade);
+if (isNaN(idade)) {
+  votante = "Entrada não é um número";
 } else {
-  voteable = (age < 18) ? "Too young" : "Old enough";
+  votante = (idade < 18) ? "Jovem demais" : "Velho o suficiente";
 }
 ```
 
-## JavaScript if else and else if (https://www.w3schools.com/js/js_if_else.asp)
+## if else e else if em JavaScript [(se senão em JS)](https://www.w3schools.com/js/js_if_else.asp)
 
-Conditional statements are used to perform different actions based on different conditions.
+Instruções condicionais podem ser usadas para realizar diferentes ações
+dependendo de diferentes condições.
 
-### Conditional Statements
+### Instruções Condicionais
 
-Very often when you write code, you want to perform different actions for different decisions.
+Frequentemente, quando você escreve código, você quer realizar diferentes ações
+para diferentes decisões.
 
-You can use conditional statements in your code to do this.
+Você pode usar instruções condicionais no seu código para isto.
 
-In JavaScript we have the following conditional statements:
+No JavaScript temos as seguintes instruções condicionais:
 
-  * Use if to specify a block of code to be executed, if a specified condition is true
-  * Use else to specify a block of code to be executed, if the same condition is false
-  * Use else if to specify a new condition to test, if the first condition is false
-  * Use switch to specify many alternative blocks of code to be executed
+  * Use *if* para especificar um bloco de código para ser executado, se a
+  condição especificada for verdadeira, *true*;
+  * Use *else* para especificar um bloco de código a ser executado, se a
+  mesma condição for false, *false*;
+  * Use *else if* para especificar uma nova condição de teste, se a primeira
+  condição for falsa; e
+  * Use *switch* para especificar várias alternativas de blocos de código a
+  serem executadas.
 
-### The if Statement
+### A Instrução if
 
-Use the **if** statement to specify a block of JavaScript code to be executed if a condition is true.
+Use a instrução **if** para especificar um bloco de código JavaScript a ser
+executado se a condição for verdadeira.
+
+Sintaxe
+
+```javascript
+if (condição) {
+  //  bloco de código a executar se a condição for verdadeira
+}
+```
+
+Exemplo: Faça uma saudação de "Bom dia" se a hora for menor do que 18:00:
+
+```javascript
+if (hora < 18) {
+  saudacao = "Bom dia";
+}
+```
+
+O resultado da saudação será:
+
+  Bom dia
+
+### A Instrução else
+
+Use a instrução **else** para especificar um bloco de código a ser executado
+se a condição for falsa.
+
+Sintaxe
+
+```javascript
+if (condição) {
+  //  bloco de código a ser executado se a condição for verdadeira
+} else {
+  //  bloco de código a ser executado se a condição for falsa
+}
+```
+
+Exemplo: Se a hora for menor do que 18, saudacao é "Bom dia", senão "Boa noite":
+[Demo: if e else] (ifelse_demo1.html)
+
+```javascript
+if (hora < 18) {
+  saudacao = "Bom dia";
+} else {
+  saudacao = "Boa noite";
+}
+```
+
+O resultado de saudacao será:
+
+  Bom dia
+
+### A Instrução else if
+
+Use a instrução **else if** para especificar uma nova condição se a primeira
+for falsa.
+
+Sintaxe
+
+```javascript
+if (condição1) {
+  //  bloco de código a ser executado se a condição1 for verdadeira
+} else if (condição2) {
+  //  bloco de código a ser executado se a condição1 for falsa
+  // e a condição2 for verdadeira
+} else {
+  //  bloco de código a ser executado se a condição1 for falsa e
+  // a condição2 for falsa
+}
+```
+
+Exemplo: Se horario for menor do que 10:00, crie uma saudacao "Boa manhã",
+se não, mas horário for menor do que 20:00, crie a saudacao "Bom dia",
+senão um "Boa noite":
+
+```javascript
+if (horario < 10) {
+  saudacao = "Boa manhã";
+} else if (horario < 20) {
+  saudacao = "Bom dia";
+} else {
+  saudacao = "Boa noite";
+}
+```
+
+O resultado da saudacao será:
+
+  Bom dia
+
+## Instrução switch no JavaScript (https://www.w3schools.com/js/js_switch.asp)
+
+A instrução **switch** é usada para realizar diferentes ações baseada em
+diferentes condições.
+
+### A Instrução switch JavaScript
+
+Use a instrução switch para selecionar um de muitos blocos de código a serem
+executados.
 
 Syntax
 
 ```javascript
-if (condition) {
-  //  block of code to be executed if the condition is true
-}
-```
-
-Exemplo: Make a "Good day" greeting if the hour is less than 18:00:
-
-```javascript
-if (hour < 18) {
-  greeting = "Good day";
-}
-```
-
-
-The result of greeting will be:
-
-  Good day
-
-### The else Statement
-
-Use the **else** statement to specify a block of code to be executed if the condition is false.
-
-Syntax
-
-```javascript
-if (condition) {
-  //  block of code to be executed if the condition is true
-} else {
-  //  block of code to be executed if the condition is false
-}
-```
-
-Exemplo: If the hour is less than 18, create a "Good day" greeting, otherwise "Good evening": (ifelse_demo1.html)
-
-```javascript
-if (hour < 18) {
-  greeting = "Good day";
-} else {
-  greeting = "Good evening";
-}
-```
-
-The result of greeting will be:
-
-  Good day
-
-### The else if Statement
-
-Use the **else if** statement to specify a new condition if the first condition is false.
-
-Syntax
-
-```javascript
-if (condition1) {
-  //  block of code to be executed if condition1 is true
-} else if (condition2) {
-  //  block of code to be executed if the condition1 is false and condition2 is true
-} else {
-  //  block of code to be executed if the condition1 is false and condition2 is false
-}
-```
-
-Exemplo: If time is less than 10:00, create a "Good morning" greeting, if not, but time is less than 20:00, create a "Good day" greeting, otherwise a "Good evening":
-
-```javascript
-if (time < 10) {
-  greeting = "Good morning";
-} else if (time < 20) {
-  greeting = "Good day";
-} else {
-  greeting = "Good evening";
-}
-```
-
-The result of greeting will be:
-
-  Good day
-
-## JavaScript Switch Statement (https://www.w3schools.com/js/js_switch.asp)
-
-The **switch** statement is used to perform different actions based on different conditions.
-
-### The JavaScript Switch Statement
-
-Use the switch statement to select one of many code blocks to be executed.
-
-Syntax
-
-```javascript
-switch(expression) {
+switch(expressão) {
   case x:
-    // code block
+    // bloco de código a ser executado caso a expressão seja x
     break;
   case y:
-    // code block
+    // bloco de código a ser executado caso a expressão seja y
     break;
   default:
-    // code block
+    // bloco de código a ser executado caso a expressão tenha um valor
+    // diferente de dos cases
 }
 ```
 
-This is how it works:
+Eis como isto funciona:
 
-The switch expression is evaluated once.
-The value of the expression is compared with the values of each case.
-If there is a match, the associated block of code is executed.
+A expressão do switch é calculada uma vez.
+O valor da expressão é comparado com os valores de cada *case*.
+Se há um casamento (valores iguais), o bloco associado é executado.
 
-Exemplo: The getDay\(\) method returna the weekday as a number between 0 and 6.
+Exemplo: O método getDay\(\) retorna o dia da semana como um número de 0 a 6.
 
-\(Sunday=0, Monday=1, Tuesday=2 ..\)
+\(Domingo=0, Segunda=1, Terça=2 ..\)
 
-This Exemplo uses the weekday number to calculate the weekday name:
+Este exemplo usa o número do dia da semana para calcular o nome do dia da semana:
 
 ```javascript
 switch (new Date().getDay()) {
   case 0:
-    day = "Sunday";
+    day = "Domingo";
     break;
   case 1:
-    day = "Monday";
+    day = "Segunda-feira";
     break;
   case 2:
-     day = "Tuesday";
+     day = "Terça-feira";
     break;
   case 3:
-    day = "Wednesday";
+    day = "Quarta-feira";
     break;
   case 4:
-    day = "Thursday";
+    day = "Quinta-feira";
     break;
   case 5:
-    day = "Friday";
+    day = "Sexta-feira";
     break;
   case 6:
-    day = "Saturday";
+    day = "Sábado";
 }
 ```
 
-The result of day will be:
+O resultado do dia poderia ser:
 
-  Monday
+  Segunda-feira
 
-### The break Keyword
+### A Palavra-Chave break
 
-When JavaScript reaches a **break** keyword, it breaks out of the switch block.
+Quando o JavaScript chega numa palavra-chave **break**, ele sai do bloco do
+*switch*.
 
-This will stop the execution of more code and case testing inside the block.
+Isto para a execução do restante do código dentro do switch.
 
-When a match is found, and the job is done, it's time for a break. There is no need for more testing.
+Quando um casamento é encontrado e o trabalho estiver feito, é hora de um
+*break*. Não há a necessidade de continuar testando e executando o restante do código.
 
-    A break can save a lot of execution time because it "ignores" the execution of all the rest of the code in the switch block.
+    Um break pode economizar um monte de tempo de execução, porque
+    ele ignora a execução de todo o restante do código do bloco do switch.
 
-It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.
+Não é necessário usar um *break* no último *case* do bloco do *switch*.
+O bloco vai terminar de qualquer maneira.
 
-### The default Keyword
+### A Palavra-Chave default
 
-The **default** keyword specifies the code to run if there is no case match:
+A palavra-chave **default** especifica o código a rodar se não houver nenhum
+casamento com um *case*:
 
-Exemplo: The getDay\(\) method returna the weekday as a number between 0 and 6.
+Exemplo: Usemos de novo o método getDay\(\).
 
-If today is neither Saturday \(6\) nor Sunday \(0\), write a default message:
+Se hoje não for nem Sábado\(6\), nem Domingo\(0\), escreva a mensagem a *default*:
 
 ```javascript
 switch (new Date().getDay()) {
   case 6:
-    text = "Today is Saturday";
+    texto = "Hoje é Sábado";
     break;
   case 0:
-    text = "Today is Sunday";
+    texto = "Hoje é Domingo";
     break;
   default:
-    text = "Looking forward to the Weekend";
+    texto = "Esperando o Fim-de-Semana";
 }
 ```
 
-The result of text will be:
+O resultado de texto pode ser:
 
-  Looking forward to the Weekend
+  Esperando o Fim-de-Semana
 
-The default case does not have to be the last case in a switch block:
+O caso *default* não precisa ser o último *case* do bloco do *switch*:
 
 Exemplo
 
 ```javascript
 switch (new Date().getDay()) {
   default:
-    text = "Looking forward to the Weekend";
+    texto = "Esperando o Fim-de-Semana";
     break;
   case 6:
-    text = "Today is Saturday";
+    texto = "Hoje é Sábado";
     break;
   case 0:
-    text = "Today is Sunday";
+    texto = "Hoje é Domingo";
 }
 ```
 
-    If default is not the last case in the switch block, remember to end the default case with a break.
+    Se default não for o último case no bloco do switch, lembre-se de terminar
+    o caso default com um break.
 
-### Common Code Blocks
+### Blocos de Código em Comum
 
-Sometimes you will want different switch cases to use the same code.
+Algumas vezes, você quer que diferentes *case* do switch usem um mesmo código.
 
-In this Exemplo case 4 and 5 share the same code block, and 0 and 6 share another code block:
+Neste exemplo, case 4 e 5 compartilham o mesmo bloco de códigos e
+0 e 6 compatilham um outro bloco:
 
 Exemplo
 
@@ -730,34 +763,36 @@ Exemplo
 switch (new Date().getDay()) {
   case 4:
   case 5:
-    text = "Soon it is Weekend";
+    texto = "Quase Fim-De-Semana";
     break;
   case 0:
   case 6:
-    text = "It is Weekend";
+    texto = "É Fim-De-Semana";
     break;
   default:
-    text = "Looking forward to the Weekend";
+    texto = "Esperando o Fim-De-Semana";
 }
 ```
 
-### Switching Details
+### Detalhes do Switch
 
-If multiple cases matches a case value, the first case is selected.
+Se múltiplos *case*  casam com um valor de *case*, o primeiro *case* é
+selecionado.
 
-If no matching cases are found, the program continues to the default label.
+Se nenhum case casar, o programa continua no rótulo *default*.
 
-If no default label is found, the program continues to the statement(s) after the switch.
+Se não houver rótulo *default*, o programa continua na intrução após o *switch*.
 
-### Strict Comparison
+### Comparação Estrita
 
-Switch cases use strict comparison \(===\).
+Cases do *switch* usam comparação estrita \(===\).
 
-The values must be of the same type to match.
+Os valores devem ser de um mesmo tipo para haver o casamento.
 
-A strict comparison can only be true if the operands are of the same type.
+Uma comparação estrita pode apenas ser verdadeira se os operandos são do mesmo
+tipo.
 
-In this Exemplo there will be no match for x:
+Neste exemplo, não haverá nenhum casamento para o x:
 
 Exemplo
 
@@ -765,17 +800,17 @@ Exemplo
 var x = "0";
 switch (x) {
   case 0:
-    text = "Off";
+    texto = "Desliga";
     break;
   case 1:
-    text = "On";
+    texto = "Liga";
     break;
   default:
-    text = "No value found";
+    texto = "Nenhum valor encontrado";
 }
 ```
 
-## JavaScript For Loop (https://www.w3schools.com/js/js_loop_for.asp)
+## Malha \(*loop*\) for em JavaScript (https://www.w3schools.com/js/js_loop_for.asp)
 
 Loops can execute a block of code a number of times.
 
