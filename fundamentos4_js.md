@@ -1,4 +1,4 @@
-# Fundamentos IV de JavaScript
+returna# Fundamentos IV de JavaScript
 
 Esta é a continuação de [Fundamentos III de JS](fundamento3_js.md).
 
@@ -243,50 +243,54 @@ Um booleano em JavaScript representa um de dois valores: **true** ou **false**.
 
 ### Valores Booleanos
 
-Very often, in programming, you will need a data type that can only have one of two values, like
+Frequentemente, em programação, você precisa de um tipo de dado que possa ter
+apenas dois valores, como
 
-  * YES / NO
-  * ON / OFF
-  * TRUE / FALSE
+  * SIM / NÃO
+  * LIGA / DESLIGA
+  * VERDADEIRO / FALSO
 
-For this, JavaScript has a Boolean data type. It can only take the values **true** or **false**.
+Para tanto, JavaScript tem um tipo de dado Boolean (Booleano, ou lógico). Ele só
+pode assumir os valores **true** (verdade) ou **false** (falso).
 
-### The Boolean\(\) Function
+### A Função Boolean\(\)
 
-You can use the Boolean\(\) function to find out if an expression \(or a variable\) is true:
-
-Exemplo
-
-```javascript
-Boolean(10 > 9)        // returns true
-```
-
-Or even easier:
+Você pode usar a função Boolean\(\) para descobrir se uma expressão
+\(ou uma variável\) é verdadeira:
 
 Exemplo
 
 ```javascript
-(10 > 9)              // also returns true
-10 > 9                // also returns true
+Boolean(10 > 9)        // retorna true
 ```
 
-### Comparisons and Conditions
+Ou mais simples:
 
-The chapter JS Comparisons gives a full overview of comparison operators.
+Exemplo
 
-The chapter JS Conditions gives a full overview of conditional statements.
+```javascript
+(10 > 9)              // também retorna true
+10 > 9                // também retorna true
+```
 
-Here are some Exemplos:
+### Comparações e Condições
 
-Operator | Description     | Exemplo
--------------------------------------------
-==       | equal to        | if (day == "Monday")
-\>       | greater than    | if (salary > 9000)
-<        | less than       | if (age < 18)
+A seção Comparações em JS dá uma sobrevoada nos operadores de comparação.
 
-    The Boolean value of an expression is the basis for all JavaScript comparisons and conditions.
+A seção Condições em JS dá uma obrevoada nas instruções de condição.
 
-### Everything With a "Value" is True
+Eis alguns exemplos:
+
+| Operador | Descrição      | Exemplo |
+|----------|----------------|-----------------|
+| ==       | igual a        | if (dia == "Monday") |
+| \>       | maior do que   | if (salario > 9000) |
+| <        | menor do que   | if (idade < 18) |
+
+    O valor Booleano de uma expressão é a base para todas as comparações em
+    JavaScript.
+
+### Tudo que Tem um "Valor" é True
 
 Exemplos
 
@@ -304,43 +308,43 @@ Exemplos
 7 + 1 + 3.14
 ```
 
-### Everything Without a "Value" is False
+### Qualquer Coisa sem um "Valor" é False
 
-The Boolean value of 0 \(zero\) is false:
+O valor Booleano de 0 \(zero\) é false:
 
 ```javascript
 var x = 0;
-Boolean(x);       // returns false
+Boolean(x);       // returna false
 
 var x = -0;
-Boolean(x);       // returns false
+Boolean(x);       // returna false
 
 var x = "";
-Boolean(x);       // returns false
+Boolean(x);       // returna false
 
 var x;
-Boolean(x);       // returns false
+Boolean(x);       // returna false
 
 var x = null;
-Boolean(x);       // returns false
+Boolean(x);       // returna false
 
 var x = false;
-Boolean(x);       // returns false
+Boolean(x);       // returna false
 
-// The Boolean value of NaN is false:
+// O valor Booleano de NaN (Not-a-Number, não-é-um-número) é false:
 var x = 10 / "H";
-Boolean(x);       // returns false
+Boolean(x);       // returna false
 ```
 
-### Booleans Can be Objects
+### Booleanos Podem Ser Objects
 
-Normally JavaScript booleans are primitive values created from literals:
+Normalmente, booleanos em JavaScript são valores primitivos criados de literais:
 
 ```javascript
 var x = false;
 ```
 
-But booleans can also be defined as objects with the keyword new:
+Mas booleanos podem também ser definedos como objetos com a palavra-chave new:
 
 ```javascript
 var y = new Boolean(false);
@@ -352,92 +356,97 @@ Exemplo
 var x = false;
 var y = new Boolean(false);
 
-// typeof x returns boolean
-// typeof y returns object
+// typeof x returna boolean
+// typeof y returna object
 ```
 
-    Do not create Boolean objects. It slows down execution speed.
+    Não crie objetos Boolean. Isto reduz a velocidade do processamento.
 
-The new keyword complicates the code. This can produce some unexpected results:
+A palavra-chave new complica o código. Isto pode produzir alguns resultados
+inesperados:
 
-When using the == operator, equal booleans are equal:
+Ao usar o operador ==, booleanos iguais são iguais:
 
 Exemplo
 ```javascript
 var x = false;             
 var y = new Boolean(false);
 
-// (x == y) is true because x and y have equal values
+// (x == y) é true porque x e y têm valores iguais
 ```
 
-When using the === operator, equal booleans are not equal, because the === operator expects equality in both type and value.
+Ao uso o operador ===, booleanos iguais não são iguais, porque  operador ===
+espera igualdade tanot de tipo, quanto de valor.
 
 Exemplo
 ```javascript
 var x = false;             
 var y = new Boolean(false);
 
-// (x === y) is false because x and y have different types
+// (x === y) é false porque x e y têm tipos diferentes
 ```
 
-Or even worse. Objects cannot be compared:
+Ou pior ainda. Objetos não podem ser comparados:
 
 Exemplo
 ```javascript
 var x = new Boolean(false);             
 var y = new Boolean(false);
 
-// (x == y) is false because objects cannot be compared
+// (x == y) é false porque objetos não podem ser comparados
 ```
 
-Note the difference between \(x==y\) and \(x===y\).
-Comparing two JavaScript objects will always return false.
+    Observe a diferença entre \(x==y\) e \(x===y\).
+    Comparar dois objetos JavaScript sempre retorna false.
 
-## JavaScript Comparison and Logical Operators (https://www.w3schools.com/js/js_comparisons.asp)
+## Operadores de Comparação e Lógicos em JavaScript (https://www.w3schools.com/js/js_comparisons.asp)
 
-Comparison and Logical operators are used to test for **true** or **false**.
+Operadores de comparação e lógicos são usados para testar por **true** ou **false**.
 
-### Comparison Operators
+### Operadores de Comparação
 
-Comparison operators are used in logical statements to determine equality or difference between variables or values.
+Operadores de comparação são usados em instruções lógicas para determinar a
+igualdade ou a diferença entre variáveis e valores.
 
-Given that x = 5, the table below explains the comparison operators:
+Dado que x = 5 (x recebe o valor 5), a tabela abaixo explica os operadores de
+comparação:
 
-Operator   | Description                         | Comparing | Returns
-----------------------------------------------------------------------
-==         | equal to                            | x == 8    | false
-           |                                     | x == 5    | true
-           |                                     | x == "5"  | true
-===        | equal value and equal type          | x === 5   | true
-           |                                     | x === "5" | false
-!=         | not equal                           | x != 8    | true
-!==        | not equal value or not equal type   | x !== 5   | false
-           |                                     | x !== "5" | true
-           |                                     | x !== 8   | true
-\>         | greater than                        | x > 8     | false
-<          | less than                           | x < 8     | true
-\>=        | greater than or equal to            | x >= 8    | false
-<=         | less than or equal to               | x <= 8    | true
+| Operador   | Descrição                         | Comparação | Retorna |
+|------------|-----------------------------------|------------|-----------|
+| ==         | igual a                           | x == 8    | false |
+|            |                                   | x == 5    | true |
+|            |                                   | x == "5"  | true |
+| ===        | mesmo valor e mesmo tipo          | x === 5   | true |
+|            |                                   | x === "5" | false |
+| !=         | diferente                         | x != 8    | true |
+| !==        | valor ou tipo diferente           | x !== 5   | false |
+|            |                                   | x !== "5" | true |
+|            |                                   | x !== 8   | true |
+| \>         | maior do que                      | x > 8     | false |
+| <          | menor do que                      | x < 8     | true |
+| \>=        | maior ou igual a                  | x >= 8    | false |
+| <=         | menor ou igual a                  | x <= 8    | true |
 
-### How Can it be Used
+### Como Usar
 
-Comparison operators can be used in conditional statements to compare values and take action depending on the result:
+Operadores de comparação podem ser usados em instruções condicionais para
+comparar valores e realizar uma ação de acordo com o resultado:
 
 ```javascript
-if (age < 18) text = "Too young";
+if (idade < 18) texto = "Muito jovem";
 ```
 
-### Logical Operators
+### Operadores Lógicos
 
-Logical operators are used to determine the logic between variables or values.
+Operadores lógicos são usados para determinar a lógica entre variáveis e valores.
 
-Given that x = 6 and y = 3, the table below explains the logical operators:
+Dado que x = 6 e y = 3, a tabela abaixo explica os operadores lógicos:
 
-Operator | Description | Exemplo
-----------------------------------------
-&&       | and         | \(x < 10 && y > 1\) is true
-\|\|     | or          | \(x == 5 || y == 5\) is false
-!        | not         | !\(x == y\) is true
+| Operador | Descrição | Exemplo |
+|----------|-----------|-------------------|
+| &&       | e         | \(x < 10 && y > 1\) é true |
+| \|\|     | ou        | \(x == 5 || y == 5\) é false |
+| !        | negação   | !\(x == y\) é true |
 
 ### Conditional \(Ternary\) Operator
 
@@ -618,7 +627,7 @@ The switch expression is evaluated once.
 The value of the expression is compared with the values of each case.
 If there is a match, the associated block of code is executed.
 
-Exemplo: The getDay\(\) method returns the weekday as a number between 0 and 6.
+Exemplo: The getDay\(\) method returna the weekday as a number between 0 and 6.
 
 \(Sunday=0, Monday=1, Tuesday=2 ..\)
 
@@ -669,7 +678,7 @@ It is not necessary to break the last case in a switch block. The block breaks (
 
 The **default** keyword specifies the code to run if there is no case match:
 
-Exemplo: The getDay\(\) method returns the weekday as a number between 0 and 6.
+Exemplo: The getDay\(\) method returna the weekday as a number between 0 and 6.
 
 If today is neither Saturday \(6\) nor Sunday \(0\), write a default message:
 
@@ -872,7 +881,7 @@ Often statement 2 is used to evaluate the condition of the initial variable.
 
 This is not always the case, JavaScript doesn't care. Statement 2 is also optional.
 
-If statement 2 returns true, the loop will start over again, if it returns false, the loop will end.
+If statement 2 returna true, the loop will start over again, if it returna false, the loop will end.
 
     If you omit statement 2, you must provide a break inside the loop. Otherwise the loop will never end. This will crash your browser.
 

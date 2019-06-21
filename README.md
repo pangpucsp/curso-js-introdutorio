@@ -8,13 +8,13 @@ Este curso é fortemente baseado (quase uma tradução livre) do [Tutorial da W3
 
   2. Segunda lição [Fundamentos 2](fundamentos2_js.md)
   Sintaxe de JS, comentários, variáveis, operadores, aritmética, atribuição,
-  tipos de dados.
+  tipos de dados. Funções. Objetos. Eventos. Strings. Números. Vetores.
 
   3. Terceira lição [Fundamentos 3](fundamentos3_js.md)
-  Funções. Objetos. Eventos. Strings. Números. Vetores. Datas.
+   Datas.
 
-  4. Quarta lição \[To Do]
-
+  4. Quarta lição \[Fundamentos 4](fundamentos4_js.md)
+  Objeto Math. Booleanos. Operadores de Comparação. Operadores Lógicos.
 
   5. Quinta Lição
 
