@@ -210,7 +210,7 @@ Math.floor(Math.random() * 10) + 1;  // retorna um inteiro aleatório de 1 a 10
 Math.floor(Math.random() * 100) + 1; // retorna um inteiro aleatório de 1 a 100
 ```
 
-### Uma Função Aleatória Própria
+### Uma Função Aleatória Adequada
 
 Como você pode ver dos exemplos acima, pode ser um boa idéia criar sua própria
 função aleatória para gerar números aleatórios para todos os fins.
@@ -570,7 +570,7 @@ if (condição) {
 ```
 
 Exemplo: Se a hora for menor do que 18, saudacao é "Bom dia", senão "Boa noite":
-[Demo: if e else] (ifelse_demo1.html)
+[Demo: if e else](ifelse_demo1.html)
 
 ```javascript
 if (hora < 18) {
@@ -779,7 +779,7 @@ switch (new Date().getDay()) {
 Se múltiplos *case*  casam com um valor de *case*, o primeiro *case* é
 selecionado.
 
-Se nenhum case casar, o programa continua no rótulo *default*.
+Se nenhum *case* casar, o programa continua no rótulo *default*.
 
 Se não houver rótulo *default*, o programa continua na intrução após o *switch*.
 
@@ -812,15 +812,17 @@ switch (x) {
 
 ## Malha \(*loop*\) for em JavaScript (https://www.w3schools.com/js/js_loop_for.asp)
 
-Loops can execute a block of code a number of times.
+Malhas (de repetição, ou simplesmente, loops) podem executar um bloco de código
+diversas vezes.
 
-### JavaScript Loops
+### Loops em JavaScript
 
-Loops are handy, if you want to run the same code over and over again, each time with a different value.
+Loops são muito úteis, se quiser rodar o mesmo código diversas vezes,
+cada vez com um valor diferente em algumas variáveis.
 
-Often this is the case when working with arrays:
+Frequentemente, é o que ocorre no processamento de *arrays*:
 
-Instead of writing:
+No lugar de escrever:
 
 ```javascript
 text += cars[0] + "<br>";
@@ -831,7 +833,7 @@ text += cars[4] + "<br>";
 text += cars[5] + "<br>";
 ```
 
-You can write:
+Você pode escrever:
 
 ```javascript
 var i;
@@ -840,95 +842,112 @@ for (i = 0; i < cars.length; i++) {
 }
 ```
 
-### Different Kinds of Loops
+### Diferentes Tipos de Loops
 
-JavaScript supports different kinds of loops:
+JavaScript dá suporte a diferentes tipos de *loops*:
 
-  * for - loops through a block of code a number of times
-  * for/in - loops through the properties of an object
-  * while - loops through a block of code while a specified condition is true
-  * do/while - also loops through a block of code while a specified condition is true
+  * *for* - repete um bloco de código um certo número de vezes;
+  * *for/in* - repete para as propriedades de um objetos, ou para todos elementos de um *container*;
+  * *while* - repete um bloco de código enquanto uma condição for verdadeira; e
+  * *do/while* - também repete um bloco de código enquanto uma condição for verdadeira, a diferença é que o bloco executa pelo menos uma vez.
 
-#### The For Loop
+#### O Loop For
 
-The for loop has the following syntax:
+O loop for tem a seguinte sintaxe:
 
 ```javascript
-for (statement 1; statement 2; statement 3) {
-  // code block to be executed
+for (instrução 1; instrução 2; instrução 3) {
+  // bloco de código a ser executado, enquanto a condição for verdadeira
 }
 ```
 
-**Statement 1** is executed \(one time\) before the execution of the code block.
+**instrução 1** é executada uma vez antes da execução do bloco de código.
 
-**Statement 2** defines the condition for executing the code block.
+**instrução 2** define a condição para a execução do bloco de código.
 
-**Statement 3** is executed \(every time\) after the code block has been executed.
+**instrução 3** é executada, toda vez, depois que o bloco de código for executado.
 
-Exemplo: (for_demo1.html)
+Exemplo: [Demo: for](for_demo1.html)
 
 ```javascript
 for (i = 0; i < 5; i++) {
-  text += "The number is " + i + "<br>";
+  texto += "O número é " + i + "<br>";
 }
 ```
 
-From the Exemplo above, you can read:
+Do exemplo acima, pode-se ler:
 
-Statement 1 sets a variable before the loop starts (var i = 0).
+Instrução 1 ajusta uma variável de controle do loop antes desse começar
+\(var i = 0\).
 
-Statement 2 defines the condition for the loop to run (i must be less than 5).
+Instrução 2 define a condição para o bloco de código executar \(i deve ser
+menor do que 5\).
 
-Statement 3 increases a value (i++) each time the code block in the loop has been executed.
+Instrução 3 aumenta o valor da variável de controle de 1 (i++) cada vez que
+o bloco de código for executado \(lembre-se de que esse aumento só ocorre
+depois da execução do bloco\).
 
-##### Statement 1
+##### Instrução 1
 
-Normally you will use statement 1 to initialize the variable used in the loop \(i = 0\).
+Em geral, usa-se a instrução 1 para inicializar uma variável usada no loop \(i = 0\).
 
-This is not always the case, JavaScript doesn't care. Statement 1 is optional.
+Isto não acontece sempre, o JavaScript não se importa. A instrução 1 é opcional.
 
-You can initiate many values in statement 1 \(separated by comma\):
+Você pode inicializar mais de uma variável na instrução 1 \(separadas por vírgula\):
 
 Exemplo
 
 ```javascript
-for (i = 0, len = cars.length, text = ""; i < len; i++) {
-  text += cars[i] + "<br>";
+for (i = 0, len = carros.length, texto = ""; i < len; i++) {
+  texto += carros[i] + "<br>";
 }
 ```
 
-And you can omit statement 1 (like when your values are set before the loop starts):
+E você pode omitir a instrução 1 \(quando, por exemplo, a inicialização é feita
+fora do loop\):
 
 Exemplo
 
 ```javascript
 var i = 2;
 var len = cars.length;
-var text = "";
+var texto = "";
 for (; i < len; i++) {
-  text += cars[i] + "<br>";
+  texto += carros[i] + "<br>";
 }
 ```
 
-##### Statement 2
+##### Instrução 2
 
 Often statement 2 is used to evaluate the condition of the initial variable.
+Em geral, a instrução 2 é usada para calcular a condição \(estado\) de uma
+variável de inicialização.
+
 
 This is not always the case, JavaScript doesn't care. Statement 2 is also optional.
 
-If statement 2 returna true, the loop will start over again, if it returna false, the loop will end.
+Isto nem sempre acontece, o JavaScript não se importa. A instrução 2 é opcional.
 
-    If you omit statement 2, you must provide a break inside the loop. Otherwise the loop will never end. This will crash your browser.
+    Se omitir a instrução 2, você terá de realizar um *break* dentro do loop.
+    Senão, o loop nunca vai terminar (dizemos que o programa entrou em loop).
+    Isto pode quebrar seu navegador \(se não travar seu SO\).
 
-##### Statement 3
+##### Instrução 3
 
-Often statement 3 increments the value of the initial variable.
+Em geral, a instrução 3 incrementa \(aumenta\) o valor de uma variável de
+inicialização.
 
-This is not always the case, JavaScript doesn't care, and statement 3 is optional.
+Isto nem sempre acontece, o JavaScript não se importa. A instrução 3, também,
+é opcional.
 
-Statement 3 can do anything like negative increment (i--), positive increment (i = i + 15), or anything else.
+A instrução 3 pode fazer qualquer coisa do tipo incremento negativo \(i--\),
+incremento positivo \(i++\), i += 5, ou qualquer outra coisa.
 
-Statement 3 can also be omitted (like when you increment your values inside the loop):
+    Um erro comum de programadores iniciantes é esquecer de mudar a variável
+    de controle para terminar o loop.
+
+A instrução 3 também pode ser omitida \(como quando você incrementa a variável
+  de controle dentro do loop\):
 
 Exemplo
 
@@ -936,24 +955,24 @@ Exemplo
 var i = 0;
 var len = cars.length;
 for (; i < len; ) {
-  text += cars[i] + "<br>";
+  texto += carros[i] + "<br>";
   i++;
 }
 ```
 
-#### The For/In Loop
+#### O Loop For/In
 
-The JavaScript for/in statement loops through the properties of an object:
+Em JavaScript a instruçao *for/in* faz o loop nas  propriedades de um objeto:
 
 Exemplo
 
 ```javascript
-var person = {fname:"John", lname:"Doe", age:25};
+var pessoa = {pnome:"João", sname:"Silva", idade:25};
 
-var text = "";
+var texto = "";
 var x;
 for (x in person) {
-  text += person[x];
+  texto += pessoa[x];
 }
 ```
 
