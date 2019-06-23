@@ -1,4 +1,4 @@
-returna# Fundamentos IV de JavaScript
+# Fundamentos IV de JavaScript
 
 Esta é a continuação de [Fundamentos III de JS](fundamento3_js.md).
 
@@ -976,170 +976,190 @@ for (x in person) {
 }
 ```
 
-## JavaScript While Loop (https://www.w3schools.com/js/js_loop_while.asp)
+## Loop while em JavaScript (https://www.w3schools.com/js/js_loop_while.asp)
 
-Loops can execute a block of code as long as a specified condition is true.
+Loops podem executar um bloco de código enquanto uma condição for verdadeira.
 
-### The While Loop
+### O Loop while
 
-The while loop loops through a block of code as long as a specified condition is true.
+O loop while repete um bloco de código enquanto um dada condição for verdadeira.
 
-Syntax
+Sintaxe
 
 ```javascript
-while (condition) {
-  // code block to be executed
+while (condição) {
+  // bloco de código a ser executada
 }
 ```
 
-In the following Exemplo, the code in the loop will run, over and over again, as long as a variable \(i\) is less than 10:
+No próximo exemplo, o código no bloco do loop irá executar repetidamente
+enquanto a variável \(i\) for menor do que 10:
 
 Exemplo
 
 ```javascript
 while (i < 10) {
-  text += "The number is " + i;
+  texto += "O número é " + i;
   i++;
 }
 ```
 
-    If you forget to increase the variable used in the condition, the loop will never end. This will crash your browser.
+    Se você esquecer de incrementar a variável usada na condição,
+    o loop nunca terminará. Isto quebrará o navegador.
 
-### The Do/While Loop
+### O Loop do/while
 
-The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+O loop do/while é uma variante do loop while. Este loop executará o bloco de
+código uma vez, antes de verificar se a condição é verdadeira,
+então repetirá o loop enquanto a condição for verdadeira.
 
-Syntax
+Sintaxe
 
 ```javascript
 do {
-  // code block to be executed
+  // bloco de código a ser executado
 }
-while (condition);
+while (condição);
 ```
 
-The Exemplo below uses a do/while loop. The loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:
+O exemplo abaixo usa um loop do/while. O loop sempre executará uma vez pelo
+menos, mesmo se inicialmente a condição for falsa, porque o bloco de código é
+executado antes a condição for testada:
 
 Exemplo
 
 ```javascript
 do {
-  text += "The number is " + i;
+  texto += "O número é " + i;
   i++;
 }
 while (i < 10);
 ```
 
-    Do not forget to increase the variable used in the condition, otherwise the loop will never end!
+    Não esqueça de incrementar a variável usada na condição,
+    senão o loop nunca terminará!
 
-### Comparing For and While
+### Comparação entre o for e while
 
-If you have read the previous chapter, about the for loop, you will discover that a while loop is much the same as a for loop, with statement 1 and statement 3 omitted.
+Se você leu a seção anterior, a respeito do loop *for*, você perceberá que um
+loop *while* é semelhante ao loop *for*, com as instruções 1 e 3 omitidas.
 
-The loop in this Exemplo uses a for loop to collect the car names from the cars array:
-
-Exemplo
-
-```javascript
-var cars = ["BMW", "Volvo", "Saab", "Ford"];
-var i = 0;
-var text = "";
-
-for (;cars[i];) {
-  text += cars[i] + "<br>";
-  i++;
-}
-```
-
-The loop in next Exemplo uses a while loop to collect the car names from the cars array:
+O loop neste exemplo usa um loop *for* para coletar os nomes de carros do
+*array* carros:
 
 Exemplo
 
 ```javascript
-var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var carros = ["BMW", "Volvo", "Saab", "Ford", "VW", "Toyota"];
 var i = 0;
-var text = "";
+var texto = "";
 
-while (cars[i]) {
-  text += cars[i] + "<br>";
+for (;carros[i];) {
+  texto += carros[i] + "<br>";
   i++;
 }
 ```
 
-## JavaScript Break and Continue (https://www.w3schools.com/js/js_break.asp)
+O loop no próximo exemplo usa um loop *while* para coletar os nomes de carros do
+*array* carros:
 
-The **break** statement "jumps out" of a loop.
+Exemplo
 
-The **continue** statement "jumps over" one iteration in the loop.
+```javascript
+var carros = ["BMW", "Volvo", "Saab", "Ford", "VW", "Toyota"];
+var i = 0;
+var texto = "";
 
-### The Break Statement
+while (carros[i]) {
+  texto += carros[i] + "<br>";
+  i++;
+}
+```
 
-You have already seen the break statement used in an earlier chapter of this tutorial. It was used to "jump out" of a switch\(\) statement.
+## Break e Continue em JavaScript (https://www.w3schools.com/js/js_break.asp)
 
-The break statement can also be used to jump out of a loop.  
+A instrução **break**, já vista no *switch*, "salta para fora" de um loop.
 
-The break statement breaks the loop and continues executing the code after the loop \(if any\):
+A instrução **continue** "salta para a" próxima iteração do loop.
+
+### A Instrução Break
+
+Você já viu a instrução numa outra seção desta página. Ele foi usado para
+"saltar para fora" de uma instrução switch\(\).
+
+A instrução *break* pode também ser usada para saltar fora de um loop.  
+
+A instrução *break* quebra o loop e continua a execução no código que vem após
+o loop \(se houver\):
 
 Exemplo
 
 ```javascript
 for (i = 0; i < 10; i++) {
   if (i === 3) { break; }
-  text += "The number is " + i + "<br>";
+  texto += "O número é " + i + "<br>";
 }
 ```
 
-### The Continue Statement
+### A Instrução Continue
 
-The continue statement breaks one iteration \(in the loop\), if a specified condition occurs, and continues with the next iteration in the loop.
+A instrução *continue* quebra uma iteração \(no loop\), se condição
+especificada ocorre \(for verdadeira\), e continua com a próxima iteração do loop.
 
-This Exemplo skips the value of 3:
+Este exemplo pula os múktiplos de 3:
 
 Exemplo
 
 ```javascript
 for (i = 0; i < 10; i++) {
-  if (i === 3) { continue; }
-  text += "The number is " + i + "<br>";
+  if (i % 3 == 0) { continue; }
+  texto += "O número é " + i + "<br>";
 }
 ```
 
-### JavaScript Labels
+### Rótulos em JavaScript
 
-To label JavaScript statements you precede the statements with a label name and a colon:
+Para por rótulos em instruções de JavaScript, você deve preceder as instruções
+com o nome do rótulo e um dois pontos\(:\):
 
 ```javascript
-label:
-statements
+rótulo:
+instruções
 ```
 
-The break and the continue statements are the only JavaScript statements that can "jump out of" a code block.
+As instruções *break* e *continue* são as únicas instruções em JavaScript que
+podem *saltar para fora* de um bloco de códigos.
 
 Syntax:
 
 ```javascript
-break labelname;
+break rótulo;
 
-continue labelname;
+continue rótulo;
 ```
 
-The **continue** statement \(with or without a label reference\) can only be used to skip one loop iteration.
+A instrução **continue** \(com ou sem uma referência a um rótulo\) só pode ser
+usada para *saltar* uma iteração de loop.
 
-The **break** statement, without a label reference, can only be used to jump out of a loop or a switch.
+A instrução **break**, sem uma referência a um rótulo, só pode ser usada para
+*saltar fora* de um loop ou de um *switch*.
 
-With a label reference, the break statement can be used to jump out of any code block:
+Com a referência a um rótulo, a instrução *break* pode ser usada para saltar
+fora de qualquer bloco de código:
 
 Exemplo
 
 ```javascript
-var cars = ["BMW", "Volvo", "Saab", "Ford"];
-list: {
-  text += cars[0] + "<br>";
-  text += cars[1] + "<br>";
-  break list;
-  text += cars[2] + "<br>";
-  text += cars[3] + "<br>";
+var carros = ["BMW", "Volvo", "Saab", "Ford", "VW", "Toyota"];
+lista: {
+  texto += carros[0] + "<br>";
+  texto += carros[1] + "<br>";
+  break lista;
+  texto += carros[2] + "<br>";
+  texto += carros[3] + "<br>";
 }
 ```
 
-    A code block is a block of code between \{ and \}.
+    Um bloco de código é um bloco de código entre chaves, \{ e \}.
+
+[Próxima unidade](fundamentos5_js.md)

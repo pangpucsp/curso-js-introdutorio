@@ -13,10 +13,11 @@ Este curso é fortemente baseado (quase uma tradução livre) do [Tutorial da W3
   3. Terceira lição [Fundamentos 3](fundamentos3_js.md)
    Datas.
 
-  4. Quarta lição \[Fundamentos 4](fundamentos4_js.md)
+  4. Quarta lição [Fundamentos 4](fundamentos4_js.md)
   Objeto Math. Booleanos. Operadores de Comparação. Operadores Lógicos.
+  Instruções Condicionais. Instruções de Loop (Repetição).
 
-  5. Quinta Lição
-
+  5. Quinta Lição [Fundamentos 5](fundamentos5_js.md)
+  Conversão de Tipos. 
 
   6. Sexta Lição
