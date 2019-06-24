@@ -127,28 +127,29 @@ function isDate(myDate) {
 }
 ```
 
-### JavaScript Type Conversion
+### Conversão de Tipo em JavaScript
 
-JavaScript variables can be converted to a new variable and another data type:
+Variáveis de JavaScript podem ser convertidos em uma nova variável e em um
+novo tipo de dado:
 
-  * By the use of a JavaScript function
-  * Automatically by JavaScript itself
+  * Pelo uso de uma função do JavaScript
+  * Automaticamente pelo próprio JavaScript
 
-### Converting Numbers to Strings
+### Conversão de Números em Strings
 
-The global method String\(\) can convert numbers to strings.
+O método global String\(\) pode converter convert números em strings.
 
-It can be used on any type of numbers, literals, variables, or expressions:
+Ele pode ser usado em qualquer tipo de números, literais, variáveis ou expressões:
 
 Exemplo
 
 ```javascript
-String(x)         // returns a string from a number variable x
-String(123)       // returns a string from a number literal 123
-String(100 + 23)  // returns a string from a number from an expression
+String(x)         // retorna uma string de uma variável x com um número
+String(123)       // retorna uma string de um número literal 123
+String(100 + 23)  // retorna uma string de um número de uma expressão
 ```
 
-The Number method toString\(\) does the same.
+O método *toString\(\)* de *Number* faz a mesma coisa.
 
 Exemplo
 
@@ -158,28 +159,29 @@ x.toString()
 (100 + 23).toString()
 ```
 
-In the section Number Methods, you will find more methods that can be used to convert numbers to strings:
+Na seção Métodos de Number, você outros métodos que podem converter um número
+numa string:
 
-Method            | Description
--------------------------------------------------------
-toExponential\(\) | Retorna a string, with a number rounded and written using exponential notation.
-toFixed\(\)       | Retorna a string, with a number rounded and written with a specified number of decimals.
-toPrecision\(\)   | Retorna a string, with a number written with a specified length
+| Método            | Descrição |
+|-------------------|------------------------------------|
+| toExponential\(\) | Retorna uma string, com um número arredondado e escrito em notação científica. |
+| toFixed\(\)       | Retorna uma string, com um número arredondado e escrito com um número especificado de dígitos decimais. |
+| toPrecision\(\)   | Retorna uma string, com um número escrito com um comprimento especificado. |
 
 ### Converting Booleans to Strings
 
 The global method String\(\) can convert booleans to strings.
 
 ```javascript
-String(false)      // returns "false"
-String(true)       // returns "true"
+String(false)      // retorna "false"
+String(true)       // retorna "true"
 ```
 
 The Boolean method toString() does the same.
 
 ```javascript
-false.toString()   // returns "false"
-true.toString()    // returns "true"
+false.toString()   // retorna "false"
+true.toString()    // retorna "true"
 ```
 
 ### Converting Dates to Strings
@@ -187,14 +189,14 @@ true.toString()    // returns "true"
 The global method String() can convert dates to strings.
 
 ```javascript
-String(Date())  // returns "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+String(Date())  // retorna "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
 ```
 
 The Date method toString() does the same.
 
 Exemplo
 ```javascript
-Date().toString()  // returns "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+Date().toString()  // retorna "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
 ```
 
 In the section Date Methods, you find more methods that can be used to convert dates to strings.
@@ -210,10 +212,10 @@ Empty strings convert to 0.
 Anything else converts to NaN \(Not a Number\).
 
 ```javascript
-Number("3.14")    // returns 3.14
-Number(" ")       // returns 0
-Number("")        // returns 0
-Number("99 88")   // returns NaN
+Number("3.14")    // retorna 3.14
+Number(" ")       // retorna 0
+Number("")        // retorna 0
+Number("99 88")   // retorna NaN
 ```
 
 In the section Number Methods, you find more methods that can be used to convert strings to numbers.
@@ -241,8 +243,8 @@ var x = + y;      // x is a number (NaN)
 The global method Number\(\) can also convert booleans to numbers.
 
 ```javascript
-Number(false)     // returns 0
-Number(true)      // returns 1
+Number(false)     // retorna 0
+Number(true)      // retorna 1
 ```
 
 ### Converting Dates to Numbers
@@ -251,7 +253,7 @@ The global method Number\(\) can be used to convert dates to numbers.
 
 ```javascript
 d = new Date();
-Number(d)          // returns 1404568027739
+Number(d)          // retorna 1404568027739
 ```
 
 The date method getTime\(\) does the same.
@@ -263,11 +265,11 @@ When JavaScript tries to operate on a "wrong" data type, it will try to convert 
 The result is not always what you expect:
 
 ```javascript
-5 + null    // returns 5         because null is converted to 0
-"5" + null  // returns "5null"   because null is converted to "null"
-"5" + 2     // returns "52"      because 2 is converted to "2"
-"5" - 2     // returns 3         because "5" is converted to 5
-"5" * "2"   // returns 10        because "5" and "2" are converted to 5 and 2
+5 + null    // retorna 5         because null is converted to 0
+"5" + null  // retorna "5null"   because null is converted to "null"
+"5" + 2     // retorna "52"      because 2 is converted to "2"
+"5" - 2     // retorna 3         because "5" is converted to 5
+"5" * "2"   // retorna 10        because "5" and "2" are converted to 5 and 2
 ```
 
 ### Automatic String Conversion
@@ -353,7 +355,7 @@ Before a bitwise operation is performed, JavaScript converts numbers to 32 bits 
 
 After the bitwise operation is performed, the result is converted back to 64 bits JavaScript numbers.
 
-    The examples above uses 4 bits unsigned binary numbers. Because of this ~ 5 returns 10.
+    The examples above uses 4 bits unsigned binary numbers. Because of this ~ 5 retorna 10.
 
     Since JavaScript uses 32 bits signed integers, it will not return 10. It will return -6.
 
@@ -365,7 +367,7 @@ After the bitwise operation is performed, the result is converted back to 64 bit
 
 ### Bitwise AND
 
-When a bitwise AND is performed on a pair of bits, it returns 1 if both bits are 1.
+When a bitwise AND is performed on a pair of bits, it retorna 1 if both bits are 1.
 
 One bit example:
 
@@ -387,7 +389,7 @@ Operation   | Result
 
 ### Bitwise OR
 
-When a bitwise OR is performed on a pair of bits, it returns 1 if one of the bits are 1:
+When a bitwise OR is performed on a pair of bits, it retorna 1 if one of the bits are 1:
 
 One bit example:
 
@@ -409,7 +411,7 @@ Operation    |  Result
 
 ### Bitwise XOR
 
-When a bitwise XOR is performed on a pair of bits, it returns 1 if the bits are different:
+When a bitwise XOR is performed on a pair of bits, it retorna 1 if the bits are different:
 
 One bit example:
 
@@ -431,7 +433,7 @@ Operation   | Result
 
 ### JavaScript Bitwise AND \(&\)
 
-Bitwise AND returns 1 only if both bits are 1:
+Bitwise AND retorna 1 only if both bits are 1:
 
 Decimal | Binary
 ---------------------------------------------
@@ -447,7 +449,7 @@ var x = 5 & 1;
 
 ### JavaScript Bitwise OR \(\|\)
 
-Bitwise OR returns 1 if one of the bits are 1:
+Bitwise OR retorna 1 if one of the bits are 1:
 
 Decimal | Binary
 -----------------------------------------------
@@ -463,7 +465,7 @@ var x = 5 | 1;
 
 ### JavaScript Bitwise XOR \(^\)
 
-Bitwise XOR returns 1 if the bits are different:
+Bitwise XOR retorna 1 if the bits are different:
 
 Decimal | Binary
 -----------------------------------------------
@@ -630,13 +632,13 @@ Exemplo explained:
 
 In JavaScript, regular expressions are often used with the two string methods: search\(\) and replace\(\).
 
-The search\(\) method uses an expression to search for a match, and returns the position of the match.
+The search\(\) method uses an expression to search for a match, and retorna the position of the match.
 
-The replace\(\) method returns a modified string where the pattern is replaced.
+The replace\(\) method retorna a modified string where the pattern is replaced.
 
 #### Using String search\(\) With a String
 
-The search\(\) method searches a string for a specified value and returns the position of the match:
+The search\(\) method searches a string for a specified value and retorna the position of the match:
 
 Exemplo: Use a string to do a search for "W3schools" in a string:
 
@@ -730,7 +732,7 @@ In JavaScript, the RegExp object is a regular expression object with predefined 
 
 The test\(\) method is a RegExp expression method.
 
-It searches a string for a pattern, and returns true or false, depending on the result.
+It searches a string for a pattern, and retorna true or false, depending on the result.
 
 The following example searches a string for the character "e":
 
@@ -755,9 +757,9 @@ You don't have to put the regular expression in a variable first. The two lines 
 
 The exec\(\) method is a RegExp expression method.
 
-It searches a string for a specified pattern, and returns the found text as an object.
+It searches a string for a specified pattern, and retorna the found text as an object.
 
-If no match is found, it returns an empty \(null\) object.
+If no match is found, it retorna an empty \(null\) object.
 
 The following example searches a string for the character "e":
 
@@ -942,8 +944,8 @@ The error object provides two useful properties: name and message.
 
 Property | Description
 ---------------------------------------------------------------
-name     | Sets or returns an error name
-message  | Sets or returns an error message \(a string\)
+name     | Sets or retorna an error name
+message  | Sets or retorna an error message \(a string\)
 
 #### Error Name Values
 

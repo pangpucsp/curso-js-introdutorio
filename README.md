@@ -18,6 +18,6 @@ Este curso é fortemente baseado (quase uma tradução livre) do [Tutorial da W3
   Instruções Condicionais. Instruções de Loop (Repetição).
 
   5. Quinta Lição [Fundamentos 5](fundamentos5_js.md)
-  Conversão de Tipos. 
+  Conversão de Tipos. Identificação de tipos. 
 
   6. Sexta Lição
