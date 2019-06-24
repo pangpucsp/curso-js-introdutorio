@@ -168,48 +168,49 @@ numa string:
 | toFixed\(\)       | Retorna uma string, com um número arredondado e escrito com um número especificado de dígitos decimais. |
 | toPrecision\(\)   | Retorna uma string, com um número escrito com um comprimento especificado. |
 
-### Converting Booleans to Strings
+### Conversão de Booleanos em Strings
 
-The global method String\(\) can convert booleans to strings.
+O método global String\(\) pode converter booleanos em strings.
 
 ```javascript
 String(false)      // retorna "false"
 String(true)       // retorna "true"
 ```
 
-The Boolean method toString() does the same.
+O método toString() de Boolean faz a mesma coisa.
 
 ```javascript
 false.toString()   // retorna "false"
 true.toString()    // retorna "true"
 ```
 
-### Converting Dates to Strings
+### Conversão de Dates em Strings
 
-The global method String() can convert dates to strings.
+O método global String() pode converter dates em strings.
 
 ```javascript
-String(Date())  // retorna "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+String(Date())  // retorna "Mon Jun 24 2019 00:35:08 GMT-0300 (Horário Padrão de Brasília)"
 ```
 
-The Date method toString() does the same.
+O método toString() de Date faz a mesma coisa.
 
 Exemplo
 ```javascript
-Date().toString()  // retorna "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"
+Date().toString()  // retorna "Mon Jun 24 2019 00:35:08 GMT-0300 (Horário Padrão de Brasília)"
 ```
 
-In the section Date Methods, you find more methods that can be used to convert dates to strings.
+Na seção Métodos de Date, você encontra outros métodos que podem ser usados
+para converter dates em  strings.
 
-### Converting Strings to Numbers
+### Conversão de Strings em Números
 
-The global method Number\(\) can convert strings to numbers.
+O método global Number\(\) pode converter strings em números.
 
-Strings containing numbers \(like "3.14"\) convert to numbers \(like 3.14\).
+Strings contendo números \(como "3.14"\) converte em numbers \(como 3.14\).
 
-Empty strings convert to 0.
+A string vazia converte em 0.
 
-Anything else converts to NaN \(Not a Number\).
+Qualquer outra coisa converte em NaN \(Not a Number, Não é um Número\).
 
 ```javascript
 Number("3.14")    // retorna 3.14

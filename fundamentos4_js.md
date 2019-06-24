@@ -1160,6 +1160,6 @@ lista: {
 }
 ```
 
-    Um bloco de código é um bloco de código entre chaves, \{ e \}.
+    Um bloco de código é um bloco de código entre chaves, { e }.
 
 [Próxima unidade](fundamentos5_js.md)
