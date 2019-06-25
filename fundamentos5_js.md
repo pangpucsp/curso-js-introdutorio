@@ -619,135 +619,145 @@ function bin2dec(bin){
 
 ## Expressões Regulares em JavaScript (https://www.w3schools.com/js/js_regexp.asp)
 
-A regular expression is a sequence of characters that forms a search pattern.
+Uma expressão regular é uma sequência de caracteres que forma um padrão de busca.
 
-The search pattern can be used for text search and text replace operations.
+O padrão de busca pode ser usado para busca textual e operações de substituição
+de texto.
 
-### What Is a Regular Expression?
+### o Que É uma Expressão regular?
 
-A regular expression is a sequence of characters that forms a search pattern.
+Uma expressão regular é uma sequência de caracteres que formam um padrão de busca.
 
-When you search for data in a text, you can use this search pattern to describe what you are searching for.
+Quando você busca dados num texto, você usa um padrão de busca para descrever o
+que você está buscando.
 
-A regular expression can be a single character, or a more complicated pattern.
+Uma expressão regular pode ter um único caracter, ou um padrão mais complicado.
 
-Regular expressions can be used to perform all types of text search and text replace operations.
+Expressões regulares podem ser usadas para realizar todos os tipos de Operações
+de busca e substituição de texto.
 
 Syntax
 
 ```javascript
-/pattern/modifiers;
+/padrão/modificadores;
 ```
 
 Exemplo
 
 ```javascript
-var patt = /w3schools/i;
+var patt = /pang/i;
 ```
 
-Exemplo explained:
+Exemplo explicado:
 
-**/w3schools/i**  is a regular expression.
+**/pang/i**  é uma expressão regular.
 
-**w3schools**  is a pattern \(to be used in a search\).
+**pang**  é um padrão \(a ser usado na busca\).
 
-**i**  is a modifier \(modifies the search to be case-insensitive\).
+**i**  é um modificador \(modifica a busca para ignorar maiúsculas e minúsculas\).
 
-### Using String Methods
+### Uso de Métodos de String
 
-In JavaScript, regular expressions are often used with the two string methods: search\(\) and replace\(\).
+No JavaScript, expressões regulares são frequentemente usadas com dois métodos
+de strings: *search\(\)* e *replace\(\)*.
 
-The search\(\) method uses an expression to search for a match, and retorna the position of the match.
+O método *search\(\)* usa uma expressão para buscar um casamento e retorna a
+posição do casamento.
 
-The replace\(\) method retorna a modified string where the pattern is replaced.
+O método replace\(\) retorna uma string modificada onde o padrão é substituido.
 
-#### Using String search\(\) With a String
+#### Uso de search\(\) com uma String
 
-The search\(\) method searches a string for a specified value and retorna the position of the match:
+O método *search\(\)* busca uma string com um certo valor e retorna a posição
+onde a encontra:
 
-Exemplo: Use a string to do a search for "W3schools" in a string:
+Exemplo: Uso de uma string para procurar por "pang" numa string:
 
 ```javascript
-var str = "Visit W3Schools!";
-var n = str.search("W3Schools");
+var str = "Conheça as páginas do Pang!";
+var n = str.search("Pang");
 ```
 
-#### Using String search\(\) With a Regular Expression
+#### Uso do search\(\) Com uma Expressão Regular
 
-Exemplo: Use a regular expression to do a case-insensitive search for "w3schools" in a string:
+Exemplo: Uso de uma expressão regular para fazer uma busca insensível a
+maiúsculas  por "pang" numa string:
 
 ```javascript
-var str = "Visit W3Schools";
-var n = str.search(/w3schools/i);
+var str = "Conheça as páginas do Pang!";
+var n = str.search(/pang/i);
 ```
 
-The result in n will be:
+O resultado em *n* será:
 
-  6
+  22
 
-#### Using String replace() With a String
+#### Uso do replace() Com uma String
 
-The replace\(\) method replaces a specified value with another value in a string:
+O método replace\(\) substitui um dado valor por um outro numa string:
 
 ```javascript
-var str = "Visit Microsoft!";
-var res = str.replace("Microsoft", "W3Schools");
+var str = "Visite as páginas do Totó!";
+var res = str.replace("Totó", "Pang");
 ```
 
-#### Use String replace() With a Regular Expression
+#### Uso do replace() Com uma Expressão Regular
 
-Exemplo: Use a case insensitive regular expression to replace Microsoft with W3Schools in a string:
+Exemplo: Uso de uma expressão regular insensível a maiúsculas para substituir
+Totó por Pang numa string:
 
 ```javascript
-var str = "Visit Microsoft!";
-var res = str.replace(/microsoft/i, "W3Schools");
+var str = "Visite as páginas do Totó!";
+var res = str.replace(/totó/i, "Pang");
 ```
 
 The result in res will be:
 
-  Visit W3Schools!
+  Visite as páginas do Pang!
 
-#### Did You Notice?
+#### Você reparou?
 
-    Regular expression arguments (instead of string arguments) can be used in the methods above.
-    Regular expressions can make your search much more powerful (case insensitive for example).
+    Argumentos de expressões regulares (no lugar de argumentos de string)
+    podem ser usadas nos métodos acima.
+    Expressões regulares podem fazer suas buscas muito mais poderosas
+    (insensibilidade a maiúsculas, por exemplo).
 
-#### Regular Expression Modifiers
+#### Modificadores de Expresão Regular
 
-Modifiers can be used to perform case-insensitive more global searches:
+Modificadores podem ser usadas para fazer buscas insensíveis e globais:
 
-Modifier |  Description
--------------------------------------------------------------------------------------
-i        |  Perform case-insensitive matching
-g        |  Perform a global match \(find all matches rather than stopping after the first match\)
-m        |  Perform multiline matching
+| Modificador |  Descrição |
+|-------------|-------------------------------------------------------|
+| i        |  Faz uma casamento insensível a maiúsculas |
+| g        |  Faz um casamento global \(encontra todos os casamentos não parando no primeiro\) |
+| m        |  Faz casamentos em múltiplas linhas |
 
-### Regular Expression Patterns
+### Padrões de Expressão Regular
 
-Brackets are used to find a range of characters:
+Cochetes são usados para buscar uma faixa de caracteres:
 
-Expression | Description
----------------------------------------------------------
-[abc]      | Find any of the characters between the brackets
-[0-9]      | Find any of the digits between the brackets
-(x\|y)     | Find any of the alternatives separated with \|
+| Expressão | Descrição |
+|-----------|----------------------------------------------|
+| [abc]      | Procure qualquer um dos caracteres que estão entre cochetes |
+| [0-9]      | Procure por qualquer dígito no intervalo de 0 a 9 |
+| (x\|y)     | Procure por qualquer uma das alternativas separadas por \| |
 
-Metacharacters are characters with a special meaning:
+Metacaracteres são caracteres com um significado especial:
 
-Metacharacter | Description
-------------------------------------------------------------------------------
-\d            | Find a digit
-\s            | Find a whitespace character
-\b            | Find a match at the beginning or at the end of a word
-\uxxxx        | Find the Unicode character specified by the hexadecimal number xxxx
+| Metacaracter | Descrição |
+|--------------|---------------------------------------------------------------|
+| \d            | Encontre um dígito |
+| \s            | Encontre um caracter espaço (em branco) |
+| \b            | Encontre um casamento no início ou fim de uma palavra |
+| \uxxxx        | Encontre o caracter em Unicode especificado pelo número hexadecimal xxxx |
 
-Quantifiers define quantities:
+Quantificadores definem quantidades:
 
-Quantifier | Description
-------------------------------------------------------------------------
-n+         | Matches any string that contains at least one n
-n*         | Matches any string that contains zero or more occurrences of n
-n?         | Matches any string that contains zero or one occurrences of n
+| Quantificador | Descrição |
+|---------------|---------------------------------------------------------|
+| n+         | Casa com qualquer string que contenha pelo menos um *n* |
+| n*         | Casa com qualquer string que contenha zero ou mais ocorrências *n* |
+| n?         | Casa com qualquer string que contenha zero ou uma ocorrência de *n* |
 
 ### Using the RegExp Object
 
