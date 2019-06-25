@@ -357,97 +357,108 @@ Exemplos
 
 ### JavaScript Usa Operandos de 32 bits
 
-JavaScript stores numbers as 64 bits floating point numbers, but all bitwise operations are performed on 32 bits binary numbers.
+JavaScript armazena números na representação de ponto flutuante de 64 bits
+\([IEEE 754](https://pt.wikipedia.org/wiki/IEEE_754)\), mas todas as operações
+com bits são realizadas em números binários de 32 bits.
 
-Before a bitwise operation is performed, JavaScript converts numbers to 32 bits signed integers.
+Antes que uma operação de bits seja realizada, o JavaScript converte os números
+para inteiros de 32 bits com sinal.
 
-After the bitwise operation is performed, the result is converted back to 64 bits JavaScript numbers.
+Após a operação de bits ser realizada, o resultado volta a ser convertido para
+números de 64 bits em ponto flutuante do JavaScript.
 
-    The examples above uses 4 bits unsigned binary numbers. Because of this ~ 5 retorna 10.
+    Os exemplos acima usaram números binários de 4 bits sem sinal.
+    Por causa disto: ~ 5 retorna 10.
 
-    Since JavaScript uses 32 bits signed integers, it will not return 10. It will return -6.
+    Como JavaScript usa inteiros de 32 bits com sinal,
+    ele não retorna 10. Ele retorna -6.
 
     00000000000000000000000000000101 (5)
 
     11111111111111111111111111111010 (~5 = -6)
 
-    A signed integer uses the leftmost bit as the minus sign.
+    Um inteiro com sinal usa o bits mais a esquerda (o mais significativo)
+    como um bit de sinal. No caso, o JavaScript, como todas as linguagens de
+    programação, usa a representação de inteiros em complemento de 2.
 
-### Bitwise AND
+### E de Bits
 
-When a bitwise AND is performed on a pair of bits, it retorna 1 if both bits are 1.
+Quando uma operação de E é realizada em dois bits, ela retorna 1 se ambos os
+bits forem 1.
 
-One bit example:
+Exemplo de operações de E com bits, 1 bit com outro bit:
 
-Operation | Result
--------------------
-0 & 0     | 0
-0 & 1     | 0
-1 & 0     | 0
-1 & 1     | 1
+| Operação | Resultado |
+|----------|---------|
+| 0 & 0     | 0 |
+| 0 & 1     | 0 |
+| 1 & 0     | 0 |
+| 1 & 1     | 1 |
 
-4 bits example:
+Exemplo com palavras de 4 bits:
 
-Operation   | Result
---------------------
-1111 & 0000 | 0000
-1111 & 0001 | 0001
-1111 & 0010 | 0010
-1111 & 0100 | 0100
+| Operação   | Resultado |
+|------------|--------|
+| 1111 & 0000 | 0000 |
+| 1111 & 0001 | 0000 |
+| 1111 & 0010 | 0010 |
+| 1111 & 0100 | 0100 |
 
-### Bitwise OR
+### Ou de Bits
 
-When a bitwise OR is performed on a pair of bits, it retorna 1 if one of the bits are 1:
+Quando uma operação Ou de bits é realizada em dois bits, ela retorna 1 se um
+dos bits for um:
 
-One bit example:
+Exemplo com um bit:
 
-Operation |  Result
--------------------
-0 \| 0    |  0
-0 \| 1    |  1
-1 \| 0    |  1
-1 \| 1    |  1
+| Operação |  Resultado |
+|----------|---------|
+| 0 \| 0    |  0 |
+| 0 \| 1    |  1 |
+| 1 \| 0    |  1 |
+| 1 \| 1    |  1 |
 
-4 bits example:
+Exemplo com 4 bits:
 
-Operation    |  Result
-----------------------
-1111 \| 0000 |  1111
-1111 \| 0001 |  1111
-1111 \| 0010 |  1111
-1111 \| 0100 |  1111
+| Operação    |  Resultado |
+|-------------|---------|
+| 1111 \| 0000 |  1111 |
+| 1111 \| 0001 |  1111 |
+| 1111 \| 0010 |  1111 |
+| 1111 \| 0100 |  1111 |
 
-### Bitwise XOR
+### XOu (ou-exclusivo) de Bits
 
-When a bitwise XOR is performed on a pair of bits, it retorna 1 if the bits are different:
+Quando uma operação de XOu é realizada em dois bits, ela retorna 1 se os dois
+bits tiverem valores diferentes:
 
-One bit example:
+Exemplo com um bit:
 
-Operation | Result
-------------------
-0 ^ 0     | 0
-0 ^ 1     | 1
-1 ^ 0     | 1
-1 ^ 1     | 0
+| Operação | Resultado |
+|-----------|-------|
+| 0 ^ 0     | 0 |
+| 0 ^ 1     | 1 |
+| 1 ^ 0     | 1 |
+| 1 ^ 1     | 0 |
 
-4 bits example:
+Exemplo com 4 bits:
 
-Operation   | Result
---------------------
-1111 ^ 0000 | 1111
-1111 ^ 0001 | 1110
-1111 ^ 0010 | 1101
-1111 ^ 0100 | 1011
+| operação   | Resultado |
+|------------|--------|
+| 1111 ^ 0000 | 1111 |
+| 1111 ^ 0001 | 1110 |
+| 1111 ^ 0010 | 1101 |
+| 1111 ^ 0100 | 1011 |
 
-### JavaScript Bitwise AND \(&\)
+### E de Bits no JavaScript \(&\)
 
-Bitwise AND retorna 1 only if both bits are 1:
+Operação E de bits retorna 1 apenas se ambos os bits forem 1:
 
-Decimal | Binary
----------------------------------------------
-5       | 00000000000000000000000000000101
-1       | 00000000000000000000000000000001
-5 & 1   | 00000000000000000000000000000001 \(1\)
+| Decimal | Binário |
+|---------|------------------------------------|
+| 5       | 00000000000000000000000000000101 |
+| 1       | 00000000000000000000000000000001 |
+| 5 & 1   | 00000000000000000000000000000001 \(1\) |
 
 Exemplo
 
@@ -455,15 +466,15 @@ Exemplo
 var x = 5 & 1;
 ```
 
-### JavaScript Bitwise OR \(\|\)
+### OU de Bits no JavaScript \(\|\)
 
-Bitwise OR retorna 1 if one of the bits are 1:
+A operação de Ou de bits retorna 1 se um dos bits for 1:
 
-Decimal | Binary
------------------------------------------------
-5       | 00000000000000000000000000000101
-1       | 00000000000000000000000000000001
-5 \| 1  | 00000000000000000000000000000101 \(5\)
+| Decimal | Binário |
+|---------|--------------------------------------|
+| 5       | 00000000000000000000000000000101 |
+| 1       | 00000000000000000000000000000001 |
+| 5 \| 1  | 00000000000000000000000000000101 \(5\) |
 
 Exemplo
 
@@ -471,15 +482,15 @@ Exemplo
 var x = 5 | 1;
 ```
 
-### JavaScript Bitwise XOR \(^\)
+### XOu de Bits no JavaScript \(^\)
 
-Bitwise XOR retorna 1 if the bits are different:
+A operação XOu de bits retorna 1 se os bits forem diferentes:
 
-Decimal | Binary
------------------------------------------------
-5       | 00000000000000000000000000000101
-1       | 00000000000000000000000000000001
-5 ^ 1   | 00000000000000000000000000000100 (4)
+| Decimal | Binário |
+|---------|--------------------------------------|
+| 5       | 00000000000000000000000000000101 |
+| 1       | 00000000000000000000000000000001 |
+| 5 ^ 1   | 00000000000000000000000000000100 (4) |
 
 Exemplo
 
@@ -487,12 +498,12 @@ Exemplo
 var x = 5 ^ 1;
 ```
 
-### JavaScript Bitwise NOT \(~\)
+### Não (ou Negação) de Bits no JavaScript \(~\)
 
-Decimal | Binary
---------------------------------------------
-5       | 00000000000000000000000000000101
-~5      | 11111111111111111111111111111010 (-6)
+| Decimal | Binário |
+|---------|-----------------------------------|
+| 5       | 00000000000000000000000000000101 |
+| ~5      | 11111111111111111111111111111010 (-6) |
 
 Exemplo
 
@@ -500,14 +511,16 @@ Exemplo
 var x = ~5;
 ```
 
-### JavaScript \(Zero Fill\) Bitwise Left Shift \(<<\)
+### Deslocamento para a Esquerda de Bits (com Preenchimento de Zeros) no JavaScript \(<<\)
 
-This is a zero fill left shift. One or more zero bits are pushed in from the right, and the leftmost bits fall off:
+Este é um deslocamento para a esquerda com preenchimento de zeros.
+Um ou mais bits são "empurrados" da direita para a esquerda e os mais a
+esquerda são descartados:
 
-Decimal | Binary
------------------------------------------------
-5       | 00000000000000000000000000000101
-5 << 1  | 00000000000000000000000000001010 (10)
+| Decimal | Binário |
+|---------|--------------------------------------|
+| 5       | 00000000000000000000000000000101 |
+| 5 << 1  | 00000000000000000000000000001010 (10) |
 
 Exemplo
 
@@ -515,14 +528,16 @@ Exemplo
 var x = 5 << 1;
 ```
 
-### JavaScript \(Sign Preserving\) Bitwise Right Shift \(>>\)
+### Deslocamento de Bits para a Direita \(com Conservação de Sinal\) noJavaScript \(>>\)
 
-This is a sign preserving right shift. Copies of the leftmost bit are pushed in from the left, and the rightmost bits fall off:
+Este é um deslcamento para a direita com conservação de sinal.
+Cópias do bits mais a esquerda (o mais significativo) são *empurradas* para a
+direita e os bits mais a direita são descartados:
 
-Decimal  | Binary
--------------------------------------------------
--5       | 11111111111111111111111111111011
--5 >> 1  | 11111111111111111111111111111101 (-3)
+| Decimal  | Binário |
+|----------|---------------------------------------|
+| -5       | 11111111111111111111111111111011 |
+| -5 >> 1  | 11111111111111111111111111111101 (-3) |
 
 Exemplo
 
@@ -530,14 +545,15 @@ Exemplo
 var x = -5 >> 1;
 ```
 
-### JavaScript \(Zero Fill\) Right Shift \(>>>\)
+### Deslocamento para a Direita (com Preenchimento de Zeros) no JavaScript \(>>>\)
 
-This is a zero fill right shift. One or more zero bits are pushed in from the left, and the rightmost bits fall off:
+Este é um deslocamento para a direita com preenchimento de zeros.
+Um ou mais bits são *empurrados* para a direita, os mais a direita *caem fora*:
 
-Decimal  | Binary
-------------------------------------------------
-5        | 00000000000000000000000000000101
-5 >>> 1  | 00000000000000000000000000000010 (2)
+| Decimal  | Binário |
+|----------|--------------------------------------|
+| 5        | 00000000000000000000000000000101 |
+| 5 >>> 1  | 00000000000000000000000000000010 (2) |
 
 Exemplo
 
@@ -545,42 +561,43 @@ Exemplo
 var x = 5 >>> 1;
 ```
 
-### Binary Numbers
+### Números Binários
 
-Binary numbers with only one bit set is easy to understand:
+Números binários com apenas um bit em 1 são fáceis de entender:
 
-Binary Representation             |  Decimal value
------------------------------------------
-00000000000000000000000000000001  |  1
-00000000000000000000000000000010  |  2
-00000000000000000000000000000100  |  4
-00000000000000000000000000001000  |  8
-00000000000000000000000000010000  |  16
-00000000000000000000000000100000  |  32
-00000000000000000000000001000000  |  64
+|  Representação Binária             |  Valor Decimal |
+|------------------------------------|-----|
+| 00000000000000000000000000000001  |  1 |
+| 00000000000000000000000000000010  |  2 |
+| 00000000000000000000000000000100  |  4 |
+| 00000000000000000000000000001000  |  8 |
+| 00000000000000000000000000010000  |  16 |
+| 00000000000000000000000000100000  |  32 |
+| 00000000000000000000000001000000  |  64 |
 
-Setting a few more bits reveals the binary pattern:
+Colocando mais alguns bits em 1 revela os padrões binários:
 
-Binary Representation             |  Decimal value
----------------------------------------------------------
-00000000000000000000000000000101  |  5 \(4 + 1\)
-00000000000000000000000000001101  |  13 \(8 + 4 + 1\)
-00000000000000000000000000101101  |  45 \(32 + 8 + 4 + 1\)
+|  Representação Binária             |  Valor Decimal |
+|------------------------------------|---------------------|
+| 00000000000000000000000000000101  |  5 \(4 + 1\) |
+| 00000000000000000000000000001101  |  13 \(8 + 4 + 1\) |
+| 00000000000000000000000000101101  |  45 \(32 + 8 + 4 + 1\) |
 
-JavaScript binary numbers are stored in two's complement format.
+Números binários em JavaScript são armazenados no formato de complemento de dois.
 
-This means that a negative number is the bitwise NOT of the number plus 1:
+Isto significa que um número negativo é a negação (inversão) de todos os bits
+mais 1:
 
-Binary Representation             |  Decimal value
----------------------------------------------------
-00000000000000000000000000000101  |  5
-11111111111111111111111111111011  |  -5
-00000000000000000000000000000110  |  6
-11111111111111111111111111111010  |  -6
-00000000000000000000000000101000  |  40
-11111111111111111111111111011000  |  -40
+| Representação Binária             |  Valor Decimal |
+|-----------------------------------|----------------|
+| 00000000000000000000000000000101  |  5 |
+| 11111111111111111111111111111011  |  -5 |
+| 00000000000000000000000000000110  |  6 |
+| 11111111111111111111111111111010  |  -6 |
+| 00000000000000000000000000101000  |  40 |
+| 11111111111111111111111111011000  |  -40 |
 
-### Converting Decimal to Binary
+### Conersão de Decimal para Binário
 
 Exemplo
 
@@ -590,7 +607,7 @@ function dec2bin(dec){
 }
 ```
 
-### Converting Binary to Decimal
+### Conversão Binário para Decimal
 
 Exemplo
 
@@ -600,7 +617,7 @@ function bin2dec(bin){
 }
 ```
 
-## JavaScript Regular Expressions (https://www.w3schools.com/js/js_regexp.asp)
+## Expressões Regulares em JavaScript (https://www.w3schools.com/js/js_regexp.asp)
 
 A regular expression is a sequence of characters that forms a search pattern.
 
