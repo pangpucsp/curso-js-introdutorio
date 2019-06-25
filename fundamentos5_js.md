@@ -318,44 +318,44 @@ para Número, String e Booleano:
 | -Infinity      | -Infinity           | "-Infinity"         | true |
 | ""             | 0                   | ""                  | false |
 | "20"           | 20                  | "20"                | true |
-| "twenty"       | NaN                 | "twenty"            | true |
+| "vinte"        | NaN                 | "vinte"            | true |
 | [ ]            | 0                   | ""                  | true |
 | [20]           | 20                  | "20"                | true |
 | [10,20]        | NaN                 | "10,20"             | true |
-| ["twenty"]     | NaN                 | "twenty"            | true |
-| ["ten","five"] | NaN                 | "ten,five"          | true |
+| ["vinte"]      | NaN                 | "vinte"            | true |
+| ["dez","cinco"] | NaN                 | "dez,cinco"          | true |
 | function(){}   | NaN                 | "function(){}"      | true |
 | { }            | NaN                 | "[object Object]"   | true |
 | null           | 0                   | "null"              | false |
 | undefined      | NaN                 | "undefined"         | false |
 
-## JavaScript Bitwise Operations (https://www.w3schools.com/js/js_bitwise.asp)
+## Operações em Bits no JavaScript (https://www.w3schools.com/js/js_bitwise.asp)
 
-### JavaScript Bitwise Operators
+### Operadores de Bits em JavaScript
 
-Operator | Name | Description
--------------------------------------------------------------------
-&        | AND  | Sets each bit to 1 if both bits are 1
-\|       | OR   | Sets each bit to 1 if one of two bits is 1
-^        | XOR  | Sets each bit to 1 if only one of two bits is 1
-~        | NOT  | Inverts all the bits
-<<       | Zero fill left shift | Shifts left by pushing zeros in from the right and let the leftmost bits fall off
-\>>      | Signed right shift | Shifts right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
-\>>>     | Zero fill right shift | Shifts right by pushing zeros in from the left, and let the rightmost bits fall off
+| Operador | Nome | Descrição |
+|----------|------|---------------------------------------------------|
+| &        | E  | Coloca cada bit em 1 se ambos os bits forem 1 |
+| \|       | OU   | Coloca cada bit em 1 se um dos dois bits for 1 |
+| ^        | XOR  | Coloca cada bit em 1 se apenas um dos dois bits for 1 |
+| ~        | Não  | Inverte todos os bits |
+| <<       | Deslocamento para esquerda completando com zero | Deslocamento para a esquerda preenchendo com zeros da direita e desprezando os bits saindo à esquerda |
+| \>>      | Deslocamento para a direita com sinal | Deslocamento para a direita inserindo cópias do bit mais a esquerda (sinal) a esquerda e desprezando os bits saindo à direita |
+| \>>>     | Deslocamento para direita completando com zero | Deslocamento para a direita preenchendo com zeros da esquerda e desprezando os bits saindo à direita |
 
 Exemplos
 
-Operation | Result | Same as      | Result
-----------------------------------------
-5 & 1     | 1      | 0101 & 0001  |  0001
-5 \| 1    | 5      | 0101 \| 0001 |  0101
-~ 5       | 10     |  ~0101       |  1010
-5 << 1    | 10     | 0101 << 1    |  1010
-5 ^ 1     | 4      | 0101 ^ 0001  |  0100
-5 >> 1    | 2      | 0101 >> 1    |  0010
-5 >>> 1   | 2      | 0101 >>> 1   |  0010
+| Operação | Resultado | Mesmo que      | Resultado |
+|----------|-----------|----------------|---|
+| 5 & 1    | 1         | 0101 & 0001    |  0001 |
+| 5 \| 1   | 5         | 0101 \| 0001   |  0101 |
+| ~ 5      | 10        |  ~0101         |  1010 |
+| 5 << 1   | 10        | 0101 << 1      |  1010 |
+| 5 ^ 1    | 4         | 0101 ^ 0001    |  0100 |
+| 5 >> 1   | 2         | 0101 >> 1      |  0010 |
+| 5 >>> 1  | 2         | 0101 >>> 1     |  0010 |
 
-### JavaScript Uses 32 bits Bitwise Operands
+### JavaScript Usa Operandos de 32 bits
 
 JavaScript stores numbers as 64 bits floating point numbers, but all bitwise operations are performed on 32 bits binary numbers.
 
