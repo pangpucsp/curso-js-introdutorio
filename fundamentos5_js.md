@@ -728,7 +728,7 @@ Modificadores podem ser usadas para fazer buscas insensíveis e globais:
 
 | Modificador |  Descrição |
 |-------------|-------------------------------------------------------|
-| i        |  Faz uma casamento insensível a maiúsculas |
+| i        |  Faz um casamento insensível a maiúsculas |
 | g        |  Faz um casamento global \(encontra todos os casamentos não parando no primeiro\) |
 | m        |  Faz casamentos em múltiplas linhas |
 
@@ -759,75 +759,80 @@ Quantificadores definem quantidades:
 | n*         | Casa com qualquer string que contenha zero ou mais ocorrências *n* |
 | n?         | Casa com qualquer string que contenha zero ou uma ocorrência de *n* |
 
-### Using the RegExp Object
+### Uso do Objeto RegExp
 
-In JavaScript, the RegExp object is a regular expression object with predefined properties and methods.
+Em JavaScript, o objeto RegExp é um objeto de expressão regular com propriedades
+e métodos pré-definidos.
 
-#### Using test\(\)
+#### Uso de test\(\)
 
-The test\(\) method is a RegExp expression method.
+O método test\(\) é um método de uma expressão RegExp.
 
-It searches a string for a pattern, and retorna true or false, depending on the result.
+Ele procura numa string um padrão e retorna true ou false, dependendo do resultado.
 
-The following example searches a string for the character "e":
+O exemplo a seguir busca numa o caracter "e":
 
 Exemplo
 
 ```javascript
 var patt = /e/;
-patt.test("The best things in life are free!");
+patt.test("As melhores coisas da vida são gratuitas!");
 ```
 
-Since there is an "e" in the string, the output of the code above will be:
+Como há um "e" na string, saída do código acima será:
 
   true
 
-You don't have to put the regular expression in a variable first. The two lines above can be shortened to one:
+Você não tem de colocar a expressão regular expression numa variável antes.
+As duas linhas acima podem ser abreviadas numa:
 
 ```javascript
-/e/.test("The best things in life are free!");
+/e/.test("As melhores coisas da vida são gratuitas!");
 ```
 
-#### Using exec\(\)
+#### Uso do exec\(\)
 
-The exec\(\) method is a RegExp expression method.
+O método exec\(\) é um método de expressão expression.
 
-It searches a string for a specified pattern, and retorna the found text as an object.
+Ele procura numa string um padrão especificado e retorna o texto encontrado como object.
 
-If no match is found, it retorna an empty \(null\) object.
+Se nenhum casamento é encontrado, ele retorna o objeto \(null\).
 
-The following example searches a string for the character "e":
+A seguir temos um exemplo que busca numa string o caracter "e":
 
 Exemplo
 
 ```javascript
-/e/.exec("The best things in life are free!");
+/e/.exec("As melhores coisas da vida são gratuitas!");
 ```
 
-## JavaScript Errors - Throw and Try to Catch (https://www.w3schools.com/js/js_errors.asp)
+## Erros no JavaScript - Lance e Tente Pegar [Throw and Try to Catch](https://www.w3schools.com/js/js_errors.asp)
 
-The **try** statement lets you test a block of code for errors.
+A instrução **try** permite que você verifique se um bloco de códigos tem erros.
 
-The **catch** statement lets you handle the error.
+A instrução **catch** permite que você manipule \(processe\) o erro.
 
-The **throw** statement lets you create custom errors.
+A instrução **throw** permite que você sinalize seus prórpios erros.
 
-The **finally** statement lets you execute code, after try and catch, regardless of the result.
+A instrução **finally** permite que você execute código, depois de tentar e
+ pegar (*try* e *catch*), independente de se houve ou não erro.
 
-### Errors Will Happen!
+### Erros Acontecem!
 
-When executing JavaScript code, different errors can occur.
+Ao executar código JavaScript, diferentes erros podem ocorrer.
 
-Errors can be coding errors made by the programmer, errors due to wrong input, and other unforeseeable things.
+Erros podem ser erro de codificação do programador, ou devidos a entradas
+erradas ou coisas imprevistas.
 
-Exemplo: In this example we have written alert as adddlert to deliberately produce an error: (try_demo1.html)
+Exemplo: Neste exemplo, escrevemos um alerta como adddlert para deliberadamente
+produzir um erro: [Demo: try](try_demo1.html)
 
 ```javascript
 <p id="demo"></p>
 
 <script>
 try {
-  adddlert("Welcome guest!");
+  adddlert("Bem vindo, Amigo!");
 }
 catch(err) {
   document.getElementById("demo").innerHTML = err.message;
@@ -835,63 +840,71 @@ catch(err) {
 </script>
 ```
 
-    JavaScript catches **adddlert** as an error, and executes the catch code to handle it.
+    JavaScript pega adddlert como um erro e executa o código do catch
+    que processa o erro.
 
-### JavaScript try and catch
+### try e catch do JavaScript
 
-The try statement allows you to define a block of code to be tested for errors while it is being executed.
+A instrução *try* permite que você defina um bloco de código que verifica se
+erros ocorrem durante a execução.
 
-The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+A instrução *catch* permite permite que você defina um bloco de código para ser
+executado se um erro ocorrer no bloco *try*.
 
-The JavaScript statements **try** and **catch** come in pairs:
+As instruções **try** e **catch** de JavaScript estão sendo em pares:
 
 ```javascript
 try {
-  Block of code to try
+  Bloco de código a tentar
 }
 catch(err) {
-  Block of code to handle errors
+  Bloco de código que processa o erro
 }
 ```
 
-### JavaScript Throws Errors
+### JavaScript Lança Erros
 
-When an error occurs, JavaScript will normally stop and generate an error message.
+Quando um erro ocorre, o JavaScript normalmente para a execução e gera uma
+mensagem de erro.
 
-The technical term for this is: JavaScript will throw an exception \(throw an error\).
+O termo técnico para isto é: JavaScript lançará uma exceção \(throw an error\).
 
-    JavaScript will actually create an Error object with two properties: name and message.
+    JavaScript, na verdade, criará um objeto Error com duas propriedades:
+    name (nome) e message (mensagem).
 
-### The throw Statement
+### A Instrução throw
 
-The throw statement allows you to create a custom error.
+A instrução *throw* permite que você crie seu próprio objeto de erro.
 
-Technically you can throw an exception (throw an error).
+Tecnicamente, você pode lançar uma exceção (throw an error).
 
-The exception can be a JavaScript String, a Number, a Boolean or an Object:
+Uma exceção pode ser uma String, um Number, um Boolean ou um Object de JavaScript:
 
 ```javascript
-throw "Too big";    // throw a text
-throw 500;          // throw a number
+throw "Muito grande";    // lança um texto
+throw 500;          // lança um número
 ```
 
-If you use throw together with try and catch, you can control program flow and generate custom error messages.
+Se você usar *throw* junto com *try* e *catch*, você pode controlar o fluxo do
+programa e gera mensagens de erro personalizadas.
 
-### Input Validation Exemplo
+### Exemplo de validação de Entrada
 
-This example examines input. If the value is wrong, an exception \(err\) is thrown.
+Este exemplo examina uma entrada. Se o valor estiver errado, uma exceção
+\(err\) é lançada.
 
-The exception \(err\) is caught by the catch statement and a custom error message is displayed: (inVal_demo1.html)
+A exceção \(err\) é capturada pela instrução catch e uma menasagem de erro
+personalizada é apresentada: [Demo: Valida Entrada](inVal_demo1.html)
 
 ```html
 <!DOCTYPE html>
 <html>
 <body>
 
-<p>Please input a number between 5 and 10:</p>
+<p>Por favor, insira 5 e 10:</p>
 
 <input id="demo" type="text">
-<button type="button" onclick="myFunction()">Test Input</button>
+<button type="button" onclick="myFunction()">Teste de Entrada</button>
 <p id="p01"></p>
 
 <script>
@@ -901,14 +914,14 @@ function myFunction() {
   message.innerHTML = "";
   x = document.getElementById("demo").value;
   try {
-    if(x == "") throw "empty";
-    if(isNaN(x)) throw "not a number";
+    if(x == "") throw "vazio";
+    if(isNaN(x)) throw "não é um número";
     x = Number(x);
-    if(x < 5) throw "too low";
-    if(x > 10) throw "too high";
+    if(x < 5) throw "muito pequeno";
+    if(x > 10) throw "grande demais";
   }
   catch(err) {
-    message.innerHTML = "Input is " + err;
+    message.innerHTML = "A Entrada Foi " + err;
   }
 }
 </script>
@@ -917,31 +930,34 @@ function myFunction() {
 </html>
 ```
 
-### HTML Validation
+### Validação de HTML
 
-The code above is just an example.
+O código acima é apenas um exemplo.
 
-Modern browsers will often use a combination of JavaScript and built-in HTML validation, using predefined validation rules defined in HTML attributes:
+Navegadores modernos, em geral, usam uma combinação de JavaScript e validação
+embutida no HTML 5. O código HTML abaixo usa os atributos de HTML com regras
+pré definidas de validação:
 
 ```html
 <input id="demo" type="number" min="5" max="10" step="1">
 ```
 
-### The finally Statement
+### A Instrução finally
 
-The finally statement lets you execute code, after try and catch, regardless of the result:
+A instrução *finally* permite que você execute código, após o *try* e *catch*,
+independente da existência ou não de erros:
 
-Syntax
+Sintaxe
 
 ```javascript
 try {
-  Block of code to try
+  Bloco de código a tentar
 }
 catch(err) {
-  Block of code to handle errors
+  Bloco de código que processa erros
 }
 finally {
-  Block of code to be executed regardless of the try / catch result
+  Bloce de código que executa independente de ter ou não acontecido erro
 }
 ```
 
@@ -954,14 +970,14 @@ function myFunction() {
   message.innerHTML = "";
   x = document.getElementById("demo").value;
   try {
-    if(x == "") throw "is empty";
-    if(isNaN(x)) throw "is not a number";
+    if(x == "") throw "está vazio";
+    if(isNaN(x)) throw "não é um número";
     x = Number(x);
-    if(x > 10) throw "is too high";
-    if(x < 5) throw "is too low";
+    if(x > 10) throw "é muito grande";
+    if(x < 5) throw "é muito pequeno";
   }
   catch(err) {
-    message.innerHTML = "Error: " + err + ".";
+    message.innerHTML = "Erro: " + err + ".";
   }
   finally {
     document.getElementById("demo").value = "";
@@ -969,16 +985,17 @@ function myFunction() {
 }
 ```
 
-### The Error Object
+### O Objeto Error
 
-JavaScript has a built in error object that provides error information when an error occurs.
+JavaScript tem um objeto interno *error* que fornece informações sobre o erro
+quando um erro ocorre.
 
-The error object provides two useful properties: name and message.
+O objeto *error* provê duas propriedades úteiss: name e message.
 
-#### Error Object Properties
+#### Propriedades do Objeto Error
 
 Property | Description
----------------------------------------------------------------
+---------|------------------------------------------------------
 name     | Sets or retorna an error name
 message  | Sets or retorna an error message \(a string\)
 
@@ -987,7 +1004,7 @@ message  | Sets or retorna an error message \(a string\)
 Six different values can be returned by the error name property:
 
 Error Name     | Description
---------------------------------------------------------------
+---------------|-----------------------------------------------
 EvalError      | An error has occurred in the eval\(\) function
 RangeError     | A number "out of range" has occurred
 ReferenceError | An illegal reference has occurred

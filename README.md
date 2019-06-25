@@ -19,6 +19,6 @@ Este curso é fortemente baseado (quase uma tradução livre) do [Tutorial da W3
 
   5. Quinta Lição [Fundamentos 5](fundamentos5_js.md)
   Conversão de Tipos. Identificação de tipos. Conversão Automática de Tipos.
-  Operações em bits. Expressões Regulares.
+  Operações em bits. Expressões Regulares. Processamento de Erros.
 
   6. Sexta Lição
