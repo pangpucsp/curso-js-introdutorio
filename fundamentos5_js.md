@@ -277,54 +277,57 @@ O resultado, nem sempre, é o esperado:
 "5" + "2"   // retorna "52"      porque não há necessidade de conversão
 ```
 
-### Automatic String Conversion
+### Conversão Automatica para String
 
-JavaScript automatically calls the variable's toString\(\) function when you try to "output" an object or a variable:
+JavaScript chama automaticamente a função toString\(\) da variável quando
+você tenta "imprimir" um objeto ou uma variável:
 
 ```javascript
 document.getElementById("demo").innerHTML = myVar;
 
-// if myVar = {name:"Fjohn"}  // toString converts to "[object Object]"
-// if myVar = [1,2,3,4]       // toString converts to "1,2,3,4"
-// if myVar = new Date()      // toString converts to "Fri Jul 18 2014 09:08:55 GMT+0200"
+// se myVar = {name:"Fjohn"}  // toString converte para "[object Object]"
+// se myVar = [1,2,3,4]       // toString converte para "1,2,3,4"
+// se myVar = new Date()      
+// toString converte para "Tue Jun 25 2019 00:25:30 GMT-0300 (Horário Padrão de Brasília)"
 ```
 
-Numbers and booleans are also converted, but this is not very visible:
+Números e booleanos também são convertidos, mas isto não é muito visível:
 
 ```javascript
-// if myVar = 123             // toString converts to "123"
-// if myVar = true            // toString converts to "true"
-// if myVar = false           // toString converts to "false"
+// se myVar = 123             // toString converte para "123"
+// se myVar = true            // toString converte para "true"
+// se myVar = false           // toString converte para "false"
 ```
 
-### JavaScript Type Conversion Table
+### Tabela de Conversão de Tipo do JavaScript
 
-This table shows the result of converting different JavaScript values to Number, String, and Boolean:
+Esta tabela mostra o resultado da conversão de diferente valores de JavaScript
+para Número, String e Booleano:
 
-Original Value | Converted to Number | Converted to String | Converted to Boolean
----------------------------------------------------------------------------------
-false          | 0                   | "false"             | false
-true           | 1                   | "true"              | true
-0              | 0                   | "0"                 | false
-1              | 1                   | "1"                 | true
-"0"            | 0                   | "0"                 | true
-"000"          | 0                   | "000"               | true
-"1"            | 1                   | "1"                 | true
-NaN            | NaN                 | "NaN"               | false
-Infinity       | Infinity            | "Infinity"          | true
--Infinity      | -Infinity           | "-Infinity"         | true
-""             | 0                   | ""                  | false
-"20"           | 20                  | "20"                | true
-"twenty"       | NaN                 | "twenty"            | true
-[ ]            | 0                   | ""                  | true
-[20]           | 20                  | "20"                | true
-[10,20]        | NaN                 | "10,20"             | true
-["twenty"]     | NaN                 | "twenty"            | true
-["ten","five"] | NaN                 | "ten,five"          | true
-function(){}   | NaN                 | "function(){}"      | true
-{ }            | NaN                 | "[object Object]"   | true
-null           | 0                   | "null"              | false
-undefined      | NaN                 | "undefined"         | false
+| Valor Original | Convertido para to Number | Convertido para String | Convertido para Boolean |
+|----------------|---------------------------|------------------------|--------------|
+| false          | 0                   | "false"             | false |
+| true           | 1                   | "true"              | true |
+| 0              | 0                   | "0"                 | false |
+| 1              | 1                   | "1"                 | true |
+| "0"            | 0                   | "0"                 | true |
+| "000"          | 0                   | "000"               | true |
+| "1"            | 1                   | "1"                 | true |
+| NaN            | NaN                 | "NaN"               | false |
+| Infinity       | Infinity            | "Infinity"          | true |
+| -Infinity      | -Infinity           | "-Infinity"         | true |
+| ""             | 0                   | ""                  | false |
+| "20"           | 20                  | "20"                | true |
+| "twenty"       | NaN                 | "twenty"            | true |
+| [ ]            | 0                   | ""                  | true |
+| [20]           | 20                  | "20"                | true |
+| [10,20]        | NaN                 | "10,20"             | true |
+| ["twenty"]     | NaN                 | "twenty"            | true |
+| ["ten","five"] | NaN                 | "ten,five"          | true |
+| function(){}   | NaN                 | "function(){}"      | true |
+| { }            | NaN                 | "[object Object]"   | true |
+| null           | 0                   | "null"              | false |
+| undefined      | NaN                 | "undefined"         | false |
 
 ## JavaScript Bitwise Operations (https://www.w3schools.com/js/js_bitwise.asp)
 
