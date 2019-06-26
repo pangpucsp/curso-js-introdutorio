@@ -848,7 +848,7 @@ catch(err) {
 A instrução *try* permite que você defina um bloco de código que verifica se
 erros ocorrem durante a execução.
 
-A instrução *catch* permite permite que você defina um bloco de código para ser
+A instrução *catch* permite que você defina um bloco de código para ser
 executado se um erro ocorrer no bloco *try*.
 
 As instruções **try** e **catch** de JavaScript estão sendo em pares:
@@ -990,14 +990,14 @@ function myFunction() {
 JavaScript tem um objeto interno *error* que fornece informações sobre o erro
 quando um erro ocorre.
 
-O objeto *error* provê duas propriedades úteiss: name e message.
+O objeto *error* provê duas propriedades úteis: name e message.
 
 #### Propriedades do Objeto Error
 
-Property | Description
----------|------------------------------------------------------
-name     | Sets or retorna an error name
-message  | Sets or retorna an error message \(a string\)
+| Propriedade | Descrição |
+|---------|------------------------------------------------------|
+| name     | Ajusta ou retorna um nome de erro |
+| message  | Ajusta ou retorna uma mensagem de erro \(uma string\) |
 
 #### Error Name Values
 
