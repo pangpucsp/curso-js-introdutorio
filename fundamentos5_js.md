@@ -999,221 +999,240 @@ O objeto *error* provê duas propriedades úteis: name e message.
 | name     | Ajusta ou retorna um nome de erro |
 | message  | Ajusta ou retorna uma mensagem de erro \(uma string\) |
 
-#### Error Name Values
+#### Valores de name de Error
 
-Six different values can be returned by the error name property:
+Existem seis valores diferentes para a propriedade *name* de  error:
 
-Error Name     | Description
----------------|-----------------------------------------------
-EvalError      | An error has occurred in the eval\(\) function
-RangeError     | A number "out of range" has occurred
-ReferenceError | An illegal reference has occurred
-SyntaxError    | A syntax error has occurred
-TypeError      | A type error has occurred
-URIError       | An error in encodeURI\(\) has occurred
+| Nome do Error  | Descrição |
+|----------------|-----------------------------------------------|
+| EvalError      | Um erro aconteceu na função eval\(\) |
+| RangeError     | Um número "fora da faixa" ocorreu |
+| ReferenceError | Uma referência ilegal ocorreu |
+| SyntaxError    | Um erro de sintaxe ocorreu |
+| TypeError      | Um erro de tipo ocorreu |
+| URIError       | Um erro na encodeURI\(\) ocorreu |
 
-##### Eval Error
+##### EvalError
 
-An EvalError indicates an error in the eval\(\) function.
+Um EvalError indica um erro na função eval\(\).
 
-Newer versions of JavaScript do not throw EvalError. Use SyntaxError instead.
+Versões mais novas de JavaScript não lançam EvalError. Ao invés disto,
+usam SyntaxError.
 
-##### Range Error
+##### RangeError
 
-A RangeError is thrown if you use a number that is outside the range of legal values.
+Um RangeError é lançado se você usar um número que está fora da faixa de
+valores legais para ele.
 
-For example: You cannot set the number of significant digits of a number to 500.
+Por exemplo: Você não pode ajustar a representação de números para ter 500
+dígitos significativos.
 
 ```javascript
 var num = 1;
 try {
-  num.toPrecision(500);   // A number cannot have 500 significant digits
+  num.toPrecision(500);   // Um número não pode ter 500 dígitos significativos
 }
 catch(err) {
   document.getElementById("demo").innerHTML = err.name;
 }
 ```
 
-##### A ReferenceError is thrown if you use \(reference\) a variable that has not been declared:
+##### ReferenceError
+
+Um ReferenceError é lançado se você usar \(referenciar\) uma variável que
+não foi declarada:
 
 Exemplo
 
 ```javascript
 var x;
 try {
-  x = y + 1;   // y cannot be referenced (used)
+  x = y + 1;   // y não pode ser usada (referenciada)
 }
 catch(err) {
   document.getElementById("demo").innerHTML = err.name;
 }
 ```
 
-##### Syntax Error
+##### SyntaxError
 
-A SyntaxError is thrown if you try to evaluate code with a syntax error.
+Um SyntaxError é lançado se você tentar calcular \(evaluate\) código com
+erro de sintaxe.
 
 Exemplo
 
 ```javascript
 try {
-  eval("alert('Hello)");   // Missing ' will produce an error
+  eval("alert('Hello)");   // Ausência de ' produzirá um erro
 }
 catch(err) {
   document.getElementById("demo").innerHTML = err.name;
 }
 ```
 
-##### Type Error
+##### TypeError
 
-A TypeError is thrown if you use a value that is outside the range of expected types:
+Um TypeError é lançado se você usar um calor fora da faixa de tipos esperados:
 
 Exemplo
 
 ```javascript
 var num = 1;
 try {
-  num.toUpperCase();   // You cannot convert a number to upper case
+  num.toUpperCase();   // Você não pode converter para maiúsculo um número
 }
 catch(err) {
   document.getElementById("demo").innerHTML = err.name;
 }
 ```
 
-##### URI \(Uniform Resource Identifier\) Error
+##### URIError - URI \(Uniform Resource Identifier\)
 
-A URIError is thrown if you use illegal characters in a URI function:
+Um URIError é lançado se você usa caracteres ilegais numa função URI:
 
 Exemplo
 
 ```javascript
 try {
-  decodeURI("%%%");   // You cannot URI decode percent signs
+  decodeURI("%%%"); // Você não pode decodificar os sinais de porcentagem de uma URI
 }
 catch(err) {
   document.getElementById("demo").innerHTML = err.name;
 }
 ```
 
-### on-Standard Error Object Properties
+### Propriedades Fora do Padrão do Objeto Error
 
-Mozilla and Microsoft defines some non-standard error object properties:
+Mozilla e Microsoft definem algumas propriedades fora do padrão para o objeto error:
 
-fileName \(Mozilla\)
-lineNumber \(Mozilla\)
-columnNumber \(Mozilla\)
-stack \(Mozilla\)
-description \(Microsoft\)
-number \(Microsoft\)
+  fileName \(Mozilla\)
+  lineNumber \(Mozilla\)
+  columnNumber \(Mozilla\)
+  stack \(Mozilla\)
+  description \(Microsoft\)
+  number \(Microsoft\)
 
-Do not use these properties in public web sites. They will not work in all browsers.
+  Não use estas propriedades para páginas em sites públicos.
+  Elas podem não funcionar para todos os navegadores.
 
-## JavaScript Scope (https://www.w3schools.com/js/js_scope.asp)
+## [Escopo em JavaScript](https://www.w3schools.com/js/js_scope.asp)
 
-Scope determines the accessibility (visibility) of variables.
+Escopo determina a acessibilidade (visibilidade) de variáveis.
 
-### JavaScript Function Scope
+### Escopo de Função em JavaScript
 
-In JavaScript there are two types of scope:
+No JavaScript existem dois tipos de escopo:
 
-  * Local scope
-  * Global scope
+  * Escopo local
+  * Escopo global
 
-JavaScript has function scope: Each function creates a new scope.
+JavaScript tem escopo de function: Cada função cria um novo escopo.
 
-Scope determines the accessibility (visibility) of these variables.
+Escopo determina a acessibilidade \(visibilidade\) das variáveis.
 
-Variables defined inside a function are not accessible (visible) from outside the function.
+Variáveis definidas dentro de um função não são acessíveis \(visíveis\) de
+fora da função.
 
-### Local JavaScript Variables
+### Variáveis Locais em JavaScript
 
-Variables declared within a JavaScript function, become **LOCAL** to the function.
+Variáveis declaradas dentro de uma função em JavaScript, tornam-se **LOCAL** à
+função.
 
-Local variables have Function scope: They can only be accessed from within the function.
-
-Exemplo
-
-```javascript
-// code here can NOT use carName
-
-function myFunction() {
-  var carName = "Volvo";
-
-  // code here CAN use carName
-
-}
-```
-
-Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
-
-Local variables are created when a function starts, and deleted when the function is completed.
-
-### Global JavaScript Variables
-
-A variable declared outside a function, becomes **GLOBAL**.
-
-A global variable has global scope: All scripts and functions on a web page can access it.
+Variáveis locais tem escopo de função: Elas só podem ser acessadas de dentro da
+função.
 
 Exemplo
 
 ```javascript
-var carName = "Volvo";
-
-// code here can use carName
+// código aqui NÃO pode usar nomeCarro
 
 function myFunction() {
+  var nomeCarro = "Volvo";
 
-  // code here can also use carName
+  // código aqui PODE usar nomeCarro
 
 }
 ```
 
-### JavaScript Variables
+Como variáveis locais só são reconhecidas de dentro de suas funções,
+variáveis com o mesmo nome podem ser usadas em funções diferentes.
 
-In JavaScript, objects and functions are also variables.
+Variáveis locais são criadas quando uma função começar e apagadas quando a
+função termina.
 
-    Scope determines the accessibility of variables, objects, and functions from different parts of the code.
+### Variáveis Globais em JavaScript
 
-### Automatically Global
+Uma variável declarada fora de uma função torna-se **GLOBAL**.
 
-If you assign a value to a variable that has not been declared, it will automatically become a **GLOBAL** variable.
+Uma variável global tem escopo global: Todos os *scripts* e funções de uma
+página WEB podem acessá-la.
 
-This code example will declare a global variable carName, even if the value is assigned inside a function.
+Exemplo
+
+```javascript
+var nomeCarro = "Volvo";
+
+// o código aqui pode usar nomeCarro
+
+function myFunction() {
+
+  // o código aqui TAMBÉM pode usar nomeCarro
+
+}
+```
+
+### Variáveis em JavaScript
+
+Em JavaScript, objeto s e funções também são variáveis.
+
+    Escopo determina a acessibilidade de variáveis, objetos e funções
+    de diferentes partes do código.
+
+### Automaticamente Global
+
+Se você atribui um valor a uma variável que não foi declarada, ela
+automaticamente se torna uma variável **GLOBAL**.
+
+O código deste exemplo declara uma variável global nomeCarro,
+mesmo que o valor tenha sido atribuida dentro de uma função.
 
 Exemplo
 
 ```javascript
 myFunction();
 
-// code here can use carName
+// o código aqui pode usar nomecarro
 
 function myFunction() {
-  carName = "Volvo";
+  nomeCarro = "Volvo";
 }
 ```
 
-### Strict Mode
+### Modo Estrito
 
-All modern browsers support running JavaScript in "Strict Mode".
+Todos os navegadores dão suporte a executar o JavaScript no "Strict Mode" (modo
+estrito).
 
-You will learn more about how to use strict mode in a later section of this tutorial.
+Mais à frente, o modo estrito será melhor explicado.
 
-    Global variables are not created automatically in "Strict Mode".
+    Variáveis globais não podem ser criadas automaticamente no "Strict Mode".
 
-### Global Variables in HTML
+### Variáveis Globais em HTML
 
-With JavaScript, the global scope is the complete JavaScript environment.
+Com JavaScript, o escopo global é o ambiente completo do JavaScript.
 
-In HTML, the global scope is the window object. All global variables belong to the window object.
+Em HTML, o escopo global é o objeto janela. Todas as variáveis globais
+pertencem ao objeto window (janela).
 
 Exemplo
 
 ```javascript
-var carName = "Volvo";
+var nomeCarro = "Volvo";
 
-// code here can use window.carName
+// o código aqui pode usar window.carName
 ```
 
-### Warning
+### Aviso
 
     Do NOT create global variables unless you intend to.
 
