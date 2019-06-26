@@ -1229,15 +1229,17 @@ Exemplo
 ```javascript
 var nomeCarro = "Volvo";
 
-// o código aqui pode usar window.carName
+// o código aqui pode usar window.nomeCarro
 ```
 
 ### Aviso
 
-    Do NOT create global variables unless you intend to.
+    NÃO crie variáveis globais a menos que precise.
 
-    Your global variables (or functions) can overwrite window variables (or functions).
-    Any function, including the window object, can overwrite your global variables and functions.
+    Suas variáveis (ou funções) globais podem sobreescrever variáveis
+    (ou funções) do objeto window.
+    Qualquer função, incluindo o objeto window, pode sobreescrever suas
+    variáveis e funções globais.
 
 ### The Lifetime of JavaScript Variables
 
