@@ -1241,54 +1241,59 @@ var nomeCarro = "Volvo";
     Qualquer função, incluindo o objeto window, pode sobreescrever suas
     variáveis e funções globais.
 
-### The Lifetime of JavaScript Variables
+### O Tempo de Vida de Variáveis do JavaScript
 
-The lifetime of a JavaScript variable starts when it is declared.
+O tempo de vida de uma variável de JavaScript começa quando ela é declarada.
 
-Local variables are deleted when the function is completed.
+Variáveis locais são apagadas quando a função termina.
 
-In a web browser, global variables are deleted when you close the browser window (or tab), but remain available to new pages loaded into the same window.
+Num navegador de WEB, as variáveis globais são apagadas quando se fecha a
+janela \(ou a aba\), mas \(*cuidado*\) permanece disponível para novas páginas
+carregadas na mesma janela.
 
-### Function Arguments
+### Argumentos de Funções
 
-Function arguments (parameters) work as local variables inside functions.
+Os argumentos \(parâmetros\) de funções funcionam como variáveis locais
+dentro das funções.
 
-## JavaScript Hoisting (https://www.w3schools.com/js/js_hoisting.asp)
+## [Promoção no JavaScript](https://www.w3schools.com/js/js_hoisting.asp)
 
-Hoisting is JavaScript's default behavior of moving declarations to the top.
+Promoção é o comportamento padrão do JavaScript ao mover as declarações para
+cima.
 
-### JavaScript Declarations are Hoisted
+### Declarações do JavaScript São Promovidas
 
-In JavaScript, a variable can be declared after it has been used.
+No JavaScript, uma variável pode ser declarada depois de ter sido usada.
 
-In other words; a variable can be used before it has been declared.
+Isto é, uma variável pode ser usada *antes* dela ser declarada.
 
-Exemplo 1 gives the same result as Exemplo 2:
+O Exemplo 1 abaixo dá o mesmo resultado que o Exemplo 2:
 
 Exemplo 1
 
 ```javascript
-x = 5; // Assign 5 to x
+x = 5; // Atribui 5 a x
 
-elem = document.getElementById("demo"); // Find an element
-elem.innerHTML = x;                     // Display x in the element
+elem = document.getElementById("demo"); // Acha um elemento
+elem.innerHTML = x;                     // Mostra x no elemento
 
-var x; // Declare x
+var x; // Declara x
 ```
 
 Exemplo 2
 
 ```javascript
-var x; // Declare x
-x = 5; // Assign 5 to x
+var x; // Declara x
+x = 5; // Atribui 5 a x
 
-elem = document.getElementById("demo"); // Find an element
-elem.innerHTML = x;                     // Display x in the element
+elem = document.getElementById("demo"); // Acha um elemento
+elem.innerHTML = x;                     // Mostra x no elemento
 ```
 
-To understand this, you have to understand the term "hoisting".
+Para entender isto, você precisa entender o termo *promoção*.
 
-Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope \(to the top of the current script or the current function\).
+Promoção é o comportamento padrão do JavaScript ao mover todas as declarações
+para o topo do escopo corrente \(ao topo do script atual, ou da função atual\).
 
 ### The **let** and **const** Keywords
 
