@@ -1348,4 +1348,20 @@ elem.innerHTML = x + " " + y;           // Mostre x e y
 y = 7;    // Atribui 7 a y
 ```
 
+### Declare Suas Variáveis no Topo !
+
+Promoção é \(para muitos desenvolvedores\) um comportamento desconhecido e
+descuidado do JavaScript.
+
+Se um desenvolvedor não entende a promoção, os programas podem conter *bugs*
+\(erros\).
+
+Para evitar *bugs*, sempre declare todas as variáveis no início de cada escopo.
+
+Como é assim que o JavaScript interpreta o código, esta é uma boa regra.
+
+    JavaScript no modo estrito não permite que variáveis não declaradas sejam
+    usadas.
+
+
 [Próxima unidade](intermediario1_js.md)

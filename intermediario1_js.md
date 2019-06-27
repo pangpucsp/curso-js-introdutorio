@@ -1,46 +1,46 @@
-### Declare Your Variables At the Top !
+# Fundamentos VI de JavaScript
 
-Hoisting is \(to many developers\) an unknown or overlooked behavior of JavaScript.
+Esta é a continuação de [Fundamentos V de JS](fundamento5_js.md).
 
-If a developer doesn't understand hoisting, programs may contain bugs \(errors\).
+## [Uso Estrito do JavaScript](https://www.w3schools.com/js/js_strict.asp)
 
-To avoid bugs, always declare all variables at the beginning of every scope.
+"use strict"; define que o código de JavaScript deve ser executado no modo
+estrito, "strict mode".
 
-Since this is how JavaScript interprets the code, it is always a good rule.
+### A Diretiva "use strict"
 
-    JavaScript in strict mode does not allow variables to be used if they are not declared.
+A diretiva "use strict" era nova na versão 5 do ECMAScript.
 
-## JavaScript Use Strict (https://www.w3schools.com/js/js_strict.asp)
+Ela não é uma instrução, mas uma expressão literal, ignorada pelas versão
+anteriores de JavaScript.
 
-"use strict"; Defines that JavaScript code should be executed in "strict mode".
+O propósito de "use strict" é indicar que o código deve ser executado no "strict mode".
 
-### The "use strict" Directive
+Com o modo estrito, você não pode, por exemplo, usar variáveis não declaradas.
 
-The "use strict" directive was new in ECMAScript version 5.
+todos os navegadores modernos dão suporte ao "use strict", exceto o Internet
+Explorer 9 e predecessores.
 
-It is not a statement, but a literal expression, ignored by earlier versions of JavaScript.
+    Você pode usar o modo estrito em todos os seus programas.
+    Ele ajuda-o a escrever código mais limpo, como quando evita que você use
+    variáveis não declaradas.
 
-The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+    "use strict" é apenas uma string, logo o IE 9 não lançará um erro
+    se ele não o entender.
 
-With strict mode, you can not, for example, use undeclared variables.
+### Declaração do Modo Estrito
 
-All modern browsers support "use strict" except Internet Explorer 9 and lower.
+Strict mode é declarado pela adição de "use strict"; no início de um *script*
+ou de uma função.
 
-    You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using undeclared variables.
-
-    "use strict" is just a string, so IE 9 will not throw an error even if it does not understand it.
-
-### Declaring Strict Mode
-
-Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
-
-Declared at the beginning of a script, it has global scope \(all code in the script will execute in strict mode\):
+Declarado no início de um *script*, ele tem escopo global \(todo código no
+  *script* será executado no modo estrito\):
 
 Exemplo
 
 ```javascript
 "use strict";
-x = 3.14;       // This will cause an error because x is not declared
+x = 3.14;       // Isto vai causar um erro porque x não foi declarada
 ```
 
 Exemplo
@@ -50,41 +50,51 @@ Exemplo
 myFunction();
 
 function myFunction() {
-  y = 3.14;   // This will also cause an error because y is not declared
+  y = 3.14;   // Isto também vai causar um erro porque y não foi declarada
 }
 ```
 
-Declared inside a function, it has local scope (only the code inside the function is in strict mode):
+Declarado dentro de uma função, ela tem escopo local \(apenas o código dentro
+  da função está no modo estrito\):
 
 ```javascript
-x = 3.14;       // This will not cause an error.
+x = 3.14;       // Isto não causa erro.
 myFunction();
 
 function myFunction() {
   "use strict";
-  y = 3.14;   // This will cause an error
+  y = 3.14;   // Isto causa erro.
 }
 ```
 
-### The "use strict"; Syntax
+### A Sintaxe de "use strict";
 
-The syntax, for declaring strict mode, was designed to be compatible with older versions of JavaScript.
+A sintaxe, para a declaração do modo estrito, foi projetada para ser compatível
+com versões mais antigas de JavaScript.
 
-Compiling a numeric literal (4 + 5;) or a string literal ("John Doe";) in a JavaScript program has no side effects. It simply compiles to a non existing variable and dies.
+Compilar uma literal numérica \(4 + 5;\), ou uma literal de texto
+\("John Doe";\) num programa JavaScript não produz efeitos colaterais.
+Ela simplesmente compila para uma variável inexistente e morre.
 
-So "use strict"; only matters to new compilers that "understand" the meaning of it.
+Portanto, "use strict"; só intersssa aos novos compiladores que *entendem* o
+significado da declaração.
 
-### Why Strict Mode?
+### Por que Strict Mode?
 
-Strict mode makes it easier to write "secure" JavaScript.
+Strict mode torna mais fácil escrever código JavaScript *seguro*.
 
-Strict mode changes previously accepted "bad syntax" into real errors.
+Strict mode transforma "más sintaxes" anteriormente aceitas em erros.
 
-As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will throw an error, making it impossible to accidentally create a global variable.
+Por exemplo, no JavaScript normal, erro de datilografia no nome de uma variável
+criava uma nova variável global. No strict mode, isto lança um erro, fazendo com
+que seja impossível de criar variáveis globais acidentalmente.
 
-In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.
+No JavaScript normal, um desenvolvedor não recebe retorno de erro ao atribuir
+um valor a propriedades sem direito de escrita.
 
-In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+No strict mode, qualquer atribuição a uma propriedade não-alterável, uma
+propriedade de apenas-leitura \(getter-only property\), uma propriedade
+inexistente, uma variável inexistente, ou um objeto inexistente lançará um *error*.
 
 ### Not Allowed in Strict Mode
 
