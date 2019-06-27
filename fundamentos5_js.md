@@ -1295,55 +1295,57 @@ Para entender isto, você precisa entender o termo *promoção*.
 Promoção é o comportamento padrão do JavaScript ao mover todas as declarações
 para o topo do escopo corrente \(ao topo do script atual, ou da função atual\).
 
-### The **let** and **const** Keywords
+### As Palavras-Chaves **let** e **const**
 
-Variables and constants declared with let or const are not hoisted!
+Variáveis e constantes declaradas com *let* ou *const* não são promovidas!
 
-### JavaScript Initializations are Not Hoisted
+### Inicializações do JavaScript Não São Promovidas
 
-JavaScript only hoists declarations, not initializations.
+JavaScript só promove declarações, não inicializações.
 
-Exemplo 1 does not give the same result as Exemplo 2:
+O Exemplo 1 não produz o mesmo resultado que o Exemplo 2:
 
 Exemplo 1
 
 ```javascript
-var x = 5; // Initialize x
-var y = 7; // Initialize y
+var x = 5; // Initializa x
+var y = 7; // Initializa y
 
-elem = document.getElementById("demo"); // Find an element
-elem.innerHTML = x + " " + y;           // Display x and y
+elem = document.getElementById("demo"); // Ache um elemento
+elem.innerHTML = x + " " + y;           // Mostre x e y
 ```
 
 Exemplo 2
 
 ```javascript
-var x = 5; // Initialize x
+var x = 5; // Initializa x
 
-elem = document.getElementById("demo"); // Find an element
-elem.innerHTML = x + " " + y;           // Display x and y
+elem = document.getElementById("demo"); // Ache um elemento
+elem.innerHTML = x + " " + y;           // Mostre x e y
 
-var y = 7; // Initialize y
+var y = 7; // Initializa y
 ```
 
-Does it make sense that y is undefined in the last example?
+Faz sentido que *y* seja indefinido no último exemplo?
 
-This is because only the declaration (var y), not the initialization (=7) is hoisted to the top.
+Isto ocorre porque a declaração \(*var y*\), e não a inicialização \(*=7*\)
+é promovida para o topo.
 
-Because of hoisting, y has been declared before it is used, but because initializations are not hoisted, the value of y is undefined.
+Por causa da promoção, *y* foi declarada antes de ser usada, mas como a
+inicialização não foi promovida, o valor de *y* é *undefined*.
 
-Exemplo 2 is the same as writing:
+O Exemplo 2 pode também ser escrito como:
 
 Exemplo
 
 ```javascript
-var x = 5; // Initialize x
-var y;     // Declare y
+var x = 5; // Initializa x
+var y;     // Declara y
 
-elem = document.getElementById("demo"); // Find an element
-elem.innerHTML = x + " " + y;           // Display x and y
+elem = document.getElementById("demo"); // Ache um elemento
+elem.innerHTML = x + " " + y;           // Mostre x e y
 
-y = 7;    // Assign 7 to y
+y = 7;    // Atribui 7 a y
 ```
 
 [Próxima unidade](intermediario1_js.md)
