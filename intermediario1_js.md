@@ -96,117 +96,132 @@ No strict mode, qualquer atribuição a uma propriedade não-alterável, uma
 propriedade de apenas-leitura \(getter-only property\), uma propriedade
 inexistente, uma variável inexistente, ou um objeto inexistente lançará um *error*.
 
-### Not Allowed in Strict Mode
+### Não Permitido no Modo Estrito
 
-Using a variable, without declaring it, is not allowed:
-
-```javascript
-"use strict";
-x = 3.14;                // This will cause an error
-```
-
-Objects are variables too.
-
-Using an object, without declaring it, is not allowed:
+Usar uma variável sem declará-la antes não é permitido:
 
 ```javascript
 "use strict";
-x = {p1:10, p2:20};      // This will cause an error
+x = 3.14;                // Isto causa erro
 ```
 
-Deleting a variable (or object) is not allowed.
+Objetos também são variáveis.
+
+Usar um objeto sem declará-lo antes não é permitido:
+
+```javascript
+"use strict";
+x = {p1:10, p2:20};      // Isto também causa erro
+```
+
+Apagar uma variável \(ou objeto\) não é permitido.
 
 ```javascript
 "use strict";
 var x = 3.14;
-delete x;                // This will cause an error
+delete x;                // Isto causa erro
 ```
 
-Deleting a function is not allowed.
+Apagar uma função não é permitido.
 
 ```javascript
 "use strict";
 function x(p1, p2) {};
-delete x;                // This will cause an error
+delete x;                // Isto causa erro
 ```
 
-Duplicating a parameter name is not allowed:
+Duplicar o nome de um parâmetro não é permitido:
 
 ```javascript
 "use strict";
-function x(p1, p1) {};   // This will cause an error
+function x(p1, p1) {};   // Isto causa erro
 ```
 
-Octal numeric literals are not allowed:
+Literais numéricas em octal não são permitidas:
 
 ```javascript
 "use strict";
-var x = 010;             // This will cause an error
+var x = 010;             // Isto causa erro
 ```
 
-Octal escape characters are not allowed:
+Caracteres em octal não são permitidas:
 
 ```javascript
 "use strict";
-var x = "\010";            // This will cause an error
+var x = "\010";            // Isto causa erro
 ```
 
-Writing to a read-only property is not allowed:
+Escrever numa propriedade de apenas-leitura não é permitido:
 
 ```javascript
 "use strict";
 var obj = {};
 Object.defineProperty(obj, "x", {value:0, writable:false});
 
-obj.x = 3.14;            // This will cause an error
+obj.x = 3.14;            // isto causa erro
 ```
 
-Writing to a get-only property is not allowed:
+Escrever numa propriedade  *get-only* não é permitido:
 
 ```javascript
 "use strict";
 var obj = {get x() {return 0} };
 
-obj.x = 3.14;            // This will cause an error
+obj.x = 3.14;            // Isto causa erro
 ```
 
-Deleting an undeletable property is not allowed:
+Remover uma propriedade não deletável não é permitido:
 
 ```javascript
 "use strict";
-delete Object.prototype; // This will cause an error
+delete Object.prototype; // Isto causa erro
 ```
 
-The string "eval" cannot be used as a variable:
+O nome "eval" não pode ser usada como nome de variável:
 
 ```javascript
 "use strict";
-var eval = 3.14;         // This will cause an error
+var eval = 3.14;         // Isto causa erro
 ```
 
-The string "arguments" cannot be used as a variable:
+A string "arguments" não pode ser usada com uma variável:
 
 ```javascript
 "use strict";
-var arguments = 3.14;    // This will cause an error
+var arguments = 3.14;    // Isto causa erro
 ```
 
-The with statement is not allowed:
+A instrução *with* não é permitida:
 
 ```javascript
 "use strict";
-with (Math){x = cos(2)}; // This will cause an error
+with (Math){x = cos(2)}; // Isto causa erro
 ```
 
-For security reasons, eval\(\) is not allowed to create variables in the scope from which it was called:
+Por motivo de segurança, eval\(\) não é permitida a criação de variáveis no
+escopo a partir do qual ele está sendo chamado:
 
 ```javascript
 "use strict";
 eval ("var x = 2");
-alert (x);             // This will cause an error
+alert (x);             // Isto causará erro
 ```
 
-In function calls like f\(\), the this value was the global object. In strict mode, it is now undefined.
+A palavra-chave *this* em funções comporta-se diferentemente no modo estrito.
+
+A palavra-chave *this* refere-se a um objeto que chamou a função, se o objeto
+não for especificado, funções no modo estrito retornam *undefined* e funções
+no modo normal retornam o objeto global \(windows\).
+
+Exemplo
+
+```JavaScript
+"use strict";
+function myFunction() {
+  alert(this); // alerta "undefined"
+}
+myFunction();
+```
 
 ### Future Proof!
 Keywords reserved for future JavaScript versions can NOT be used as variable names in strict mode.
