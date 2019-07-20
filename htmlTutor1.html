@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <link rel="stylesheet" href="styles/styles.css">
+        <!--
+            <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
+        -->
+        <title>My First HTML from W3School tutorial</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="This page is based on W3Schools tutorial on HTML">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Paulino Ng">
+        <!--
+          Consider to use viewport always
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .city {
+                background-color: tomato;
+                color: white;
+                padding: 10px;
+            }
+            .main {
+                text-align: center;
+            }
+        </style>
+        <script>
+            var nclick=0;
+            function myFunction() {
+              var x = document.getElementsByClassName("city");
+              for (var i = 0; i < x.length; i++) {
+                if (nclick % 2 == 0) {
+                  x[i].style.display = "none";
+                } else {
+                  x[i].style.display = "block";
+                }
+              }
+              nclick++;
+            }
+        </script>
+    </head>
+<body style="background-color:powderblue;">
+    <div style="background-color: azure">
+    <h1>Objetivo desta página</h1>
+    <p>Esta página exemplifica a maioria das estruturas do <b>HTML 5</b>
+        no seu código fonte. Ele serve como um lembrete de como usar
+        estas estruturas. Não está incluso aqui o uso de CSS.</p>
+    </div>
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+    <h1 style="color:blue;">This is heading 1 blue</h1>
+    <h2 style="font-family:verdana;">This is heading 2 in verdana font</h2>
+    <h3 style="font-size:240%;">This is heading 3 with font-size 240%</h3>
+    <p style="font-family:courier;">This is a paragraph in courier font.</p>
+    <a href="https://www.w3schools.com">This is a link</a>
+    <br>
+    <img src="images/bellinha.png" alt="Bellinha" width="500" height="349">
+    <p style="color:red">I am a red paragraph.</p>
+    <p title="I'm a tooltip">
+        This is a paragraph.
+    </p>
+    <hr>
+    <pre>
+
+   My Bonnie lies over the ocean.
+
+   My Bonnie lies over the sea.
+
+   My Bonnie lies over the ocean.
+
+   Oh, bring back my Bonnie to me.
+    </pre>
+    <h1 style="font-size:60px;">Heading 1 extra large</h1>
+    <p  style="font-size:160%;">This is a paragraph with 160% font-size.</p>
+    <h1 style="text-align:center;">Centered Heading 1</h1>
+    <p style="text-align: right; background-image: url('https://www.w3schools.com/html/clouds.jpg')">Left align a very, very, very, very, very,
+        very, very, very, very, very, very, very, very, very, very, very,
+        very, very, very, very, very, very, very, very, very, very, very,
+        very, very, very, very, very, very, very, very, very, very, very,
+        very, very, very, very, very, very, very, very, very, very,
+        very, very, very, very, very, very long paragraph with background image.</p>
+    <pre>
+    <b>This text is bold</b>
+    <strong>This text is strong</strong>
+    <i>This text is italic</i>
+    <em>This text is emphasized</em></pre>
+    <h2>HTML <small>Small</small> Formatting</h2>
+    <h2>HTML <mark>Marked</mark> Formatting</h2>
+    <p>My favorite color is <del>blue</del> red.</p>
+    <p>My favorite <ins>color</ins> is red.</p>
+    <p>This is <sub>subscripted</sub> text.</p>
+    <p>This is <sup>superscripted</sup> text.</p>
+    <p>WWF's goal is to: <q>Build a future where people live in harmony with
+        nature.</q></p>
+    <p>Here is a quote from WWF's website:</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+    For 50 years, WWF has been protecting the future of nature.
+    The world's leading conservation organization,
+    WWF works in 100 countries and is supported by
+    1.2 million members in the United States and
+    close to 5 million globally.
+    </blockquote>
+    <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+    <address>
+        Written by John Doe.<br> 
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address>
+    <p>The HTML &lt;cite&gt; element defines the title of a work.</p>
+    <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+    <bdo dir="rtl">This text will be written from right to left</bdo>
+    <!-- Write your comments here -->
+    <!-- Do not display this at the moment
+        <img border="0" src="pic_mountain.jpg" alt="Mountain">
+    -->
+    <h1 style="background-color:DodgerBlue;">Hello World</h1>
+    <p style="background-color:Tomato;">Lorem ipsum...</p>
+    <h1 style="border:2px solid Tomato;">Hello World</h1>
+    <h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+    <h1 style="border:2px solid Violet;">Hello World</h1>
+    <h1 style="background-color:rgb(255, 99, 71);">...</h1>
+    <h1 style="background-color:#ff6347;">...</h1>
+    <h1 style="background-color:hsl(9, 100%, 64%);">...</h1>
+    <h1 style="background-color:rgba(255, 99, 71, 0.5);">...</h1>
+    <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">...</h1>
+    <h1>CSS</h1>
+    <p>CSS stands for Cascading Style Sheets. CSS describes how HTML
+        elements are to be displayed on screen, paper, or in other media.
+        CSS saves a lot of work. It can control the layout of multiple web
+        pages all at once. CSS can be added to HTML elements in 3 ways:</p>
+    <ul>
+        <li>Inline - by using the style attribute in HTML elements</li>
+        <li>Internal - by using a &lt;style> element in the &lt;head> section</li>
+        <li>External - by using an external CSS file</li>
+    </ul>
+    <p style="background-color: lemonchiffon;"><strong>Tip:</strong> You can
+        learn much more about CSS in <a href="https://www.w3schools.com/css/default.asp">W3Scool's CSS
+        Tutorial</a>.</p>
+    <p id="pid1">Special paragraph, id="pid1" with style in styles.css file.</p>
+    <p class="error">I am different, a paragraph with a class style.</p>
+    <a class="a1" href="https://www.w3schools.com/" target="_blank">Visit
+        W3Schools!</a>
+    <p style="background-color: lemonchiffon;"><strong>Tip:</strong> If your webpage
+        is locked in a frame, you can use target="_top" to break out of the frame.</p>
+    <p><a href="https://www.w3schools.com/html/default.asp">
+    <img src="images/smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+        </a> Example of image link.</p>
+    <p style="background-color: lemonchiffon;"><strong>Note:</strong> border:0; is
+        added to prevent IE9 (and earlier) from displaying a border around the image
+        (when the image is a link).</p>
+    <p>Example of title attribute in links.</p>
+    <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit
+        our HTML Tutorial</a>
+    <h2 id="C4">Chapter 4</h2>
+    <p>Use of id attribute as destination of a link: <a href="#C4">Jump to Chapter
+        4</a></p>
+    <p>
+    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+    <img src="https://www.w3schools.com/html/programming.gif" alt="Computer Man" style="width:48px;height:48px;">Different images, a animated gif.</p>
+    <p><img src="images/smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+        The image will float to the right of the text.</p>
+    <p><img src="images/smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+        The image will float to the left of the text.</p>
+    <img src="https://www.w3schools.com/html/workplace.jpg" alt="Workplace" usemap="#workmap">
+    <map name="workmap">
+      <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://www.w3schools.com/html/computer.htm">
+      <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://www.w3schools.com/html/phone.htm">
+      <area shape="circle" coords="337,300,44" alt="Coffee" href="https://www.w3schools.com/html/coffee.htm">
+    </map>
+    <p style="background-color: lemonchiffon;">
+        <picture style="float: left">
+            <source media="(min-width: 650px)" srcset="images/img_pink_flowers.jpg">
+            <source media="(min-width: 465px)" srcset="images/img_white_flower.jpg">
+            <img src="images/img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+        </picture>&lt;picture&gt; is used to give different images to different conditions of viewport from the browser.
+        <b>Note:</b> Always specify an &lt;img&gt; element as the last child element of the &lt;picture&gt; element. The &lt;img&gt; element is used by browsers that do not support the &lt;picture&gt; element, or if none of the &lt;source&gt; tags matched.</p>
+    <table style="width: 50%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th> 
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td> 
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td> 
+        <td>94</td>
+      </tr>
+    </table>
+    <table style="width: 50%">
+      <tr>
+        <th>Name</th>
+        <th colspan="2">Telephone</th>
+      </tr>
+      <tr>
+        <td>Bill Gates</td>
+        <td>55577854</td>
+        <td>55577855</td>
+      </tr>
+    </table>
+    <table style="width:50%">
+      <tr>
+        <th>Name:</th>
+        <td>Bill Gates</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Telephone:</th>
+        <td>55577854</td>
+      </tr>
+      <tr>
+        <td>55577855</td>
+      </tr>
+    </table>
+    <table style="width: 50%">
+      <caption>Monthly savings</caption>
+      <tr>
+        <th>Month</th>
+        <th>Savings</th>
+      </tr>
+      <tr>
+        <td>January</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>February</td>
+        <td>$50</td>
+      </tr>
+    </table>
+    <table id="t01">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th> 
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td> 
+        <td>94</td>
+      </tr>
+      <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>42</td>
+      </tr>
+    </table>
+    <table>
+     <thead>
+      <tr>
+         <th>Month</th>
+         <th>Savings</th>
+      </tr>
+     </thead>
+     <tfoot>
+      <tr>
+         <td>Sum</td>
+         <td>$180</td>
+      </tr>
+     </tfoot>
+     <tbody>
+      <tr>
+         <td>January</td>
+         <td>$100</td>
+      </tr>
+      <tr>
+         <td>February</td>
+         <td>$80</td>
+      </tr>
+     </tbody>
+    </table>
+    <table style="border: 0px;">
+        <tr style="border: 0px;">
+            <td style="border: 0px;">
+                <ul style="list-style-type: disc">
+                  <li>Coffee</li>
+                  <li>Tea</li>
+                  <li>Milk</li>
+                </ul>
+            </td>
+            <td style="border: 0px;">
+                <ul style="list-style-type: square">
+                  <li>Coffee</li>
+                  <li>Tea</li>
+                  <li>Milk</li>
+                </ul>
+            </td>
+            <td style="border: 0px;">
+                <ul style="list-style-type: circle">
+                  <li>Coffee</li>
+                  <li>Tea</li>
+                  <li>Milk</li>
+                </ul>
+            </td>
+            <td style="border: 0px;">
+                <ul style="list-style-type: none">
+                  <li>Coffee</li>
+                  <li>Tea</li>
+                  <li>Milk</li>
+                </ul>
+            </td>
+            <td style="border: 0px;">
+                <ol>
+                  <li>Coffee</li>
+                  <li>Tea</li>
+                  <li>Milk</li>
+                </ol>
+            </td>
+            <td style="border: 0px;">
+                <ol type="a">
+                  <li>Coffee</li>
+                  <li>Tea</li>
+                  <li>Milk</li>
+                </ol>
+            </td>
+        </tr>
+    </table>
+    <dl>
+      <dt>Coffee</dt>
+      <dd>- black hot drink</dd>
+      <dt>Milk</dt>
+      <dd>- white cold drink</dd>
+    </dl>
+    <h2>Blocks in HTML</h2>
+    <p>A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).</p>
+    <div>Hello</div>
+    <div>World</div>
+    <img src="images/html_blocks.png" style="width: 697px; height: 166px">
+    <h2>Inline elements</h2>
+    <p>An inline element does not start on a new line and only takes up as much width as necessary.</p>
+    <span>Hello</span>
+    <span>World</span>
+    <img src="images/html_inlines.png" style="width: 678px; height: 188px;">
+    <div style="background-color:black;color:white;padding:20px;">
+      <h2>London</h2>
+      <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    </div>
+    <h1>My <span style="color:red">Important</span> Heading</h1>
+    <h2>Using class element</h2>
+    <p>The class attribute specifies one or more class names for an HTML element.
+        The class name can be used by CSS and JavaScript to perform certain tasks
+        for elements with the specified class name.</p>
+    <h2 class="city">London</h2>
+    <p>London is the capital of England.</p>
+
+    <h2 class="city main">Paris</h2>
+    <p>Paris is the capital of France.</p>
+
+    <h2 class="city">Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+    <p style="background-color: lemonchiffon;"><strong>Note:</strong> The class name is case sensitive!</p>
+    <p>Click the button, and a JavaScript hides all elements with the class name "city":</p>
+    <button onclick="myFunction()">Hide/show elements</button>
+    <h2>HTML Iframes</h2>
+    <p>An iframe is used to display a web page within a web page.</p>
+    <iframe src="index.html" name="iframe_a" height="300" width="500" style="border:none;"></iframe>
+    <p><a href="https://localhost/bellinha.html" target="iframe_a">Localhost</a></p>
+    <h1>My First JavaScript</h1>
+    <button type="button" onclick="demo1()">
+    Click me to display Date and Time.</button>
+    <p id="demo">This will be replaced by Date and Time.</p>
+    <script>
+        function demo1() {
+            document.getElementById("demo").style.fontSize = "25px";
+            document.getElementById("demo").style.color = "red";
+            document.getElementById("demo").style.backgroundColor = "yellow";
+            document.getElementById('demo').innerHTML = Date();
+        }
+    </script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+    <h2>The HTML &lt;noscript&gt; Tag</h2>
+    <p>The &lt;noscript&gt; tag is used to provide an alternate content for users that have disabled scripts in their browser or have a browser that doesn't support client-side scripts</p>
+    <h2>HTML layout elements</h2>
+    <img src="images/html_layout.png" style="width: 777px; height: 307px">
+    <p>For a example, see source code of <a href="html_layout1.html">layout example1</a>.</p>
+    <p>There are four different ways to create multicolumn layouts. Each way has its pros and cons:</p>
+    <ul>
+        <li>HTML tables</li>
+        <li>CSS float property</li>
+        <li>CSS framework</li>
+        <li>CSS flexbox</li>
+    </ul>
+    <p style="background-color: lemonchiffon;"><strong>Tip:</strong> Do NOT use tables for your page layout.</p>
+    <p>If you want to create your layout fast, you can use a framework, like W3.CSS or Bootstrap.</p>
+    <p>It is common to do entire web layouts using the CSS float property. Float is easy to learn - you just need to remember how the float and clear properties work. Disadvantages: Floating elements are tied to the document flow, which may harm the flexibility. Learn more about float in w3schools' <a href="https://www.w3schools.com/css/css_float.asp">CSS Float and Clear chapter</a>.</p>
+    <p><b>Flexbox</b> is a new layout mode in CSS3. Use of flexbox ensures that elements
+        behave predictably when the page layout must accommodate different screen sizes and different display devices. Disadvantages: Does not work in IE10 and earlier.</p>
+    <p>To learn more about Media Queries and Responsive Web Design, read W3Schools
+        <a href="https://www.w3schools.com/css/css_rwd_intro.asp">RWD Tutorial</a>.</p>
+    <h2>Code</h2>
+    <code>
+    x = 5;<br>
+    y = 6;<br>
+    z = x + y;
+    </code>
+    <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+    <p>If you input wrong value, the program will return <samp>Error!</samp></p>
+    <p>Better than to put &lt;br&gt; is to use &lt;pre&gt;.</p>
+    <pre style="margin-bottom: 3px; margin-top: 3px">
+    <code>
+x = 5;
+y = 6;
+z = x + y;
+    </code>
+    </pre>
+    <p>Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>.</p>
+    <h2>Some Other Useful HTML Character Entities</h2>
+    <table>
+    <tbody><tr>
+      <th>Result</th>
+      <th>Description</th>
+      <th>Entity Name</th>
+      <th>Entity Number</th>
+    </tr>
+    <tr>
+      <td style="height: 29px"></td>
+      <td style="height: 29px">non-breaking space</td>
+      <td style="height: 29px">&amp;nbsp;</td>
+      <td style="height: 29px">&amp;#160;</td>
+    </tr>
+    <tr>
+      <td>&lt;</td>
+      <td>less than</td>
+      <td>&amp;lt;</td>
+      <td>&amp;#60;</td>
+    </tr>
+    <tr>
+      <td>&gt;</td>
+      <td>greater than</td>
+      <td>&amp;gt;</td>
+      <td>&amp;#62;</td>
+    </tr>
+    <tr>
+      <td>&amp;</td>
+      <td>ampersand</td>
+      <td>&amp;amp;</td>
+      <td>&amp;#38;</td>
+    </tr>
+    <tr>
+      <td>"</td>
+      <td>double quotation mark </td>
+      <td>&amp;quot;</td>
+      <td>&amp;#34;</td>
+    </tr>
+    <tr>
+      <td>'</td>
+      <td>single quotation mark (apostrophe) </td>
+      <td>&amp;apos;</td>
+      <td>&amp;#39;</td>
+    </tr>
+    <tr>
+      <td>¢</td>
+      <td>cent</td>
+      <td>&amp;cent;</td>
+      <td>&amp;#162;</td>
+    </tr>
+    <tr>
+      <td>£</td>
+      <td>pound</td>
+      <td>&amp;pound;</td>
+      <td>&amp;#163;</td>
+    </tr>
+    <tr>
+      <td>¥</td>
+      <td>yen</td>
+      <td>&amp;yen;</td>
+      <td>&amp;#165;</td>
+    </tr>
+    <tr>
+      <td>€</td>
+      <td>euro</td>
+      <td>&amp;euro;</td>
+      <td>&amp;#8364;</td>
+    </tr>
+    <tr>
+      <td>©</td>
+      <td>copyright</td>
+      <td>&amp;copy;</td>
+      <td>&amp;#169;</td>
+    </tr>
+    <tr>
+      <td>®</td>
+      <td>registered trademark</td>
+      <td>&amp;reg;</td>
+      <td>&amp;#174;</td>
+    </tr>
+    </tbody></table>
+    <h2>Mathematical symbols</h2>
+    <table style="width: 600px">
+        <tbody><tr>
+        <th style="width:10%">Char</th>
+        <th style="width:10%">Number</th>
+        <th style="width:15%">Entity</th>
+        <th>Description</th>
+        </tr>
+        <tr>
+        <td>∀</td>
+        <td>&amp;#8704;</td>
+        <td>&amp;forall;</td>
+        <td>FOR ALL</td>
+        </tr>
+        <tr>
+        <td>∂</td>
+        <td>&amp;#8706;</td>
+        <td>&amp;part;</td>
+        <td>PARTIAL DIFFERENTIAL</td>
+        </tr>
+        <tr>
+        <td>∃</td>
+        <td>&amp;#8707;</td>
+        <td>&amp;exist;</td>
+        <td>THERE EXISTS</td>
+        </tr>
+        <tr>
+        <td>∅</td>
+        <td>&amp;#8709;</td>
+        <td>&amp;empty;</td>
+        <td>EMPTY SETS</td>
+        </tr>
+        <tr>
+        <td>∇</td>
+        <td>&amp;#8711;</td>
+        <td>&amp;nabla;</td>
+        <td>NABLA</td>
+        </tr>
+        <tr>
+        <td>∈</td>
+        <td>&amp;#8712;</td>
+        <td>&amp;isin;</td>
+        <td>ELEMENT OF</td>
+        </tr>
+        <tr>
+        <td>∉</td>
+        <td>&amp;#8713;</td>
+        <td>&amp;notin;</td>
+        <td>NOT AN ELEMENT OF</td>
+        </tr>
+        <tr>
+        <td>∋</td>
+        <td>&amp;#8715;</td>
+        <td>&amp;ni;</td>
+        <td>CONTAINS AS MEMBER</td>
+        </tr>
+        <tr>
+        <td>∏</td>
+        <td>&amp;#8719;</td>
+        <td>&amp;prod;</td>
+        <td>N-ARY PRODUCT</td>
+        </tr>
+        <tr>
+        <td>∑</td>
+        <td>&amp;#8721;</td>
+        <td>&amp;sum;</td>
+        <td>N-ARY SUMMATION</td>
+        </tr>
+    </tbody></table>
+    <h2>The &lt;form&gt; element</h2>
+    <p>The HTML &lt;form&gt; element defines a form that is used to collect user input:</p>
+    <img src="images/html_form1.png" style="width: 142px; height: 120px">
+    <table>
+        <caption>The &lt;input&gt; element</caption>
+         <tbody><tr>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+         <tr>
+          <td>&lt;input type="text"&gt;</td>
+          <td>Defines a one-line text input field</td>
+         </tr>
+         <tr>
+          <td>&lt;input type="radio"&gt;</td>
+          <td>Defines a radio button (for selecting one of many choices)</td>
+         </tr>
+         <tr>
+          <td>&lt;input type="submit"&gt;</td>
+          <td>Defines a submit button (for submitting the form)</td>
+         </tr>
+        </tbody>
+    </table>
+    <form action="/action_page.php" method="get" target="_blank">
+      First name:<br>
+      <input type="text" name="firstname" value="John"><br>
+      Last name:<br>
+      <input type="text" name="lastname" value="Smith"><br>
+      <input type="radio" name="gender" value="male" checked> Male<br>
+      <input type="radio" name="gender" value="female"> Female<br>
+      <input type="radio" name="gender" value="other"> Other
+      <input type="submit" value="Submit">
+    </form>
+    <h2>Form attributes</h2>
+    <img src="images/html_form2.png" style="width: 680px; height: auto">
+    <h2><a href='https://www.w3schools.com/html/html_form_elements.asp'>https://www.w3schools.com/html/html_form_elements.asp</a></h2>
+    <p>The &lt;input&gt; element is the most important form element. it is displayed differently, depending on the type attribute. Default type is text. Next section shows all types avaible.</p>
+    <p>The &lt;select&gt; element defines a drop-down list:</p>
+    
+    <h1>Uso de CSS para criar um <dfn title="texto que surge quando o mouse está em cima">tooltip</dfn></h1>
+    
+    <div class="tooltip">Passe o mouse em cima.
+        <span class="tooltiptext">Texto do tooltip</span>
+    </div>
+    <div>
+        <p>Tentativa de usar um <span class="tooltip">CSS tooltip<span class="tooltiptext">span dentro de span: <strong>Funciona</strong></span></span> no meio de um parágrafo.</p>
+    </div>
+    
+</body>
+</html>

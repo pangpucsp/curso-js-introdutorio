@@ -1,0 +1,85 @@
+body {
+    text-align: justify;
+}
+#pid1 {
+    color: blue;
+    padding-left: 30px;
+    border: 1px solid green;
+    margin: 50px;
+}
+p.error {
+    color: red;
+}
+a.a1:link {
+    color: green; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a.a1:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a.a1:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a.a1:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+th {
+    text-align: center;
+}
+table#t01 {
+    width: 60%; 
+    background-color: #f1f1c1;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+table#t01 th {
+    color: white;
+    background-color: black;
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
