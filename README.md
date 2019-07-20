@@ -1,6 +1,9 @@
 # Curso de JavaScript Introdutório
 
-Este curso é fortemente baseado (quase uma tradução livre) do [Tutorial da W3Schools](https://www.w3schools.com/js/)
+Este curso é fortemente baseado (quase uma tradução livre) do [Tutorial da W3Schools](https://www.w3schools.com/js/).
+
+> Para os não iniciados em HTML, o link a seguir é uma página cujo código
+> fonte ilustra os principais [elementos de HTML](htmlTutor1.html).
 
   1. Primeira lição [Fundamentos](fundamento_js.md)
   Introdução ao JavaScript, como rodar os exemplo no Chrome ou Firefox,
