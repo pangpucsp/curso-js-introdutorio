@@ -1,6 +1,6 @@
 # Fundamentos III de JavaScript
 
-Esta é a continuação de [Fundamentos II de JS](fundamento2_js.md).
+Esta é a continuação de [Fundamentos II de JS](fundamentos2_js.md).
 
 ## Objetos de [Horário](https://www.w3schools.com/js/js_dates.asp) \(Date\) em JavaScript
 

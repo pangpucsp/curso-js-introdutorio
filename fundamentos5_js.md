@@ -1,6 +1,6 @@
 # Fundamentos V de JavaScript
 
-Esta é a continuação de [Fundamentos IV de JS](fundamento4_js.md).
+Esta é a continuação de [Fundamentos IV de JS](fundamentos4_js.md).
 
 ## Conversão de Tipos em JavaScript (https://www.w3schools.com/js/js_type_conversion.asp)
 

@@ -1,6 +1,6 @@
 # Fundamentos VI de JavaScript
 
-Esta é a continuação de [Fundamentos V de JS](fundamento5_js.md).
+Esta é a continuação de [Fundamentos V de JS](fundamentos5_js.md).
 
 ## [Uso Estrito do JavaScript](https://www.w3schools.com/js/js_strict.asp)
 
@@ -223,51 +223,48 @@ function myFunction() {
 myFunction();
 ```
 
-### Future Proof!
-Keywords reserved for future JavaScript versions can NOT be used as variable names in strict mode.
+### Reserva para o Futuro!
+Palavras chaves reservadas para futuras versões de JavaScript não podem ser
+usadas como nome de variáveis no modo estrito.
 
-These are:
+<table border="1">
+<tr><td>implements</td><td>interface</td><td>let</td></tr>
+<tr><td>package</td><td>private</td><td>protected</td></tr>
+<tr><td>public</td><td>static</td><td>yield</td></tr>
+</table>
 
-  * implements
-  * interface
-  * let
-  * package
-  * private
-  * protected
-  * public
-  * static
-  * yield
+    **Atenção!**
+    A diretiva "use strict" só é reconhecida no início de um script ou
+    uma função.
 
-    **Watch Out!**
-    The "use strict" directive is only recognized at the beginning of a script or a function.
-
-## The JavaScript this Keyword (https://www.w3schools.com/js/js_this.asp)
+## A Palavra-Chave **this** no JavaScript (https://www.w3schools.com/js/js_this.asp)
 
 Exemplo
 
 ```javascript
 var person = {
-  firstName: "John",
-  lastName : "Doe",
+  nome: "José",
+  sobrenome : "da Silva",
   id       : 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
+  nomeCompleto : function() {
+    return this.nome + " " + this.sobrenome;
   }
 };
 ```
 
-### What is **this**?
+### O Que É o **this**?
 
-The JavaScript **this** keyword refers to the object it belongs to.
+A palavra-chave **this** do JavaScript refere-se ao objeto a que ela pertence.
 
-It has different values depending on where it is used:
+Ela tem valores diferentes dependendo de onde ela está sendo usada:
 
-  In a method, this refers to the **owner object**.
-  Alone, this refers to the **global object**.
-  In a function, this refers to the **global object**.
-  In a function, in strict mode, this is **undefined**.
-  In an event, this refers to the **element** that received the event.
-  Methods like call(), and apply() can refer this to **any object**.
+  - Num método, o **this** refere-se ao **objeto proprietário**.
+  - Sózinha, o **this** refere-se ao **objeto global**.
+  - Numa função, o **this** refere-se ao **objeto global**.
+  - Numa função, no modo estrito, o **this** é **undefined**.
+  - Num **evento**, o **this** refere-se ao **elemento** que recebeu o evento.
+  - Métodos como `call()` e `apply()` podem referenciar **this** a
+    **qualquer objeto**.
 
 #### this in a Method
 

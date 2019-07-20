@@ -1,6 +1,6 @@
 # Fundamentos IV de JavaScript
 
-Esta é a continuação de [Fundamentos III de JS](fundamento3_js.md).
+Esta é a continuação de [Fundamentos III de JS](fundamentos3_js.md).
 
 ## Objeto Math de JavaScript (https://www.w3schools.com/js/js_math.asp)
 
