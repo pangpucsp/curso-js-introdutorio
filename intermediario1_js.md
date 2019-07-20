@@ -227,7 +227,7 @@ myFunction();
 Palavras chaves reservadas para futuras versões de JavaScript não podem ser
 usadas como nome de variáveis no modo estrito.
 
-<table border="1">
+<table>
 <tr><td>implements</td><td>interface</td><td>let</td></tr>
 <tr><td>package</td><td>private</td><td>protected</td></tr>
 <tr><td>public</td><td>static</td><td>yield</td></tr>
