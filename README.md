@@ -26,4 +26,4 @@ Este curso é fortemente baseado (quase uma tradução livre) do [Tutorial da W3
   Escopo. Promoção de Declarações.
 
   6. Sexta Lição [Fundamentos VI](intermediario1_js.md)
-  Modo Estrito. 
+  Modo Estrito. O `this` em JavaScript. O `let`. Constantes.

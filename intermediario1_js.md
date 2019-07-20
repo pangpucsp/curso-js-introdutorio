@@ -242,7 +242,7 @@ usadas como nome de variáveis no modo estrito.
 Exemplo
 
 ```javascript
-var person = {
+var pessoa = {
   nome: "José",
   sobrenome : "da Silva",
   id       : 5566,
@@ -266,25 +266,26 @@ Ela tem valores diferentes dependendo de onde ela está sendo usada:
   - Métodos como `call()` e `apply()` podem referenciar `this` a
     **qualquer objeto**.
 
-#### this in a Method
+#### `this` num Método
 
-In an object method, this refers to the "owner" of the method.
+Num método de um objeto, o `this` refere-se ao *proprietário* do método.
 
-In the example on the top of this section, this refers to the person object.
+No exemplo, no início desta seção, o `this` refere-se ao objeto `pessoa`.
 
-The person object is the owner of the fullName method.
+O objeto `pessoa` é o proprietário do método `nomeCompleto`.
 
 ```javascript
-fullName : function() {
-  return this.firstName + " " + this.lastName;
+nomeCompleto : function() {
+  return this.nome + " " + this.sobrenome;
 }
 ```
 
-### this Alone
+### O `this` Sózinho
 
-When used alone, the owner is the Global object, so this refers to the Global object.
+Quando usado sózinho, o proprietário é o *objeto global*, então o `this`
+refere-se ao objeto `Global`.
 
-In a browser window the Global object is \[object Window\]:
+Num navegador, o objeto `Global` é o objeto `Window`.
 
 Exemplo
 
@@ -292,7 +293,8 @@ Exemplo
 var x = this;
 ```
 
-In strict mode, when used alone, this also refers to the Global object \[object Window\]:
+No modo modo estrito, quando usado sózinho, o `this` também refere-se ao
+objeto `Global` o \[objeto Window\]:
 
 Exemplo
 
@@ -301,11 +303,12 @@ Exemplo
 var x = this;
 ```
 
-### this in a Function \(Default\)
+### O `this` numa Função \(Default\)
 
-In a JavaScript function, the owner of the function is the default binding for this.
+Numa função em JavaScript, o proprietário da função é a ligação *default*
+do `this`.
 
-So, in a function, this refers to the Global object \[object Window\].
+Então, numa função, o `this` refere-se ao objeto `Global`, o \[objeto Window\].
 
 Exemplo
 
@@ -315,11 +318,11 @@ function myFunction() {
 }
 ```
 
-### this in a Function \(Strict\)
+### O `this` numa Função \(Strict\)
 
-JavaScript strict mode does not allow default binding.
+JavaScript no *modo estrito* não permite uma ligação *default*.
 
-So, when used in a function, in strict mode, this is undefined.
+Logo, quando usado numa função, no modo estrito, o `this` é `undefined`.
 
 Exemplo
 
@@ -330,30 +333,32 @@ function myFunction() {
 }
 ```
 
-### this in Event Handlers
+### O `this` em Manipuladores de Eventos
 
-In HTML event handlers, this refers to the HTML element that received the event:
+Em manipuladores de eventos de HTML, o `this` refere-se ao elemento de HTML
+que recebeu o evento:
 
 Exemplo
 
 ```html
 <button onclick="this.style.display='none'">
-  Click to Remove Me!
+  Clique para Me Remover!
 </button>
 ```
 
-### Object Method Binding
+### Ligação de Mètodo com o Objeto
 
-In these examples, this is the person object \(The person object is the "owner" of the function\):
+Nestes exemplos, o `this` é o objeto `pessoa` \(O objeto `pessoa` é o
+ "proprietário" da função\):
 
 Exemplo
 
 ```javascript
-var person = {
-  firstName  : "John",
-  lastName   : "Doe",
+var pessoa = {
+  nome  : "José",
+  sobrenome   : "da Silva",
   id         : 5566,
-  myFunction : function() {
+  minhaFuncao : function() {
     return this;
   }
 };
@@ -362,95 +367,103 @@ var person = {
 Exemplo
 
 ```javascript
-var person = {
-  firstName: "John",
-  lastName : "Doe",
+var pessoa = {
+  nome: "José",
+  sobrenome : "da Silva",
   id       : 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
+  nomeCompleto : function() {
+    return this.nome + " " + this.sobrenome;
   }
 };
 ```
 
-In other words: this.firstName means the firstName property of this (person) object.
+Em outras palavras: `this.nome` significa a propriedade `nome` do objeto `pessoa`.
 
-### Explicit Function Binding
+### Ligação da Função Explícita
 
-The call\(\) and apply\(\) methods are predefined JavaScript methods.
+Os métodos `call()` e o `apply()` são métodos predefinidos em JavaScript.
 
-They can both be used to call an object method with another object as argument.
+Ambos podem ser usados para chamar o método de um objeto com outro objeto como
+argumento.
 
-You can read more about call() and apply() later in this tutorial.
-
-In the example below, when calling person1.fullName with person2 as argument, this will refer to person2, even if it is a method of person1:
+No exemplo abaixo, ao chamar `pessoa1.nomeCompleto` com `pessoa2` como
+argumento, o `this` refere-se à `pessoa2`, apesar de usar um método da
+`pessoa1`:
 
 Exemplo
 
 ```javascript
-var person1 = {
-  fullName: function() {
-    return this.firstName + " " + this.lastName;
+var pessoa1 = {
+  nomeCompleto: function() {
+    return this.nome + " " + this.sobrenome;
   }
 }
-var person2 = {
-  firstName:"John",
-  lastName: "Doe",
+var pessoa2 = {
+  nome:"José",
+  sobrenome: "da Silva",
 }
-person1.fullName.call(person2);  // Will return "John Doe"
+pessoa1.nomeCompleto.call(pessoa2);  // Retornará "José da Silva"
 ```
 
-## JavaScript Let (https://www.w3schools.com/js/js_let.asp)
+## O `let` JavaScript (https://www.w3schools.com/js/js_let.asp)
 
 ### ECMAScript 2015
 
-ES2015 introduced two important new JavaScript keywords: let and const.
+A ES2015 introduziu duas novas palavras-chaves importantes em JavaScript:
+let and const.
 
-These two keywords provide Block Scope variables \(and constants\) in JavaScript.
+Estas duas palabras chaves fornecem **Escopo de Bloco** \(e constantes\)
+em JavaScript.
 
-Before ES2015, JavaScript had only two types of scope: Global Scope and Function Scope.
+Antes da ES2015, o JavaScript só tinha dois tipos de escopos: *Escopo Global*
+e *Escopo de Função*.
 
-### Global Scope
+### Escopo Global
 
-Variables declared Globally \(outside any function\) have Global Scope.
-
-Exemplo
-
-```javascript
-var carName = "Volvo";
-
-// code here can use carName
-
-function myFunction() {
-  // code here can also use carName
-}
-```
-
-Global variables can be accessed from anywhere in a JavaScript program.
-
-### Function Scope
-
-Variables declared **Locally** (inside a function) have **Function Scope**.
+Variáveis declaradas Globalmente \(fora de qualquer função\) têm Escopo Global.
 
 Exemplo
 
 ```javascript
-// code here can NOT use carName
+var marcaCarro = "Toyota";
+
+// código aqui pode usar marcaCarro
 
 function myFunction() {
-  var carName = "Volvo";
-  // code here CAN use carName
+  // código aqui também pode usar marcaCarro
 }
-
-// code here can NOT use carName
 ```
 
-Local variables can only be accessed from inside the function where they are declared.
+Variáveis globais podem ser acessadas em qualquer lugar num programa
+JavaScript.
 
-### JavaScript Block Scope
+### Escopo de Função
 
-Variables declared with the **var** keyword can not have Block Scope.
+Variáveis declaradas **Locamente** \(dentro de uma função\) têm **Escopo de
+Função**.
 
-Variables declared inside a block {} can be accessed from outside the block.
+Exemplo
+
+```javascript
+// código aqui NÃO pode usar marcaCarro
+
+function myFunction() {
+  var marcaCarro = "Honda";
+  // código aqui PODE usar marcaCarro
+}
+
+// código aqui NÃO pode usar marcaCarro
+```
+
+Variáveis locais só podem ser acessadas de dentro da função onde elas
+foram declaradas.
+
+### Escopo de Bloco em JavaScript
+
+Variáveis declaradas com a palavra-chave **var** não podem ter Escopo de Bloco.
+
+Variáveis declaradas dentro de um bloco \{\} podem ser acessadas de fora
+do bloco.
 
 Exemplo
 
@@ -458,14 +471,15 @@ Exemplo
 {
   var x = 2;
 }
-// x CAN be used here
+// x PODE ser usada aqui
 ```
 
-Before ES2015 JavaScript did not have **Block Scope**.
+Antes da ES2015, JavaScript não tinha **Escopo de Bloco**.
 
-Variables declared with the let keyword can have Block Scope.
+Variáveis declaradas com a palavra-chave `let` pode ter um *Escopo de Bloco*.
 
-Variables declared inside a block {} can not be accessed from outside the block:
+Varáveis declaradas com `let` dentro de um bloco \{\} não podem ser
+acessadas de fora do bloco:
 
 Exemplo
 
@@ -473,356 +487,367 @@ Exemplo
 {
   let x = 2;
 }
-// x can NOT be used here
+// x NÃO pode ser acessada aqui
 ```
 
-### Redeclaring Variables
+### Redeclaração de Variáveis
 
-Redeclaring a variable using the var keyword can impose problems.
+Redeclarar uma variável com a palavra-chave `var` pode impor alguns problemas.
 
-Redeclaring a variable inside a block will also redeclare the variable outside the block:
+Redeclarar uma variável dentro de um bloco também vai redeclará-la fora do
+bloco:
 
 Exemplo
 
 ```javascript
 var x = 10;
-// Here x is 10
+// Aqui x vale 10
 {
   var x = 2;
-  // Here x is 2
+  // Aqui x vale 2
 }
-// Here x is 2
+// Aqui x vale 2
 ```
 
-Redeclaring a variable using the let keyword can solve this problem.
+Redeclarar uma variável com a palavra-chave `let` pode resolver este problema.
 
-Redeclaring a variable inside a block will not redeclare the variable outside the block:
+Redeclarar uma variável dentro de um bloco não redeclara a variável fora do
+bloco:
 
 Exemplo
 
 ```javascript
 var x = 10;
-// Here x is 10
+// Aqui x vale 10
 {
   let x = 2;
-  // Here x is 2
+  // Aqui x vale 2
 }
-// Here x is 10
+// Aqui x vale 10 de novo
 ```
 
-### Loop Scope
+### Escopo de *Loop*
 
-Using var in a loop:
+O uso de `var` num *loop*:
 
 Exemplo
 
 ```javascript
 var i = 5;
 for (var i = 0; i < 10; i++) {
-  // some statements
+  // algumas instruções
 }
-// Here i is 10
+// Aqui i vale 10
 ```
 
-Using let in a loop:
+Uso de `let` dentro de um *loop*:
 
 Exemplo
 
 ```javascript
 let i = 5;
 for (let i = 0; i < 10; i++) {
-  // some statements
+  // algumas instruções
 }
-// Here i is 5
+// Aqui i vale 5
 ```
 
-In the first example, using var, the variable declared in the loop redeclares the variable outside the loop.
+No primeiro exemplo, uso de `var`, a variável declarada no *loop* redeclara
+a variável de fora do *loop*.
 
-In the second example, using let, the variable declared in the loop does not redeclare the variable outside the loop.
+No segundo exemplo, uso do `let`, a variável declarada no `loop` não redeclara
+a variável de fora do *loop*.
 
-When let is used to declare the i variable in a loop, the i variable will only be visible within the loop.
+Quando o `let` é usado para declarar a variável `i` dentro do *loop*, a
+variável `i` só será visível de dentro do *loop*.
 
-### Function Scope
+### Escopo de Função
 
-Variables declared with var and let are quite similar when declared inside a function.
+Variáveis declaradas com `var` e `let` são bastante semelhantes quando
+declaradas dentro de uma função.
 
-They will both have Function Scope:
+Ambas terão um Escopo de Função:
 
 ```javascript
-function myFunction() {
-  var carName = "Volvo";   // Function Scope
+function minhaFuncao() {
+  var marcaCarro = "VW";   // Escopo de Função
 }
-function myFunction() {
-  let carName = "Volvo";   // Function Scope
+function minhaFuncao() {
+  let marcaCarro = "Ford";   // Escopo de Função
 }
 ```
 
-### Global Scope
+### Escopo Global
 
-Variables declared with var and let are quite similar when declared outside a block.
+Variáveis declaradas com `var` e `let` são quase similares quando são
+declaradas fora de um bloco.
 
-They will both have Global Scope:
+Ambos terão Escopo Global:
 
 ```javascript
-var x = 2;       // Global scope
-let x = 2;       // Global scope
+var x = 2;       // Escopo Global
+let x = 2;       // Escopo Global
 ```
 
-### Global Variables in HTML
+### Variáveis Globais em HTML
 
-With JavaScript, the global scope is the JavaScript environment.
+Com JavaScript, o escopo global é o ambiente de JavaScript.
 
-In HTML, the global scope is the window object.
+Em HTML, o escopo global é o objeto `window`.
 
-Global variables defined with the var keyword belong to the window object:
+Variáveis globais definidas com a palavra-chave `var` pertencem ao
+objeto `window`:
 
 Exemplo
 
 ```javascript
-var carName = "Volvo";
-// code here can use window.carName
+var marcaCarro = "Renault";
+// código aqui pode usar window.marcaCarro
 ```
 
-Global variables defined with the let keyword do not belong to the window object:
+Variáveis globais definidas com a palavra-chave `let` não pertencem ao
+objeto `window`:
 
 Exemplo
 
 ```javascript
-let carName = "Volvo";
-// code here can not use window.carName
+let marcaCarro = "Hyundai";
+// código aqui NÃO pode usar window.marcaCarro
 ```
 
-### Redeclaring
+### Redeclaração
 
-Redeclaring a JavaScript variable with var is allowed anywhere in a program:
+Redeclarar uma variável JavaScript com `var` é permitida em qualquer lugar
+num programa:
 
 Exemplo
 
 ```javascript
 var x = 2;
 
-// Now x is 2
+// Agora x vale 2
 
 var x = 3;
 
-// Now x is 3
+// Agora x vale 3
 ```
 
-Redeclaring a var variable with let, in the same scope, or in the same block, is not allowed:
+Redeclarar uma variável `var` com `let`, no mesmo escopo, ou no mesmo bloco,
+não é permitido:
 
 Exemplo
 ```javascript
-var x = 2;       // Allowed
-let x = 3;       // Not allowed
+var x = 2;       // Permitido
+let x = 3;       // Não permitido
 
 {
-  var x = 4;   // Allowed
-  let x = 5   // Not allowed
+  var x = 4;   // Permitido
+  let x = 5   // Não permitido
 }
 ```
 
-Redeclaring a let variable with let, in the same scope, or in the same block, is not allowed:
+Redelarar uma variável com `let`, no mesmo escopo, ou no mesmo bloco,
+não é permitido:
 
 Exemplo
 ```javascript
-let x = 2;       // Allowed
-let x = 3;       // Not allowed
+let x = 2;       // Permitido
+let x = 3;       // Não permitido
 
 {
-  let x = 4;   // Allowed
-  let x = 5;   // Not allowed
+  let x = 4;   // Permitido
+  let x = 5;   // Não permitido
 }
 ```
 
-Redeclaring a let variable with var, in the same scope, or in the same block, is not allowed:
+Redeclarar uma variável `let` com `var`, no mesmo escopo, ou no mesmo bloco,
+não é permitido:
 
 Exemplo
 ```javascript
-let x = 2;       // Allowed
-var x = 3;       // Not allowed
+let x = 2;       // Permitido
+var x = 3;       // Não permitido
 
 {
-  let x = 4;   // Allowed
-  var x = 5;   // Not allowed
+  let x = 4;   // Permitido
+  var x = 5;   // Não permitido
 }
 ```
 
-Redeclaring a variable with let, in another scope, or in another block, is allowed:
+Redeclarar uma variável com `let`, num outro escopo, ou num outro bloco,
+é permitido:
 
 Exemplo
 ```javascript
-let x = 2;       // Allowed
+let x = 2;       // Permitido
 
 {
-  let x = 3;   // Allowed
+  let x = 3;   // Permitido
 }
 
 {
-  let x = 4;   // Allowed
+  let x = 4;   // Permitido
 }
 ```
 
-### Hoisting
+### Promoção
 
-Variables defined with var are hoisted to the top.
+Variáveis definidas com `var` são promovidas para o topo.
 
-You can use a variable before it is declared:
-
-Exemplo
-
-```javascript
-// you CAN use carName here
-var carName;
-Variables defined with let are not hoisted to the top.
-```
-
-Using a let variable before it is declared will result in a ReferenceError.
-
-The variable is in a "temporal dead zone" from the start of the block until it is declared:
+Você pode usar uma variável antes dela ser declarada:
 
 Exemplo
 
 ```javascript
-// you can NOT use carName here
-let carName;
+// Você PODE usar marcaCarro aqui
+var marcaCarro;
 ```
 
-## JavaScript Const (https://www.w3schools.com/js/js_const.asp)
+Variáveis definidas com `let` não são promovidas para o topo.
+
+Usar uma variável `let` antes dela ser declarada resultará em `ReferenceError`.
+
+A variável está numa *zona morta temporal* do início do bloco até que
+ela seja declarada.
+
+Exemplo
+
+```javascript
+// Você NÃO pode usar marcaCarro aqui
+let marcaCarro;
+```
+
+## Const em JavaScript (https://www.w3schools.com/js/js_const.asp)
 
 ### ECMAScript 2015
 
-ES2015 intoduced two important new JavaScript keywords: let and const.
+A ES2015 introduziu duas novas palavras-chaves importantes no JavaScript:
+`let` e `const`.
 
-Variables defined with const behave like let variables, except they cannot be reassigned:
+Variáveis definidas com `const` comportam-se como variáveis `let`, exceto
+por elas não poderem receber novas atribuições:
 
 Exemplo
 
 ```javascript
 const PI = 3.141592653589793;
-PI = 3.14;      // This will give an error
-PI = PI + 10;   // This will also give an error
+PI = 3.14;      // Isto produzirá um erro
+PI = PI + 10;   // Isto também produzirá um erro
 ```
 
-### Block Scope
+### Escopo de Bloco
 
-Declaring a variable with const is similar to let when it comes to Block Scope.
+Declarar uma variável com `const` é similar ao `let` quanto ao escopo de bloco.
 
-The x declared in the block, in this example, is not the same as the x declared outside the block:
+O `x` declarado no bloco, neste exemplo, não é o mesmo que o `x`
+declarado fora do bloco:
 
 Exemplo
 
 ```javascript
 var x = 10;
-// Here x is 10
+// Aqui x vale 10
 {
   const x = 2;
-  // Here x is 2
+  // Aqui x vale 2
 }
-// Here x is 10
+// Aqui x vale 10
 ```
 
-### Assigned when Declared
+### Atribuída quando Declarada
 
-JavaScript const variables must be assigned a value when they are declared:
+Variáveis `const` em JavaScript devem ser atribuídas quando elas são declaradas:
 
-#### Incorrect
+#### Incorreto
 
 ```javascript
 const PI;
 PI = 3.14159265359;
 ```
 
-#### Correct
+#### Correto
 
 ```javascript
 const PI = 3.14159265359;
 ```
 
-### Not Real Constants
+### Não São Constantes Reais
 
-The keyword **const** is a little misleading.
+A palavra-chave **const** é uma pouco enganadora.
 
-It does NOT define a constant value. It defines a constant reference to a value.
+Ela NÃO define um valor constante. Ela define uma referência constante a
+um valor.
 
-Because of this, we cannot change constant primitive values, but we can change the properties of constant objects.
+Por causa disto, não podemos mudar valores primitivos constantes, mas
+podemos mudar as propriedades de objetos "constantes".
 
-### Primitive Values
+### Valores Primitivos
 
-If we assign a primitive value to a constant, we cannot change the primitive value:
+Se atribuimos um valor primitivo a uma constante, não podemos mudar o valor
+primitivo.
 
 Exemplo
 
 ```javascript
 const PI = 3.141592653589793;
-PI = 3.14;      // This will give an error
-PI = PI + 10;   // This will also give an error
+PI = 3.14;      // Isto produzirá um erro
+PI = PI + 10;   // Isto também produzirá um erro
 ```
 
-### Constant Objects can Change
+### Objetos Constantes Podem Mudar
 
-You can change the properties of a constant object:
+Você pode mudar as propriedades de um objeto constante:
 
 Exemplo
 
 ```javascript
-// You can create a const object:
-const car = {type:"Fiat", model:"500", color:"white"};
+// Você pode criar um objeto constante:
+const carro = {tipo:"Fiat", modelo:"uno", cor:"branco"};
 
-// You can change a property:
-car.color = "red";
+// Você pode mudar uma propriedade:
+carro.cor = "vermelho";
 
-// You can add a property:
-car.owner = "Johnson";
+// Você pode adicionar uma propriedade:
+carro.dono = "Abel";
 ```
 
-But you can NOT reassign a constant object:
+Porém, você NÃO pode reatribuir um objeto constante:
 
 Exemplo
 
 ```javascript
-const car = {type:"Fiat", model:"500", color:"white"};
-car = {type:"Volvo", model:"EX60", color:"red"};    // ERROR
+const carro = {tipo:"Fiat", modelo:"uno", cor:"branco"};
+carro = {tipo:"Citroen", modelo:"C3", cor:"vermelho"};    // ERRO
 ```
 
-### Constant Arrays can Change
+### Arrays Contantes Podem Mudar
 
-You can change the elements of a constant array:
+Você pode mudar os elementos de um *array* constante:
 
 Exemplo
 
 ```javascript
-// You can create a constant array:
-const cars = ["Saab", "Volvo", "BMW"];
+// Você pode criar um array constante:
+const carros = ["Mercedes", "Ford", "Hyundai"];
 
-// You can change an element:
-cars[0] = "Toyota";
+// Você pode mudar um elemento:
+carros[0] = "Toyota";
 
-// You can add an element:
-cars.push("Audi");
+// Você pode adicionar um elemento:
+carros.push("Audi");
 ```
 
-### Hoisting
+### Promoção
 
-Variables defined with var are hoisted to the top.
+Variáveis definidas com `const` não são promovidas para o topo.
 
-You can use a var variable before it is declared:
+Uma variável `const` não pode ser usada antes dela ser declarada:
 
 Exemplo
 
 ```javascript
-carName = "Volvo";    // You CAN use carName here
-var carName;
-```
-
-Variables defined with const are not hoisted to the top.
-
-A const variable cannot be used before it is declared
-
-Exemplo
-
-```javascript
-carName = "Volvo";    // You can NOT use carName here
-const carName = "Volvo";
+marcaCarro = "Volvo";    // Você NÃO pode usar marcaCarro
+const marcaCarro = "BMW";
 ```
 
 [Próxima unidade](intermediario2_js.md)
