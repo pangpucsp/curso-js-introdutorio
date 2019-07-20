@@ -191,14 +191,14 @@ A string "arguments" não pode ser usada com uma variável:
 var arguments = 3.14;    // Isto causa erro
 ```
 
-A instrução *with* não é permitida:
+A instrução `with` não é permitida:
 
 ```javascript
 "use strict";
 with (Math){x = cos(2)}; // Isto causa erro
 ```
 
-Por motivo de segurança, eval\(\) não é permitida a criação de variáveis no
+Por motivo de segurança, `eval()` não é permitida a criação de variáveis no
 escopo a partir do qual ele está sendo chamado:
 
 ```javascript
@@ -207,11 +207,11 @@ eval ("var x = 2");
 alert (x);             // Isto causará erro
 ```
 
-A palavra-chave *this* em funções comporta-se diferentemente no modo estrito.
+A palavra-chave `this` em funções comporta-se diferentemente no modo estrito.
 
-A palavra-chave *this* refere-se a um objeto que chamou a função, se o objeto
-não for especificado, funções no modo estrito retornam *undefined* e funções
-no modo normal retornam o objeto global \(windows\).
+A palavra-chave `this` refere-se a um objeto que chamou a função, se o objeto
+não for especificado, funções no modo estrito retornam `undefined` e funções
+no modo normal retornam o objeto global `windows`.
 
 Exemplo
 
@@ -237,7 +237,7 @@ usadas como nome de variáveis no modo estrito.
     A diretiva "use strict" só é reconhecida no início de um script ou
     uma função.
 
-## A Palavra-Chave **this** no JavaScript (https://www.w3schools.com/js/js_this.asp)
+## A Palavra-Chave `this` no JavaScript (https://www.w3schools.com/js/js_this.asp)
 
 Exemplo
 
@@ -252,18 +252,18 @@ var person = {
 };
 ```
 
-### O Que É o **this**?
+### O Que É o `this`?
 
-A palavra-chave **this** do JavaScript refere-se ao objeto a que ela pertence.
+A palavra-chave `this` do JavaScript refere-se ao objeto a que ela pertence.
 
 Ela tem valores diferentes dependendo de onde ela está sendo usada:
 
-  - Num método, o **this** refere-se ao **objeto proprietário**.
-  - Sózinha, o **this** refere-se ao **objeto global**.
-  - Numa função, o **this** refere-se ao **objeto global**.
-  - Numa função, no modo estrito, o **this** é **undefined**.
-  - Num **evento**, o **this** refere-se ao **elemento** que recebeu o evento.
-  - Métodos como `call()` e `apply()` podem referenciar **this** a
+  - Num método, o `this` refere-se ao **objeto proprietário**.
+  - Sózinha, o `this` refere-se ao **objeto global**.
+  - Numa função, o `this` refere-se ao **objeto global**.
+  - Numa função, no modo estrito, o `this` é `undefined`.
+  - Num **evento**, o `this` refere-se ao **elemento** que recebeu o evento.
+  - Métodos como `call()` e `apply()` podem referenciar `this` a
     **qualquer objeto**.
 
 #### this in a Method
