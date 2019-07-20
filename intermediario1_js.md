@@ -346,7 +346,7 @@ Exemplo
 </button>
 ```
 
-### Ligação de Mètodo com o Objeto
+### Ligação de Método com o Objeto
 
 Nestes exemplos, o `this` é o objeto `pessoa` \(O objeto `pessoa` é o
  "proprietário" da função\):
@@ -773,7 +773,7 @@ const PI = 3.14159265359;
 
 ### Não São Constantes Reais
 
-A palavra-chave **const** é uma pouco enganadora.
+A palavra-chave **const** é um pouco enganadora.
 
 Ela NÃO define um valor constante. Ela define uma referência constante a
 um valor.
