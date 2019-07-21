@@ -4,22 +4,23 @@ Esta é a continuação de [Fundamentos V de JS](fundamentos5_js.md).
 
 ## [Uso Estrito do JavaScript](https://www.w3schools.com/js/js_strict.asp)
 
-"use strict"; define que o código de JavaScript deve ser executado no modo
-estrito, "strict mode".
+`"use strict";` define que o código de JavaScript deve ser executado no modo
+estrito, *strict mode*.
 
-### A Diretiva "use strict"
+### A Diretiva `"use strict"`
 
-A diretiva "use strict" era nova na versão 5 do ECMAScript.
+A diretiva `"use strict"` era nova na versão 5 do ECMAScript.
 
 Ela não é uma instrução, mas uma expressão literal, ignorada pelas versão
 anteriores de JavaScript.
 
-O propósito de "use strict" é indicar que o código deve ser executado no "strict mode".
+O propósito de `"use strict"` é indicar que o código deve ser executado no
+*strict mode*.
 
-Com o modo estrito, você não pode, por exemplo, usar variáveis não declaradas.
+Com o *modo estrito*, você não pode, por exemplo, usar variáveis não declaradas.
 
-todos os navegadores modernos dão suporte ao "use strict", exceto o Internet
-Explorer 9 e predecessores.
+Todos os navegadores modernos dão suporte ao `"use strict"`, exceto o Internet
+Explorer 9 e seus predecessores.
 
     Você pode usar o modo estrito em todos os seus programas.
     Ele ajuda-o a escrever código mais limpo, como quando evita que você use
@@ -28,13 +29,13 @@ Explorer 9 e predecessores.
     "use strict" é apenas uma string, logo o IE 9 não lançará um erro
     se ele não o entender.
 
-### Declaração do Modo Estrito
+### Declaração do *Modo Estrito*
 
-Strict mode é declarado pela adição de "use strict"; no início de um *script*
-ou de uma função.
+*Strict mode* é declarado pela adição de `"use strict;"` no início de um
+*script* ou de uma função.
 
 Declarado no início de um *script*, ele tem escopo global \(todo código no
-  *script* será executado no modo estrito\):
+  *script* será executado no *modo estrito*\):
 
 Exemplo
 
@@ -67,36 +68,37 @@ function myFunction() {
 }
 ```
 
-### A Sintaxe de "use strict";
+### A Sintaxe de `"use strict";`
 
-A sintaxe, para a declaração do modo estrito, foi projetada para ser compatível
-com versões mais antigas de JavaScript.
+A sintaxe, para a declaração do *modo estrito*, foi projetada para ser
+compatível com versões mais antigas de JavaScript.
 
-Compilar uma literal numérica \(4 + 5;\), ou uma literal de texto
-\("John Doe";\) num programa JavaScript não produz efeitos colaterais.
+Compilar uma literal numérica \(`4 + 5;`\), ou uma literal de texto
+\(`"John Doe";`\) num programa JavaScript não produz efeitos colaterais.
 Ela simplesmente compila para uma variável inexistente e morre.
 
-Portanto, "use strict"; só intersssa aos novos compiladores que *entendem* o
+Portanto, `"use strict";` só intersssa aos novos compiladores que *entendem* o
 significado da declaração.
 
-### Por que Strict Mode?
+### Por que *Strict Mode*?
 
-Strict mode torna mais fácil escrever código JavaScript *seguro*.
+*Strict mode* torna mais fácil escrever código JavaScript *seguro*.
 
-Strict mode transforma "más sintaxes" anteriormente aceitas em erros.
+*Strict mode* transforma *más sintaxes* anteriormente aceitas em erros.
 
 Por exemplo, no JavaScript normal, erro de datilografia no nome de uma variável
-criava uma nova variável global. No strict mode, isto lança um erro, fazendo com
-que seja impossível de criar variáveis globais acidentalmente.
+criava uma nova variável global. No *strict mode*, isto lança um erro,
+fazendo com que seja impossível de criar variáveis globais acidentalmente.
 
 No JavaScript normal, um desenvolvedor não recebe retorno de erro ao atribuir
 um valor a propriedades sem direito de escrita.
 
-No strict mode, qualquer atribuição a uma propriedade não-alterável, uma
-propriedade de apenas-leitura \(getter-only property\), uma propriedade
-inexistente, uma variável inexistente, ou um objeto inexistente lançará um *error*.
+No *strict mode*, qualquer atribuição a uma propriedade não-alterável, uma
+propriedade de apenas-leitura \(*getter-only property*\), uma propriedade
+inexistente, uma variável inexistente, ou um objeto inexistente lançará
+um *error*.
 
-### Não Permitido no Modo Estrito
+### Não Permitido no *Modo Estrito*
 
 Usar uma variável sem declará-la antes não é permitido:
 
@@ -156,7 +158,7 @@ Escrever numa propriedade de apenas-leitura não é permitido:
 ```javascript
 "use strict";
 var obj = {};
-Object.defineProperty(obj, "x", {value:0, writable:false});
+Object.defineProperty(obj, "x", {valor:0, writable:false});
 
 obj.x = 3.14;            // isto causa erro
 ```
@@ -198,8 +200,8 @@ A instrução `with` não é permitida:
 with (Math){x = cos(2)}; // Isto causa erro
 ```
 
-Por motivo de segurança, `eval()` não é permitida a criação de variáveis no
-escopo a partir do qual ele está sendo chamado:
+Por motivo de segurança, na chamada de `eval()` não é permitida a criação
+de variáveis no escopo a partir do qual ele está sendo chamado:
 
 ```javascript
 "use strict";
@@ -223,7 +225,7 @@ function myFunction() {
 myFunction();
 ```
 
-### Reserva para o Futuro!
+### Reservas para o Futuro!
 Palavras chaves reservadas para futuras versões de JavaScript não podem ser
 usadas como nome de variáveis no modo estrito.
 
@@ -234,7 +236,7 @@ usadas como nome de variáveis no modo estrito.
 </table>
 
     **Atenção!**
-    A diretiva "use strict" só é reconhecida no início de um script ou
+    A diretiva "use strict" só é reconhecida no início de um *script* ou de
     uma função.
 
 ## A Palavra-Chave `this` no JavaScript (https://www.w3schools.com/js/js_this.asp)
@@ -377,7 +379,8 @@ var pessoa = {
 };
 ```
 
-Em outras palavras: `this.nome` significa a propriedade `nome` do objeto `pessoa`.
+Em outras palavras: `this.nome` significa a propriedade `nome` do objeto
+`pessoa`.
 
 ### Ligação da Função Explícita
 
@@ -407,7 +410,7 @@ pessoa1.nomeCompleto.call(pessoa2);  // Retornará "José da Silva"
 
 ## O `let` JavaScript (https://www.w3schools.com/js/js_let.asp)
 
-## ECMAScript 2015
+## O ECMAScript 2015
 
 A ES2015, também conhecido como ES6, introduziu duas novas palavras-chaves
 importantes em JavaScript: `let` e `const`.
@@ -778,7 +781,7 @@ podemos mudar as propriedades de objetos "constantes".
 
 ### Valores Primitivos
 
-Se atribuimos um valor primitivo a uma constante, não podemos mudar o valor
+Se atribuímos um valor primitivo a uma constante, não podemos mudar o valor
 primitivo.
 
 Exemplo
@@ -797,7 +800,7 @@ Exemplo
 
 ```javascript
 // Você pode criar um objeto constante:
-const carro = {tipo:"Fiat", modelo:"uno", cor:"branco"};
+const carro = {tipo:"Fiat", modelo:"Mille", cor:"branco"};
 
 // Você pode mudar uma propriedade:
 carro.cor = "vermelho";
@@ -811,7 +814,7 @@ Porém, você NÃO pode reatribuir um objeto constante:
 Exemplo
 
 ```javascript
-const carro = {tipo:"Fiat", modelo:"uno", cor:"branco"};
+const carro = {tipo:"Fiat", modelo:"Mille", cor:"branco"};
 carro = {tipo:"Citroen", modelo:"C3", cor:"vermelho"};    // ERRO
 ```
 
