@@ -246,9 +246,9 @@ Exemplo
 ```javascript
 var pessoa = {
   nome: "José",
-  sobrenome : "da Silva",
-  id       : 5566,
-  nomeCompleto : function() {
+  sobrenome: "da Silva",
+  id: 5566,
+  nomeCompleto: function() {
     return this.nome + " " + this.sobrenome;
   }
 };
@@ -357,10 +357,10 @@ Exemplo
 
 ```javascript
 var pessoa = {
-  nome  : "José",
-  sobrenome   : "da Silva",
-  id         : 5566,
-  minhaFuncao : function() {
+  nome: "José",
+  sobrenome: "da Silva",
+  id: 5566,
+  minhaFuncao: function() {
     return this;
   }
 };
@@ -371,9 +371,9 @@ Exemplo
 ```javascript
 var pessoa = {
   nome: "José",
-  sobrenome : "da Silva",
-  id       : 5566,
-  nomeCompleto : function() {
+  sobrenome: "da Silva",
+  id: 5566,
+  nomeCompleto: function() {
     return this.nome + " " + this.sobrenome;
   }
 };
