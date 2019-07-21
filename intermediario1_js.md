@@ -1250,7 +1250,7 @@ declará-la:
 ```javascript
 class Carro {
   constructor(marca) {
-    i = 0;  // lança um erro
+    i = 0;  // lança um erro quando um Carro for instanciado
     this.marcaCarro = marca;
   }
 }
