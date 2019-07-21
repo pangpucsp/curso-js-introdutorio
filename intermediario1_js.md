@@ -407,10 +407,10 @@ pessoa1.nomeCompleto.call(pessoa2);  // Retornará "José da Silva"
 
 ## O `let` JavaScript (https://www.w3schools.com/js/js_let.asp)
 
-### ECMAScript 2015
+## ECMAScript 2015
 
-A ES2015 introduziu duas novas palavras-chaves importantes em JavaScript:
-let and const.
+A ES2015, também conhecido como ES6, introduziu duas novas palavras-chaves
+importantes em JavaScript: `let` e `const`.
 
 Estas duas palabras chaves fornecem **Escopo de Bloco** \(e constantes\)
 em JavaScript.
@@ -646,7 +646,7 @@ let x = 3;       // Não permitido
 }
 ```
 
-Redelarar uma variável com `let`, no mesmo escopo, ou no mesmo bloco,
+Redeclarar uma variável com `let`, no mesmo escopo, ou no mesmo bloco,
 não é permitido:
 
 Exemplo
@@ -717,12 +717,7 @@ Exemplo
 let marcaCarro;
 ```
 
-## Const em JavaScript (https://www.w3schools.com/js/js_const.asp)
-
-### ECMAScript 2015
-
-A ES2015 introduziu duas novas palavras-chaves importantes no JavaScript:
-`let` e `const`.
+### Const em JavaScript (https://www.w3schools.com/js/js_const.asp)
 
 Variáveis definidas com `const` comportam-se como variáveis `let`, exceto
 por elas não poderem receber novas atribuições:
@@ -848,6 +843,418 @@ Exemplo
 ```javascript
 marcaCarro = "Volvo";    // Você NÃO pode usar marcaCarro
 const marcaCarro = "BMW";
+```
+
+### Funções Usando [Flechas](https://www.w3schools.com/js/js_arrow_function.asp)
+
+As funções usando flechas também foram introduzidas no ES6.
+
+Funções usando flechas permitem que escrevamos funções com uma sintaxe mais
+abreviada.
+
+    Antes:
+```javascript
+hello = function() {
+  return "Hello World!";
+}
+```
+
+    Com Funções usando flechas:
+```javascript
+hello = () => {
+  return "Hello World!";
+}
+```
+
+Pode ser ainda mais curto! Se a função tem apenas uma instrução, e a
+instrução retorna um valor, você pode eliminar as chaves e a palavra-chave
+`return`:
+
+    Arrow Functions Return Value by Default:
+```javascript
+hello = () => "Hello World!";
+```
+
+    Nota: Isto só funciona com funções de uma única instrução.
+
+Se você tiver parâmetros, você pode passá-los dentro dos parenteses:
+
+    Função com Flecha com Parâmetros:
+```javascript
+hello = (val) => "Hello " + val;
+```
+
+De fato, se você só tiver um parâmetro, você pode pular os parâmetros também:
+
+    Arrow Function Without Parentheses:
+```javascript
+hello = val => "Hello " + val;
+```
+
+#### E o `this`?
+
+A manipulação do `this` também é diferente nas funções com flechas em relação
+às funções normais.
+
+Resumindo, em funções com flechas, não há ligação com o `this`.
+
+Nas funções normais, a palavra-chave `this` representa o objeto que chamou
+a função, que poderia ser a `window`, o `document`, um botão ou outra coisa.
+
+Com funções com flechas, a palavra-chave `this` sempre representa o objeto
+que definiu a função com flecha.
+
+Vejamos dois exemplos para entender a diferença.
+
+Ambos chamam um método duas vezes, a primeira quando a página carrega e
+uma outra vez quando um botão é acionado.
+
+O primeiro exemplo usa uma função normal e o segundo usa uma função com flecha.
+
+O resultado mostra que o primeiro exemplo retorna dois objetos diferentes
+\(`window` e `button`\) e o segudo exemplo retorna o objeto `window` duas
+vezes, porque o objeto `window` é o *proprietário* da função.
+
+Exemplo
+Numa função normal, o `this` representa o objeto que chama a função:
+
+```javascript
+//Função normal:
+alo = function() {
+  document.getElementById("demo").innerHTML += this;
+}
+
+//O objeto window chama a função:
+window.addEventListener("load", alo);
+
+//Um objeto button chama a função:
+document.getElementById("btn").addEventListener("click", alo);
+```
+
+Exemplo
+Numa função com flecha, o `this` representa o proprietário da função:
+
+```javascript
+//Função com Flecha:
+alo = () => {
+  document.getElementById("demo").innerHTML += this;
+}
+
+//O objeto window chama a função:
+window.addEventListener("load", alo);
+
+//Um objeto button chama a função:
+document.getElementById("btn").addEventListener("click", alo);
+```
+
+Lembre-se dessas diferenças ao trabalhar com funções. Algumas vezes, o
+comportamento das funções normais é o que você quer, se não for, use
+funções com flechas.
+
+### [Classes em JavaScript](https://www.w3schools.com/js/js_classes.asp)
+
+ES6, conhecida como ECMAScript2015, também introduziu classes em JavaScript.
+
+Uma classe é um tipo de função, mas, em vez de usar a palavra-chave `function`
+para inicializá-la, usamos a palavra-chave `class` e as propriedades são
+atribuídas dentro de um método `constructor()`.
+
+#### Definição de Classes
+
+Use a palavra-chave `class` cria uma classe e sempre adiciona um método
+construtor.
+
+O método construtor é chamado cada vez que um objeto da classe é instanciado.
+
+Exemplo: Uma definição simples de uma classe chamada de "Carro":
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this.marcaCarro = marca;
+  }
+}
+```
+Agora, você pode criar objetos usando a classe `Carro`:
+
+Exemplo: Cria um objeto chamado de meuCarro baseado na classe `Carro`
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this.marcaCarro = marca;
+  }
+}
+meuCarro = new Carro("VW");
+```
+
+    Nota: O método `constructor()` é chamado automaticamente quando
+    o objeto é inicializado.
+
+#### Métodos
+
+O método `constructor()` é especial, é nele que você inicializa as
+propriedades, ele é chamado automaticamente quando uma classe é instanciada
+e ele deve ter exatamente o nome `constructor`. De fato, se você não tiver
+um método `constructor`, JavaScript adicionará um método `constructor`
+invisível e vazio.
+
+Você também está liberado para fazer seus próprios métodos,
+a sintaxe deve ser familiar:
+
+Exemplo: Cria um método chamado `presente`:
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this.marcaCarro = marca;
+  }
+  presente() {
+    return "Eu tenho um " + this.marcaCarro;
+  }
+}
+
+meuCarro = new Carro("VW");
+document.getElementById("demo").innerHTML = meuCarro.presente();
+```
+
+Como você pode ver no exemplo acima, você chama o método referindo-se ao
+nome do método do objeto seguido de parenteses \(os parâmetros, se houver,
+  devem ir dentro dos parenteses\).
+
+Exemplo
+Envie um parâmetro ao método `presente()`:
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this.marcaCarro = marca;
+  }
+  presente(x) {
+    return x + ", eu tenho um " + this.marcaCarro;
+  }
+}
+
+meuCarro = new Carro("Ford");
+document.getElementById("demo").innerHTML = meuCarro.presente("Alô");
+```
+
+#### Métodos Estáticos
+
+Métodos estáticos são definidos na própria classe e não no protótipo.
+
+Isto significa que você *não pode chamar* um método estático com o objeto
+\(`meuCarro`\), mas com a classe \(`Carro`\):
+
+Exemplo: Cria um método estático e chama ele com a classe.
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this.marcaCarro = marca;
+  }
+  static alo() {
+    return "Alô!!";
+  }
+}
+
+meuCarro = new Carro("Ford");
+
+// Chama 'alo()' com a classe Carro:
+document.getElementById("demo").innerHTML = Carro.alo();
+
+// e não com o objeto 'meuCarro':
+// document.getElementById("demo").innerHTML = meuCarro.alo();
+// isto lançaria um erro.
+```
+
+Se você quiser usar o objeto `meuCarro` dentro do método estático,
+você pode enviá-lo como um parâmetro:
+
+Exemplo: Envie `meuCarro` como um parâmetro:
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this.marcaCarro = marca;
+  }
+  static alo(x) {
+    return "Alô " + x.marcaCarro;
+  }
+}
+
+meuCarro = new Carro("Ford");
+
+document.getElementById("demo").innerHTML = Carro.alo(meuCarro);
+```
+
+#### Herança
+
+Para criar uma hierarquia de classes, use a palavra-chave `extends`.
+
+Uma classe craida com herança de classes herda todos os métodos de uma
+outra classe:
+
+Exemplo: Cria uma classe com o nome `Modelo` que herdará os métodos da
+classe `Carro`
+```javascript
+class Carro {
+  constructor(marca) {
+    this.marcaCarro = marca;
+  }
+  presente() {
+    return 'Eu tenho um ' + this.marcaCarro;
+  }
+}
+
+class Modelo extends Carro {
+  constructor(marca, mod) {
+    super(marca);
+    this.modelo = mod;
+  }
+  mostra() {
+    return this.presente() + ', é um ' + this.modelo;
+  }
+}
+
+meuCarro = new Modelo("Honda", "Civic");
+document.getElementById("demo").innerHTML = meuCarro.mostra();
+```
+
+O método `super()` refere-se à classe mãe.
+
+Ao chamar o método `super()` no método `constructor`, chamamos o método
+`constructor` da mãe e obtemos acesso às propriedades e métodos da mãe.
+
+#### Getters and Setters
+
+Classes também permitem que você use `getters` e `setters`
+\(leitores e modificadores de propriedades\).
+
+Pode ser inteligente usar `getters` e `setters` para as suas propriedades,
+especialmente se você quiser fazer algo especial com o valor antes de
+retorná-los, ou antes de modificá-los.
+
+Para adicionar `getters` e `setters` na classe, use as palavras-chaves
+`get` e `set`.
+
+Exemplo: Cria um `getter` e um `setter` para a propriedade `marcaCarro`:
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this.marcaCarro = marca;
+  }
+  get marcac() {
+    return this.marcaCarro;
+  }
+  set marcac(x) {
+    this.marcaCarro = x;
+  }
+}
+
+meuCarro = new Carro("Honda");
+
+document.getElementById("demo").innerHTML = meuCarro.marcac;
+```
+
+    Nota: mesmo se o getter é um método, você não usa parênteses quando quiser
+    obter o valor da propriedade.
+
+O nome dos métodos `getter/setter` não pode ser o mesmo da propriedade,
+no caso `marcaCarro`.
+
+Muitos programadores usam um carácter sublinhado \_ antes do nome da
+propriedade para separar os `getter/setter` da propriedade:
+
+Exemplo: Você pode usar o carácter sublinhado para separar os getter/setter
+da propriedade
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this._marcaCarro = marca;
+  }
+  get marcaCarro() {
+    return this._marcaCarro;
+  }
+  set marcaCarro(x) {
+    this._marcaCarro = x;
+  }
+}
+
+meuCarro = new Carro("Honda");
+
+document.getElementById("demo").innerHTML = meuCarro.marcaCarro;
+```
+
+Para usar um `setter`, use a mesma sintaxe de quando você usa para modificar
+o valor de uma propriedade, parênteses:
+
+Exemplo: Usa um `setter` para mudar o valor de marcaCarro para "Toyota".
+
+```javascript
+class Carro {
+  constructor(marca) {
+    this._marcaCarro = marca;
+  }
+  get marcaCarro() {
+    return this._marcaCarro;
+  }
+  set marcaCarro(x) {
+    this._marcaCarro = x;
+  }
+}
+
+meuCarro = new Carro("Fiat");
+meuCarro.marcaCarro = "Honda";
+document.getElementById("demo").innerHTML = meuCarro.marcaCarro;
+```
+
+#### Promoção
+
+Diferente de funções e outras declarações de JavaScript, declarações de classes
+não são promovidas.
+
+Isto significa que você precisa declarar uma classe antes de poder usá-la:
+
+Exemplo
+```javascript
+// Você ainda não pode usar a classe.
+// meuCarro = new Carro("Ford")
+// Isto iria lançar um erro.
+
+class Carro {
+  constructor(marca) {
+    this.meuCarro = marca;
+  }
+}
+
+// Agora você pode usar a classe:
+meuCarro = new Carro("Ford");
+```
+
+    Nota: Para outras declarações, como funções, você NÃO terá um error
+    se tentar usá-lo antes de declará-lo. Porque o comportamento padrão das
+    declarações é a promoção (move a declaração para o topo).
+
+#### "use strict"
+
+A sintaxe nas classes devem ser escritas no *modo estrito*.
+
+Você terá um `error` se não seguir as regras do *modo estrito*.
+
+Exemplo: No *modo estrito*, você terá um erro se usar uma variável sem
+declará-la:
+
+```javascript
+class Carro {
+  constructor(marca) {
+    i = 0;  // lança um erro
+    this.marcaCarro = marca;
+  }
+}
+var meuCarro = new Carro("Ford");
 ```
 
 [Próxima unidade](intermediario2_js.md)
