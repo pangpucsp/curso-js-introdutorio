@@ -27,3 +27,6 @@ Este curso é fortemente baseado (quase uma tradução livre) do [Tutorial da W3
 
   6. Sexta Lição [Fundamentos VI](intermediario1_js.md)
   Modo Estrito. O `this` em JavaScript. O `let`. Constantes. Classes.
+
+  7. Sétima Lição [Fundamentos VII](intermediario2_js.md)
+  *Debug*. Convenções de estilo e escrita de código. 

@@ -1,0 +1,1530 @@
+# Fundamentos VII de JavaScript
+
+Esta é a continuação de [Fundamentos VI de JS](intermediario1_js.md).
+
+## [Debug em JavaScript](https://www.w3schools.com/js/js_debugging.asp)
+
+Erros \(*bugs*\) podem \(vão\) acontecer, sempre que você escrever algum
+código novo de computador.
+
+### *Debug* de Código
+
+*Bug* é como em computação são chamados os erros de código. *Debug* é retirar
+os erros dos programas. Muitas vezes, *debug* é traduzido por depuração.
+Códigos de programas podem ter erros de sintaxe ou erros lógicos.
+
+Muitos destes erros são difíceis de diagnosticar.
+
+Frequentemente, quando um código de programação possui erros, nada acontece.
+Não há mensagens de erro e você não tem nenhuma indicação de onde procurar
+os erros.
+
+Procurar e consertar os erros no código dos programas é chamado de
+*debugar* (depurar) os programas.
+
+### *Debuggers* de JavaScript
+
+Debugar não é fácil. Felizmente, todos os navegadores modernos possuem
+um *debugger* \(depurador, ou "debugador"\) embutido.
+
+*Debuggers* embutidos podem ser ligados ou desligados para relatar os erros
+para os usuários.
+
+Com um *debugger*, você também pode colocar *breakpoints* \(lugares no
+  código em que a execução deve ser parada\) e examinar as variáveis enquanto
+o programa está executando.
+
+Normalmente, você ativa o *debugging* \(depuração\) no seu navegador com
+a tecla <kbd>F12</kbd> e seleciona a aba de *Console* no menu do debugger.
+
+### O Método `console.log()`
+
+Se seu navegador suporta a depuração, você pode usar `console.log()` para
+mostrar os valores de JavaScript na janela de depuração:
+
+Exemplo
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Minha Primeira Página WEB</h1>
+
+<script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+</script>
+
+</body>
+</html>
+```
+
+### Colocação de *Breakpoints*
+
+Na janela do *debugger*, você pode colocar *breakpoints* no código JavaScript.
+
+Em cada *breakpoint*, o JavaScript parará a execução e o *debugger* permite
+que você examine o valor das variáveis e calcule outros valores.
+
+Depois de examinar os valores, você pode prosseguir a execução do código
+\(tipicamente com um botão de *play*\).
+
+### A Palavra-Chave `debugger`
+
+A palavra-chave `debugger` para a execução do JavaScript e chama \(se
+  estiver disponível\) a função de depuração.
+
+Isto tem o mesmo efeito que colocar um *breakpoint* no *debugger*.
+
+Se nenhuma depuração estiver disponível, a instrução `debugger` não
+tem efeito.
+
+Com o *debugger* ligado, o código abaixo para a execução antes de executar a
+terceira linha.
+
+Exemplo
+
+```javascript
+var x = 15 * 5;
+debugger;
+document.getElementById("demo").innerHTML = x;
+```
+
+### Ferramentas de *Debugging* dos Principais Navegadores
+
+Normalmente, você ativa a depuração no navegador com <kbd>F12</kbd> e
+seleciona a aba *Console* no menu do *debugger*.
+
+Se não, siga as seguintes instruções:
+
+#### Chrome
+  1. Rode o navegador.
+  2. Do menu, selecione "Outras Ferramentas".
+  3. Das Ferramentas, escolha "Ferramentas de Desenvolvimento".
+  4. Enfim, selecione "Console".
+
+#### Firefox
+  1. Rode o  navegador.
+  2. Do menu, selecione "Desenvolvedor Web".
+  3. Enfim, selecione "Console Web".
+
+#### Edge
+  1. Rode o  navegador.
+  2. Do menu, selecione "Ferramentas Desenvolvedor".
+  3. Enfim, selecione "Console".
+
+#### Opera
+  1. Rode o  navegador.
+  2. Do menu, selecione "Desenvolvedor".
+  3. De "Desenvolvedor", selecione "Ferramentas Desenvolvedor".
+  4. Enfim, selecione "Console".
+
+#### Safari
+  1. Vá ao Safari, Preferências, Avançado no menu principal.
+  2. Marque "Enable Show Develop menu in menu bar".
+  3. Quando a nova opção "Develop" aparecer no menu:
+  4. Escolha "Show Error Console".
+
+## Guia de Estilo e [Convenções de Codificação](https://www.w3schools.com/js/js_conventions.asp) de JavaScript
+
+Sempre use as mesmas convenções de codificação para todos os seus projetos
+de JavaScript.
+
+### Convenções de Codificação de JavaScript
+
+Convenções de codificação são recomendações de estilo para a programação.
+Elas, em geral, cobrem:
+
+  * Regras para a formação de nomes e declaração de variáveis e funções.
+  * Regras para o uso de espaços, indentação \(tabulação\) e comentários.
+  * Práticas e princípios de programação.
+
+Convenções de codificação asseguram a qualidade:
+
+  * Melhora a legibilidade do código.
+  * Torna a manutenção do código mais fácil.
+
+Convenções de codificação podem ser regras documentadas para equipes seguirem,
+ou serem apenas a prática de codificação individual do programador.
+
+    Esta seção descreve convenções de codificação de JavaScript usadas
+    frequentemente.
+    Leia também a próxima seção "Melhores Práticas" e aprenda a evitar
+    armadilhas de programação.
+
+### Nomes de Variáveis
+
+Use a *notação camelo* para os nomes dos identificadores \(para variáveis e
+  funções\). Na *notação camelo*, quando um identificador é composto por
+  várias palavras, as palavras são colocadas juntas, a primeira letra de cada
+  palavra é escrita em maiúsculo e as outras em minúsculas \(a não ser que
+  seja uma abreviação, ou sigla, quando todas as letras permanecem maiúculas\).
+
+Todos os nomes começam com uma letra minúscula \(a não ser que o
+identificador seja o nome de uma classe\).
+
+```javascript
+nome = "José";
+nomeDoMeio = "Antônio";
+sobrenome = "da Silva";
+
+preco = 19.90;
+imposto = 0.20;
+
+precoCheio = preco + (preco * imposto);
+```
+
+### Espaços em Volta dos Operadores
+
+Sempre coloque espaços em volta dos operadores \( = + - * / \)
+e depois de vírgulas:
+
+Exemplos:
+
+```javascript
+var x = y + z;
+var valores = ["Volvo", "Saab", "Fiat"];
+```
+
+### Indentação de Códigos
+
+Sempre use 2 espaços para a indentação de blocos de códigos:
+
+Funções:
+```javascript
+// função para converter graus Fahrenheit em graus Celsius
+function paraCelsius(fahrenheit) {
+  return (5 / 9) * (fahrenheit - 32);
+}
+```
+
+    Não use tabs \(tabuladores\) para indentação.
+    Diferentes editores interpretam tabs diferentemente.
+
+### Regras para Instruções
+
+Regras gerais para instruções simples:
+
+Sempre termine uma instrução com ponto-e-vírgula \(;\).
+
+Exemplos
+
+```javascript
+var valores = ["Volvo", "Saab", "Fiat"];  // array
+
+var pessoa = {  // objeto
+  nome: "José",
+  sobrenome: "da Silva",
+  idade: 50,
+  corDosOlhos: "azul"
+};
+```
+
+Regras gerais para instruções complexas \(compostas\):
+
+  * Abra chave no fim da primeira linha;
+  * Coloque um espaço antes de abrir chave;
+  * Feche chave numa linha nova, retirando indentação do bloco e
+  * Não termine uma instrução complexa com ponto-e-vírgula.
+
+Funções:
+```javascript
+function toCelsius(fahrenheit) {
+  return (5 / 9) * (fahrenheit - 32);
+}
+```
+
+*Loops*:
+```javascript
+for (i = 0; i < 5; i++) {
+  x += i;
+}
+```
+
+Condicionais:
+```javascript
+if (hora < 12) {
+  saudacao = "Bom dia";
+} else if (hora < 18) {
+  sudacao = "Boa tarde";
+} else {
+  saudacao = "Boa noite";
+}
+```
+
+### Regras para Objetos
+
+Regras gerais para a definição de objetos:
+
+  * Abra chave \(\{\) na mesma linha do nome do objeto;
+  * Use dois pontos \(:\) mais espaço entre cada propriedade e seu valor;
+  * Use aspas \(\"\) em volta de valores de strings, não em volta de
+    valores numéricos;
+  * Não adicione uma vírgula após o último par propriedade-valor;
+  * Feche chave \(\}\) numa nova linha, retirando uma indentação e
+  * Sempre termine uma definição de objeto com ponto-e-vírgula.
+
+Exemplo
+
+```javascript
+var pessoa = {
+  nome: "José",
+  sobrenome: "da Silva",
+  idade: 50,
+  corDosOlhos: "azul"
+};
+```
+
+Objetos curtos podem ser escritos comprimidos, numa linha, use espaços
+apenas entre as propriedades, assim:
+
+```javascript
+var pessoa = {nome:"José", sobrenome:"da Silva", idade:50, corDosOlhos:"azul"};
+```
+
+### Comprimento de Linha < 80
+
+Para legibilidade, evite linhas mais longas do que 80 caracteres.
+
+Se uma instrução JavaScript não cabe numa linha, o melhor lugar para quebrá-la
+é depois de um operador ou de uma vírgula.
+
+Exemplo
+
+```javascript
+document.getElementById("demo").innerHTML =
+"Alô, Teresinha!";
+```
+
+### Convenções para Nomes
+
+Sempre use a convenção de nomes para todos os seus códigos. Por exemplo:
+
+  * Nomes de variáveis e funções escritas em *notação camelo*
+  * Variáveis globais em letras maiúsculas
+  * Constantes \(como PI\) em maiúsculas
+
+Observe que existe constantemente uma discussão sobre como escrever
+identificadores compostos de várias palavras:
+
+  - programadores Lisp usam hífens, atributos em HTML e CSS, também;
+  - programadores C/C++, PHP, Pearl e SQL usam sublinhado \(\_\) e
+  - programadores Java usam a *notação camelo*.
+
+#### Hífens em HTML e CSS
+
+Atributos em HTML5 podem começar com *data-* \(data-quantity, data-price\).
+
+CSS usa hífens nos nomes-de-propriedades \(font-size\).
+
+    Hífens podem ser confundidas com tentativas de substração.
+    Hífens não são permitidos nos nomes de JavaScript.
+
+#### Sublinhados
+
+Muitos programadores preferem usar sublinhados \(data_de_nascimento\),
+especialmente em bancos de dados SQL.
+
+Sublinhados são frequentemente usados na documentação de PHP.
+
+#### camelCase \(notação camelo\):
+
+Notação camelo é usada pelo próprio JavaScript, pelo jQuery e outras
+bibliotecas de JavaScript.
+
+    Não comece nomes com o sinal de dollar \(\$\).
+    Colocará você em conflito com muitos nomes de bibliotecas do JavaScript.
+
+### Carregamento do JavaScript no HTML
+
+Use sintaxe simples para carregar *scripts* externos \(o atributo tipo
+  não é necessário\):
+
+```html
+<script src="meuscript.js"></script>
+```
+
+### Acesso aos Elementos de HTML
+
+Uma consequência do uso de estilos HTML "desarrumados" é provocar
+erros no JavaScript.
+
+Estas duas instruções de JavaScript vão produzir resultados diferentes:
+
+```javascript
+var obj = getElementById("Demo")
+
+var obj = getElementById("demo")
+```
+
+Se possível, use as mesmas convenções de formação de nomes \(como no
+  JavaScript\) em HTML.
+
+### Extensões de Arquivos
+
+Arquivos HTML devem ter uma extensão **.html** \(não **.htm**\).
+
+Arquivos CSS devem ter uma extensão **.css**.
+
+Arquivos JavaScript devem ter uma extensão **.js**.
+
+### Use Nomes de Arquivos com Minúsculas
+
+A maioria dos servidores de WEB \(Apache, Unix\) diferenciam maiúsculas
+e minúsculas nos nomes dos arquivos:
+
+`london.jpg` não pode ser acessado como `London.jpg`.
+
+Alguns servidores WEB \(Microsoft, IIS\) não diferenciam as caixas:
+
+`london.jpg` pode ser acessado como `London.jpg` ou `london.jpg`.
+
+Se você misturar maiúsculas com minúsculas, num servidor sensível à caixa,
+você tem ser muito consistente.
+
+Se você mudar de um servidor insensível à caixa para um sensível, pequenos
+erros podem quebrar seu site WEB.
+
+Para evitar estes problemas, sempre use nomes de arquivos em minúsculas.
+
+### Desempenho
+
+Convenções de codificação não são usadas pelos computadores. A maioria
+das regras têm pouco impacto na execução dos programas.
+
+Indentação e espaços extras não são significantes em *scripts* pequenos.
+
+Para o desenvolvimento de código, a legibilidade deve ser sempre preferida.
+Grandes *scripts* em produção devem ser minimizados.
+
+## Melhores [Práticas de JavaScript](https://www.w3schools.com/js/js_best_practices.asp)
+
+Evite *variáveis globais*, evite `new`, evite `==`, evite `eval()`.
+
+### Avoid Global Variables
+
+Minimize the use of global variables.
+
+This includes all data types, objects, and functions.
+
+Global variables and functions can be overwritten by other scripts.
+
+Use local variables instead, and learn how to use closures.
+
+### Always Declare Local Variables
+
+All variables used in a function should be declared as local variables.
+
+Local variables must be declared with the var keyword, otherwise they will become global variables.
+
+Strict mode does not allow undeclared variables.
+
+### Declarations on Top
+
+It is a good coding practice to put all declarations at the top of each script or function.
+
+This will:
+
+  * Give cleaner code
+  * Provide a single place to look for local variables
+  * Make it easier to avoid unwanted (implied) global variables
+  * Reduce the possibility of unwanted re-declarations
+
+```javascript
+// Declare at the beginning
+var firstName, lastName, price, discount, fullPrice;
+
+// Use later
+firstName = "John";
+lastName = "Doe";
+
+price = 19.90;
+discount = 0.10;
+
+fullPrice = price * 100 / discount;
+```
+
+This also goes for loop variables:
+
+```javascript
+// Declare at the beginning
+var i;
+
+// Use later
+for (i = 0; i < 5; i++) {
+```
+
+    By default, JavaScript moves all declarations to the top (JavaScript Hoisting).
+
+### Initialize Variables
+
+It is a good coding practice to initialize variables when you declare them.
+
+This will:
+
+  * Give cleaner code
+  * Provide a single place to initialize variables
+  * Avoid undefined values
+
+```javascript
+// Declare and initiate at the beginning
+var firstName = "",
+lastName = "",
+price = 0,
+discount = 0,
+fullPrice = 0,
+myArray = [],
+myObject = {};
+```
+
+    Initializing variables provides an idea of the intended use \(and intended data type\).
+
+### Never Declare Number, String, or Boolean Objects
+
+Always treat numbers, strings, or booleans as primitive values. Not as objects.
+
+Declaring these types as objects, slows down execution speed, and produces nasty side effects:
+
+Exemplo
+
+```javascript
+var x = "John";             
+var y = new String("John");
+(x === y) // is false because x is a string and y is an object.
+```
+
+Or even worse:
+
+Exemplo
+```javascript
+var x = new String("John");             
+var y = new String("John");
+(x == y) // is false because you cannot compare objects.
+```
+
+#### Don't Use new Object()
+
+  * Use {} instead of new Object()
+  * Use "" instead of new String()
+  * Use 0 instead of new Number()
+  * Use false instead of new Boolean()
+  * Use [] instead of new Array()
+  * Use /()/ instead of new RegExp()
+  * Use function (){} instead of new Function()
+
+Exemplo
+
+```javascript
+var x1 = {};           // new object
+var x2 = "";           // new primitive string
+var x3 = 0;            // new primitive number
+var x4 = false;        // new primitive boolean
+var x5 = [];           // new array object
+var x6 = /()/;         // new regexp object
+var x7 = function(){}; // new function object
+```
+
+### Beware of Automatic Type Conversions
+
+Beware that numbers can accidentally be converted to strings or NaN \(Not a Number\).
+
+JavaScript is loosely typed. A variable can contain different data types, and a variable can change its data type:
+
+Exemplo
+
+```javascript
+var x = "Hello";     // typeof x is a string
+x = 5;               // changes typeof x to a number
+```
+
+When doing mathematical operations, JavaScript can convert numbers to strings:
+
+Exemplo
+
+```javascript
+var x = 5 + 7;       // x.valueOf() is 12,  typeof x is a number
+var x = 5 + "7";     // x.valueOf() is 57,  typeof x is a string
+var x = "5" + 7;     // x.valueOf() is 57,  typeof x is a string
+var x = 5 - 7;       // x.valueOf() is -2,  typeof x is a number
+var x = 5 - "7";     // x.valueOf() is -2,  typeof x is a number
+var x = "5" - 7;     // x.valueOf() is -2,  typeof x is a number
+var x = 5 - "x";     // x.valueOf() is NaN, typeof x is a number
+```
+
+Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):
+
+Exemplo
+
+```javascript
+"Hello" - "Dolly"    // returns NaN
+```
+
+### Use === Comparison
+
+The == comparison operator always converts \(to matching types\) before comparison.
+
+The === operator forces comparison of values and type:
+
+Exemplo
+
+```javascript
+0 == "";        // true
+1 == "1";       // true
+1 == true;      // true
+
+0 === "";       // false
+1 === "1";      // false
+1 === true;     // false
+```
+
+### Use Parameter Defaults
+
+If a function is called with a missing argument, the value of the missing argument is set to undefined.
+
+Undefined values can break your code. It is a good habit to assign default values to arguments.
+
+Exemplo
+
+```javascript
+function myFunction(x, y) {
+  if (y === undefined) {
+    y = 0;
+  }
+}
+```
+
+ECMAScript 2015 allows default parameters in the function call:
+
+```javascript
+function (a=1, b=1) { // function code }
+```
+
+### End Your Switches with Defaults
+
+Always end your switch statements with a default. Even if you think there is no need for it.
+
+Exemplo
+
+```javascript
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+    break;
+  default:
+    day = "Unknown";
+}
+```
+
+### Avoid Using eval\(\)
+
+The eval\(\) function is used to run text as code. In almost all cases, it should not be necessary to use it.
+
+Because it allows arbitrary code to be run, it also represents a security problem.
+
+## JavaScript Common Mistakes (https://www.w3schools.com/js/js_mistakes.asp)
+
+### Accidentally Using the Assignment Operator
+
+JavaScript programs may generate unexpected results if a programmer accidentally uses an assignment operator \(=\), instead of a comparison operator \(==\) in an if statement.
+
+This if statement returns false \(as expected\) because x is not equal to 10:
+
+```javascript
+var x = 0;
+if (x == 10)
+```
+
+This if statement returns true (maybe not as expected), because 10 is true:
+
+```javascript
+var x = 0;
+if (x = 10)
+```
+
+This if statement returns false (maybe not as expected), because 0 is false:
+
+```javascript
+var x = 0;
+if (x = 0)
+```
+
+An assignment always returns the value of the assignment.
+
+### Expecting Loose Comparison
+
+In regular comparison, data type does not matter. This if statement returns true:
+
+```javascript
+var x = 10;
+var y = "10";
+if (x == y)
+```
+
+In strict comparison, data type does matter. This if statement returns false:
+
+```javascript
+var x = 10;
+var y = "10";
+if (x === y)
+```
+
+It is a common mistake to forget that switch statements use strict comparison:
+
+This case switch will display an alert:
+
+```javascript
+var x = 10;
+switch(x) {
+  case 10: alert("Hello");
+}
+```
+
+This case switch will not display an alert:
+
+```javascript
+var x = 10;
+switch(x) {
+  case "10": alert("Hello");
+}
+```
+
+### Confusing Addition & Concatenation
+
+Addition is about adding numbers.
+
+Concatenation is about adding strings.
+
+In JavaScript both operations use the same + operator.
+
+Because of this, adding a number as a number will produce a different result from adding a number as a string:
+
+```javascript
+var x = 10 + 5;          // the result in x is 15
+var x = 10 + "5";        // the result in x is "105"
+```
+
+When adding two variables, it can be difficult to anticipate the result:
+
+```javascript
+var x = 10;
+var y = 5;
+var z = x + y;           // the result in z is 15
+
+var x = 10;
+var y = "5";
+var z = x + y;           // the result in z is "105"
+```
+
+### Misunderstanding Floats
+
+All numbers in JavaScript are stored as 64-bits Floating point numbers \(Floats\).
+
+All programming languages, including JavaScript, have difficulties with precise floating point values:
+
+```javascript
+var x = 0.1;
+var y = 0.2;
+var z = x + y            // the result in z will not be 0.3
+```
+
+To solve the problem above, it helps to multiply and divide:
+
+Exemplo
+
+```javascript
+var z = (x * 10 + y * 10) / 10;       // z will be 0.3
+```
+
+### Breaking a JavaScript String
+
+JavaScript will allow you to break a statement into two lines:
+
+Exemplo 1
+
+```javascript
+var x =
+"Hello World!";
+```
+
+But, breaking a statement in the middle of a string will not work:
+
+Exemplo 2
+
+```javascript
+var x = "Hello
+World!";
+```
+
+You must use a "backslash" if you must break a statement in a string:
+
+Exemplo 3
+
+```javascript
+var x = "Hello \
+World!";
+```
+
+### Misplacing Semicolon
+
+Because of a misplaced semicolon, this code block will execute regardless of the value of x:
+
+```javascript
+if (x == 19);
+{
+  // code block  
+}
+```
+
+### reaking a Return Statement
+
+It is a default JavaScript behavior to close a statement automatically at the end of a line.
+
+Because of this, these two examples will return the same result:
+
+Exemplo 1
+```javascript
+function myFunction(a) {
+  var power = 10  
+  return a * power
+}
+```
+
+Exemplo 2
+```javascript
+function myFunction(a) {
+  var power = 10;
+  return a * power;
+}
+```
+
+JavaScript will also allow you to break a statement into two lines.
+
+Because of this, example 3 will also return the same result:
+
+Exemplo 3
+```javascript
+function myFunction(a) {
+  var
+  power = 10;  
+  return a * power;
+}
+```
+
+But, what will happen if you break the return statement in two lines like this:
+
+Exemplo 4
+```javascript
+function myFunction(a) {
+  var
+  power = 10;  
+  return
+  a * power;
+}
+```
+
+The function will return undefined!
+
+Why? Because JavaScript thought you meant:
+
+Exemplo 5
+```javascript
+function myFunction(a) {
+  var
+  power = 10;  
+  return;
+  a * power;
+}
+```
+
+#### Explanation
+
+If a statement is incomplete like:
+
+```javascript
+var
+```
+
+JavaScript will try to complete the statement by reading the next line:
+
+```javascript
+power = 10;
+```
+
+But since this statement is complete:
+
+```javascript
+return
+```
+
+JavaScript will automatically close it like this:
+
+```javascript
+return;
+```
+
+This happens because closing \(ending\) statements with semicolon is optional in JavaScript.
+
+JavaScript will close the return statement at the end of the line, because it is a complete statement.
+
+    Never break a return statement.
+
+### Accessing Arrays with Named Indexes
+
+Many programming languages support arrays with named indexes.
+
+Arrays with named indexes are called associative arrays (or hashes).
+
+JavaScript does not support arrays with named indexes.
+
+In JavaScript, arrays use numbered indexes:  
+
+Exemplo:
+
+```javascript
+var person = [];
+person[0] = "John";
+person[1] = "Doe";
+person[2] = 46;
+var x = person.length;       // person.length will return 3
+var y = person[0];           // person[0] will return "John"
+```
+
+In JavaScript, objects use named indexes.
+
+If you use a named index, when accessing an array, JavaScript will redefine the array to a standard object.
+
+After the automatic redefinition, array methods and properties will produce undefined or incorrect results:
+
+Exemplo:
+
+```javascript
+var person = [];
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46;
+var x = person.length;      // person.length will return 0
+var y = person[0];          // person[0] will return undefined
+```
+
+### Ending Definitions with a Comma
+
+Trailing commas in object and array definition are legal in ECMAScript 5.
+
+Object Exemplo:
+```javascript
+person = {firstName:"John", lastName:"Doe", age:46,}
+```
+
+Array Exemplo:
+```javascript
+points = [40, 100, 1, 5, 25, 10,];
+```
+
+WARNING !!
+
+    Internet Explorer 8 will crash.
+
+    JSON does not allow trailing commas.
+
+JSON:
+```javascript
+person = {"firstName":"John", "lastName":"Doe", "age":46}
+```
+
+JSON:
+```javascript
+points = [40, 100, 1, 5, 25, 10];
+```
+
+### Undefined is Not Null
+
+JavaScript objects, variables, properties, and methods can be undefined.
+
+In addition, empty JavaScript objects can have the value null.
+
+This can make it a little bit difficult to test if an object is empty.
+
+You can test if an object exists by testing if the type is undefined:
+
+Exemplo:
+
+```javascript
+if (typeof myObj === "undefined")
+```
+
+But you cannot test if an object is null, because this will throw an error if the object is undefined:
+
+Incorrect:
+```javascript
+if (myObj === null)
+```
+
+To solve this problem, you must test if an object is not null, and not undefined.
+
+But this can still throw an error:
+
+Incorrect:
+```javascript
+if (myObj !== null && typeof myObj !== "undefined")
+```
+
+Because of this, you must test for not undefined before you can test for not null:
+
+Correct:
+```javascript
+if (typeof myObj !== "undefined" && myObj !== null)
+```
+
+### Expecting Block Level Scope
+
+JavaScript does not create a new scope for each code block.
+
+It is true in many programming languages, but not true in JavaScript.
+
+This code will display the value of i \(10\), even OUTSIDE the for loop block:
+
+Exemplo
+
+```javascript
+for (var i = 0; i < 10; i++) {
+  // some code
+}
+return i;
+```
+
+## JavaScript Performance (https://www.w3schools.com/js/js_performance.asp)
+
+### Reduce Activity in Loops
+
+Loops are often used in programming.
+
+Each statement in a loop, including the for statement, is executed for each iteration of the loop.
+
+Statements or assignments that can be placed outside the loop will make the loop run faster.
+
+Bad:
+```javascript
+var i;
+for (i = 0; i < arr.length; i++) {
+```
+
+Better Code:
+```javascript
+var i;
+var l = arr.length;
+for (i = 0; i < l; i++) {
+```
+
+The bad code accesses the length property of an array each time the loop is iterated.
+
+The better code accesses the length property outside the loop and makes the loop run faster.
+
+### Reduce DOM Access
+
+Accessing the HTML DOM is very slow, compared to other JavaScript statements.
+
+If you expect to access a DOM element several times, access it once, and use it as a local variable:
+
+Exemplo
+```javascript
+var obj;
+obj = document.getElementById("demo");
+obj.innerHTML = "Hello";
+```
+
+### Reduce DOM Size
+
+Keep the number of elements in the HTML DOM small.
+
+This will always improve page loading, and speed up rendering \(page display\), especially on smaller devices.
+
+Every attempt to search the DOM \(like getElementsByTagName\) will benefit from a smaller DOM.
+
+### Avoid Unnecessary Variables
+
+Don't create new variables if you don't plan to save values.
+
+Often you can replace code like this:
+
+```javascript
+var fullName = firstName + " " + lastName;
+document.getElementById("demo").innerHTML = fullName;
+```
+
+With this:
+
+```javascript
+document.getElementById("demo").innerHTML = firstName + " " + lastName
+```
+
+### Delay JavaScript Loading
+
+Putting your scripts at the bottom of the page body lets the browser load the page first.
+
+While a script is downloading, the browser will not start any other downloads. In addition all parsing and rendering activity might be blocked.
+
+The HTTP specification defines that browsers should not download more than two components in parallel.
+
+An alternative is to use defer="true" in the script tag. The defer attribute specifies that the script should be executed after the page has finished parsing, but it only works for external scripts.
+
+If possible, you can add your script to the page by code, after the page has loaded:
+
+Exemplo
+
+```javascript
+<script>
+window.onload = function() {
+  var element = document.createElement("script");
+  element.src = "myScript.js";
+  document.body.appendChild(element);
+};
+</script>
+```
+
+### Avoid Using with
+
+Avoid using the with keyword. It has a negative effect on speed. It also clutters up JavaScript scopes.
+
+The with keyword is **not allowed** in strict mode.
+
+## JavaScript Reserved Words (https://www.w3schools.com/js/js_reserved.asp)
+
+### In JavaScript you cannot use these reserved words as variables, labels, or function names:
+
+---------|-----------|---------|----------
+abstract | arguments | await\* | boolean
+break | byte | case | catch
+char | class\* | const | continue
+debugger | default | delete | do
+double | else | enum\* | eval
+export\* | extends\* | false | final
+finally | float | for | function
+goto | if | implements | import\*
+in | instanceof | int | interface
+let\* | long | native | new
+null | package | private | protected
+public | return | short | static
+super\* | switch | synchronized | this
+throw | throws | transient | true
+try | typeof | var | void
+volatile | while | with | yield
+
+Words marked with \* are new in ECMAScript 5 and 6.
+
+### Removed Reserved Words
+The following reserved words has been removed from the ECMAScript 5/6 standard:
+-------------------------------------------------
+abstract | boolean | byte | char
+double | final | float | goto
+int | long | native | short
+synchronized | throws | transient | volatile
+
+Do not use these words as variables. ECMAScript 5/6 does not have full support in all browsers.
+
+### JavaScript Objects, Properties, and Methods
+
+You should also avoid using the name of JavaScript built-in objects, properties, and methods:
+
+------|------|------|-------------------------------
+Array | Date | eval | function
+hasOwnProperty | Infinity | isFinite | isNaN
+isPrototypeOf | length | Math | NaN
+name | Number | Object | prototype
+String | toString | undefined | valueOf
+
+### Java Reserved Words
+
+JavaScript is often used together with Java. You should avoid using some Java objects and properties as JavaScript identifiers:
+
+---------|------------------|--------------------
+getClass | java | JavaArray | javaClass
+JavaObject | JavaPackage |
+
+### Other Reserved Words
+
+JavaScript can be used as the programming language in many applications.
+
+You should also avoid using the name of HTML and Window objects and properties:
+
+------|-----|--------|-----------------------------------------------
+alert | all | anchor | anchors
+area | assign | blur | button
+checkbox | clearInterval | clearTimeout | clientInformation
+close | closed | confirm | constructor
+crypto | decodeURI | decodeURIComponent | defaultStatus
+document | element | elements | embed
+embeds | encodeURI | encodeURIComponent | escape
+event | fileUpload | focus | form
+forms | frame | innerHeight | innerWidth
+layer | layers | link | location
+mimeTypes | navigate | navigator | frames
+frameRate | hidden | history | image
+images | offscreenBuffering | open | opener
+option | outerHeight | outerWidth | packages
+pageXOffset | pageYOffset | parent | parseFloat
+parseInt | password | pkcs11 | plugin
+prompt | propertyIsEnum | radio | reset
+screenX | screenY | scroll | secure
+select | self | setInterval | setTimeout
+status | submit | taint | text
+textarea | top | unescape | untaint
+window |  |
+
+### HTML Event Handlers
+
+In addition you should avoid using the name of all HTML event handlers.
+
+Exemplos:
+
+-------|---------|---------|------------------------
+onblur | onclick | onerror | onfocus
+onkeydown | onkeypress | onkeyup | onmouseover
+onload | onmouseup | onmousedown | onsubmit
+
+## JavaScript JSON (https://www.w3schools.com/js/js_json.asp)
+
+JSON is a format for storing and transporting data.
+
+JSON is often used when data is sent from a server to a web page.
+
+### What is JSON?
+
+  * JSON stands for JavaScript Object Notation
+  * JSON is a lightweight data interchange format
+  * JSON is language independent *
+  * JSON is "self-describing" and easy to understand
+
+* The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
+
+### JSON Exemplo
+
+This JSON syntax defines an employees object: an array of 3 employee records \(objects\):
+
+JSON Exemplo
+```json
+{
+"employees":[
+  {"firstName":"John", "lastName":"Doe"},
+  {"firstName":"Anna", "lastName":"Smith"},
+  {"firstName":"Peter", "lastName":"Jones"}
+]
+}
+```
+
+### The JSON Format Evaluates to JavaScript Objects
+
+The JSON format is syntactically identical to the code for creating JavaScript objects.
+
+Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects.
+
+### JSON Syntax Rules
+
+  * Data is in name/value pairs
+  * Data is separated by commas
+  * Curly braces hold objects
+  * Square brackets hold arrays
+
+### JSON Data - A Name and a Value
+
+JSON data is written as name/value pairs, just like JavaScript object properties.
+
+A name/value pair consists of a field name \(in double quotes\), followed by a colon, followed by a value:
+
+```json
+"firstName":"John"
+```
+
+    JSON names require double quotes. JavaScript names do not.
+
+### JSON Objects
+
+JSON objects are written inside curly braces.
+
+Just like in JavaScript, objects can contain multiple name/value pairs:
+
+```json
+{"firstName":"John", "lastName":"Doe"}
+```
+
+### JSON Arrays
+JSON arrays are written inside square brackets.
+
+Just like in JavaScript, an array can contain objects:
+
+```json
+"employees":[
+  {"firstName":"John", "lastName":"Doe"},
+  {"firstName":"Anna", "lastName":"Smith"},
+  {"firstName":"Peter", "lastName":"Jones"}
+]
+```
+
+In the example above, the object "employees" is an array. It contains three objects.
+
+Each object is a record of a person \(with a first name and a last name\).
+
+### Converting a JSON Text to a JavaScript Object
+
+A common use of JSON is to read data from a web server, and display the data in a web page.
+
+For simplicity, this can be demonstrated using a string as input.
+
+First, create a JavaScript string containing JSON syntax:
+
+```json
+var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+```
+
+Then, use the JavaScript built-in function JSON.parse\(\) to convert the string into a JavaScript object:
+
+```javascript
+var obj = JSON.parse(text);
+```
+
+Finally, use the new JavaScript object in your page:
+
+Exemplo
+```html
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+```
+
+## JavaScript Forms (https://www.w3schools.com/js/js_validation.asp)
+
+### JavaScript Form Validation
+
+HTML form validation can be done by JavaScript.
+
+If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted:
+
+JavaScript Exemplo:
+```javascript
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+```
+
+The function can be called when the form is submitted:
+
+HTML Form Exemplo: [Demo: Form Val1](valid_demo1.html)
+```html
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</form>
+```
+
+### JavaScript Can Validate Numeric Input
+
+JavaScript is often used to validate numeric input: [Demo: Form Val2](valid_demo2.html)
+Exemplo:
+```javascript
+function myFunction() {
+  var x, text;
+
+  // Get the value of the input field with id="numb"
+  x = document.getElementById("numb").value;
+
+  // If x is Not a Number or less than one or greater than 10
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+```
+
+### Automatic HTML Form Validation
+
+HTML form validation can be performed automatically by the browser:
+
+If a form field (fname) is empty, the required attribute prevents this form from being submitted:
+
+HTML Form Exemplo
+```html
+<form action="/action_page.php" method="post">
+  <input type="text" name="fname" required>
+  <input type="submit" value="Submit">
+</form>
+```
+
+### Data Validation
+
+Data validation is the process of ensuring that user input is clean, correct, and useful.
+
+Typical validation tasks are:
+
+  * has the user filled in all required fields?
+  * has the user entered a valid date?
+  * has the user entered text in a numeric field?
+
+Most often, the purpose of data validation is to ensure correct user input.
+
+Validation can be defined by many different methods, and deployed in many different ways.
+
+**Server side validation** is performed by a web server, after input has been sent to the server.
+
+**Client side validation** is performed by a web browser, before input is sent to a web server.
+
+   Obs.: You should do both. DON'T rely only on client side validation. Data may be coming without using your js validation.
+
+### HTML Constraint Validation
+
+HTML5 introduced a new HTML validation concept called **constraint validation**.
+
+HTML constraint validation is based on:
+
+  * Constraint validation HTML Input Attributes
+  * Constraint validation CSS Pseudo Selectors
+  * Constraint validation DOM Properties and Methods
+
+#### Constraint Validation HTML Input Attributes
+
+Attribute | Description
+----------|-------------
+disabled | Specifies that the input element should be disabled
+max | Specifies the maximum value of an input element
+min | Specifies the minimum value of an input element
+pattern | Specifies the value pattern of an input element
+required | Specifies that the input field requires an element
+type  | Specifies the type of an input element
+
+#### Constraint Validation CSS Pseudo Selectors
+
+Selector | Description
+---------|-------------
+:disabled | Selects input elements with the "disabled" attribute specified
+:invalid | Selects input elements with invalid values
+:optional | Selects input elements with no "required" attribute specified
+:required | Selects input elements with the "required" attribute specified
+:valid | Selects input elements with valid values
+
+## JavaScript Validation API [JS Validation](https://www.w3schools.com/js/js_validation_api.asp)
+
+### Constraint Validation DOM Methods
+
+Property | Description
+---------|---------------
+checkValidity\(\) | Returns true if an input element contains valid data.
+setCustomValidity\(\) | Sets the validationMessage property of an input element.
+
+If an input field contains invalid data, display a message:
+
+#### The checkValidity\(\) Method
+
+Exemplo: [Demo: Form Val3](valid_demo3.html)
+```html
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">OK</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var inpObj = document.getElementById("id1");
+  if (!inpObj.checkValidity()) {
+    document.getElementById("demo").innerHTML = inpObj.validationMessage;
+  }
+}
+</script>
+```
+
+### Constraint Validation DOM Properties
+
+Property | Description
+---------|------------
+validity | Contains boolean properties related to the validity of an input element.
+validationMessage | Contains the message a browser will display when the validity is false.
+willValidate | Indicates if an input element will be validated.
+
+### Validity Properties
+The validity property of an input element contains a number of properties related to the validity of data:
+
+Property | Description
+---------|----------------
+customError | Set to true, if a custom validity message is set.
+patternMismatch | Set to true, if an element's value does not match its pattern attribute.
+rangeOverflow | Set to true, if an element's value is greater than its max attribute.
+rangeUnderflow | Set to true, if an element's value is less than its min attribute.
+stepMismatch | Set to true, if an element's value is invalid per its step attribute.
+tooLong | Set to true, if an element's value exceeds its maxLength attribute.
+typeMismatch | Set to true, if an element's value is invalid per its type attribute.
+valueMissing | Set to true, if an element \(with a required attribute\) has no value.
+valid | Set to true, if an element's value is valid.
+
+### Exemplos
+
+If the number in an input field is greater than 100 \(the input's max attribute\), display a message:
+
+#### The rangeOverflow Property
+```html
+<input id="id1" type="number" max="100">
+<button onclick="myFunction()">OK</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var txt = "";
+  if (document.getElementById("id1").validity.rangeOverflow) {
+    txt = "Value too large";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+```
+
+If the number in an input field is less than 100 \(the input's min attribute\), display a message:
+
+#### The rangeUnderflow Property
+```html
+<input id="id1" type="number" min="100">
+<button onclick="myFunction()">OK</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var txt = "";
+  if (document.getElementById("id1").validity.rangeUnderflow) {
+    txt = "Value too small";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+```
+
+[Próxima unidade](intermediario3_js.md)
