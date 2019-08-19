@@ -404,132 +404,137 @@ Grandes *scripts* em produção devem ser minimizados.
 
 Evite *variáveis globais*, evite `new`, evite `==`, evite `eval()`.
 
-### Avoid Global Variables
+### Evite Variáveis globais
 
-Minimize the use of global variables.
+Minimize o uso de variáveis globais.
 
-This includes all data types, objects, and functions.
+Isto vale para todos os tipos de dados, objetos e funções.
 
-Global variables and functions can be overwritten by other scripts.
+Variáveis e funções globais podem ser sobreescritas por outros scripts.
 
-Use local variables instead, and learn how to use closures.
+Use variáveis locais e aprenda a usar fechamentos \(*closures*\).
 
-### Always Declare Local Variables
+### Sempre Declare Variáveis Locais
 
-All variables used in a function should be declared as local variables.
+Todas as variáveis usadas numa função devem ser declaradas como variáveis
+locais.
 
-Local variables must be declared with the var keyword, otherwise they will become global variables.
+Variáveis locais devem ser declaradas com a palavra-chave `var`, senão elas
+se tornam globais.
 
-Strict mode does not allow undeclared variables.
+O modo *strict* não permite variáveis não declaradas, procure usá-lo.
 
-### Declarations on Top
+### Declarações no Topo
 
-It is a good coding practice to put all declarations at the top of each script or function.
+É uma boa prática de programação coloxar todas as declarações no topo de cada
+script ou função.
 
-This will:
-
-  * Give cleaner code
-  * Provide a single place to look for local variables
-  * Make it easier to avoid unwanted (implied) global variables
-  * Reduce the possibility of unwanted re-declarations
+  * Permite ter um código mais claro
+  * Fornece um único lugar para procurar pelas variáveis locais
+  * Torna mais fácil evitar variáveis globais indesejadas \(implícitas\)
+  * Reduz a possibilidade de re-declarações acidentais
 
 ```javascript
-// Declare at the beginning
-var firstName, lastName, price, discount, fullPrice;
+// Declare no início
+var nome, sobrenome, preco, desconto, precoCheio;
 
-// Use later
-firstName = "John";
-lastName = "Doe";
+// Use depois
+nome = "José";
+sobrenome = "da Silva";
 
-price = 19.90;
-discount = 0.10;
+preco = 19.90;
+desconto = 0.10;
 
-fullPrice = price * 100 / discount;
+precoCheio = preco / (1 - desconto / 100);
 ```
 
-This also goes for loop variables:
+Isto também vale para variáveis de malhas:
 
 ```javascript
-// Declare at the beginning
+// Declare no inicio
 var i;
 
-// Use later
+// Use depois
 for (i = 0; i < 5; i++) {
+  // ...
+}
 ```
 
-    By default, JavaScript moves all declarations to the top (JavaScript Hoisting).
+> O JavaScript move todas as declarações para o topo \(Promoção do JavaScript\).
 
-### Initialize Variables
+### Inicialize as Variáveis
 
-It is a good coding practice to initialize variables when you declare them.
+É uma boa prática, inicializar as variáveis quando você as declara.
 
-This will:
-
-  * Give cleaner code
-  * Provide a single place to initialize variables
-  * Avoid undefined values
+  * Resulta num código mais claro
+  * Fornece um único lugar para inicializar as variáveis
+  * Evita valores indefinidos
 
 ```javascript
-// Declare and initiate at the beginning
-var firstName = "",
-lastName = "",
-price = 0,
-discount = 0,
-fullPrice = 0,
-myArray = [],
-myObject = {};
+// Declare e inicialize no começo
+var nome = "",
+sobrenome = "",
+preco = 0,
+desconto = 0,
+precoCheio = 0,
+meuArray = [],
+meuObjeto = {};
 ```
 
-    Initializing variables provides an idea of the intended use \(and intended data type\).
+> Inicializar as variáveis fornece uma ideia do uso ptrtrndido \(e o tipo de
+dado pretendido\).
 
-### Never Declare Number, String, or Boolean Objects
+### Nunca Declare Objeto Número, String ou Booleano
 
-Always treat numbers, strings, or booleans as primitive values. Not as objects.
+Sempre trate números, strings ou booleanos como valores primitivos.
+Não como objetos.
 
-Declaring these types as objects, slows down execution speed, and produces nasty side effects:
+Declarar estes tipos como objetos, reduz a velocidade do processamento e
+produz efeitos colaterais desagradáveis.
 
 Exemplo
 
 ```javascript
-var x = "John";             
-var y = new String("John");
-(x === y) // is false because x is a string and y is an object.
+var x = "José";             
+var y = new String("José");
+(x === y) // é false porque x é uma string e y é um objeto.
 ```
 
-Or even worse:
+Ou pior ainda:
 
 Exemplo
 ```javascript
-var x = new String("John");             
-var y = new String("John");
-(x == y) // is false because you cannot compare objects.
+var x = new String("José");             
+var y = new String("José");
+(x == y) // é false porque você não pode comparar objetos.
 ```
 
-#### Don't Use new Object()
+#### Não Use `new Object()``
 
-  * Use {} instead of new Object()
-  * Use "" instead of new String()
-  * Use 0 instead of new Number()
-  * Use false instead of new Boolean()
-  * Use [] instead of new Array()
-  * Use /()/ instead of new RegExp()
-  * Use function (){} instead of new Function()
+  * Use `{}` no lugar de `new Object()`
+  * Use `""` no lugar de `new String()`
+  * Use `0` no lugar de `new Number()`
+  * Use `false` no lugar de `new Boolean()`
+  * Use `[]` no lugar de `new Array()`
+  * Use `/()/` no lugar de `new RegExp()`
+  * Use `function (){}` no lugar de `new Function()`
 
 Exemplo
 
 ```javascript
-var x1 = {};           // new object
-var x2 = "";           // new primitive string
-var x3 = 0;            // new primitive number
-var x4 = false;        // new primitive boolean
-var x5 = [];           // new array object
-var x6 = /()/;         // new regexp object
-var x7 = function(){}; // new function object
+var x1 = {};           // novo objeto
+var x2 = "";           // nova string primitiva
+var x3 = 0;            // novo número primitivo
+var x4 = false;        // novo booleano primitivo
+var x5 = [];           // novo objeto array
+var x6 = /()/;         // novo objeto regexp
+var x7 = function(){}; // novo objeto função
 ```
 
-### Beware of Automatic Type Conversions
+### Cuidado com Conversões Automáticas de Tipos
 
-Beware that numbers can accidentally be converted to strings or NaN \(Not a Number\).
+Cuidado, números podem ser automaticamente convertidos para *strings* ou
+NaN \(*Not a Number*\).
 
 JavaScript is loosely typed. A variable can contain different data types, and a variable can change its data type:
 
