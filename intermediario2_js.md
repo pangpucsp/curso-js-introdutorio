@@ -509,7 +509,7 @@ var y = new String("José");
 (x == y) // é false porque você não pode comparar objetos.
 ```
 
-#### Não Use `new Object()``
+#### Não Use `new Object()`
 
   * Use `{}` no lugar de `new Object()`
   * Use `""` no lugar de `new String()`
@@ -536,42 +536,44 @@ var x7 = function(){}; // novo objeto função
 Cuidado, números podem ser automaticamente convertidos para *strings* ou
 NaN \(*Not a Number*\).
 
-JavaScript is loosely typed. A variable can contain different data types, and a variable can change its data type:
+JavaScript é fracamente tipado. Uma variável pode conter diferentes tipos
+de dados e uma variável pode trocar o seu tipo de dado:
 
 Exemplo
 
 ```javascript
-var x = "Hello";     // typeof x is a string
-x = 5;               // changes typeof x to a number
+var x = "Alo";     // typeof x é uma string
+x = 5;             // muda typeof x para um número
 ```
 
-When doing mathematical operations, JavaScript can convert numbers to strings:
+Ao fazer operações matemáticas, JavaScript pode converter números em *strings*:
 
 Exemplo
 
 ```javascript
-var x = 5 + 7;       // x.valueOf() is 12,  typeof x is a number
-var x = 5 + "7";     // x.valueOf() is 57,  typeof x is a string
-var x = "5" + 7;     // x.valueOf() is 57,  typeof x is a string
-var x = 5 - 7;       // x.valueOf() is -2,  typeof x is a number
-var x = 5 - "7";     // x.valueOf() is -2,  typeof x is a number
-var x = "5" - 7;     // x.valueOf() is -2,  typeof x is a number
-var x = 5 - "x";     // x.valueOf() is NaN, typeof x is a number
+var x = 5 + 7;       // x.valueOf() é 12,  typeof x é um número
+var x = 5 + "7";     // x.valueOf() é 57,  typeof x é uma string
+var x = "5" + 7;     // x.valueOf() é 57,  typeof x é uma string
+var x = 5 - 7;       // x.valueOf() é -2,  typeof x é um número
+var x = 5 - "7";     // x.valueOf() é -2,  typeof x é um número
+var x = "5" - 7;     // x.valueOf() é -2,  typeof x é um número
+var x = 5 - "x";     // x.valueOf() é NaN, typeof x é um número
 ```
 
-Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):
+> Substrair uma string de uma string não gera um *erro*, mas retorna `NaN`
 
 Exemplo
 
 ```javascript
-"Hello" - "Dolly"    // returns NaN
+"Alo" - "Terezinha"    // retorna NaN
 ```
 
-### Use === Comparison
+### Use a Comparação com `===`
 
-The == comparison operator always converts \(to matching types\) before comparison.
+O operador de comparação `==` sempre converte antes da comparação \(para tipos
+  iguais\).
 
-The === operator forces comparison of values and type:
+O operador `===` força a comparação de tipo e valor:
 
 Exemplo
 
@@ -585,11 +587,13 @@ Exemplo
 1 === true;     // false
 ```
 
-### Use Parameter Defaults
+### Use Parâmetros com Valor Padrão \(*Defaults*\)
 
-If a function is called with a missing argument, the value of the missing argument is set to undefined.
+Se uma função é chamada com um argumento ausente, o valor do argumento ausente
+é colocado como `undefined`.
 
-Undefined values can break your code. It is a good habit to assign default values to arguments.
+Valores não definidos \(*undefined*\) podem quebrar o seu código. É um hábito
+bom atribuir valores padrões \(*defaults*\) aos argumentos.
 
 Exemplo
 
@@ -601,84 +605,98 @@ function myFunction(x, y) {
 }
 ```
 
-ECMAScript 2015 allows default parameters in the function call:
+ECMAScript 2015 permite definir parâmetros com valores padrões para as chamadas
+das funções:
 
 ```javascript
-function (a=1, b=1) { // function code }
+function (a=1, b=1) {
+  // código da function
+}
 ```
 
-### End Your Switches with Defaults
+### Termine Seus `switch`es com `default`
 
-Always end your switch statements with a default. Even if you think there is no need for it.
+Sempre termine seus `switch` com um `default`. Mesmo que você ache que não
+precisa dele.
 
 Exemplo
 
 ```javascript
 switch (new Date().getDay()) {
   case 0:
-    day = "Sunday";
+    dia = "Domingo";
     break;
   case 1:
-    day = "Monday";
+    dia = "Segunda-feira";
     break;
   case 2:
-    day = "Tuesday";
+    dia = "Terça-feira";
     break;
   case 3:
-    day = "Wednesday";
+    dia = "Quarta-feira";
     break;
   case 4:
-    day = "Thursday";
+    dia = "Quinta-feira";
     break;
   case 5:
-    day = "Friday";
+    dia = "Sexta-feira";
     break;
   case 6:
-    day = "Saturday";
+    dia = "Sábado";
     break;
   default:
-    day = "Unknown";
+    dia = "Desconhecido";
 }
 ```
 
-### Avoid Using eval\(\)
+### Evite Usar `eval()`
 
-The eval\(\) function is used to run text as code. In almost all cases, it should not be necessary to use it.
+A função `eval()` é usada para executar texto como código. Em quase todos os
+casos, não deve ser necessário usá-la, a menos que você esteja escrevendo um
+interpretador.
 
-Because it allows arbitrary code to be run, it also represents a security problem.
+Ela permite que qualquer código seja executado e isto pode ser um risco à
+segurança.
 
-## JavaScript Common Mistakes (https://www.w3schools.com/js/js_mistakes.asp)
+## [Erros Comuns em JavaScript](https://www.w3schools.com/js/js_mistakes.asp)
 
-### Accidentally Using the Assignment Operator
+### Uso Acidental do Operador de Atribuição
 
-JavaScript programs may generate unexpected results if a programmer accidentally uses an assignment operator \(=\), instead of a comparison operator \(==\) in an if statement.
+Programas em JavaScript, ou em qualquer linguagem, pode gerar resultados
+inesperados se um programador usa acidentalmente um operador de atribuição
+\(`=`\), no lugar de um operador de comparação \(`==`\) numa condição.
 
-This if statement returns false \(as expected\) because x is not equal to 10:
+A condição do `if` abaixo vale `false` \(como esperado\) porque `x` não é
+igual a `10`:
 
 ```javascript
 var x = 0;
 if (x == 10)
 ```
 
-This if statement returns true (maybe not as expected), because 10 is true:
+A condição da instrução `if` vale `true` \(ao contrário do esperado), porque
+`10` é `true`:
 
 ```javascript
 var x = 0;
 if (x = 10)
 ```
 
-This if statement returns false (maybe not as expected), because 0 is false:
+A condição da instrução `if` abaixo vale `false` \(ao contrário do que se
+espera\), porque `0` é `false`:
 
 ```javascript
 var x = 0;
 if (x = 0)
 ```
 
-An assignment always returns the value of the assignment.
+Uma atribuição sempre volta o valor da atribuição, isto é, o valor da expressão
+a direita da atribuição.
 
-### Expecting Loose Comparison
+### Expectativa de Comparação Fraca
 
-In regular comparison, data type does not matter. This if statement returns true:
+Numa comparação normal, o tipo do dado *nao importa*. A condição da instrução
+`if` abaixo vale `true`:
 
 ```javascript
 var x = 10;
@@ -686,7 +704,8 @@ var y = "10";
 if (x == y)
 ```
 
-In strict comparison, data type does matter. This if statement returns false:
+Numa comparação estrita, o tipo do dado *importa*.  A condição da instrução
+`if` abaixo vale `false`:
 
 ```javascript
 var x = 10;
@@ -694,76 +713,80 @@ var y = "10";
 if (x === y)
 ```
 
-It is a common mistake to forget that switch statements use strict comparison:
+Um erro comum é esquecer que os `case` da instrução `switch` usam a
+comparação estrita:
 
-This case switch will display an alert:
-
-```javascript
-var x = 10;
-switch(x) {
-  case 10: alert("Hello");
-}
-```
-
-This case switch will not display an alert:
+O `switch` abaixo vai mostrar um alerta:
 
 ```javascript
 var x = 10;
 switch(x) {
-  case "10": alert("Hello");
+  case 10: alert("Alo");
 }
 ```
 
-### Confusing Addition & Concatenation
-
-Addition is about adding numbers.
-
-Concatenation is about adding strings.
-
-In JavaScript both operations use the same + operator.
-
-Because of this, adding a number as a number will produce a different result from adding a number as a string:
+O `switch` abaixo não vai mostrar o alerta:
 
 ```javascript
-var x = 10 + 5;          // the result in x is 15
-var x = 10 + "5";        // the result in x is "105"
+var x = 10;
+switch(x) {
+  case "10": alert("Alo");
+}
 ```
 
-When adding two variables, it can be difficult to anticipate the result:
+### Confusão com Adição e Concatenação
+
+Adição soma números.
+
+Concatenação junta *strings*.
+
+No JavaScript ambas operações usam o mesmo operador `+`.
+
+Por causa disto, adicionar um número como um número pode resultar em algo
+diferente de adicionar um número como *string*:
+
+```javascript
+var x = 10 + 5;          // o resultado em x é 15
+var x = 10 + "5";        // o resultado em x é "105"
+```
+
+Ao adicioar duas variáveis, é difícil de prever o resultado:
 
 ```javascript
 var x = 10;
 var y = 5;
-var z = x + y;           // the result in z is 15
+var z = x + y;           // o resultado em z é 15
 
 var x = 10;
 var y = "5";
-var z = x + y;           // the result in z is "105"
+var z = x + y;           // o resultado em z é "105"
 ```
 
-### Misunderstanding Floats
+### Má Compreensão de *Floats*
 
-All numbers in JavaScript are stored as 64-bits Floating point numbers \(Floats\).
+Todos os números em JavaScript são armazenados como números de ponto flutuante
+de 64-bits \(*Floats*, ou *doubles*\).
 
-All programming languages, including JavaScript, have difficulties with precise floating point values:
+Todas as linguagens de programação, inclusive o JavaScript, têm problemas
+com valores exatos de ponto flutuante:
 
 ```javascript
 var x = 0.1;
 var y = 0.2;
-var z = x + y            // the result in z will not be 0.3
+var z = x + y            // O resultado em z não é 0.3
 ```
 
-To solve the problem above, it helps to multiply and divide:
+Para resolver o problema acima, ajuda, multiplicar e dividir:
 
 Exemplo
 
 ```javascript
-var z = (x * 10 + y * 10) / 10;       // z will be 0.3
+var z = (x * 10 + y * 10) / 10;       // z é 0.3
 ```
 
-### Breaking a JavaScript String
+### Quebra de *String* em JavaScript
 
-JavaScript will allow you to break a statement into two lines:
+JavaScript permite que você quebre uma instrução em duas linhas:
 
 Exemplo 1
 
@@ -772,7 +795,7 @@ var x =
 "Hello World!";
 ```
 
-But, breaking a statement in the middle of a string will not work:
+Mas, quebrar uma instrução no meio de uma *string* não funciona:
 
 Exemplo 2
 
@@ -781,7 +804,8 @@ var x = "Hello
 World!";
 ```
 
-You must use a "backslash" if you must break a statement in a string:
+Você precisa usar uma barra invertida \(`\`\) se quiser quebrar uma *string*
+numa instrução:
 
 Exemplo 3
 
@@ -790,215 +814,229 @@ var x = "Hello \
 World!";
 ```
 
-### Misplacing Semicolon
+### Erro de Colocação de Ponto-e-vírgula
 
-Because of a misplaced semicolon, this code block will execute regardless of the value of x:
+Devido a um ponto-e-vírgula mal colocado, o código abaixo vai executar
+independente do valor de x:
 
 ```javascript
 if (x == 19);
 {
-  // code block  
+  // bloco de código  
 }
 ```
 
-### reaking a Return Statement
+### Quebra de uma Instrução `return`
 
-It is a default JavaScript behavior to close a statement automatically at the end of a line.
+O comportamento padrão de JavaScript é terminar automaticamente uma instrução
+no final de uma linha.
 
-Because of this, these two examples will return the same result:
+Por causa disto, os dois exemplos a seguir são equivalentes:
 
 Exemplo 1
 ```javascript
-function myFunction(a) {
-  var power = 10  
-  return a * power
+function minhaFuncao(a) {
+  var potencia = 10  
+  return a * potencia
 }
 ```
 
 Exemplo 2
 ```javascript
-function myFunction(a) {
-  var power = 10;
-  return a * power;
+function minhaFuncao(a) {
+  var potencia = 10;
+  return a * potencia;
 }
 ```
 
-JavaScript will also allow you to break a statement into two lines.
+O JavaScript também permite que você quebre uma instrução em duas linhas.
 
-Because of this, example 3 will also return the same result:
+Por causa disto, o exemplo 3 também resulta no msmo que os anteriores:
 
 Exemplo 3
 ```javascript
-function myFunction(a) {
+function mnhaFuncao(a) {
   var
-  power = 10;  
-  return a * power;
+  potencia = 10;  
+  return a * potencia;
 }
 ```
 
-But, what will happen if you break the return statement in two lines like this:
+Mas, o que acontece se você quebrar a instrução `return` em duas linhas?
 
 Exemplo 4
 ```javascript
-function myFunction(a) {
+function minhaFuncao(a) {
   var
-  power = 10;  
+  potencia = 10;  
   return
-  a * power;
+  a * potencia;
 }
 ```
 
-The function will return undefined!
+A função retorna o valor `undefined`!
 
-Why? Because JavaScript thought you meant:
+Por que? Porque o JavaScript pensou que você queria dizer:
 
 Exemplo 5
 ```javascript
-function myFunction(a) {
+function minhaFuncao(a) {
   var
-  power = 10;  
+  potencia = 10;  
   return;
-  a * power;
+  a * potencia;
 }
 ```
 
-#### Explanation
+#### Explicação
 
-If a statement is incomplete like:
+Se uma instrução está incompleta como em:
 
 ```javascript
 var
 ```
 
-JavaScript will try to complete the statement by reading the next line:
+O JavaScript tentará completá-la com a próxima linha:
 
 ```javascript
-power = 10;
+potencia = 10;
 ```
 
-But since this statement is complete:
+Mas, como a instrução está completa:
 
 ```javascript
 return
 ```
 
-JavaScript will automatically close it like this:
+O JavaScript automaticamente a termina como se tivesse sido escrito:
 
 ```javascript
 return;
 ```
 
-This happens because closing \(ending\) statements with semicolon is optional in JavaScript.
+Isto ocorre porque a finalização das instruções com ponto-e-vírgula é opcional
+em JavaScript.
 
-JavaScript will close the return statement at the end of the line, because it is a complete statement.
+O JavaScript terminará a instrução de `return` no fim da linha porque ela é
+uma instrução completa.
 
-    Never break a return statement.
+> **Nunca quebre** uma instrução `return`.
 
-### Accessing Arrays with Named Indexes
+### Acesso de *Arrays* com Nomes como Índice
 
-Many programming languages support arrays with named indexes.
+Muitas linguagens de programação possuem suporte para índices de *arrays* com
+nomes.
 
-Arrays with named indexes are called associative arrays (or hashes).
+*Arrays* com nomes como índice são chamados de *arrays associativos*, ou mapas
+associativos, ou dicionários, \(ou *hashes*\).
 
-JavaScript does not support arrays with named indexes.
+O JavaScript não dá suporte a *arrays* com nomes como índice.
 
-In JavaScript, arrays use numbered indexes:  
-
-Exemplo:
-
-```javascript
-var person = [];
-person[0] = "John";
-person[1] = "Doe";
-person[2] = 46;
-var x = person.length;       // person.length will return 3
-var y = person[0];           // person[0] will return "John"
-```
-
-In JavaScript, objects use named indexes.
-
-If you use a named index, when accessing an array, JavaScript will redefine the array to a standard object.
-
-After the automatic redefinition, array methods and properties will produce undefined or incorrect results:
+No JavaScript, *arrays* usam números inteiros como índice:  
 
 Exemplo:
 
 ```javascript
-var person = [];
-person["firstName"] = "John";
-person["lastName"] = "Doe";
-person["age"] = 46;
-var x = person.length;      // person.length will return 0
-var y = person[0];          // person[0] will return undefined
+var pessoa = [];
+pessoa[0] = "João";
+pessoa[1] = "da Silva";
+pessoa[2] = 46;
+var x = pessoa.length;       // pessoa.length volta 3
+var y = pessoa[0];           // pessoa[0] volta "João"
 ```
 
-### Ending Definitions with a Comma
+No JavaScript, objetos usam índices com nomes.
 
-Trailing commas in object and array definition are legal in ECMAScript 5.
+Se você usar um índice com nome, ao acessar um *array*, o JavaScript redefinirá
+o *array* como um objeto padrão.
 
-Object Exemplo:
+Depois da redefinição automática, os métodos e propriedades de *array* na
+variável resultarão em valores `undefined` ou incorretos.
+
+Exemplo:
+
 ```javascript
-person = {firstName:"John", lastName:"Doe", age:46,}
+var pessoa = [];
+pessoa["nome"] = "João";
+pessoa["sobrenome"] = "da Silva";
+pessoa["idade"] = 46;
+var x = pessoa.length;      // pessoa.length retorna 0
+var y = pessoa[0];          // pessoa[0] retorna undefined
 ```
 
-Array Exemplo:
+### Término de Definições com Vírgula
+
+Vírgulas no final da definição de um objeto são permitidas no ECMAScript 5.
+
+Exemplo de Objeto:
+
 ```javascript
-points = [40, 100, 1, 5, 25, 10,];
+pessoa = {nome:"João", sobrenome:"da Silva", idade:46,}
 ```
 
-WARNING !!
+Exemplo de *Array*:
 
-    Internet Explorer 8 will crash.
+```javascript
+pontos = [40, 100, 1, 5, 25, 10,];
+```
 
-    JSON does not allow trailing commas.
+ALERTA !!
+
+> Não funciona no Internet Explorer 8.
+
+> JSON não permite vírgulas no final.
+
+JSON:
+
+```javascript
+pessoa = {"nome":"João", "sobrenome":"da Silva", "idade":46}
+```
 
 JSON:
 ```javascript
-person = {"firstName":"John", "lastName":"Doe", "age":46}
+pontos = [40, 100, 1, 5, 25, 10];
 ```
 
-JSON:
-```javascript
-points = [40, 100, 1, 5, 25, 10];
-```
+### `undefined` **Não É** `null`
 
-### Undefined is Not Null
+Os objetos, as variáveis, as propriedades e os métodos em JavaScript podem
+ser `undefined`.
 
-JavaScript objects, variables, properties, and methods can be undefined.
+Além disso, os objetos vazios de JavaScript podem ter valor `null`.
 
-In addition, empty JavaScript objects can have the value null.
+Isto torna um pouco difícil testar para saber se um objeto está vazio.
 
-This can make it a little bit difficult to test if an object is empty.
-
-You can test if an object exists by testing if the type is undefined:
+Você pode testar se um objeto existe testando se o tipo é `undefined`:
 
 Exemplo:
 
 ```javascript
-if (typeof myObj === "undefined")
+if (typeof meuObj === "undefined")
 ```
 
-But you cannot test if an object is null, because this will throw an error if the object is undefined:
+Mas, você não pode testar se um objeto é `null`, porque isto vai lançar um
+*error* se o objeto é `undefined`:
 
-Incorrect:
+Incorreto:
 ```javascript
 if (myObj === null)
 ```
 
-To solve this problem, you must test if an object is not null, and not undefined.
+Para resolver este problema, você deve testar se um objeto não é `null`, nem
+`undefined`.
 
-But this can still throw an error:
+Mas, isto ainda pode lançar um `error`:
 
-Incorrect:
+Incorreto:
 ```javascript
-if (myObj !== null && typeof myObj !== "undefined")
+if (meuObj !== null && typeof meuObj !== "undefined")
 ```
 
-Because of this, you must test for not undefined before you can test for not null:
+Porque você deve testar antes se é `undefined` e só depois se é `null`:
 
-Correct:
+Correto:
 ```javascript
-if (typeof myObj !== "undefined" && myObj !== null)
+if (typeof meuObj !== "undefined" && meuObj !== null)
 ```
 
 ### Expecting Block Level Scope
@@ -1287,7 +1325,7 @@ Just like in JavaScript, an array can contain objects:
 
 In the example above, the object "employees" is an array. It contains three objects.
 
-Each object is a record of a person \(with a first name and a last name\).
+Each object is a record of a pessoa \(with a first name and a last name\).
 
 ### Converting a JSON Text to a JavaScript Object
 
