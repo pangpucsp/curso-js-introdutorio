@@ -1,0 +1,5 @@
+# files to ignore
+# yamm header file for pandoc
+*h.md
+# Testing HTML files from pandoc
+tutor_js.html

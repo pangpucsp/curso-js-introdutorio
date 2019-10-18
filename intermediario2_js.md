@@ -335,8 +335,8 @@ Sublinhados são frequentemente usados na documentação de PHP.
 Notação camelo é usada pelo próprio JavaScript, pelo jQuery e outras
 bibliotecas de JavaScript.
 
-    Não comece nomes com o sinal de dollar \(\$\).
-    Colocará você em conflito com muitos nomes de bibliotecas do JavaScript.
+> Não comece nomes com o sinal de dollar \(\$\).
+> Colocará você em conflito com muitos nomes de bibliotecas do JavaScript.
 
 ### Carregamento do JavaScript no HTML
 
@@ -481,7 +481,7 @@ meuArray = [],
 meuObjeto = {};
 ```
 
-> Inicializar as variáveis fornece uma ideia do uso ptrtrndido \(e o tipo de
+> Inicializar as variáveis fornece uma ideia do uso pretendido \(e o tipo de
 dado pretendido\).
 
 ### Nunca Declare Objeto Número, String ou Booleano
