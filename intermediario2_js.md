@@ -1039,172 +1039,205 @@ Correto:
 if (typeof meuObj !== "undefined" && meuObj !== null)
 ```
 
-### Expecting Block Level Scope
+### Escopo no Nível de Bloco
 
-JavaScript does not create a new scope for each code block.
+JavaScript não cria um novo escopo para cada bloco de código.
 
-It is true in many programming languages, but not true in JavaScript.
+Isto acontece com muitas linguagens, mas não com o JavaScript.
 
-This code will display the value of i \(10\), even OUTSIDE the for loop block:
+O código abaixo vai mostrar o valor de \(10\), mesmo *fora* do bloco da malha:
 
 Exemplo
 
 ```javascript
 for (var i = 0; i < 10; i++) {
-  // some code
+  // algum código
 }
 return i;
 ```
 
-## JavaScript Performance (https://www.w3schools.com/js/js_performance.asp)
+## Desempenho do JavaScript (https://www.w3schools.com/js/js_performance.asp)
 
-### Reduce Activity in Loops
+### Redução de Atividades em *Loops*
 
-Loops are often used in programming.
+*Loops* são sempre usados em programação.
 
-Each statement in a loop, including the for statement, is executed for each iteration of the loop.
+Cada instrução num loop, inclusive a própria instrução de **for**, é executada
+para cada *iteração* \(repetição\) do *loop*.
 
-Statements or assignments that can be placed outside the loop will make the loop run faster.
+Instruções e atribuições que podem ser colocadas fora de um *loop* podem
+tornar a execução do *loop* mais rápida.
 
-Bad:
+Ruim:
+
 ```javascript
 var i;
 for (i = 0; i < arr.length; i++) {
+  // ...
+}
 ```
 
-Better Code:
+Código melhor:
+
 ```javascript
 var i;
 var l = arr.length;
 for (i = 0; i < l; i++) {
+  // ...
+}
 ```
 
-The bad code accesses the length property of an array each time the loop is iterated.
+O código ruim acessa a propriedade `length` de um array cada vez que o *loop* é
+repetido.
 
-The better code accesses the length property outside the loop and makes the loop run faster.
+O código melhor acessa a propriedade `length` fora do *loop* e torna a execução
+do *loop* mais rápida.
 
-### Reduce DOM Access
+### Redução de Acessos ao DOM
 
-Accessing the HTML DOM is very slow, compared to other JavaScript statements.
+Acessar o DOM do HTML é muito lento, comparado com outras instruções de
+JavaScript.
 
-If you expect to access a DOM element several times, access it once, and use it as a local variable:
+Se você espera acessar um elemento de DOM várias vezes, acesse ele uma vez e
+use-o como uma variável local:
 
 Exemplo
+
 ```javascript
 var obj;
 obj = document.getElementById("demo");
-obj.innerHTML = "Hello";
+obj.innerHTML = "Alo";
 ```
 
-### Reduce DOM Size
+### Redução do Tamanho do **DOM**
 
-Keep the number of elements in the HTML DOM small.
+Mantenha o número de elementos no **DOM HTML** pequeno.
 
-This will always improve page loading, and speed up rendering \(page display\), especially on smaller devices.
+Isto sempre melhorará o carregamento da página e acelerará a renderização
+\(exibição da página\), especialmente e dispositivos pequenos.
 
-Every attempt to search the DOM \(like getElementsByTagName\) will benefit from a smaller DOM.
+Todas as tentativas de busca no **DOM** \(como com `getElementsByTagName`\)
+se beneficiam de um **DOM** menor.
 
-### Avoid Unnecessary Variables
+### Evite Variáveis Desnecessárias
 
-Don't create new variables if you don't plan to save values.
+Não crie variáveis novas a menos que pretenda salvar os valores.
 
-Often you can replace code like this:
+Em geral, você pode substituir código como:
 
 ```javascript
-var fullName = firstName + " " + lastName;
-document.getElementById("demo").innerHTML = fullName;
+var nomeCompleto = nome + " " + sobrenome;
+document.getElementById("demo").innerHTML = nomeCompleto;
 ```
 
-With this:
+Por:
 
 ```javascript
-document.getElementById("demo").innerHTML = firstName + " " + lastName
+document.getElementById("demo").innerHTML = nome + " " + sobrenome;
 ```
 
-### Delay JavaScript Loading
+### Retarde o Carregamento do JavaScript
 
-Putting your scripts at the bottom of the page body lets the browser load the page first.
+Colocar seus *scripts* no final do corpo da página deixa o navegador carregar a
+página antes.
 
-While a script is downloading, the browser will not start any other downloads. In addition all parsing and rendering activity might be blocked.
+Enquanto um *script* é baixado \(downloaded\), o navegador não começa a baixar
+nada mais. Além disso, toda atividade de análise sintática e renderização pode
+ficar bloqueada.
 
-The HTTP specification defines that browsers should not download more than two components in parallel.
+A especificação do HTTP define que navegadores não devem baixar mais de 2
+componentes em paralelo.
 
-An alternative is to use defer="true" in the script tag. The defer attribute specifies that the script should be executed after the page has finished parsing, but it only works for external scripts.
+Uma alternativa é usar `defer="true"` na *tag* do *script*. O atributo `defer`
+especifica que o *script* deve ser executado depois da página ter sido
+analisada lexicamente, mas ele só funciona para *scripts* externos.
 
-If possible, you can add your script to the page by code, after the page has loaded:
+Se possível, você pode adicionar seu *script* à página por código, depois que
+a página for carregada:
 
 Exemplo
 
 ```javascript
 <script>
 window.onload = function() {
-  var element = document.createElement("script");
-  element.src = "myScript.js";
-  document.body.appendChild(element);
+  var elemento = document.createElement("script");
+  elemento.src = "meuScript.js";
+  document.body.appendChild(elemento);
 };
 </script>
 ```
 
-### Avoid Using with
+### Evite o Uso do `with`
 
-Avoid using the with keyword. It has a negative effect on speed. It also clutters up JavaScript scopes.
+Evite usar a palavra-chave `with`. Ela tem um efeito negativo na velocidade de
+execução. Ele também confunde os escopos do JavaScript.
 
-The with keyword is **not allowed** in strict mode.
+A palavra-chave `with` **não é permitida** no modo estrito.
 
-## JavaScript Reserved Words (https://www.w3schools.com/js/js_reserved.asp)
+## Palavras Reservadas do JavaScript (https://www.w3schools.com/js/js_reserved.asp)
 
-### In JavaScript you cannot use these reserved words as variables, labels, or function names:
+### No JavaScript, você não pode usar as palavras reservadas como variáveis, rótulos ou nomes de funções:
 
----------|-----------|---------|----------
-abstract | arguments | await\* | boolean
-break | byte | case | catch
-char | class\* | const | continue
-debugger | default | delete | do
-double | else | enum\* | eval
-export\* | extends\* | false | final
-finally | float | for | function
-goto | if | implements | import\*
-in | instanceof | int | interface
-let\* | long | native | new
-null | package | private | protected
-public | return | short | static
-super\* | switch | synchronized | this
-throw | throws | transient | true
-try | typeof | var | void
-volatile | while | with | yield
+---------   -----------   ---------     ----------
+abstract    arguments     await\*       boolean
+break       byte          case          catch
+char        class\*       const         continue
+debugger    default       delete        do
+double      else          enum\*        eval
+export\*    extends\*     false         final
+finally     float         for           function
+goto        if            implements    import\*
+in          instanceof    int           interface
+let\*       long          native        new
+null        package       private       protected
+public      return        short         static
+super\*     switch        synchronized  this
+throw       throws        transient     true
+try         typeof        var           void
+volatile    while         with          yield
+---------   -----------   ---------     ----------
 
-Words marked with \* are new in ECMAScript 5 and 6.
+Palavras marcadas com \* são novas no ECMAScript 5 e 6.
 
-### Removed Reserved Words
-The following reserved words has been removed from the ECMAScript 5/6 standard:
--------------------------------------------------
-abstract | boolean | byte | char
-double | final | float | goto
-int | long | native | short
-synchronized | throws | transient | volatile
+### Palavras Removidas da Reserva
 
-Do not use these words as variables. ECMAScript 5/6 does not have full support in all browsers.
+As palavras chaves a seguir foram removidas dos padrões ECMAScript 5/6:
 
-### JavaScript Objects, Properties, and Methods
+---------------   -------------   ----------    -----------
+abstract          boolean         byte          char
+double            final           float         goto
+int               long            native        short
+synchronized      throws          transient     volatile
+---------------   -------------   ----------    -----------
 
-You should also avoid using the name of JavaScript built-in objects, properties, and methods:
+Não use estas palavras como variáveis. ECMAScript 5/6 não tem suporte completo
+em todos os navegadores.
 
-------|------|------|-------------------------------
-Array | Date | eval | function
-hasOwnProperty | Infinity | isFinite | isNaN
-isPrototypeOf | length | Math | NaN
-name | Number | Object | prototype
-String | toString | undefined | valueOf
+### Objetos, Propriedades e Métodos em JavaScript
 
-### Java Reserved Words
+Você também deve evitar o uso do nome de objetos, propriedades e métodos do
+JavaScript.
 
-JavaScript is often used together with Java. You should avoid using some Java objects and properties as JavaScript identifiers:
 
----------|------------------|--------------------
-getClass | java | JavaArray | javaClass
-JavaObject | JavaPackage |
+--------------   ----------   --------   ----------
+Array            Date         eval       function
+hasOwnProperty   Infinity     isFinite   isNaN
+isPrototypeOf    length       Math       NaN
+name             Number       Object     prototype
+String           toString     undefined  valueOf
+--------------   ----------   --------   ----------
 
-### Other Reserved Words
+### Palavras Reservadas do Java
+
+JavaScript é usado com frequência com Java. Você deve evitar usar alguns
+objetos e propriedades de Java com identificadores de JavaScript.
+
+----------   ------------------   -----------  ---------
+getClass     java                 JavaArray    javaClass
+JavaObject   JavaPackage
+----------   ------------------   -----------  ---------
+
+### Outras Palavras Reservadas
 
 JavaScript can be used as the programming language in many applications.
 
