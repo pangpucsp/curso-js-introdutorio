@@ -320,23 +320,25 @@ Atributos em HTML5 podem começar com *data-* \(data-quantity, data-price\).
 
 CSS usa hífens nos nomes-de-propriedades \(font-size\).
 
-    Hífens podem ser confundidas com tentativas de substração.
-    Hífens não são permitidos nos nomes de JavaScript.
+> Hífens podem ser confundidas com tentativas de substração.
+> Hífens não são permitidos nos nomes de JavaScript.
 
 #### Sublinhados
 
 Muitos programadores preferem usar sublinhados \(data_de_nascimento\),
-especialmente em bancos de dados SQL.
+especialmente em bancos de dados SQL e na programação em linguagem C.
 
 Sublinhados são frequentemente usados na documentação de PHP.
 
-#### camelCase \(notação camelo\):
+#### CamelCase \(notação camelo\):
 
 Notação camelo é usada pelo próprio JavaScript, pelo jQuery e outras
-bibliotecas de JavaScript.
+bibliotecas de JavaScript. Nela, os identificadores compostos por vários nomes
+cada nome começa em maiúsculo \(com a possível exceção do primeiro nome que deve
+  ser em maiúsculo apenas se o identificador for o nome de uma classe\).
 
 > Não comece nomes com o sinal de dollar \(\$\).
-> Colocará você em conflito com muitos nomes de bibliotecas do JavaScript.
+> Você entrará em conflito com muitos nomes de bibliotecas do JavaScript.
 
 ### Carregamento do JavaScript no HTML
 
@@ -346,6 +348,8 @@ Use sintaxe simples para carregar *scripts* externos \(o atributo tipo
 ```html
 <script src="meuscript.js"></script>
 ```
+
+> Observe que nem sempre usamos a notação camelo para nome de arquivo.
 
 ### Acesso aos Elementos de HTML
 
@@ -736,7 +740,7 @@ switch(x) {
 
 ### Confusão com Adição e Concatenação
 
-Adição soma números.
+Adição soma *números*.
 
 Concatenação junta *strings*.
 
@@ -750,7 +754,7 @@ var x = 10 + 5;          // o resultado em x é 15
 var x = 10 + "5";        // o resultado em x é "105"
 ```
 
-Ao adicioar duas variáveis, é difícil de prever o resultado:
+Ao adicionar duas variáveis, é difícil de prever o resultado:
 
 ```javascript
 var x = 10;
@@ -922,12 +926,12 @@ uma instrução completa.
 
 > **Nunca quebre** uma instrução `return`.
 
-### Acesso de *Arrays* com Nomes como Índice
+### Acesso de *Arrays* com *Strings* como Índice
 
 Muitas linguagens de programação possuem suporte para índices de *arrays* com
 nomes.
 
-*Arrays* com nomes como índice são chamados de *arrays associativos*, ou mapas
+*Arrays* com *strings* como índice são chamados de *arrays associativos*, ou mapas
 associativos, ou dicionários, \(ou *hashes*\).
 
 O JavaScript não dá suporte a *arrays* com nomes como índice.
