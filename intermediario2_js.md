@@ -1243,87 +1243,97 @@ JavaObject   JavaPackage
 
 ### Outras Palavras Reservadas
 
-JavaScript can be used as the programming language in many applications.
+JavaScript pode ser usado como linguagem de programação para muitas aplicações.
 
-You should also avoid using the name of HTML and Window objects and properties:
+Você deve evitar, também, usar o nome de objetos e propriedades de HTML e
+Window:
 
-------|-----|--------|-----------------------------------------------
-alert | all | anchor | anchors
-area | assign | blur | button
-checkbox | clearInterval | clearTimeout | clientInformation
-close | closed | confirm | constructor
-crypto | decodeURI | decodeURIComponent | defaultStatus
-document | element | elements | embed
-embeds | encodeURI | encodeURIComponent | escape
-event | fileUpload | focus | form
-forms | frame | innerHeight | innerWidth
-layer | layers | link | location
-mimeTypes | navigate | navigator | frames
-frameRate | hidden | history | image
-images | offscreenBuffering | open | opener
-option | outerHeight | outerWidth | packages
-pageXOffset | pageYOffset | parent | parseFloat
-parseInt | password | pkcs11 | plugin
-prompt | propertyIsEnum | radio | reset
-screenX | screenY | scroll | secure
-select | self | setInterval | setTimeout
-status | submit | taint | text
-textarea | top | unescape | untaint
-window |  |
+------------  ------------------   ------------------   -------------------
+alert         all                  anchor               anchors
+area          assign               blur                 button
+checkbox      clearInterval        clearTimeout         clientInformation
+close         closed               confirm              constructor
+crypto        decodeURI            decodeURIComponent   defaultStatus
+document      element              elements             embed
+embeds        encodeURI            encodeURIComponent   escape
+event         fileUpload           focus                form
+forms         frame                innerHeight          innerWidth
+layer         layers               link                 location
+mimeTypes     navigate             navigator            frames
+frameRate     hidden               history              image
+images        offscreenBuffering   open                 opener
+option        outerHeight          outerWidth           packages
+pageXOffset   pageYOffset          parent               parseFloat
+parseInt      password             pkcs11               plugin
+prompt        propertyIsEnum       radio                reset
+screenX       screenY              scroll               secure
+select        self                 setInterval          setTimeout
+status        submit               taint                text
+textarea      top                  unescape             untaint
+window    
+------------  ------------------   ------------------   -------------------
 
-### HTML Event Handlers
+### Manipuladores de Eventos de HTML
 
-In addition you should avoid using the name of all HTML event handlers.
+Além disso, você deve evitar o uso do nome de todos os manipuladores de
+eventos de HTML.
 
 Exemplos:
 
--------|---------|---------|------------------------
-onblur | onclick | onerror | onfocus
-onkeydown | onkeypress | onkeyup | onmouseover
-onload | onmouseup | onmousedown | onsubmit
+----------  -----------  ------------  ---------------------
+onblur      onclick      onerror       onfocus
+onkeydown   onkeypress   onkeyup       onmouseover
+onload      onmouseup    onmousedown   onsubmit
+----------  -----------  ------------  ---------------------
 
-## JavaScript JSON (https://www.w3schools.com/js/js_json.asp)
+## JSON (https://www.w3schools.com/js/js_json.asp)
 
-JSON is a format for storing and transporting data.
+JSON é um formato para armazenar e transferir dados.
 
-JSON is often used when data is sent from a server to a web page.
+JSON é usado com frequência quando dados devem ser enviados de um servidor para
+uma página de Web.
 
-### What is JSON?
+### O Que É JSON?
 
-  * JSON stands for JavaScript Object Notation
-  * JSON is a lightweight data interchange format
-  * JSON is language independent *
-  * JSON is "self-describing" and easy to understand
+  * JSON é a sigla para *JavaScript Object Notation* \(notação de objetos JS\)
+  * JSON é um formato *leve* para troca de dados
+  * JSON é independente da linguagem de programação \(\*\)
+  * JSON é *auto-descritivo* e fácil de entender
 
-* The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
+\* A sintaxe do JSON syntax é derivada da notação da sintaxe de notação de
+objetos do JavaScript, mas o formato JSON é puro texto. Código para ler e gerar
+dados em JSON podem ser escritos em qualquer linguagem de prohramação.
 
-### JSON Exemplo
+### Exemplo de JSON
 
-This JSON syntax defines an employees object: an array of 3 employee records \(objects\):
+Esta sintaxe de JSON define um objetos `empregados`: um *array* com
+registros \(objetos\) de 3 empregados:
 
-JSON Exemplo
+Exemplo de JSON
 ```json
 {
-"employees":[
-  {"firstName":"John", "lastName":"Doe"},
-  {"firstName":"Anna", "lastName":"Smith"},
-  {"firstName":"Peter", "lastName":"Jones"}
+"empregados":[
+  {"nome":"João", "sobrenome":"Silva"},
+  {"nome":"Ana", "sobrenome":"Carvalho"},
+  {"nome":"Pedro", "sobrenome":"Cavalcante"}
 ]
 }
 ```
 
-### The JSON Format Evaluates to JavaScript Objects
+### O Formato JSON É Calculado Em Objetos JavaScript
 
-The JSON format is syntactically identical to the code for creating JavaScript objects.
+O formato JSON é sintaticamente identico ao código para criar objetos de
+JavaScript.
 
-Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects.
+Por causa da semelhança, um programa JavaScript pode converter facilmente dados
+em JSON em objetos JavaScript nativos.
 
-### JSON Syntax Rules
+### Regras Sintáticas de JSON
 
-  * Data is in name/value pairs
-  * Data is separated by commas
-  * Curly braces hold objects
-  * Square brackets hold arrays
+  * Dados estão em pares nome/valor
+  * Dados são separados por vírgulas
+  * Chaves representam objetos
+  * Colchetes representam *arrays*
 
 ### JSON Data - A Name and a Value
 

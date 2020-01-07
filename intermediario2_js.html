@@ -1,0 +1,1353 @@
+<h1 id="fundamentos-vii-de-javascript">Fundamentos VII de JavaScript</h1>
+<p>Esta é a continuação de <a href="intermediario1_js.md">Fundamentos VI de JS</a>.</p>
+<h2 id="debug-em-javascript"><a href="https://www.w3schools.com/js/js_debugging.asp">Debug em JavaScript</a></h2>
+<p>Erros (<em>bugs</em>) podem (vão) acontecer, sempre que você escrever algum código novo de computador.</p>
+<h3 id="debug-de-código"><em>Debug</em> de Código</h3>
+<p><em>Bug</em> é como em computação são chamados os erros de código. <em>Debug</em> é retirar os erros dos programas. Muitas vezes, <em>debug</em> é traduzido por depuração. Códigos de programas podem ter erros de sintaxe ou erros lógicos.</p>
+<p>Muitos destes erros são difíceis de diagnosticar.</p>
+<p>Frequentemente, quando um código de programação possui erros, nada acontece. Não há mensagens de erro e você não tem nenhuma indicação de onde procurar os erros.</p>
+<p>Procurar e consertar os erros no código dos programas é chamado de <em>debugar</em> (depurar) os programas.</p>
+<h3 id="debuggers-de-javascript"><em>Debuggers</em> de JavaScript</h3>
+<p>Debugar não é fácil. Felizmente, todos os navegadores modernos possuem um <em>debugger</em> (depurador, ou “debugador”) embutido.</p>
+<p><em>Debuggers</em> embutidos podem ser ligados ou desligados para relatar os erros para os usuários.</p>
+<p>Com um <em>debugger</em>, você também pode colocar <em>breakpoints</em> (lugares no código em que a execução deve ser parada) e examinar as variáveis enquanto o programa está executando.</p>
+<p>Normalmente, você ativa o <em>debugging</em> (depuração) no seu navegador com a tecla <kbd>F12</kbd> e seleciona a aba de <em>Console</em> no menu do debugger.</p>
+<h3 id="o-método-console.log">O Método <code>console.log()</code></h3>
+<p>Se seu navegador suporta a depuração, você pode usar <code>console.log()</code> para mostrar os valores de JavaScript na janela de depuração:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">&lt;h1&gt;</span>Minha Primeira Página WEB<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>b <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>c <span class="op">=</span> a <span class="op">+</span> b<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="va">console</span>.<span class="at">log</span>(c)<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="kw">&lt;/script&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<h3 id="colocação-de-breakpoints">Colocação de <em>Breakpoints</em></h3>
+<p>Na janela do <em>debugger</em>, você pode colocar <em>breakpoints</em> no código JavaScript.</p>
+<p>Em cada <em>breakpoint</em>, o JavaScript parará a execução e o <em>debugger</em> permite que você examine o valor das variáveis e calcule outros valores.</p>
+<p>Depois de examinar os valores, você pode prosseguir a execução do código (tipicamente com um botão de <em>play</em>).</p>
+<h3 id="a-palavra-chave-debugger">A Palavra-Chave <code>debugger</code></h3>
+<p>A palavra-chave <code>debugger</code> para a execução do JavaScript e chama (se estiver disponível) a função de depuração.</p>
+<p>Isto tem o mesmo efeito que colocar um <em>breakpoint</em> no <em>debugger</em>.</p>
+<p>Se nenhuma depuração estiver disponível, a instrução <code>debugger</code> não tem efeito.</p>
+<p>Com o <em>debugger</em> ligado, o código abaixo para a execução antes de executar a terceira linha.</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">15</span> <span class="op">*</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="cf">debugger</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> x<span class="op">;</span></span></code></pre></div>
+<h3 id="ferramentas-de-debugging-dos-principais-navegadores">Ferramentas de <em>Debugging</em> dos Principais Navegadores</h3>
+<p>Normalmente, você ativa a depuração no navegador com <kbd>F12</kbd> e seleciona a aba <em>Console</em> no menu do <em>debugger</em>.</p>
+<p>Se não, siga as seguintes instruções:</p>
+<h4 id="chrome">Chrome</h4>
+<ol type="1">
+<li>Rode o navegador.</li>
+<li>Do menu, selecione “Outras Ferramentas”.</li>
+<li>Das Ferramentas, escolha “Ferramentas de Desenvolvimento”.</li>
+<li>Enfim, selecione “Console”.</li>
+</ol>
+<h4 id="firefox">Firefox</h4>
+<ol type="1">
+<li>Rode o navegador.</li>
+<li>Do menu, selecione “Desenvolvedor Web”.</li>
+<li>Enfim, selecione “Console Web”.</li>
+</ol>
+<h4 id="edge">Edge</h4>
+<ol type="1">
+<li>Rode o navegador.</li>
+<li>Do menu, selecione “Ferramentas Desenvolvedor”.</li>
+<li>Enfim, selecione “Console”.</li>
+</ol>
+<h4 id="opera">Opera</h4>
+<ol type="1">
+<li>Rode o navegador.</li>
+<li>Do menu, selecione “Desenvolvedor”.</li>
+<li>De “Desenvolvedor”, selecione “Ferramentas Desenvolvedor”.</li>
+<li>Enfim, selecione “Console”.</li>
+</ol>
+<h4 id="safari">Safari</h4>
+<ol type="1">
+<li>Vá ao Safari, Preferências, Avançado no menu principal.</li>
+<li>Marque “Enable Show Develop menu in menu bar”.</li>
+<li>Quando a nova opção “Develop” aparecer no menu:</li>
+<li>Escolha “Show Error Console”.</li>
+</ol>
+<h2 id="guia-de-estilo-e-convenções-de-codificação-de-javascript">Guia de Estilo e <a href="https://www.w3schools.com/js/js_conventions.asp">Convenções de Codificação</a> de JavaScript</h2>
+<p>Sempre use as mesmas convenções de codificação para todos os seus projetos de JavaScript.</p>
+<h3 id="convenções-de-codificação-de-javascript">Convenções de Codificação de JavaScript</h3>
+<p>Convenções de codificação são recomendações de estilo para a programação. Elas, em geral, cobrem:</p>
+<ul>
+<li>Regras para a formação de nomes e declaração de variáveis e funções.</li>
+<li>Regras para o uso de espaços, indentação (tabulação) e comentários.</li>
+<li>Práticas e princípios de programação.</li>
+</ul>
+<p>Convenções de codificação asseguram a qualidade:</p>
+<ul>
+<li>Melhora a legibilidade do código.</li>
+<li>Torna a manutenção do código mais fácil.</li>
+</ul>
+<p>Convenções de codificação podem ser regras documentadas para equipes seguirem, ou serem apenas a prática de codificação individual do programador.</p>
+<pre><code>Esta seção descreve convenções de codificação de JavaScript usadas
+frequentemente.
+Leia também a próxima seção &quot;Melhores Práticas&quot; e aprenda a evitar
+armadilhas de programação.</code></pre>
+<h3 id="nomes-de-variáveis">Nomes de Variáveis</h3>
+<p>Use a <em>notação camelo</em> para os nomes dos identificadores (para variáveis e funções). Na <em>notação camelo</em>, quando um identificador é composto por várias palavras, as palavras são colocadas juntas, a primeira letra de cada palavra é escrita em maiúsculo e as outras em minúsculas (a não ser que seja uma abreviação, ou sigla, quando todas as letras permanecem maiúculas).</p>
+<p>Todos os nomes começam com uma letra minúscula (a não ser que o identificador seja o nome de uma classe).</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a>nome <span class="op">=</span> <span class="st">&quot;José&quot;</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>nomeDoMeio <span class="op">=</span> <span class="st">&quot;Antônio&quot;</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>sobrenome <span class="op">=</span> <span class="st">&quot;da Silva&quot;</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>preco <span class="op">=</span> <span class="fl">19.90</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>imposto <span class="op">=</span> <span class="fl">0.20</span><span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a>precoCheio <span class="op">=</span> preco <span class="op">+</span> (preco <span class="op">*</span> imposto)<span class="op">;</span></span></code></pre></div>
+<h3 id="espaços-em-volta-dos-operadores">Espaços em Volta dos Operadores</h3>
+<p>Sempre coloque espaços em volta dos operadores ( = + - * / ) e depois de vírgulas:</p>
+<p>Exemplos:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">var</span> x <span class="op">=</span> y <span class="op">+</span> z<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">var</span> valores <span class="op">=</span> [<span class="st">&quot;Volvo&quot;</span><span class="op">,</span> <span class="st">&quot;Saab&quot;</span><span class="op">,</span> <span class="st">&quot;Fiat&quot;</span>]<span class="op">;</span></span></code></pre></div>
+<h3 id="indentação-de-códigos">Indentação de Códigos</h3>
+<p>Sempre use 2 espaços para a indentação de blocos de códigos:</p>
+<p>Funções:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">// função para converter graus Fahrenheit em graus Celsius</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">function</span> <span class="at">paraCelsius</span>(fahrenheit) <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="cf">return</span> (<span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span>) <span class="op">*</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>)<span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="op">}</span></span></code></pre></div>
+<pre><code>Não use tabs \(tabuladores\) para indentação.
+Diferentes editores interpretam tabs diferentemente.</code></pre>
+<h3 id="regras-para-instruções">Regras para Instruções</h3>
+<p>Regras gerais para instruções simples:</p>
+<p>Sempre termine uma instrução com ponto-e-vírgula (;).</p>
+<p>Exemplos</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">var</span> valores <span class="op">=</span> [<span class="st">&quot;Volvo&quot;</span><span class="op">,</span> <span class="st">&quot;Saab&quot;</span><span class="op">,</span> <span class="st">&quot;Fiat&quot;</span>]<span class="op">;</span>  <span class="co">// array</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="kw">var</span> pessoa <span class="op">=</span> <span class="op">{</span>  <span class="co">// objeto</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="dt">nome</span><span class="op">:</span> <span class="st">&quot;José&quot;</span><span class="op">,</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="dt">sobrenome</span><span class="op">:</span> <span class="st">&quot;da Silva&quot;</span><span class="op">,</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="dt">idade</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="dt">corDosOlhos</span><span class="op">:</span> <span class="st">&quot;azul&quot;</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="op">};</span></span></code></pre></div>
+<p>Regras gerais para instruções complexas (compostas):</p>
+<ul>
+<li>Abra chave no fim da primeira linha;</li>
+<li>Coloque um espaço antes de abrir chave;</li>
+<li>Feche chave numa linha nova, retirando indentação do bloco e</li>
+<li>Não termine uma instrução complexa com ponto-e-vírgula.</li>
+</ul>
+<p>Funções:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">function</span> <span class="at">toCelsius</span>(fahrenheit) <span class="op">{</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="cf">return</span> (<span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span>) <span class="op">*</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>)<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="op">}</span></span></code></pre></div>
+<p><em>Loops</em>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  x <span class="op">+=</span> i<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="op">}</span></span></code></pre></div>
+<p>Condicionais:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="cf">if</span> (hora <span class="op">&lt;</span> <span class="dv">12</span>) <span class="op">{</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  saudacao <span class="op">=</span> <span class="st">&quot;Bom dia&quot;</span><span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (hora <span class="op">&lt;</span> <span class="dv">18</span>) <span class="op">{</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  sudacao <span class="op">=</span> <span class="st">&quot;Boa tarde&quot;</span><span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  saudacao <span class="op">=</span> <span class="st">&quot;Boa noite&quot;</span><span class="op">;</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="regras-para-objetos">Regras para Objetos</h3>
+<p>Regras gerais para a definição de objetos:</p>
+<ul>
+<li>Abra chave ({) na mesma linha do nome do objeto;</li>
+<li>Use dois pontos (:) mais espaço entre cada propriedade e seu valor;</li>
+<li>Use aspas (") em volta de valores de strings, não em volta de valores numéricos;</li>
+<li>Não adicione uma vírgula após o último par propriedade-valor;</li>
+<li>Feche chave (}) numa nova linha, retirando uma indentação e</li>
+<li>Sempre termine uma definição de objeto com ponto-e-vírgula.</li>
+</ul>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">var</span> pessoa <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="dt">nome</span><span class="op">:</span> <span class="st">&quot;José&quot;</span><span class="op">,</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="dt">sobrenome</span><span class="op">:</span> <span class="st">&quot;da Silva&quot;</span><span class="op">,</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="dt">idade</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="dt">corDosOlhos</span><span class="op">:</span> <span class="st">&quot;azul&quot;</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="op">};</span></span></code></pre></div>
+<p>Objetos curtos podem ser escritos comprimidos, numa linha, use espaços apenas entre as propriedades, assim:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">var</span> pessoa <span class="op">=</span> <span class="op">{</span><span class="dt">nome</span><span class="op">:</span><span class="st">&quot;José&quot;</span><span class="op">,</span> <span class="dt">sobrenome</span><span class="op">:</span><span class="st">&quot;da Silva&quot;</span><span class="op">,</span> <span class="dt">idade</span><span class="op">:</span><span class="dv">50</span><span class="op">,</span> <span class="dt">corDosOlhos</span><span class="op">:</span><span class="st">&quot;azul&quot;</span><span class="op">};</span></span></code></pre></div>
+<h3 id="comprimento-de-linha-80">Comprimento de Linha &lt; 80</h3>
+<p>Para legibilidade, evite linhas mais longas do que 80 caracteres.</p>
+<p>Se uma instrução JavaScript não cabe numa linha, o melhor lugar para quebrá-la é depois de um operador ou de uma vírgula.</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1"></a><span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="st">&quot;Alô, Teresinha!&quot;</span><span class="op">;</span></span></code></pre></div>
+<h3 id="convenções-para-nomes">Convenções para Nomes</h3>
+<p>Sempre use a convenção de nomes para todos os seus códigos. Por exemplo:</p>
+<ul>
+<li>Nomes de variáveis e funções escritas em <em>notação camelo</em></li>
+<li>Variáveis globais em letras maiúsculas</li>
+<li>Constantes (como PI) em maiúsculas</li>
+</ul>
+<p>Observe que existe constantemente uma discussão sobre como escrever identificadores compostos de várias palavras:</p>
+<ul>
+<li>programadores Lisp usam hífens, atributos em HTML e CSS, também;</li>
+<li>programadores C/C++, PHP, Pearl e SQL usam sublinhado (_) e</li>
+<li>programadores Java usam a <em>notação camelo</em>.</li>
+</ul>
+<h4 id="hífens-em-html-e-css">Hífens em HTML e CSS</h4>
+<p>Atributos em HTML5 podem começar com <em>data-</em> (data-quantity, data-price).</p>
+<p>CSS usa hífens nos nomes-de-propriedades (font-size).</p>
+<blockquote>
+<p>Hífens podem ser confundidas com tentativas de substração. Hífens não são permitidos nos nomes de JavaScript.</p>
+</blockquote>
+<h4 id="sublinhados">Sublinhados</h4>
+<p>Muitos programadores preferem usar sublinhados (data_de_nascimento), especialmente em bancos de dados SQL e na programação em linguagem C.</p>
+<p>Sublinhados são frequentemente usados na documentação de PHP.</p>
+<h4 id="camelcase-notação-camelo">CamelCase (notação camelo):</h4>
+<p>Notação camelo é usada pelo próprio JavaScript, pelo jQuery e outras bibliotecas de JavaScript. Nela, os identificadores compostos por vários nomes cada nome começa em maiúsculo (com a possível exceção do primeiro nome que deve ser em maiúsculo apenas se o identificador for o nome de uma classe).</p>
+<blockquote>
+<p>Não comece nomes com o sinal de dollar ($). Você entrará em conflito com muitos nomes de bibliotecas do JavaScript.</p>
+</blockquote>
+<h3 id="carregamento-do-javascript-no-html">Carregamento do JavaScript no HTML</h3>
+<p>Use sintaxe simples para carregar <em>scripts</em> externos (o atributo tipo não é necessário):</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;meuscript.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<blockquote>
+<p>Observe que nem sempre usamos a notação camelo para nome de arquivo.</p>
+</blockquote>
+<h3 id="acesso-aos-elementos-de-html">Acesso aos Elementos de HTML</h3>
+<p>Uma consequência do uso de estilos HTML “desarrumados” é provocar erros no JavaScript.</p>
+<p>Estas duas instruções de JavaScript vão produzir resultados diferentes:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">var</span> obj <span class="op">=</span> <span class="at">getElementById</span>(<span class="st">&quot;Demo&quot;</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">var</span> obj <span class="op">=</span> <span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>)</span></code></pre></div>
+<p>Se possível, use as mesmas convenções de formação de nomes (como no JavaScript) em HTML.</p>
+<h3 id="extensões-de-arquivos">Extensões de Arquivos</h3>
+<p>Arquivos HTML devem ter uma extensão <strong>.html</strong> (não <strong>.htm</strong>).</p>
+<p>Arquivos CSS devem ter uma extensão <strong>.css</strong>.</p>
+<p>Arquivos JavaScript devem ter uma extensão <strong>.js</strong>.</p>
+<h3 id="use-nomes-de-arquivos-com-minúsculas">Use Nomes de Arquivos com Minúsculas</h3>
+<p>A maioria dos servidores de WEB (Apache, Unix) diferenciam maiúsculas e minúsculas nos nomes dos arquivos:</p>
+<p><code>london.jpg</code> não pode ser acessado como <code>London.jpg</code>.</p>
+<p>Alguns servidores WEB (Microsoft, IIS) não diferenciam as caixas:</p>
+<p><code>london.jpg</code> pode ser acessado como <code>London.jpg</code> ou <code>london.jpg</code>.</p>
+<p>Se você misturar maiúsculas com minúsculas, num servidor sensível à caixa, você tem ser muito consistente.</p>
+<p>Se você mudar de um servidor insensível à caixa para um sensível, pequenos erros podem quebrar seu site WEB.</p>
+<p>Para evitar estes problemas, sempre use nomes de arquivos em minúsculas.</p>
+<h3 id="desempenho">Desempenho</h3>
+<p>Convenções de codificação não são usadas pelos computadores. A maioria das regras têm pouco impacto na execução dos programas.</p>
+<p>Indentação e espaços extras não são significantes em <em>scripts</em> pequenos.</p>
+<p>Para o desenvolvimento de código, a legibilidade deve ser sempre preferida. Grandes <em>scripts</em> em produção devem ser minimizados.</p>
+<h2 id="melhores-práticas-de-javascript">Melhores <a href="https://www.w3schools.com/js/js_best_practices.asp">Práticas de JavaScript</a></h2>
+<p>Evite <em>variáveis globais</em>, evite <code>new</code>, evite <code>==</code>, evite <code>eval()</code>.</p>
+<h3 id="evite-variáveis-globais">Evite Variáveis globais</h3>
+<p>Minimize o uso de variáveis globais.</p>
+<p>Isto vale para todos os tipos de dados, objetos e funções.</p>
+<p>Variáveis e funções globais podem ser sobreescritas por outros scripts.</p>
+<p>Use variáveis locais e aprenda a usar fechamentos (<em>closures</em>).</p>
+<h3 id="sempre-declare-variáveis-locais">Sempre Declare Variáveis Locais</h3>
+<p>Todas as variáveis usadas numa função devem ser declaradas como variáveis locais.</p>
+<p>Variáveis locais devem ser declaradas com a palavra-chave <code>var</code>, senão elas se tornam globais.</p>
+<p>O modo <em>strict</em> não permite variáveis não declaradas, procure usá-lo.</p>
+<h3 id="declarações-no-topo">Declarações no Topo</h3>
+<p>É uma boa prática de programação coloxar todas as declarações no topo de cada script ou função.</p>
+<ul>
+<li>Permite ter um código mais claro</li>
+<li>Fornece um único lugar para procurar pelas variáveis locais</li>
+<li>Torna mais fácil evitar variáveis globais indesejadas (implícitas)</li>
+<li>Reduz a possibilidade de re-declarações acidentais</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a><span class="co">// Declare no início</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">var</span> nome<span class="op">,</span> sobrenome<span class="op">,</span> preco<span class="op">,</span> desconto<span class="op">,</span> precoCheio<span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co">// Use depois</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>nome <span class="op">=</span> <span class="st">&quot;José&quot;</span><span class="op">;</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>sobrenome <span class="op">=</span> <span class="st">&quot;da Silva&quot;</span><span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a></span>
+<span id="cb17-8"><a href="#cb17-8"></a>preco <span class="op">=</span> <span class="fl">19.90</span><span class="op">;</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>desconto <span class="op">=</span> <span class="fl">0.10</span><span class="op">;</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a></span>
+<span id="cb17-11"><a href="#cb17-11"></a>precoCheio <span class="op">=</span> preco <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> desconto <span class="op">/</span> <span class="dv">100</span>)<span class="op">;</span></span></code></pre></div>
+<p>Isto também vale para variáveis de malhas:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">// Declare no inicio</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">var</span> i<span class="op">;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="co">// Use depois</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>  <span class="co">// ...</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="op">}</span></span></code></pre></div>
+<blockquote>
+<p>O JavaScript move todas as declarações para o topo (Promoção do JavaScript).</p>
+</blockquote>
+<h3 id="inicialize-as-variáveis">Inicialize as Variáveis</h3>
+<p>É uma boa prática, inicializar as variáveis quando você as declara.</p>
+<ul>
+<li>Resulta num código mais claro</li>
+<li>Fornece um único lugar para inicializar as variáveis</li>
+<li>Evita valores indefinidos</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">// Declare e inicialize no começo</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">var</span> nome <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">,</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>sobrenome <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">,</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>preco <span class="op">=</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>desconto <span class="op">=</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>precoCheio <span class="op">=</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a>meuArray <span class="op">=</span> []<span class="op">,</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>meuObjeto <span class="op">=</span> <span class="op">{};</span></span></code></pre></div>
+<blockquote>
+<p>Inicializar as variáveis fornece uma ideia do uso pretendido (e o tipo de dado pretendido).</p>
+</blockquote>
+<h3 id="nunca-declare-objeto-número-string-ou-booleano">Nunca Declare Objeto Número, String ou Booleano</h3>
+<p>Sempre trate números, strings ou booleanos como valores primitivos. Não como objetos.</p>
+<p>Declarar estes tipos como objetos, reduz a velocidade do processamento e produz efeitos colaterais desagradáveis.</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="st">&quot;José&quot;</span><span class="op">;</span>             </span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="kw">var</span> y <span class="op">=</span> <span class="kw">new</span> <span class="at">String</span>(<span class="st">&quot;José&quot;</span>)<span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>(x <span class="op">===</span> y) <span class="co">// é false porque x é uma string e y é um objeto.</span></span></code></pre></div>
+<p>Ou pior ainda:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="kw">new</span> <span class="at">String</span>(<span class="st">&quot;José&quot;</span>)<span class="op">;</span>             </span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="kw">var</span> y <span class="op">=</span> <span class="kw">new</span> <span class="at">String</span>(<span class="st">&quot;José&quot;</span>)<span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>(x <span class="op">==</span> y) <span class="co">// é false porque você não pode comparar objetos.</span></span></code></pre></div>
+<h4 id="não-use-new-object">Não Use <code>new Object()</code></h4>
+<ul>
+<li>Use <code>{}</code> no lugar de <code>new Object()</code></li>
+<li>Use <code>""</code> no lugar de <code>new String()</code></li>
+<li>Use <code>0</code> no lugar de <code>new Number()</code></li>
+<li>Use <code>false</code> no lugar de <code>new Boolean()</code></li>
+<li>Use <code>[]</code> no lugar de <code>new Array()</code></li>
+<li>Use <code>/()/</code> no lugar de <code>new RegExp()</code></li>
+<li>Use <code>function (){}</code> no lugar de <code>new Function()</code></li>
+</ul>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">var</span> x1 <span class="op">=</span> <span class="op">{};</span>           <span class="co">// novo objeto</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="kw">var</span> x2 <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span>           <span class="co">// nova string primitiva</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="kw">var</span> x3 <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>            <span class="co">// novo número primitivo</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="kw">var</span> x4 <span class="op">=</span> <span class="kw">false</span><span class="op">;</span>        <span class="co">// novo booleano primitivo</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="kw">var</span> x5 <span class="op">=</span> []<span class="op">;</span>           <span class="co">// novo objeto array</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="kw">var</span> x6 <span class="op">=</span> <span class="ss">/</span><span class="sc">()</span><span class="ss">/</span><span class="op">;</span>         <span class="co">// novo objeto regexp</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a><span class="kw">var</span> x7 <span class="op">=</span> <span class="kw">function</span>()<span class="op">{};</span> <span class="co">// novo objeto função</span></span></code></pre></div>
+<h3 id="cuidado-com-conversões-automáticas-de-tipos">Cuidado com Conversões Automáticas de Tipos</h3>
+<p>Cuidado, números podem ser automaticamente convertidos para <em>strings</em> ou NaN (<em>Not a Number</em>).</p>
+<p>JavaScript é fracamente tipado. Uma variável pode conter diferentes tipos de dados e uma variável pode trocar o seu tipo de dado:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="st">&quot;Alo&quot;</span><span class="op">;</span>     <span class="co">// typeof x é uma string</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span>             <span class="co">// muda typeof x para um número</span></span></code></pre></div>
+<p>Ao fazer operações matemáticas, JavaScript pode converter números em <em>strings</em>:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">7</span><span class="op">;</span>       <span class="co">// x.valueOf() é 12,  typeof x é um número</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="st">&quot;7&quot;</span><span class="op">;</span>     <span class="co">// x.valueOf() é 57,  typeof x é uma string</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="kw">var</span> x <span class="op">=</span> <span class="st">&quot;5&quot;</span> <span class="op">+</span> <span class="dv">7</span><span class="op">;</span>     <span class="co">// x.valueOf() é 57,  typeof x é uma string</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">5</span> <span class="op">-</span> <span class="dv">7</span><span class="op">;</span>       <span class="co">// x.valueOf() é -2,  typeof x é um número</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">5</span> <span class="op">-</span> <span class="st">&quot;7&quot;</span><span class="op">;</span>     <span class="co">// x.valueOf() é -2,  typeof x é um número</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="kw">var</span> x <span class="op">=</span> <span class="st">&quot;5&quot;</span> <span class="op">-</span> <span class="dv">7</span><span class="op">;</span>     <span class="co">// x.valueOf() é -2,  typeof x é um número</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">5</span> <span class="op">-</span> <span class="st">&quot;x&quot;</span><span class="op">;</span>     <span class="co">// x.valueOf() é NaN, typeof x é um número</span></span></code></pre></div>
+<blockquote>
+<p>Substrair uma string de uma string não gera um <em>erro</em>, mas retorna <code>NaN</code></p>
+</blockquote>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="st">&quot;Alo&quot;</span> <span class="op">-</span> <span class="st">&quot;Terezinha&quot;</span>    <span class="co">// retorna NaN</span></span></code></pre></div>
+<h3 id="use-a-comparação-com">Use a Comparação com <code>===</code></h3>
+<p>O operador de comparação <code>==</code> sempre converte antes da comparação (para tipos iguais).</p>
+<p>O operador <code>===</code> força a comparação de tipo e valor:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1"></a><span class="dv">0</span> <span class="op">==</span> <span class="st">&quot;&quot;</span><span class="op">;</span>        <span class="co">// true</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="dv">1</span> <span class="op">==</span> <span class="st">&quot;1&quot;</span><span class="op">;</span>       <span class="co">// true</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="dv">1</span> <span class="op">==</span> <span class="kw">true</span><span class="op">;</span>      <span class="co">// true</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="dv">0</span> <span class="op">===</span> <span class="st">&quot;&quot;</span><span class="op">;</span>       <span class="co">// false</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="dv">1</span> <span class="op">===</span> <span class="st">&quot;1&quot;</span><span class="op">;</span>      <span class="co">// false</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="dv">1</span> <span class="op">===</span> <span class="kw">true</span><span class="op">;</span>     <span class="co">// false</span></span></code></pre></div>
+<h3 id="use-parâmetros-com-valor-padrão-defaults">Use Parâmetros com Valor Padrão (<em>Defaults</em>)</h3>
+<p>Se uma função é chamada com um argumento ausente, o valor do argumento ausente é colocado como <code>undefined</code>.</p>
+<p>Valores não definidos (<em>undefined</em>) podem quebrar o seu código. É um hábito bom atribuir valores padrões (<em>defaults</em>) aos argumentos.</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">function</span> <span class="at">myFunction</span>(x<span class="op">,</span> y) <span class="op">{</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="cf">if</span> (y <span class="op">===</span> <span class="kw">undefined</span>) <span class="op">{</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>    y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="op">}</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="op">}</span></span></code></pre></div>
+<p>ECMAScript 2015 permite definir parâmetros com valores padrões para as chamadas das funções:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">function</span> (a<span class="op">=</span><span class="dv">1</span><span class="op">,</span> b<span class="op">=</span><span class="dv">1</span>) <span class="op">{</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="co">// código da function</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="termine-seus-switches-com-default">Termine Seus <code>switch</code>es com <code>default</code></h3>
+<p>Sempre termine seus <code>switch</code> com um <code>default</code>. Mesmo que você ache que não precisa dele.</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1"></a><span class="cf">switch</span> (<span class="kw">new</span> <span class="at">Date</span>().<span class="at">getDay</span>()) <span class="op">{</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="cf">case</span> <span class="dv">0</span><span class="op">:</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>    dia <span class="op">=</span> <span class="st">&quot;Domingo&quot;</span><span class="op">;</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>    dia <span class="op">=</span> <span class="st">&quot;Segunda-feira&quot;</span><span class="op">;</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="cf">case</span> <span class="dv">2</span><span class="op">:</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>    dia <span class="op">=</span> <span class="st">&quot;Terça-feira&quot;</span><span class="op">;</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a>  <span class="cf">case</span> <span class="dv">3</span><span class="op">:</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a>    dia <span class="op">=</span> <span class="st">&quot;Quarta-feira&quot;</span><span class="op">;</span></span>
+<span id="cb29-13"><a href="#cb29-13"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb29-14"><a href="#cb29-14"></a>  <span class="cf">case</span> <span class="dv">4</span><span class="op">:</span></span>
+<span id="cb29-15"><a href="#cb29-15"></a>    dia <span class="op">=</span> <span class="st">&quot;Quinta-feira&quot;</span><span class="op">;</span></span>
+<span id="cb29-16"><a href="#cb29-16"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb29-17"><a href="#cb29-17"></a>  <span class="cf">case</span> <span class="dv">5</span><span class="op">:</span></span>
+<span id="cb29-18"><a href="#cb29-18"></a>    dia <span class="op">=</span> <span class="st">&quot;Sexta-feira&quot;</span><span class="op">;</span></span>
+<span id="cb29-19"><a href="#cb29-19"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb29-20"><a href="#cb29-20"></a>  <span class="cf">case</span> <span class="dv">6</span><span class="op">:</span></span>
+<span id="cb29-21"><a href="#cb29-21"></a>    dia <span class="op">=</span> <span class="st">&quot;Sábado&quot;</span><span class="op">;</span></span>
+<span id="cb29-22"><a href="#cb29-22"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb29-23"><a href="#cb29-23"></a>  <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb29-24"><a href="#cb29-24"></a>    dia <span class="op">=</span> <span class="st">&quot;Desconhecido&quot;</span><span class="op">;</span></span>
+<span id="cb29-25"><a href="#cb29-25"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="evite-usar-eval">Evite Usar <code>eval()</code></h3>
+<p>A função <code>eval()</code> é usada para executar texto como código. Em quase todos os casos, não deve ser necessário usá-la, a menos que você esteja escrevendo um interpretador.</p>
+<p>Ela permite que qualquer código seja executado e isto pode ser um risco à segurança.</p>
+<h2 id="erros-comuns-em-javascript"><a href="https://www.w3schools.com/js/js_mistakes.asp">Erros Comuns em JavaScript</a></h2>
+<h3 id="uso-acidental-do-operador-de-atribuição">Uso Acidental do Operador de Atribuição</h3>
+<p>Programas em JavaScript, ou em qualquer linguagem, pode gerar resultados inesperados se um programador usa acidentalmente um operador de atribuição (<code>=</code>), no lugar de um operador de comparação (<code>==</code>) numa condição.</p>
+<p>A condição do <code>if</code> abaixo vale <code>false</code> (como esperado) porque <code>x</code> não é igual a <code>10</code>:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="cf">if</span> (x <span class="op">==</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>A condição da instrução <code>if</code> vale <code>true</code> (ao contrário do esperado), porque <code>10</code> é <code>true</code>:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="cf">if</span> (x <span class="op">=</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>A condição da instrução <code>if</code> abaixo vale <code>false</code> (ao contrário do que se espera), porque <code>0</code> é <code>false</code>:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="cf">if</span> (x <span class="op">=</span> <span class="dv">0</span>)</span></code></pre></div>
+<p>Uma atribuição sempre volta o valor da atribuição, isto é, o valor da expressão a direita da atribuição.</p>
+<h3 id="expectativa-de-comparação-fraca">Expectativa de Comparação Fraca</h3>
+<p>Numa comparação normal, o tipo do dado <em>nao importa</em>. A condição da instrução <code>if</code> abaixo vale <code>true</code>:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="kw">var</span> y <span class="op">=</span> <span class="st">&quot;10&quot;</span><span class="op">;</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="cf">if</span> (x <span class="op">==</span> y)</span></code></pre></div>
+<p>Numa comparação estrita, o tipo do dado <em>importa</em>. A condição da instrução <code>if</code> abaixo vale <code>false</code>:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="kw">var</span> y <span class="op">=</span> <span class="st">&quot;10&quot;</span><span class="op">;</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="cf">if</span> (x <span class="op">===</span> y)</span></code></pre></div>
+<p>Um erro comum é esquecer que os <code>case</code> da instrução <code>switch</code> usam a comparação estrita:</p>
+<p>O <code>switch</code> abaixo vai mostrar um alerta:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="cf">switch</span>(x) <span class="op">{</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="cf">case</span> <span class="dv">10</span><span class="op">:</span> <span class="at">alert</span>(<span class="st">&quot;Alo&quot;</span>)<span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a><span class="op">}</span></span></code></pre></div>
+<p>O <code>switch</code> abaixo não vai mostrar o alerta:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="cf">switch</span>(x) <span class="op">{</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="cf">case</span> <span class="st">&quot;10&quot;</span><span class="op">:</span> <span class="at">alert</span>(<span class="st">&quot;Alo&quot;</span>)<span class="op">;</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="confusão-com-adição-e-concatenação">Confusão com Adição e Concatenação</h3>
+<p>Adição soma <em>números</em>.</p>
+<p>Concatenação junta <em>strings</em>.</p>
+<p>No JavaScript ambas operações usam o mesmo operador <code>+</code>.</p>
+<p>Por causa disto, adicionar um número como um número pode resultar em algo diferente de adicionar um número como <em>string</em>:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span> <span class="op">+</span> <span class="dv">5</span><span class="op">;</span>          <span class="co">// o resultado em x é 15</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span> <span class="op">+</span> <span class="st">&quot;5&quot;</span><span class="op">;</span>        <span class="co">// o resultado em x é &quot;105&quot;</span></span></code></pre></div>
+<p>Ao adicionar duas variáveis, é difícil de prever o resultado:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="kw">var</span> y <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="kw">var</span> z <span class="op">=</span> x <span class="op">+</span> y<span class="op">;</span>           <span class="co">// o resultado em z é 15</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a></span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb38-6"><a href="#cb38-6"></a><span class="kw">var</span> y <span class="op">=</span> <span class="st">&quot;5&quot;</span><span class="op">;</span></span>
+<span id="cb38-7"><a href="#cb38-7"></a><span class="kw">var</span> z <span class="op">=</span> x <span class="op">+</span> y<span class="op">;</span>           <span class="co">// o resultado em z é &quot;105&quot;</span></span></code></pre></div>
+<h3 id="má-compreensão-de-floats">Má Compreensão de <em>Floats</em></h3>
+<p>Todos os números em JavaScript são armazenados como números de ponto flutuante de 64-bits (<em>Floats</em>, ou <em>doubles</em>).</p>
+<p>Todas as linguagens de programação, inclusive o JavaScript, têm problemas com valores exatos de ponto flutuante:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="fl">0.1</span><span class="op">;</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="kw">var</span> y <span class="op">=</span> <span class="fl">0.2</span><span class="op">;</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="kw">var</span> z <span class="op">=</span> x <span class="op">+</span> y            <span class="co">// O resultado em z não é 0.3</span></span></code></pre></div>
+<p>Para resolver o problema acima, ajuda, multiplicar e dividir:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1"></a><span class="kw">var</span> z <span class="op">=</span> (x <span class="op">*</span> <span class="dv">10</span> <span class="op">+</span> y <span class="op">*</span> <span class="dv">10</span>) <span class="op">/</span> <span class="dv">10</span><span class="op">;</span>       <span class="co">// z é 0.3</span></span></code></pre></div>
+<h3 id="quebra-de-string-em-javascript">Quebra de <em>String</em> em JavaScript</h3>
+<p>JavaScript permite que você quebre uma instrução em duas linhas:</p>
+<p>Exemplo 1</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">var</span> x <span class="op">=</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="st">&quot;Hello World!&quot;</span><span class="op">;</span></span></code></pre></div>
+<p>Mas, quebrar uma instrução no meio de uma <em>string</em> não funciona:</p>
+<p>Exemplo 2</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="st">&quot;Hello</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>World<span class="op">!</span><span class="st">&quot;;</span></span></code></pre></div>
+<p>Você precisa usar uma barra invertida (<code>\</code>) se quiser quebrar uma <em>string</em> numa instrução:</p>
+<p>Exemplo 3</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="st">&quot;Hello </span><span class="sc">\</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="st">World!&quot;</span><span class="op">;</span></span></code></pre></div>
+<h3 id="erro-de-colocação-de-ponto-e-vírgula">Erro de Colocação de Ponto-e-vírgula</h3>
+<p>Devido a um ponto-e-vírgula mal colocado, o código abaixo vai executar independente do valor de x:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1"></a><span class="cf">if</span> (x <span class="op">==</span> <span class="dv">19</span>)<span class="op">;</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a><span class="op">{</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>  <span class="co">// bloco de código  </span></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="quebra-de-uma-instrução-return">Quebra de uma Instrução <code>return</code></h3>
+<p>O comportamento padrão de JavaScript é terminar automaticamente uma instrução no final de uma linha.</p>
+<p>Por causa disto, os dois exemplos a seguir são equivalentes:</p>
+<p>Exemplo 1</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">function</span> <span class="at">minhaFuncao</span>(a) <span class="op">{</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="kw">var</span> potencia <span class="op">=</span> <span class="dv">10</span>  </span>
+<span id="cb45-3"><a href="#cb45-3"></a>  <span class="cf">return</span> a <span class="op">*</span> potencia</span>
+<span id="cb45-4"><a href="#cb45-4"></a><span class="op">}</span></span></code></pre></div>
+<p>Exemplo 2</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">function</span> <span class="at">minhaFuncao</span>(a) <span class="op">{</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="kw">var</span> potencia <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>  <span class="cf">return</span> a <span class="op">*</span> potencia<span class="op">;</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a><span class="op">}</span></span></code></pre></div>
+<p>O JavaScript também permite que você quebre uma instrução em duas linhas.</p>
+<p>Por causa disto, o exemplo 3 também resulta no msmo que os anteriores:</p>
+<p>Exemplo 3</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">function</span> <span class="at">mnhaFuncao</span>(a) <span class="op">{</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="kw">var</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a>  potencia <span class="op">=</span> <span class="dv">10</span><span class="op">;</span>  </span>
+<span id="cb47-4"><a href="#cb47-4"></a>  <span class="cf">return</span> a <span class="op">*</span> potencia<span class="op">;</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a><span class="op">}</span></span></code></pre></div>
+<p>Mas, o que acontece se você quebrar a instrução <code>return</code> em duas linhas?</p>
+<p>Exemplo 4</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">function</span> <span class="at">minhaFuncao</span>(a) <span class="op">{</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="kw">var</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a>  potencia <span class="op">=</span> <span class="dv">10</span><span class="op">;</span>  </span>
+<span id="cb48-4"><a href="#cb48-4"></a>  <span class="cf">return</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a>  a <span class="op">*</span> potencia<span class="op">;</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a><span class="op">}</span></span></code></pre></div>
+<p>A função retorna o valor <code>undefined</code>!</p>
+<p>Por que? Porque o JavaScript pensou que você queria dizer:</p>
+<p>Exemplo 5</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">function</span> <span class="at">minhaFuncao</span>(a) <span class="op">{</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="kw">var</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a>  potencia <span class="op">=</span> <span class="dv">10</span><span class="op">;</span>  </span>
+<span id="cb49-4"><a href="#cb49-4"></a>  <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a>  a <span class="op">*</span> potencia<span class="op">;</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="op">}</span></span></code></pre></div>
+<h4 id="explicação">Explicação</h4>
+<p>Se uma instrução está incompleta como em:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">var</span></span></code></pre></div>
+<p>O JavaScript tentará completá-la com a próxima linha:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb51-1"><a href="#cb51-1"></a>potencia <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span></code></pre></div>
+<p>Mas, como a instrução está completa:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb52-1"><a href="#cb52-1"></a><span class="cf">return</span></span></code></pre></div>
+<p>O JavaScript automaticamente a termina como se tivesse sido escrito:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb53-1"><a href="#cb53-1"></a><span class="cf">return</span><span class="op">;</span></span></code></pre></div>
+<p>Isto ocorre porque a finalização das instruções com ponto-e-vírgula é opcional em JavaScript.</p>
+<p>O JavaScript terminará a instrução de <code>return</code> no fim da linha porque ela é uma instrução completa.</p>
+<blockquote>
+<p><strong>Nunca quebre</strong> uma instrução <code>return</code>.</p>
+</blockquote>
+<h3 id="acesso-de-arrays-com-strings-como-índice">Acesso de <em>Arrays</em> com <em>Strings</em> como Índice</h3>
+<p>Muitas linguagens de programação possuem suporte para índices de <em>arrays</em> com nomes.</p>
+<p><em>Arrays</em> com <em>strings</em> como índice são chamados de <em>arrays associativos</em>, ou mapas associativos, ou dicionários, (ou <em>hashes</em>).</p>
+<p>O JavaScript não dá suporte a <em>arrays</em> com nomes como índice.</p>
+<p>No JavaScript, <em>arrays</em> usam números inteiros como índice:</p>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb54-1"><a href="#cb54-1"></a><span class="kw">var</span> pessoa <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a>pessoa[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&quot;João&quot;</span><span class="op">;</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a>pessoa[<span class="dv">1</span>] <span class="op">=</span> <span class="st">&quot;da Silva&quot;</span><span class="op">;</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a>pessoa[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">46</span><span class="op">;</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a><span class="kw">var</span> x <span class="op">=</span> <span class="va">pessoa</span>.<span class="at">length</span><span class="op">;</span>       <span class="co">// pessoa.length volta 3</span></span>
+<span id="cb54-6"><a href="#cb54-6"></a><span class="kw">var</span> y <span class="op">=</span> pessoa[<span class="dv">0</span>]<span class="op">;</span>           <span class="co">// pessoa[0] volta &quot;João&quot;</span></span></code></pre></div>
+<p>No JavaScript, objetos usam índices com nomes.</p>
+<p>Se você usar um índice com nome, ao acessar um <em>array</em>, o JavaScript redefinirá o <em>array</em> como um objeto padrão.</p>
+<p>Depois da redefinição automática, os métodos e propriedades de <em>array</em> na variável resultarão em valores <code>undefined</code> ou incorretos.</p>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb55-1"><a href="#cb55-1"></a><span class="kw">var</span> pessoa <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a>pessoa[<span class="st">&quot;nome&quot;</span>] <span class="op">=</span> <span class="st">&quot;João&quot;</span><span class="op">;</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a>pessoa[<span class="st">&quot;sobrenome&quot;</span>] <span class="op">=</span> <span class="st">&quot;da Silva&quot;</span><span class="op">;</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a>pessoa[<span class="st">&quot;idade&quot;</span>] <span class="op">=</span> <span class="dv">46</span><span class="op">;</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a><span class="kw">var</span> x <span class="op">=</span> <span class="va">pessoa</span>.<span class="at">length</span><span class="op">;</span>      <span class="co">// pessoa.length retorna 0</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="kw">var</span> y <span class="op">=</span> pessoa[<span class="dv">0</span>]<span class="op">;</span>          <span class="co">// pessoa[0] retorna undefined</span></span></code></pre></div>
+<h3 id="término-de-definições-com-vírgula">Término de Definições com Vírgula</h3>
+<p>Vírgulas no final da definição de um objeto são permitidas no ECMAScript 5.</p>
+<p>Exemplo de Objeto:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb56-1"><a href="#cb56-1"></a>pessoa <span class="op">=</span> <span class="op">{</span><span class="dt">nome</span><span class="op">:</span><span class="st">&quot;João&quot;</span><span class="op">,</span> <span class="dt">sobrenome</span><span class="op">:</span><span class="st">&quot;da Silva&quot;</span><span class="op">,</span> <span class="dt">idade</span><span class="op">:</span><span class="dv">46</span><span class="op">,}</span></span></code></pre></div>
+<p>Exemplo de <em>Array</em>:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb57-1"><a href="#cb57-1"></a>pontos <span class="op">=</span> [<span class="dv">40</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">25</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span>]<span class="op">;</span></span></code></pre></div>
+<p>ALERTA !!</p>
+<blockquote>
+<p>Não funciona no Internet Explorer 8.</p>
+</blockquote>
+<blockquote>
+<p>JSON não permite vírgulas no final.</p>
+</blockquote>
+<p>JSON:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb58-1"><a href="#cb58-1"></a>pessoa <span class="op">=</span> <span class="op">{</span><span class="st">&quot;nome&quot;</span><span class="op">:</span><span class="st">&quot;João&quot;</span><span class="op">,</span> <span class="st">&quot;sobrenome&quot;</span><span class="op">:</span><span class="st">&quot;da Silva&quot;</span><span class="op">,</span> <span class="st">&quot;idade&quot;</span><span class="op">:</span><span class="dv">46</span><span class="op">}</span></span></code></pre></div>
+<p>JSON:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb59-1"><a href="#cb59-1"></a>pontos <span class="op">=</span> [<span class="dv">40</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">25</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">;</span></span></code></pre></div>
+<h3 id="undefined-não-é-null"><code>undefined</code> <strong>Não É</strong> <code>null</code></h3>
+<p>Os objetos, as variáveis, as propriedades e os métodos em JavaScript podem ser <code>undefined</code>.</p>
+<p>Além disso, os objetos vazios de JavaScript podem ter valor <code>null</code>.</p>
+<p>Isto torna um pouco difícil testar para saber se um objeto está vazio.</p>
+<p>Você pode testar se um objeto existe testando se o tipo é <code>undefined</code>:</p>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb60-1"><a href="#cb60-1"></a><span class="cf">if</span> (<span class="kw">typeof</span> meuObj <span class="op">===</span> <span class="st">&quot;undefined&quot;</span>)</span></code></pre></div>
+<p>Mas, você não pode testar se um objeto é <code>null</code>, porque isto vai lançar um <em>error</em> se o objeto é <code>undefined</code>:</p>
+<p>Incorreto:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb61-1"><a href="#cb61-1"></a><span class="cf">if</span> (myObj <span class="op">===</span> <span class="kw">null</span>)</span></code></pre></div>
+<p>Para resolver este problema, você deve testar se um objeto não é <code>null</code>, nem <code>undefined</code>.</p>
+<p>Mas, isto ainda pode lançar um <code>error</code>:</p>
+<p>Incorreto:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb62-1"><a href="#cb62-1"></a><span class="cf">if</span> (meuObj <span class="op">!==</span> <span class="kw">null</span> <span class="op">&amp;&amp;</span> <span class="kw">typeof</span> meuObj <span class="op">!==</span> <span class="st">&quot;undefined&quot;</span>)</span></code></pre></div>
+<p>Porque você deve testar antes se é <code>undefined</code> e só depois se é <code>null</code>:</p>
+<p>Correto:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb63-1"><a href="#cb63-1"></a><span class="cf">if</span> (<span class="kw">typeof</span> meuObj <span class="op">!==</span> <span class="st">&quot;undefined&quot;</span> <span class="op">&amp;&amp;</span> meuObj <span class="op">!==</span> <span class="kw">null</span>)</span></code></pre></div>
+<h3 id="escopo-no-nível-de-bloco">Escopo no Nível de Bloco</h3>
+<p>JavaScript não cria um novo escopo para cada bloco de código.</p>
+<p>Isto acontece com muitas linguagens, mas não com o JavaScript.</p>
+<p>O código abaixo vai mostrar o valor de (10), mesmo <em>fora</em> do bloco da malha:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb64-1"><a href="#cb64-1"></a><span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a>  <span class="co">// algum código</span></span>
+<span id="cb64-3"><a href="#cb64-3"></a><span class="op">}</span></span>
+<span id="cb64-4"><a href="#cb64-4"></a><span class="cf">return</span> i<span class="op">;</span></span></code></pre></div>
+<h2 id="desempenho-do-javascript-httpswww.w3schools.comjsjs_performance.asp">Desempenho do JavaScript (https://www.w3schools.com/js/js_performance.asp)</h2>
+<h3 id="redução-de-atividades-em-loops">Redução de Atividades em <em>Loops</em></h3>
+<p><em>Loops</em> são sempre usados em programação.</p>
+<p>Cada instrução num loop, inclusive a própria instrução de <strong>for</strong>, é executada para cada <em>iteração</em> (repetição) do <em>loop</em>.</p>
+<p>Instruções e atribuições que podem ser colocadas fora de um <em>loop</em> podem tornar a execução do <em>loop</em> mais rápida.</p>
+<p>Ruim:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb65-1"><a href="#cb65-1"></a><span class="kw">var</span> i<span class="op">;</span></span>
+<span id="cb65-2"><a href="#cb65-2"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">arr</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb65-3"><a href="#cb65-3"></a>  <span class="co">// ...</span></span>
+<span id="cb65-4"><a href="#cb65-4"></a><span class="op">}</span></span></code></pre></div>
+<p>Código melhor:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb66-1"><a href="#cb66-1"></a><span class="kw">var</span> i<span class="op">;</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a><span class="kw">var</span> l <span class="op">=</span> <span class="va">arr</span>.<span class="at">length</span><span class="op">;</span></span>
+<span id="cb66-3"><a href="#cb66-3"></a><span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> l<span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb66-4"><a href="#cb66-4"></a>  <span class="co">// ...</span></span>
+<span id="cb66-5"><a href="#cb66-5"></a><span class="op">}</span></span></code></pre></div>
+<p>O código ruim acessa a propriedade <code>length</code> de um array cada vez que o <em>loop</em> é repetido.</p>
+<p>O código melhor acessa a propriedade <code>length</code> fora do <em>loop</em> e torna a execução do <em>loop</em> mais rápida.</p>
+<h3 id="redução-de-acessos-ao-dom">Redução de Acessos ao DOM</h3>
+<p>Acessar o DOM do HTML é muito lento, comparado com outras instruções de JavaScript.</p>
+<p>Se você espera acessar um elemento de DOM várias vezes, acesse ele uma vez e use-o como uma variável local:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb67-1"><a href="#cb67-1"></a><span class="kw">var</span> obj<span class="op">;</span></span>
+<span id="cb67-2"><a href="#cb67-2"></a>obj <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>)<span class="op">;</span></span>
+<span id="cb67-3"><a href="#cb67-3"></a><span class="va">obj</span>.<span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&quot;Alo&quot;</span><span class="op">;</span></span></code></pre></div>
+<h3 id="redução-do-tamanho-do-dom">Redução do Tamanho do <strong>DOM</strong></h3>
+<p>Mantenha o número de elementos no <strong>DOM HTML</strong> pequeno.</p>
+<p>Isto sempre melhorará o carregamento da página e acelerará a renderização (exibição da página), especialmente e dispositivos pequenos.</p>
+<p>Todas as tentativas de busca no <strong>DOM</strong> (como com <code>getElementsByTagName</code>) se beneficiam de um <strong>DOM</strong> menor.</p>
+<h3 id="evite-variáveis-desnecessárias">Evite Variáveis Desnecessárias</h3>
+<p>Não crie variáveis novas a menos que pretenda salvar os valores.</p>
+<p>Em geral, você pode substituir código como:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb68-1"><a href="#cb68-1"></a><span class="kw">var</span> nomeCompleto <span class="op">=</span> nome <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> sobrenome<span class="op">;</span></span>
+<span id="cb68-2"><a href="#cb68-2"></a><span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> nomeCompleto<span class="op">;</span></span></code></pre></div>
+<p>Por:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb69-1"><a href="#cb69-1"></a><span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> nome <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> sobrenome<span class="op">;</span></span></code></pre></div>
+<h3 id="retarde-o-carregamento-do-javascript">Retarde o Carregamento do JavaScript</h3>
+<p>Colocar seus <em>scripts</em> no final do corpo da página deixa o navegador carregar a página antes.</p>
+<p>Enquanto um <em>script</em> é baixado (downloaded), o navegador não começa a baixar nada mais. Além disso, toda atividade de análise sintática e renderização pode ficar bloqueada.</p>
+<p>A especificação do HTTP define que navegadores não devem baixar mais de 2 componentes em paralelo.</p>
+<p>Uma alternativa é usar <code>defer="true"</code> na <em>tag</em> do <em>script</em>. O atributo <code>defer</code> especifica que o <em>script</em> deve ser executado depois da página ter sido analisada lexicamente, mas ele só funciona para <em>scripts</em> externos.</p>
+<p>Se possível, você pode adicionar seu <em>script</em> à página por código, depois que a página for carregada:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb70-1"><a href="#cb70-1"></a><span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a><span class="va">window</span>.<span class="at">onload</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span></span>
+<span id="cb70-3"><a href="#cb70-3"></a>  <span class="kw">var</span> elemento <span class="op">=</span> <span class="va">document</span>.<span class="at">createElement</span>(<span class="st">&quot;script&quot;</span>)<span class="op">;</span></span>
+<span id="cb70-4"><a href="#cb70-4"></a>  <span class="va">elemento</span>.<span class="at">src</span> <span class="op">=</span> <span class="st">&quot;meuScript.js&quot;</span><span class="op">;</span></span>
+<span id="cb70-5"><a href="#cb70-5"></a>  <span class="va">document</span>.<span class="va">body</span>.<span class="at">appendChild</span>(elemento)<span class="op">;</span></span>
+<span id="cb70-6"><a href="#cb70-6"></a><span class="op">};</span></span>
+<span id="cb70-7"><a href="#cb70-7"></a>&lt;/script<span class="op">&gt;</span></span></code></pre></div>
+<h3 id="evite-o-uso-do-with">Evite o Uso do <code>with</code></h3>
+<p>Evite usar a palavra-chave <code>with</code>. Ela tem um efeito negativo na velocidade de execução. Ele também confunde os escopos do JavaScript.</p>
+<p>A palavra-chave <code>with</code> <strong>não é permitida</strong> no modo estrito.</p>
+<h2 id="palavras-reservadas-do-javascript-httpswww.w3schools.comjsjs_reserved.asp">Palavras Reservadas do JavaScript (https://www.w3schools.com/js/js_reserved.asp)</h2>
+<h3 id="no-javascript-você-não-pode-usar-as-palavras-reservadas-como-variáveis-rótulos-ou-nomes-de-funções">No JavaScript, você não pode usar as palavras reservadas como variáveis, rótulos ou nomes de funções:</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">abstract</td>
+<td style="text-align: left;">arguments</td>
+<td style="text-align: left;">await*</td>
+<td style="text-align: left;">boolean</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">break</td>
+<td style="text-align: left;">byte</td>
+<td style="text-align: left;">case</td>
+<td style="text-align: left;">catch</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">char</td>
+<td style="text-align: left;">class*</td>
+<td style="text-align: left;">const</td>
+<td style="text-align: left;">continue</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">debugger</td>
+<td style="text-align: left;">default</td>
+<td style="text-align: left;">delete</td>
+<td style="text-align: left;">do</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">else</td>
+<td style="text-align: left;">enum*</td>
+<td style="text-align: left;">eval</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">export*</td>
+<td style="text-align: left;">extends*</td>
+<td style="text-align: left;">false</td>
+<td style="text-align: left;">final</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">finally</td>
+<td style="text-align: left;">float</td>
+<td style="text-align: left;">for</td>
+<td style="text-align: left;">function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">goto</td>
+<td style="text-align: left;">if</td>
+<td style="text-align: left;">implements</td>
+<td style="text-align: left;">import*</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">in</td>
+<td style="text-align: left;">instanceof</td>
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">interface</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">let*</td>
+<td style="text-align: left;">long</td>
+<td style="text-align: left;">native</td>
+<td style="text-align: left;">new</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">null</td>
+<td style="text-align: left;">package</td>
+<td style="text-align: left;">private</td>
+<td style="text-align: left;">protected</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">public</td>
+<td style="text-align: left;">return</td>
+<td style="text-align: left;">short</td>
+<td style="text-align: left;">static</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">super*</td>
+<td style="text-align: left;">switch</td>
+<td style="text-align: left;">synchronized</td>
+<td style="text-align: left;">this</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">throw</td>
+<td style="text-align: left;">throws</td>
+<td style="text-align: left;">transient</td>
+<td style="text-align: left;">true</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">try</td>
+<td style="text-align: left;">typeof</td>
+<td style="text-align: left;">var</td>
+<td style="text-align: left;">void</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">volatile</td>
+<td style="text-align: left;">while</td>
+<td style="text-align: left;">with</td>
+<td style="text-align: left;">yield</td>
+</tr>
+</tbody>
+</table>
+<p>Palavras marcadas com * são novas no ECMAScript 5 e 6.</p>
+<h3 id="palavras-removidas-da-reserva">Palavras Removidas da Reserva</h3>
+<p>As palavras chaves a seguir foram removidas dos padrões ECMAScript 5/6:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">abstract</td>
+<td style="text-align: left;">boolean</td>
+<td style="text-align: left;">byte</td>
+<td style="text-align: left;">char</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">double</td>
+<td style="text-align: left;">final</td>
+<td style="text-align: left;">float</td>
+<td style="text-align: left;">goto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">int</td>
+<td style="text-align: left;">long</td>
+<td style="text-align: left;">native</td>
+<td style="text-align: left;">short</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">synchronized</td>
+<td style="text-align: left;">throws</td>
+<td style="text-align: left;">transient</td>
+<td style="text-align: left;">volatile</td>
+</tr>
+</tbody>
+</table>
+<p>Não use estas palavras como variáveis. ECMAScript 5/6 não tem suporte completo em todos os navegadores.</p>
+<h3 id="objetos-propriedades-e-métodos-em-javascript">Objetos, Propriedades e Métodos em JavaScript</h3>
+<p>Você também deve evitar o uso do nome de objetos, propriedades e métodos do JavaScript.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Array</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">eval</td>
+<td style="text-align: left;">function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hasOwnProperty</td>
+<td style="text-align: left;">Infinity</td>
+<td style="text-align: left;">isFinite</td>
+<td style="text-align: left;">isNaN</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">isPrototypeOf</td>
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">Math</td>
+<td style="text-align: left;">NaN</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">Object</td>
+<td style="text-align: left;">prototype</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">toString</td>
+<td style="text-align: left;">undefined</td>
+<td style="text-align: left;">valueOf</td>
+</tr>
+</tbody>
+</table>
+<h3 id="palavras-reservadas-do-java">Palavras Reservadas do Java</h3>
+<p>JavaScript é usado com frequência com Java. Você deve evitar usar alguns objetos e propriedades de Java com identificadores de JavaScript.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">getClass</td>
+<td style="text-align: left;">java</td>
+<td style="text-align: left;">JavaArray</td>
+<td>javaClass</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">JavaObject</td>
+<td style="text-align: left;">JavaPackage</td>
+<td style="text-align: left;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="outras-palavras-reservadas">Outras Palavras Reservadas</h3>
+<p>JavaScript pode ser usado como linguagem de programação para muitas aplicações.</p>
+<p>Você deve evitar, também, usar o nome de objetos e propriedades de HTML e Window:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">alert</td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">anchor</td>
+<td style="text-align: left;">anchors</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">area</td>
+<td style="text-align: left;">assign</td>
+<td style="text-align: left;">blur</td>
+<td style="text-align: left;">button</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">checkbox</td>
+<td style="text-align: left;">clearInterval</td>
+<td style="text-align: left;">clearTimeout</td>
+<td style="text-align: left;">clientInformation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">close</td>
+<td style="text-align: left;">closed</td>
+<td style="text-align: left;">confirm</td>
+<td style="text-align: left;">constructor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">crypto</td>
+<td style="text-align: left;">decodeURI</td>
+<td style="text-align: left;">decodeURIComponent</td>
+<td style="text-align: left;">defaultStatus</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">document</td>
+<td style="text-align: left;">element</td>
+<td style="text-align: left;">elements</td>
+<td style="text-align: left;">embed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">embeds</td>
+<td style="text-align: left;">encodeURI</td>
+<td style="text-align: left;">encodeURIComponent</td>
+<td style="text-align: left;">escape</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">event</td>
+<td style="text-align: left;">fileUpload</td>
+<td style="text-align: left;">focus</td>
+<td style="text-align: left;">form</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">forms</td>
+<td style="text-align: left;">frame</td>
+<td style="text-align: left;">innerHeight</td>
+<td style="text-align: left;">innerWidth</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">layer</td>
+<td style="text-align: left;">layers</td>
+<td style="text-align: left;">link</td>
+<td style="text-align: left;">location</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mimeTypes</td>
+<td style="text-align: left;">navigate</td>
+<td style="text-align: left;">navigator</td>
+<td style="text-align: left;">frames</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">frameRate</td>
+<td style="text-align: left;">hidden</td>
+<td style="text-align: left;">history</td>
+<td style="text-align: left;">image</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">images</td>
+<td style="text-align: left;">offscreenBuffering</td>
+<td style="text-align: left;">open</td>
+<td style="text-align: left;">opener</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">option</td>
+<td style="text-align: left;">outerHeight</td>
+<td style="text-align: left;">outerWidth</td>
+<td style="text-align: left;">packages</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pageXOffset</td>
+<td style="text-align: left;">pageYOffset</td>
+<td style="text-align: left;">parent</td>
+<td style="text-align: left;">parseFloat</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">parseInt</td>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">pkcs11</td>
+<td style="text-align: left;">plugin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">prompt</td>
+<td style="text-align: left;">propertyIsEnum</td>
+<td style="text-align: left;">radio</td>
+<td style="text-align: left;">reset</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">screenX</td>
+<td style="text-align: left;">screenY</td>
+<td style="text-align: left;">scroll</td>
+<td style="text-align: left;">secure</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">select</td>
+<td style="text-align: left;">self</td>
+<td style="text-align: left;">setInterval</td>
+<td style="text-align: left;">setTimeout</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">status</td>
+<td style="text-align: left;">submit</td>
+<td style="text-align: left;">taint</td>
+<td style="text-align: left;">text</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">textarea</td>
+<td style="text-align: left;">top</td>
+<td style="text-align: left;">unescape</td>
+<td style="text-align: left;">untaint</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">window</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="manipuladores-de-eventos-de-html">Manipuladores de Eventos de HTML</h3>
+<p>Além disso, você deve evitar o uso do nome de todos os manipuladores de eventos de HTML.</p>
+<p>Exemplos:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">onblur</td>
+<td style="text-align: left;">onclick</td>
+<td style="text-align: left;">onerror</td>
+<td style="text-align: left;">onfocus</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">onkeydown</td>
+<td style="text-align: left;">onkeypress</td>
+<td style="text-align: left;">onkeyup</td>
+<td style="text-align: left;">onmouseover</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">onload</td>
+<td style="text-align: left;">onmouseup</td>
+<td style="text-align: left;">onmousedown</td>
+<td style="text-align: left;">onsubmit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="json-httpswww.w3schools.comjsjs_json.asp">JSON (https://www.w3schools.com/js/js_json.asp)</h2>
+<p>JSON é um formato para armazenar e transferir dados.</p>
+<p>JSON é usado com frequência quando dados devem ser enviados de um servidor para uma página de Web.</p>
+<h3 id="o-que-é-json">O Que É JSON?</h3>
+<ul>
+<li>JSON é a sigla para <em>JavaScript Object Notation</em> (notação de objetos JS)</li>
+<li>JSON é um formato <em>leve</em> para troca de dados</li>
+<li>JSON é independente da linguagem de programação (*)</li>
+<li>JSON é <em>auto-descritivo</em> e fácil de entender</li>
+</ul>
+<p>* A sintaxe do JSON syntax é derivada da notação da sintaxe de notação de objetos do JavaScript, mas o formato JSON é puro texto. Código para ler e gerar dados em JSON podem ser escritos em qualquer linguagem de prohramação.</p>
+<h3 id="exemplo-de-json">Exemplo de JSON</h3>
+<p>Esta sintaxe de JSON define um objetos <code>empregados</code>: um <em>array</em> com registros (objetos) de 3 empregados:</p>
+<p>Exemplo de JSON</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">{</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a><span class="dt">&quot;empregados&quot;</span><span class="fu">:</span><span class="ot">[</span></span>
+<span id="cb71-3"><a href="#cb71-3"></a>  <span class="fu">{</span><span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;João&quot;</span><span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;Silva&quot;</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb71-4"><a href="#cb71-4"></a>  <span class="fu">{</span><span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;Ana&quot;</span><span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;Carvalho&quot;</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb71-5"><a href="#cb71-5"></a>  <span class="fu">{</span><span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;Pedro&quot;</span><span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;Cavalcante&quot;</span><span class="fu">}</span></span>
+<span id="cb71-6"><a href="#cb71-6"></a><span class="ot">]</span></span>
+<span id="cb71-7"><a href="#cb71-7"></a><span class="fu">}</span></span></code></pre></div>
+<h3 id="o-formato-json-é-calculado-em-objetos-javascript">O Formato JSON É Calculado Em Objetos JavaScript</h3>
+<p>O formato JSON é sintaticamente identico ao código para criar objetos de JavaScript.</p>
+<p>Por causa da semelhança, um programa JavaScript pode converter facilmente dados em JSON em objetos JavaScript nativos.</p>
+<h3 id="regras-sintáticas-de-json">Regras Sintáticas de JSON</h3>
+<ul>
+<li>Dados estão em pares nome/valor</li>
+<li>Dados são separados por vírgulas</li>
+<li>Chaves representam objetos</li>
+<li>Colchetes representam <em>arrays</em></li>
+</ul>
+<h3 id="json-data---a-name-and-a-value">JSON Data - A Name and a Value</h3>
+<p>JSON data is written as name/value pairs, just like JavaScript object properties.</p>
+<p>A name/value pair consists of a field name (in double quotes), followed by a colon, followed by a value:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb72-1"><a href="#cb72-1"></a><span class="er">&quot;firstName&quot;:&quot;John&quot;</span></span></code></pre></div>
+<pre><code>JSON names require double quotes. JavaScript names do not.</code></pre>
+<h3 id="json-objects">JSON Objects</h3>
+<p>JSON objects are written inside curly braces.</p>
+<p>Just like in JavaScript, objects can contain multiple name/value pairs:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb74-1"><a href="#cb74-1"></a><span class="fu">{</span><span class="dt">&quot;firstName&quot;</span><span class="fu">:</span><span class="st">&quot;John&quot;</span><span class="fu">,</span> <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span><span class="st">&quot;Doe&quot;</span><span class="fu">}</span></span></code></pre></div>
+<h3 id="json-arrays">JSON Arrays</h3>
+<p>JSON arrays are written inside square brackets.</p>
+<p>Just like in JavaScript, an array can contain objects:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb75-1"><a href="#cb75-1"></a><span class="er">&quot;employees&quot;:</span><span class="ot">[</span></span>
+<span id="cb75-2"><a href="#cb75-2"></a>  <span class="fu">{</span><span class="dt">&quot;firstName&quot;</span><span class="fu">:</span><span class="st">&quot;John&quot;</span><span class="fu">,</span> <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span><span class="st">&quot;Doe&quot;</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb75-3"><a href="#cb75-3"></a>  <span class="fu">{</span><span class="dt">&quot;firstName&quot;</span><span class="fu">:</span><span class="st">&quot;Anna&quot;</span><span class="fu">,</span> <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span><span class="st">&quot;Smith&quot;</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb75-4"><a href="#cb75-4"></a>  <span class="fu">{</span><span class="dt">&quot;firstName&quot;</span><span class="fu">:</span><span class="st">&quot;Peter&quot;</span><span class="fu">,</span> <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span><span class="st">&quot;Jones&quot;</span><span class="fu">}</span></span>
+<span id="cb75-5"><a href="#cb75-5"></a><span class="ot">]</span></span></code></pre></div>
+<p>In the example above, the object “employees” is an array. It contains three objects.</p>
+<p>Each object is a record of a pessoa (with a first name and a last name).</p>
+<h3 id="converting-a-json-text-to-a-javascript-object">Converting a JSON Text to a JavaScript Object</h3>
+<p>A common use of JSON is to read data from a web server, and display the data in a web page.</p>
+<p>For simplicity, this can be demonstrated using a string as input.</p>
+<p>First, create a JavaScript string containing JSON syntax:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb76-1"><a href="#cb76-1"></a><span class="er">var</span> <span class="er">text</span> <span class="er">=</span> <span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;employees&quot;</span> <span class="fu">:</span> <span class="ot">[</span><span class="er">&#39;</span> <span class="er">+</span></span>
+<span id="cb76-2"><a href="#cb76-2"></a><span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span><span class="st">&quot;John&quot;</span> <span class="fu">,</span> <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span><span class="st">&quot;Doe&quot;</span> <span class="fu">}</span><span class="ot">,</span><span class="er">&#39;</span> <span class="er">+</span></span>
+<span id="cb76-3"><a href="#cb76-3"></a><span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span><span class="st">&quot;Anna&quot;</span> <span class="fu">,</span> <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span><span class="st">&quot;Smith&quot;</span> <span class="fu">}</span><span class="ot">,</span><span class="er">&#39;</span> <span class="er">+</span></span>
+<span id="cb76-4"><a href="#cb76-4"></a><span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span><span class="st">&quot;Peter&quot;</span> <span class="fu">,</span> <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span><span class="st">&quot;Jones&quot;</span> <span class="fu">}</span> <span class="ot">]</span><span class="fu">}</span><span class="er">&#39;;</span></span></code></pre></div>
+<p>Then, use the JavaScript built-in function JSON.parse() to convert the string into a JavaScript object:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb77-1"><a href="#cb77-1"></a><span class="kw">var</span> obj <span class="op">=</span> <span class="va">JSON</span>.<span class="at">parse</span>(text)<span class="op">;</span></span></code></pre></div>
+<p>Finally, use the new JavaScript object in your page:</p>
+<p>Exemplo</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb78-1"><a href="#cb78-1"></a><span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;demo&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
+<span id="cb78-2"><a href="#cb78-2"></a></span>
+<span id="cb78-3"><a href="#cb78-3"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb78-4"><a href="#cb78-4"></a><span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span></span>
+<span id="cb78-5"><a href="#cb78-5"></a><span class="va">obj</span>.<span class="at">employees</span>[<span class="dv">1</span>].<span class="at">firstName</span> <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="va">obj</span>.<span class="at">employees</span>[<span class="dv">1</span>].<span class="at">lastName</span><span class="op">;</span></span>
+<span id="cb78-6"><a href="#cb78-6"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<h2 id="javascript-forms-httpswww.w3schools.comjsjs_validation.asp">JavaScript Forms (https://www.w3schools.com/js/js_validation.asp)</h2>
+<h3 id="javascript-form-validation">JavaScript Form Validation</h3>
+<p>HTML form validation can be done by JavaScript.</p>
+<p>If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted:</p>
+<p>JavaScript Exemplo:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb79-1"><a href="#cb79-1"></a><span class="kw">function</span> <span class="at">validateForm</span>() <span class="op">{</span></span>
+<span id="cb79-2"><a href="#cb79-2"></a>  <span class="kw">var</span> x <span class="op">=</span> <span class="va">document</span>.<span class="at">forms</span>[<span class="st">&quot;myForm&quot;</span>][<span class="st">&quot;fname&quot;</span>].<span class="at">value</span><span class="op">;</span></span>
+<span id="cb79-3"><a href="#cb79-3"></a>  <span class="cf">if</span> (x <span class="op">==</span> <span class="st">&quot;&quot;</span>) <span class="op">{</span></span>
+<span id="cb79-4"><a href="#cb79-4"></a>    <span class="at">alert</span>(<span class="st">&quot;Name must be filled out&quot;</span>)<span class="op">;</span></span>
+<span id="cb79-5"><a href="#cb79-5"></a>    <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb79-6"><a href="#cb79-6"></a>  <span class="op">}</span></span>
+<span id="cb79-7"><a href="#cb79-7"></a><span class="op">}</span></span></code></pre></div>
+<p>The function can be called when the form is submitted:</p>
+<p>HTML Form Exemplo: <a href="valid_demo1.html">Demo: Form Val1</a></p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb80-1"><a href="#cb80-1"></a><span class="kw">&lt;form</span><span class="ot"> name=</span><span class="st">&quot;myForm&quot;</span><span class="ot"> action=</span><span class="st">&quot;/action_page.php&quot;</span><span class="ot"> onsubmit=</span><span class="st">&quot;return validateForm()&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb80-2"><a href="#cb80-2"></a>Name: <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;fname&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb80-3"><a href="#cb80-3"></a><span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Submit&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb80-4"><a href="#cb80-4"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h3 id="javascript-can-validate-numeric-input">JavaScript Can Validate Numeric Input</h3>
+<p>JavaScript is often used to validate numeric input: <a href="valid_demo2.html">Demo: Form Val2</a> Exemplo:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb81-1"><a href="#cb81-1"></a><span class="kw">function</span> <span class="at">myFunction</span>() <span class="op">{</span></span>
+<span id="cb81-2"><a href="#cb81-2"></a>  <span class="kw">var</span> x<span class="op">,</span> text<span class="op">;</span></span>
+<span id="cb81-3"><a href="#cb81-3"></a></span>
+<span id="cb81-4"><a href="#cb81-4"></a>  <span class="co">// Get the value of the input field with id=&quot;numb&quot;</span></span>
+<span id="cb81-5"><a href="#cb81-5"></a>  x <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;numb&quot;</span>).<span class="at">value</span><span class="op">;</span></span>
+<span id="cb81-6"><a href="#cb81-6"></a></span>
+<span id="cb81-7"><a href="#cb81-7"></a>  <span class="co">// If x is Not a Number or less than one or greater than 10</span></span>
+<span id="cb81-8"><a href="#cb81-8"></a>  <span class="cf">if</span> (<span class="at">isNaN</span>(x) <span class="op">||</span> x <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">||</span> x <span class="op">&gt;</span> <span class="dv">10</span>) <span class="op">{</span></span>
+<span id="cb81-9"><a href="#cb81-9"></a>    text <span class="op">=</span> <span class="st">&quot;Input not valid&quot;</span><span class="op">;</span></span>
+<span id="cb81-10"><a href="#cb81-10"></a>  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb81-11"><a href="#cb81-11"></a>    text <span class="op">=</span> <span class="st">&quot;Input OK&quot;</span><span class="op">;</span></span>
+<span id="cb81-12"><a href="#cb81-12"></a>  <span class="op">}</span></span>
+<span id="cb81-13"><a href="#cb81-13"></a>  <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> text<span class="op">;</span></span>
+<span id="cb81-14"><a href="#cb81-14"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="automatic-html-form-validation">Automatic HTML Form Validation</h3>
+<p>HTML form validation can be performed automatically by the browser:</p>
+<p>If a form field (fname) is empty, the required attribute prevents this form from being submitted:</p>
+<p>HTML Form Exemplo</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb82-1"><a href="#cb82-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/action_page.php&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb82-2"><a href="#cb82-2"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;fname&quot;</span><span class="ot"> required</span><span class="kw">&gt;</span></span>
+<span id="cb82-3"><a href="#cb82-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Submit&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb82-4"><a href="#cb82-4"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h3 id="data-validation">Data Validation</h3>
+<p>Data validation is the process of ensuring that user input is clean, correct, and useful.</p>
+<p>Typical validation tasks are:</p>
+<ul>
+<li>has the user filled in all required fields?</li>
+<li>has the user entered a valid date?</li>
+<li>has the user entered text in a numeric field?</li>
+</ul>
+<p>Most often, the purpose of data validation is to ensure correct user input.</p>
+<p>Validation can be defined by many different methods, and deployed in many different ways.</p>
+<p><strong>Server side validation</strong> is performed by a web server, after input has been sent to the server.</p>
+<p><strong>Client side validation</strong> is performed by a web browser, before input is sent to a web server.</p>
+<p>Obs.: You should do both. DON’T rely only on client side validation. Data may be coming without using your js validation.</p>
+<h3 id="html-constraint-validation">HTML Constraint Validation</h3>
+<p>HTML5 introduced a new HTML validation concept called <strong>constraint validation</strong>.</p>
+<p>HTML constraint validation is based on:</p>
+<ul>
+<li>Constraint validation HTML Input Attributes</li>
+<li>Constraint validation CSS Pseudo Selectors</li>
+<li>Constraint validation DOM Properties and Methods</li>
+</ul>
+<h4 id="constraint-validation-html-input-attributes">Constraint Validation HTML Input Attributes</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>disabled</td>
+<td>Specifies that the input element should be disabled</td>
+</tr>
+<tr class="even">
+<td>max</td>
+<td>Specifies the maximum value of an input element</td>
+</tr>
+<tr class="odd">
+<td>min</td>
+<td>Specifies the minimum value of an input element</td>
+</tr>
+<tr class="even">
+<td>pattern</td>
+<td>Specifies the value pattern of an input element</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>Specifies that the input field requires an element</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>Specifies the type of an input element</td>
+</tr>
+</tbody>
+</table>
+<h4 id="constraint-validation-css-pseudo-selectors">Constraint Validation CSS Pseudo Selectors</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Selector</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>:disabled</td>
+<td>Selects input elements with the “disabled” attribute specified</td>
+</tr>
+<tr class="even">
+<td>:invalid</td>
+<td>Selects input elements with invalid values</td>
+</tr>
+<tr class="odd">
+<td>:optional</td>
+<td>Selects input elements with no “required” attribute specified</td>
+</tr>
+<tr class="even">
+<td>:required</td>
+<td>Selects input elements with the “required” attribute specified</td>
+</tr>
+<tr class="odd">
+<td>:valid</td>
+<td>Selects input elements with valid values</td>
+</tr>
+</tbody>
+</table>
+<h2 id="javascript-validation-api-js-validation">JavaScript Validation API <a href="https://www.w3schools.com/js/js_validation_api.asp">JS Validation</a></h2>
+<h3 id="constraint-validation-dom-methods">Constraint Validation DOM Methods</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>checkValidity()</td>
+<td>Returns true if an input element contains valid data.</td>
+</tr>
+<tr class="even">
+<td>setCustomValidity()</td>
+<td>Sets the validationMessage property of an input element.</td>
+</tr>
+</tbody>
+</table>
+<p>If an input field contains invalid data, display a message:</p>
+<h4 id="the-checkvalidity-method">The checkValidity() Method</h4>
+<p>Exemplo: <a href="valid_demo3.html">Demo: Form Val3</a></p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb83-1"><a href="#cb83-1"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;id1&quot;</span><span class="ot"> type=</span><span class="st">&quot;number&quot;</span><span class="ot"> min=</span><span class="st">&quot;100&quot;</span><span class="ot"> max=</span><span class="st">&quot;300&quot;</span><span class="ot"> required</span><span class="kw">&gt;</span></span>
+<span id="cb83-2"><a href="#cb83-2"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction()&quot;</span><span class="kw">&gt;</span>OK<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb83-3"><a href="#cb83-3"></a></span>
+<span id="cb83-4"><a href="#cb83-4"></a><span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;demo&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
+<span id="cb83-5"><a href="#cb83-5"></a></span>
+<span id="cb83-6"><a href="#cb83-6"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb83-7"><a href="#cb83-7"></a><span class="kw">function</span> <span class="at">myFunction</span>() <span class="op">{</span></span>
+<span id="cb83-8"><a href="#cb83-8"></a>  <span class="kw">var</span> inpObj <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;id1&quot;</span>)<span class="op">;</span></span>
+<span id="cb83-9"><a href="#cb83-9"></a>  <span class="cf">if</span> (<span class="op">!</span><span class="va">inpObj</span>.<span class="at">checkValidity</span>()) <span class="op">{</span></span>
+<span id="cb83-10"><a href="#cb83-10"></a>    <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> <span class="va">inpObj</span>.<span class="at">validationMessage</span><span class="op">;</span></span>
+<span id="cb83-11"><a href="#cb83-11"></a>  <span class="op">}</span></span>
+<span id="cb83-12"><a href="#cb83-12"></a><span class="op">}</span></span>
+<span id="cb83-13"><a href="#cb83-13"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<h3 id="constraint-validation-dom-properties">Constraint Validation DOM Properties</h3>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>validity</td>
+<td>Contains boolean properties related to the validity of an input element.</td>
+</tr>
+<tr class="even">
+<td>validationMessage</td>
+<td>Contains the message a browser will display when the validity is false.</td>
+</tr>
+<tr class="odd">
+<td>willValidate</td>
+<td>Indicates if an input element will be validated.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="validity-properties">Validity Properties</h3>
+<p>The validity property of an input element contains a number of properties related to the validity of data:</p>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>customError</td>
+<td>Set to true, if a custom validity message is set.</td>
+</tr>
+<tr class="even">
+<td>patternMismatch</td>
+<td>Set to true, if an element’s value does not match its pattern attribute.</td>
+</tr>
+<tr class="odd">
+<td>rangeOverflow</td>
+<td>Set to true, if an element’s value is greater than its max attribute.</td>
+</tr>
+<tr class="even">
+<td>rangeUnderflow</td>
+<td>Set to true, if an element’s value is less than its min attribute.</td>
+</tr>
+<tr class="odd">
+<td>stepMismatch</td>
+<td>Set to true, if an element’s value is invalid per its step attribute.</td>
+</tr>
+<tr class="even">
+<td>tooLong</td>
+<td>Set to true, if an element’s value exceeds its maxLength attribute.</td>
+</tr>
+<tr class="odd">
+<td>typeMismatch</td>
+<td>Set to true, if an element’s value is invalid per its type attribute.</td>
+</tr>
+<tr class="even">
+<td>valueMissing</td>
+<td>Set to true, if an element (with a required attribute) has no value.</td>
+</tr>
+<tr class="odd">
+<td>valid</td>
+<td>Set to true, if an element’s value is valid.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemplos">Exemplos</h3>
+<p>If the number in an input field is greater than 100 (the input’s max attribute), display a message:</p>
+<h4 id="the-rangeoverflow-property">The rangeOverflow Property</h4>
+<div class="sourceCode" id="cb84"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb84-1"><a href="#cb84-1"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;id1&quot;</span><span class="ot"> type=</span><span class="st">&quot;number&quot;</span><span class="ot"> max=</span><span class="st">&quot;100&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb84-2"><a href="#cb84-2"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction()&quot;</span><span class="kw">&gt;</span>OK<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb84-3"><a href="#cb84-3"></a></span>
+<span id="cb84-4"><a href="#cb84-4"></a><span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;demo&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
+<span id="cb84-5"><a href="#cb84-5"></a></span>
+<span id="cb84-6"><a href="#cb84-6"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb84-7"><a href="#cb84-7"></a><span class="kw">function</span> <span class="at">myFunction</span>() <span class="op">{</span></span>
+<span id="cb84-8"><a href="#cb84-8"></a>  <span class="kw">var</span> txt <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb84-9"><a href="#cb84-9"></a>  <span class="cf">if</span> (<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;id1&quot;</span>).<span class="va">validity</span>.<span class="at">rangeOverflow</span>) <span class="op">{</span></span>
+<span id="cb84-10"><a href="#cb84-10"></a>    txt <span class="op">=</span> <span class="st">&quot;Value too large&quot;</span><span class="op">;</span></span>
+<span id="cb84-11"><a href="#cb84-11"></a>  <span class="op">}</span></span>
+<span id="cb84-12"><a href="#cb84-12"></a>  <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> txt<span class="op">;</span></span>
+<span id="cb84-13"><a href="#cb84-13"></a><span class="op">}</span></span>
+<span id="cb84-14"><a href="#cb84-14"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>If the number in an input field is less than 100 (the input’s min attribute), display a message:</p>
+<h4 id="the-rangeunderflow-property">The rangeUnderflow Property</h4>
+<div class="sourceCode" id="cb85"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb85-1"><a href="#cb85-1"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;id1&quot;</span><span class="ot"> type=</span><span class="st">&quot;number&quot;</span><span class="ot"> min=</span><span class="st">&quot;100&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb85-2"><a href="#cb85-2"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction()&quot;</span><span class="kw">&gt;</span>OK<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb85-3"><a href="#cb85-3"></a></span>
+<span id="cb85-4"><a href="#cb85-4"></a><span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;demo&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
+<span id="cb85-5"><a href="#cb85-5"></a></span>
+<span id="cb85-6"><a href="#cb85-6"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb85-7"><a href="#cb85-7"></a><span class="kw">function</span> <span class="at">myFunction</span>() <span class="op">{</span></span>
+<span id="cb85-8"><a href="#cb85-8"></a>  <span class="kw">var</span> txt <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb85-9"><a href="#cb85-9"></a>  <span class="cf">if</span> (<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;id1&quot;</span>).<span class="va">validity</span>.<span class="at">rangeUnderflow</span>) <span class="op">{</span></span>
+<span id="cb85-10"><a href="#cb85-10"></a>    txt <span class="op">=</span> <span class="st">&quot;Value too small&quot;</span><span class="op">;</span></span>
+<span id="cb85-11"><a href="#cb85-11"></a>  <span class="op">}</span></span>
+<span id="cb85-12"><a href="#cb85-12"></a>  <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> txt<span class="op">;</span></span>
+<span id="cb85-13"><a href="#cb85-13"></a><span class="op">}</span></span>
+<span id="cb85-14"><a href="#cb85-14"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p><a href="intermediario3_js.md">Próxima unidade</a></p>
