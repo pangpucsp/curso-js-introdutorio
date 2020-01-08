@@ -1335,135 +1335,155 @@ em JSON em objetos JavaScript nativos.
   * Chaves representam objetos
   * Colchetes representam *arrays*
 
-### JSON Data - A Name and a Value
+### Dados em JSON - Um Nome e um Valor
 
-JSON data is written as name/value pairs, just like JavaScript object properties.
+Dados em JSON são escritos com pares nome/valor, assim como propriedades de
+objetos em JavaScript.
 
-A name/value pair consists of a field name \(in double quotes\), followed by a colon, followed by a value:
+Um par nome/valor consiste de um nome de campo *entre aspas*, seguido de dois
+pontos \(:\), seguido de um valor:
 
 ```json
-"firstName":"John"
+"nome":"João"
 ```
 
-    JSON names require double quotes. JavaScript names do not.
+> Nomes do JSON precisam estar entre aspas. Nomes em JavaScript não precisam.
 
-### JSON Objects
+### Objetos JSON
 
-JSON objects are written inside curly braces.
+Objetos em JSON são escritos entre chaves.
 
-Just like in JavaScript, objects can contain multiple name/value pairs:
+Como no JavaScript, objetos podem conter diversos pares nome/valor:
 
 ```json
-{"firstName":"John", "lastName":"Doe"}
+{"nome":"João", "sobrenome":"da Silva"}
 ```
 
-### JSON Arrays
-JSON arrays are written inside square brackets.
+### *Arrays* em JSON
 
-Just like in JavaScript, an array can contain objects:
+*Arrays* em JSON são escritos dentro de colchetes.
+
+Como no JavaScript, um *array* pode conter objetos:
 
 ```json
-"employees":[
-  {"firstName":"John", "lastName":"Doe"},
-  {"firstName":"Anna", "lastName":"Smith"},
-  {"firstName":"Peter", "lastName":"Jones"}
+"empregados":[
+  {"nome":"João", "sobrenome":"da Silva"},
+  {"nome":"Ana", "sobrenome":"Carvalho"},
+  {"nome":"Pedro", "sobrenome":"Cavalcante"}
 ]
 ```
 
-In the example above, the object "employees" is an array. It contains three objects.
+NO exemplo acima, o objeto `empregados` é um *array*. Ele tem 3 objetos.
 
-Each object is a record of a pessoa \(with a first name and a last name\).
+Cada objeto é o registro de uma pessoa \(com o nome e o sobrenome\).
 
-### Converting a JSON Text to a JavaScript Object
+### Conversão de um Texto JSON num Objeto JavaScript
 
-A common use of JSON is to read data from a web server, and display the data in a web page.
+Um uso comum de JSON é ler dados de um servidor Web e mostrar os dados numa
+página Web.
 
-For simplicity, this can be demonstrated using a string as input.
+Por simplicidade, isto pode ser demonstrado usando uma string como entrada.
+
 
 First, create a JavaScript string containing JSON syntax:
 
 ```json
-var text = '{ "employees" : [' +
-'{ "firstName":"John" , "lastName":"Doe" },' +
-'{ "firstName":"Anna" , "lastName":"Smith" },' +
-'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+var texto = '{ "empregados" : [' +
+'{ "nome":"João" , "sobrenome":"da Silva" },' +
+'{ "nome":"Ana" , "sobrenome":"Carvalho" },' +
+'{ "nome":"Pedro" , "sobrenome":"Cavalcante" } ]}';
 ```
 
-Then, use the JavaScript built-in function JSON.parse\(\) to convert the string into a JavaScript object:
+Em seguida, use a função interna do JavaScript `JSON.parse()` para converter
+a *string* num objeto JavaScript:
 
 ```javascript
-var obj = JSON.parse(text);
+var obj = JSON.parse(texto);
 ```
 
-Finally, use the new JavaScript object in your page:
+Finalmente, use o novo objeto JavaScript na sua página:
 
-Exemplo
+Exemplo:
+
 ```html
 <p id="demo"></p>
 
 <script>
 document.getElementById("demo").innerHTML =
-obj.employees[1].firstName + " " + obj.employees[1].lastName;
+obj.empregados[1].nome + " " + obj.empregados[1].sobrenome;
 </script>
 ```
 
-## JavaScript Forms (https://www.w3schools.com/js/js_validation.asp)
+> Para se aprofundar mais em JSON, leia o [tutorial de JSON da W3Schools](https://www.w3schools.com/js/js_json_intro.asp).
 
-### JavaScript Form Validation
+## Formulários com JavaScript (https://www.w3schools.com/js/js_validation.asp)
 
-HTML form validation can be done by JavaScript.
+### Validação de Formulários com JavaScript
 
-If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted:
+Validação de formulários HTML pode ser feita pelo JavaScript. Esta validação
+não dispensa a validação dos dados no lado do servidor: a validação do lado
+do cliente \(*frontend*\) serve para auxiliar o usuário, a validação do lado
+do servidor \(*backend*\) serve para proteger as aplicações.
 
-JavaScript Exemplo:
+Se um campo do formulário \(`fnome`\) estiver vazio, esta função emite uma
+mensagem de *alerta* e retorna falso, para prevenir a submissão do formulário
+incompleto:
+
+Exemplo de JavaScript:
+
 ```javascript
 function validateForm() {
-  var x = document.forms["myForm"]["fname"].value;
+  var x = document.forms["meuForm"]["fnome"].value;
   if (x == "") {
-    alert("Name must be filled out");
+    alert("O campo Nome é obrigatório.");
     return false;
   }
 }
 ```
 
-The function can be called when the form is submitted:
+A função pode ser chamada quando o formulário é submetido:
 
-HTML Form Exemplo: [Demo: Form Val1](valid_demo1.html)
+Exemplo de Fomulário de HTML: [Demo: Form Val1](valid_demo1.html)
 ```html
-<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+<form name="meuForm" action="/action_page.php" onsubmit="return validateForm()"
+ method="post">
 Name: <input type="text" name="fname">
 <input type="submit" value="Submit">
 </form>
 ```
 
-### JavaScript Can Validate Numeric Input
+### JavaScript Pode Validar Entrada de Valores Numéricos
 
-JavaScript is often used to validate numeric input: [Demo: Form Val2](valid_demo2.html)
+JavaScript é usado frequentemente para validar entradas numéricas: [Demo: Form Val2](valid_demo2.html)
+
 Exemplo:
 ```javascript
-function myFunction() {
-  var x, text;
+function minhaFuncao() {
+  var x, texto;
 
-  // Get the value of the input field with id="numb"
+  // Obtem o valor do campo de entrada com id="numb"
   x = document.getElementById("numb").value;
 
-  // If x is Not a Number or less than one or greater than 10
+  // Se x for Não Número ou menor do que 1 ou maior do que 10
   if (isNaN(x) || x < 1 || x > 10) {
-    text = "Input not valid";
+    texto = "Entrada Inválida";
   } else {
-    text = "Input OK";
+    text = "Entrada OK";
   }
-  document.getElementById("demo").innerHTML = text;
+  document.getElementById("demo").innerHTML = texto;
 }
 ```
 
-### Automatic HTML Form Validation
+### Validação Automática de Formulários HTML
 
-HTML form validation can be performed automatically by the browser:
+HTML5 permite a validação automática de formulários pelo navegador sem a
+necessidade de usar JavaScript.
 
-If a form field (fname) is empty, the required attribute prevents this form from being submitted:
+Se um campo do formulário estiver vazio e ele precisa ser preenchido, o
+atributo `required` evita a submissão do formulário incompleto:
 
-HTML Form Exemplo
+Exemplo de Formulário HTML
+
 ```html
 <form action="/action_page.php" method="post">
   <input type="text" name="fname" required>

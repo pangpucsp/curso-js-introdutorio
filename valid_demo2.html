@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Pode Validar Entradas Numéricas</h2>
+
+<p>Por favor, entre com um número entre 1 e 10:</p>
+
+<input id="numb">
+
+<button type="button" onclick="minhaFuncao()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+function minhaFuncao() {
+  var x, texto;
+
+  // Obtenha o valor do campo de entrada com id="numb"
+  x = document.getElementById("numb").value;
+
+  // Se x for um Não Número ou menor do que 1 ou maior do que 10
+  if (isNaN(x) || x < 1 || x > 10) {
+    texto = "Entrada inválida";
+  } else {
+    texto = "Entrada OK";
+  }
+  document.getElementById("demo").innerHTML = texto;
+}
+</script>
+
+</body>
+</html>

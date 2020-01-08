@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  var x = document.forms["meuForm"]["fname"].value;
+  if (x == "") {
+    alert("Nome deve ser preenchido.");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+
+<form name="meuForm" action="/action_page.php" onsubmit="return validateForm()"
+ method="post">
+  Nome: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
