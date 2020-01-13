@@ -1491,79 +1491,87 @@ Exemplo de Formulário HTML
 </form>
 ```
 
-### Data Validation
+### Validação de Dados
 
-Data validation is the process of ensuring that user input is clean, correct, and useful.
+A validação de dados é o processo para garantir que as entradas do usuário
+são limpas, corretas e úteis.
 
-Typical validation tasks are:
+Tarefas de validação típicas são:
 
-  * has the user filled in all required fields?
-  * has the user entered a valid date?
-  * has the user entered text in a numeric field?
+  * O usuário preencheu todos os campos obrigatórios?
+  * O usuário entrou com dados válidos?
+  * O usuário entrou com texto num campo numérico?
 
-Most often, the purpose of data validation is to ensure correct user input.
+Na maioria das vezes, o propósito da validação de dados é se assegurar que
+o usuário forneceu dados corretos.
 
-Validation can be defined by many different methods, and deployed in many different ways.
+A validação pode ser definida por vários métodos diferentes  e aplicada de
+diferentes maneiras.
 
-**Server side validation** is performed by a web server, after input has been sent to the server.
+**A validação do lado do servidor** é feita pelo servidor Web, depois que os
+dados foram enviados para o servidor.
 
-**Client side validation** is performed by a web browser, before input is sent to a web server.
+**A validação do lado do cliente** é feita pelo navegador, antes das entradas
+serem enviadas a um servidor Web.
 
-   Obs.: You should do both. DON'T rely only on client side validation. Data may be coming without using your js validation.
+> Obs.: Você deve fazer ambos. NÃO confie apenas na validação do lado do
+  cliente. Os dados podem ter sido enviados sem a validação pelo JS.
 
-### HTML Constraint Validation
+### A Validação pelas Restrições de HTML
 
-HTML5 introduced a new HTML validation concept called **constraint validation**.
+O HTML5 introduziu um novo conceito de validação de HTML chamado de
+**validação por restrições**.
 
-HTML constraint validation is based on:
+A validação por restrições de HTML é baseada em:
 
-  * Constraint validation HTML Input Attributes
-  * Constraint validation CSS Pseudo Selectors
-  * Constraint validation DOM Properties and Methods
+  * Validação por restrições de HTML através de Atributos de Entradas
+  * Validação por restrições de CSS através Pseudo Seletores
+  * Validação por restrições de Propriedades e Métodos do DOM
 
-#### Constraint Validation HTML Input Attributes
+#### Validação por Restrição de HTML por Atributos de Entrada
 
-Attribute | Description
-----------|-------------
-disabled | Specifies that the input element should be disabled
-max | Specifies the maximum value of an input element
-min | Specifies the minimum value of an input element
-pattern | Specifies the value pattern of an input element
-required | Specifies that the input field requires an element
-type  | Specifies the type of an input element
+Atributo    | Descrição
+------------|-------------
+`disabled`  | Especifica que este elemento de entrada deve estar desabilitado
+`max`       | Especifica o valor máximo de um elemento de entrada
+`min`       | Especifica o valor mínimo de um elemento de entrada
+`pattern`   | Especifica o valor padrão de um elemento de entrada
+`required`  | Especifica que o campo de entrada é obrigatório
+`type`      | Especifica o tipo de um elemento de entrada
 
-#### Constraint Validation CSS Pseudo Selectors
+#### Validação por Restrições de CSS através Pseudo Seletores
 
-Selector | Description
----------|-------------
-:disabled | Selects input elements with the "disabled" attribute specified
-:invalid | Selects input elements with invalid values
-:optional | Selects input elements with no "required" attribute specified
-:required | Selects input elements with the "required" attribute specified
-:valid | Selects input elements with valid values
+Seletor     | Descrição
+------------|-------------
+`:disabled` | Seleciona elementos de entrada com o atributo "`disabled`" especificado
+`:invalid`  | Seleciona elementos de entrada com valores inválidos
+`:optional` | Seleciona elementos de entrada sem o atributo "`required`" especificado
+`:required` | Seleciona elementos de entrada com o atributo "`required`" especificado
+`:valid`    | Seleciona elementos de entrada com valores válidos
 
 ## JavaScript Validation API [JS Validation](https://www.w3schools.com/js/js_validation_api.asp)
 
-### Constraint Validation DOM Methods
+### Métodos do DOM para Validação por Restrições
 
-Property | Description
----------|---------------
-checkValidity\(\) | Returns true if an input element contains valid data.
-setCustomValidity\(\) | Sets the validationMessage property of an input element.
+Propriedade           | Descrição
+----------------------|---------------
+`checkValidity()`     | Retorna `true` se um elemento de entrada contém dados válidos.
+`setCustomValidity()` | Configura a propridade `validationMessage` de um elemento de entrada.
 
-If an input field contains invalid data, display a message:
+Se um campo de entrada contém dados inválidos, mostra uma mensagem.
 
-#### The checkValidity\(\) Method
+#### O Método `checkValidity()`
 
 Exemplo: [Demo: Form Val3](valid_demo3.html)
+
 ```html
 <input id="id1" type="number" min="100" max="300" required>
-<button onclick="myFunction()">OK</button>
+<button onclick="minhaFuncao()">OK</button>
 
 <p id="demo"></p>
 
 <script>
-function myFunction() {
+function minhaFuncao() {
   var inpObj = document.getElementById("id1");
   if (!inpObj.checkValidity()) {
     document.getElementById("demo").innerHTML = inpObj.validationMessage;
