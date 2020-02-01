@@ -1280,11 +1280,11 @@ eventos de HTML.
 
 Exemplos:
 
-          |           |             |
-----------|-----------| ------------|---------------------
-onblur    |  onclick  |    onerror  |     onfocus
-onkeydown |  onkeypress |   onkeyup  |    onmouseover
-onload    | onmouseup |  onmousedown | onsubmit
+|          |           |             |                    |
+|----------|-----------| ------------|---------------------|
+|onblur    |  onclick  |    onerror  |     onfocus     |
+|onkeydown |  onkeypress |   onkeyup  |    onmouseover  |
+|onload    | onmouseup |  onmousedown | onsubmit         |
 <!----------  -----------  ------------  --------------------->
 
 ## JSON (https://www.w3schools.com/js/js_json.asp)
