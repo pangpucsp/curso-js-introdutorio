@@ -1280,6 +1280,7 @@ eventos de HTML.
 
 Exemplos:
 
+          |           |             |
 ----------|-----------| ------------|---------------------
 onblur    |  onclick  |    onerror  |     onfocus
 onkeydown |  onkeypress |   onkeyup  |    onmouseover
