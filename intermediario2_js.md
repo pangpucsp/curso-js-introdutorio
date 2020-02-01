@@ -1517,18 +1517,18 @@ serem enviadas a um servidor Web.
 > Obs.: Você deve fazer ambos. NÃO confie apenas na validação do lado do
   cliente. Os dados podem ter sido enviados sem a validação pelo JS.
 
-### A Validação pelas Restrições de HTML
+### A Validação de Restrições de HTML
 
 O HTML5 introduziu um novo conceito de validação de HTML chamado de
-**validação por restrições**.
+**validação de restrições** \(*Constraint Validation*\).
 
-A validação por restrições de HTML é baseada em:
+A validação de restrições de HTML é baseada em:
 
-  * Validação por restrições de HTML através de Atributos de Entradas
-  * Validação por restrições de CSS através Pseudo Seletores
-  * Validação por restrições de Propriedades e Métodos do DOM
+  * Validação de restrições de HTML através de Atributos de Entradas
+  * Validação de restrições de CSS através Pseudo Seletores
+  * Validação de restrições de Propriedades e Métodos do DOM
 
-#### Validação por Restrição de HTML por Atributos de Entrada
+#### Validação de Restrição de HTML por Atributos de Entrada
 
 Atributo    | Descrição
 ------------|-------------
@@ -1551,7 +1551,7 @@ Seletor     | Descrição
 
 ## JavaScript Validation API [JS Validation](https://www.w3schools.com/js/js_validation_api.asp)
 
-### Métodos do DOM para Validação por Restrições
+### Métodos do DOM para Validação de Restrições
 
 Propriedade           | Descrição
 ----------------------|---------------
@@ -1580,28 +1580,30 @@ function minhaFuncao() {
 </script>
 ```
 
-### Constraint Validation DOM Properties
+### Validação de Restrições em Propriedades do DOM
 
-Property | Description
----------|------------
-validity | Contains boolean properties related to the validity of an input element.
-validationMessage | Contains the message a browser will display when the validity is false.
-willValidate | Indicates if an input element will be validated.
+Propriedade    | Descrição
+---------------|------------
+`validity`       | Contém propriedades lógicas relacionadas à validade de um elemento de entrada.
+`validationMessage` | Contém a mensagem que um navegador mostrará quando a validade é falsa.
+`willValidate`   | Indica se um elemento de entrada será validado.
 
-### Validity Properties
-The validity property of an input element contains a number of properties related to the validity of data:
+### Propriedades de Validação
 
-Property | Description
----------|----------------
-customError | Set to true, if a custom validity message is set.
-patternMismatch | Set to true, if an element's value does not match its pattern attribute.
-rangeOverflow | Set to true, if an element's value is greater than its max attribute.
-rangeUnderflow | Set to true, if an element's value is less than its min attribute.
-stepMismatch | Set to true, if an element's value is invalid per its step attribute.
-tooLong | Set to true, if an element's value exceeds its maxLength attribute.
-typeMismatch | Set to true, if an element's value is invalid per its type attribute.
-valueMissing | Set to true, if an element \(with a required attribute\) has no value.
-valid | Set to true, if an element's value is valid.
+A propriedade de validadede um elemento de entrada contém várias propriedades
+relacionadas com a validade dos dados:
+
+Propriedade     | Descrição
+----------------|----------------
+`customError`     | Verdadeiro, se uma mensagem de validade estiver configurada.
+`patternMismatch` | Verdadeiro, se o valor de um elemento não casa com o padrão de seu atributo.
+`rangeOverflow`   | Verdadeiro, se o valor de um elemento for maior do que o seu atributo `max`.
+`rangeUnderflow`  | Verdadeiro, se o valor de um elemento for menor do que o seu atributo `min`.
+`stepMismatch`    | Verdadeiro, se o valor de um elemento for inválido por seu atributo `step`.
+`tooLong`         | Verdadeiro, se o valor de um elemento excede o seu atributo `maxLength`.
+`typeMismatch`    | Verdadeiro, se o valor de um elemento for inválido devido ao atributo de `type`.
+`valueMissing`    | Verdadeiro, se um elemento \(com o atributo `required`\) não tiver valor.
+`valid`           | Verdadeiro, se o valor de uma elemento for válido.
 
 ### Exemplos
 
