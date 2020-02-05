@@ -1390,9 +1390,9 @@ First, create a JavaScript string containing JSON syntax:
 
 ```json
 var texto = '{ "empregados" : [' +
-'{ "nome":"João" , "sobrenome":"da Silva" },' +
-'{ "nome":"Ana" , "sobrenome":"Carvalho" },' +
-'{ "nome":"Pedro" , "sobrenome":"Cavalcante" } ]}';
+            '{ "nome":"João" , "sobrenome":"da Silva" },' +
+            '{ "nome":"Ana" , "sobrenome":"Carvalho" },' +
+            '{ "nome":"Pedro" , "sobrenome":"Cavalcante" } ]}';
 ```
 
 Em seguida, use a função interna do JavaScript `JSON.parse()` para converter
@@ -1608,20 +1608,22 @@ Propriedade     | Descrição
 
 ### Exemplos
 
-If the number in an input field is greater than 100 \(the input's max attribute\), display a message:
+Se o número de um campo de entrada for maior do que 100 \(o atributo `max` de
+  entrada\), mostre a mesagem:
 
-#### The rangeOverflow Property
+#### A propriedade `rangeOverflow`
+
 ```html
 <input id="id1" type="number" max="100">
-<button onclick="myFunction()">OK</button>
+<button onclick="minhaFuncao()">OK</button>
 
 <p id="demo"></p>
 
 <script>
-function myFunction() {
+function minhaFuncao() {
   var txt = "";
   if (document.getElementById("id1").validity.rangeOverflow) {
-    txt = "Value too large";
+    txt = "Valor excessivamente grande";
   }
   document.getElementById("demo").innerHTML = txt;
 }
