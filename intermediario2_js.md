@@ -1609,7 +1609,7 @@ Propriedade     | Descrição
 ### Exemplos
 
 Se o número de um campo de entrada for maior do que 100 \(o atributo `max` de
-  entrada\), mostre a mesagem:
+  entrada\), mostre a mensagem:
 
 #### A propriedade `rangeOverflow`
 
@@ -1630,12 +1630,14 @@ function minhaFuncao() {
 </script>
 ```
 
-If the number in an input field is less than 100 \(the input's min attribute\), display a message:
+Se o número no campo de entrada for menor do que 100 \(o atributo `min` de
+  entrada\), mostre a mensagem:
 
-#### The rangeUnderflow Property
+#### A Propriedade `rangeUnderflow`
+
 ```html
 <input id="id1" type="number" min="100">
-<button onclick="myFunction()">OK</button>
+<button onclick="minhaFuncao()">OK</button>
 
 <p id="demo"></p>
 
@@ -1643,7 +1645,7 @@ If the number in an input field is less than 100 \(the input's min attribute\), 
 function myFunction() {
   var txt = "";
   if (document.getElementById("id1").validity.rangeUnderflow) {
-    txt = "Value too small";
+    txt = "Valor muito pequeno";
   }
   document.getElementById("demo").innerHTML = txt;
 }
