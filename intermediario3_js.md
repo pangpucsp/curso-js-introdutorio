@@ -4,7 +4,7 @@ Esta é a continuação de [Fundamentos VII de JS](intermediario2_js.md).
 
 <!--
 This is my annotations from [javascript tutorial W3C school study](https://www.w3schools.com/js/).
-This part is Objects in JavaScript.
+This part is about Objects in JavaScript.
 -->
 
 ## Objetos em JavaScript (https://www.w3schools.com/js/js_object_definition.asp)
@@ -116,19 +116,20 @@ nomeCompleto | function\(\) {return this.nome + " " + this.sobrenome;}
 > Objetos de JavaScript são repositórios de valores com nomes,
   chamados de propriedades e métodos.
 
-### Creating a JavaScript Object
+### Criação de um Objeto em JavaScript
 
-With JavaScript, you can define and create your own objects.
+Com JavaScript, você pode definir e criar seus próprios objetos.
 
-There are different ways to create new objects:
+Existem diferentes maneiras de criar novos objetos:
 
-  * Define and create a single object, using an object literal.
-  * Define and create a single object, with the keyword new.
-  * Define an object constructor, and then create objects of the constructed type.
+  * Defina e crie um único objeto com o uso de um objeto literal.
+  * Defina e crie um único objeto com a palavra-chave `new`.
+  * Defina um construtor de objetos e, então, crie objetos do tipo construído.
 
-    In ECMAScript 5, an object can also be created with the function Object.create().
+>  A partir do ECMAScript 5, um objeto pode ser criado também com a função
+   `Object.create()`.
 
-#### Using an Object Literal
+#### Uso de um Objeto Literal
 
 This is the easiest way to create a JavaScript Object.
 
