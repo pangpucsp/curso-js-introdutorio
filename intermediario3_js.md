@@ -131,61 +131,67 @@ Existem diferentes maneiras de criar novos objetos:
 
 #### Uso de um Objeto Literal
 
-This is the easiest way to create a JavaScript Object.
+Esta é a maneira mais fácil de criar um Objeto JavaScript.
 
-Using an object literal, you both define and create an object in one statement.
+Ao usar um objeto literal, você tanto define, quanto cria um objeto em uma
+instrução.
 
-An object literal is a list of name:value pairs \(like age:50\) inside curly braces {}.
+Um objeto literal é uma lista de pares de `nome:valor` \(como `idade:50`\)
+dentro de chaves, `{}`.
 
-The following example creates a new JavaScript object with four properties:
+O exemplo a seguir cria um novo objeto JavaScript com 4 propriedades:
 
 Exemplo
 
 ```javascript
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+var pessoa = {nome:"José", sobrenome:"da Silva", idade:50, corDosOlhos:"azul"};
 ```
 
-Spaces and line breaks are not important. An object definition can span multiple lines:
+Espaços e quebras de linhas não são importantes. A definição de um objeto pode
+se espalhar por várias linhas:
 
 Exemplo
 
 ```javascript
-var person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
+var pessoa = {
+  nome: "José",
+  sobrenome: "da Silva",
+  idade: 50,
+  corDosOlhos: "azul"
 };
 ```
 
-#### Using the JavaScript Keyword new
+#### Uso da Palavra-Chave `new` em JavaScript
 
-The following example also creates a new JavaScript object with four properties:
+O exemplo a seguir também cria um novo objeto JavaScript com 4 propriedades:
 
 Exemplo
 
 ```javascript
-var person = new Object();
-person.firstName = "John";
-person.lastName = "Doe";
-person.age = 50;
-person.eyeColor = "blue";
+var pessoa = new Object();
+pessoa.nome = "José";
+pessoa.sobrenome = "da Silva";
+pessoa.idade = 50;
+pessoa.corDosOlhos = "azul";
 ```
 
-    The two examples above do exactly the same. There is no need to use new Object().
-    For simplicity, readability and execution speed, use the first one (the object literal method).
+> Os dois exemplos acima são exatamente os mesmos. Não há a necessidade de usar
+> `new Object()`. Por simplicidade, legibilidade e velocidade de execução,
+> use o primeiro \(o método de objeto literal\).
 
-#### JavaScript Objects are Mutable
+#### Objetos em JavaScript são Mutáveis
 
-Objects are mutable: They are addressed by reference, not by value.
+Objetos são mutáveis: Eles são acessados por referência, não por valor.
 
-If person is an object, the following statement will not create a copy of person:
+Se `pessoa` é um objeto, a instrução a seguir não criará uma cópia de `pessoa`:
 
 ```javascript
-var x = person;  // This will not create a copy of person.
+var x = pessoa;  // Isto não cria uma cópia de pessoa.
 ```
 
-The object x is not a copy of person. It is person. Both x and person are the same object.
+O objeto `x` não é uma cópia de `pessoa`. Ele é `pessoa`. Tanto `x`, quanto
+`pessoa` são o mesmo objeto.
+
 
 Any changes to x will also change person, because x and person are the same object.
 
