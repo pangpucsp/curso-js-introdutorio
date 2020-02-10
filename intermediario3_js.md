@@ -192,22 +192,26 @@ var x = pessoa;  // Isto não cria uma cópia de pessoa.
 O objeto `x` não é uma cópia de `pessoa`. Ele é `pessoa`. Tanto `x`, quanto
 `pessoa` são o mesmo objeto.
 
-
-Any changes to x will also change person, because x and person are the same object.
+Qualquer mudança em `x` também mudará em `pessoa`, porque `x` e `pessoa` são
+o mesmo objeto.
 
 Exemplo
 ```javascript
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+var pessoa = {nome:"José", sobrenome:"da Silva", idade:50, corDosOlhos:"azul"}
 
-var x = person;
-x.age = 10;           // This will change both x.age and person.age
+var x = pessoa;
+x.idade = 10;           // Isto irá mudar tanto x.idade, quanto pessoa.idade
 ```
 
-    Note: JavaScript variables are not mutable. Only JavaScript objects.
+> Observação: As variáveis em JavaScript não são mutáveis. Apenas os objetos
+> em JavaScript.
 
-## JavaScript Object Properties (https://www.w3schools.com/js/js_object_properties.asp)
+## Propriedades de Objetos em JavaScript
+<!--
+ (https://www.w3schools.com/js/js_object_properties.asp)
+ -->
 
-Properties are the most important part of any JavaScript object.
+Propriedades são a parte mais importante de qualquer objeto em JavaScript.
 
 ### JavaScript Properties
 
