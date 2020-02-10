@@ -4,6 +4,7 @@ Esta é a continuação de [Fundamentos VII de JS](intermediario2_js.md).
 
 <!--
 This is my annotations from [javascript tutorial W3C school study](https://www.w3schools.com/js/).
+This part is Objects in JavaScript.
 -->
 
 ## Objetos em JavaScript (https://www.w3schools.com/js/js_object_definition.asp)
@@ -60,56 +61,60 @@ Variáveis de JavaScript podem conter valores simples:
 Exemplo
 
 ```javascript
-var person = "John Doe";
+var pessoa = "José da Silva";
 ```
 
-Objects are variables too. But objects can contain many values.
+Objetos são variáveis, também. Mas objetos podem conter vários valores.
 
-The values are written as name : value pairs \(name and value separated by a colon\).
+Os valores são escritos como pares `nome : valor` \(nome e valor separados por
+  dois pontos\).
 
 Exemplo
+
 ```javascript
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+var pessoa = {nome:"José", sobrenome:"da Silva", idade:50, corDosOlhos:"azul"};
 ```
 
-  * A JavaScript object is a collection of named values
+> Um objeto JavaScript é uma coleção de valores com nomes.
 
-### Object Properties
+### Propriedades de Objetos
 
-The named values, in JavaScript objects, are called properties.
+Os valores com nomes, nos objetos de JavaScript, são chamados de propriedades.
 
-Property | Value
+Propriedade | Valor
 ---------|-------
-firstName | John
-lastName | Doe
-age | 50
-eyeColor | blue
+nome  | José
+sobrenome | da Silva
+idade | 50
+corDosOlhos | azul
 
-Objects written as name value pairs are similar to:
+Objetos escritos como pares `nome : valor` são similares a:
 
-  * Associative arrays in PHP
-  * Dictionaries in Python
-  * Hash tables in C
-  * Hash maps in Java
-  * Hashes in Ruby and Perl
+  * Arrays associativos em PHP
+  * Dicionários em Python
+  * Tabelas Hash em C
+  * Mapas Hash em Java
+  * Hashes em Ruby e Perl
 
-### Object Methods
+### Métodos de Objetos
 
-Methods are actions that can be performed on objects.
+Métodos são ações que podem ser realizados em objetos.
 
-Object properties can be both primitive values, other objects, and functions.
+Propriedades de objetos podem ser ambos, valores primitivos, outros objetos e
+funções.
 
-An object method is an object property containing a function definition.
+Um método de objeto é uma propriedade de objeto contendo uma definição de função.
 
-Property | Value
+Propriedade | Valor
 ---------|-------
-firstName | John
-lastName | Doe
-age | 50
-eyeColor | blue
-fullName | function\(\) {return this.firstName + " " + this.lastName;}
+nome | José
+sobrenome | da Silva
+idade | 50
+corDosOlhos | azul
+nomeCompleto | function\(\) {return this.nome + " " + this.sobrenome;}
 
-    JavaScript objects are containers for named values, called properties and methods.
+> Objetos de JavaScript são repositórios de valores com nomes,
+  chamados de propriedades e métodos.
 
 ### Creating a JavaScript Object
 
