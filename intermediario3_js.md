@@ -43,7 +43,7 @@ JavaScript define 5 tipos de dados primitivos:
 Valores primitivos são imutáveis \(eles estão embutidos na linguagem e não
   podem ser modificados\).
 
-> se x = 3.14, você pode mudar o valor de x. Mas não pode mudar o valor de 3.14.
+> Se x = 3.14, você pode mudar o valor de x. Mas não pode mudar o valor de 3.14.
 
 Valor | Tipo | Comentário
 ------|------|---------
@@ -111,7 +111,7 @@ nome | José
 sobrenome | da Silva
 idade | 50
 corDosOlhos | azul
-nomeCompleto | function\(\) {return this.nome + " " + this.sobrenome;}
+nomeCompleto | `function\(\) {return this.nome + " " + this.sobrenome;}`
 
 > Objetos de JavaScript são repositórios de valores com nomes,
   chamados de propriedades e métodos.
