@@ -242,88 +242,108 @@ ou
 nomeDoObjeto[expressao]      // x = "idade"; pessoa[x]
 ```
 
-The expression must evaluate to a property name.
+A expressão deve calcular o nome de uma propriedade.
 
 #### Exemplo 1
+
 ```javascript
-person.firstname + " is " + person.age + " years old.";
+pessoa.nome + " tem " + pessoa.idade + " anos.";
 ```
 
 #### Exemplo 2
+
 ```javascript
-person["firstname"] + " is " + person["age"] + " years old.";
+pessoa["nome"] + " tem " + pessoa["idade"] + " anos.";
 ```
 
-### JavaScript for...in Loop
+### Loop `for...in` em JavaScript
 
-The JavaScript **for...in** statement loops through the properties of an object.
+A instrução de repetição **`for...in`** permite percorrer as propriedades de um
+objeto.
 
-Syntax
+Syntaxe:
+
 ```javascript
-for (variable in object) {
-  // code to be executed
+for (variável in objeto) {
+  // código a ser executado
 }
 ```
 
-The block of code inside of the **for...in** loop will be executed once for each property.
+O bloco de código dentro do *loop* `for...in` será executado uma vez para cada
+propriedade.
 
-Looping through the properties of an object:
+Percorrendo as propriedades de um objeto:
 
 Exemplo
-```javascript
-var person = {fname:"John", lname:"Doe", age:25};
 
-for (x in person) {
-  txt += person[x];
+```javascript
+var pessoa = {nome:"José", sobrenome:"da Silva", idade:25};
+txt = "";
+for (x in pessoa) {
+  txt += pessoa[x];
 }
+// tem-se: txt === "Joséda Silva25"
 ```
 
-### Adding New Properties
+### Acrescentando Novas Propriedades
 
-You can add new properties to an existing object by simply giving it a value.
+Você pode acrescentar novas propriedades a um objeto existente simplesmente
+dando-lhe um valor.
 
-Assume that the person object already exists - you can then give it new properties:
+Assumindo que o objeto `pessoa` já exista, você pode lhe dar uma nova
+propriedade:
 
 Exemplo
+
 ```javascript
-person.nationality = "English";
+pessoa.nationalidade = "Atlantiano";
 ```
 
-    You cannot use reserved words for property (or method) names. JavaScript naming rules apply.
+> Você não pode usar palavras reservadas para nome de propriedades
+  \(ou para métodos\). As regras para nomes do JavaScript se aplicam para
+  os nomes das propriedades e dos métodos.
 
-### Deleting Properties
+### Remoção de Propriedades
 
-The **delete** keyword deletes a property from an object:
+A palavra-chave **`delete`** remove uma propriedade de um objeto:
 
 Exemplo
+
 ```javascript
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-delete person.age;   // or delete person["age"];
+var pessoa = {nome:"José", sobrenome:"da Silva", idade:50, corDosOlhos:"azul"};
+delete pessoa.idade;   // ou delete pessoa["idade"];
 ```
 
-The delete keyword deletes both the value of the property and the property itself.
+A palavra-chave `delete` remove tanto o valor da propriedade, quanto a própria
+propriedade.
 
-After deletion, the property cannot be used before it is added back again.
+Após a remoção, a propriedade não pode ser usada antes de ser acrescentada de
+volta.
 
-The delete operator is designed to be used on object properties. It has no effect on variables or functions.
+O operador `delete` foi projetado para ser usado em propriedades de objetos.
+Ele não tem efeito em variáveis ou funções.
 
-The delete operator should not be used on predefined JavaScript object properties. It can crash your application.
+O operador `delete` não deve ser usado em propriedades pré-definidas de
+JavaScript. Isto pode quebrar sua aplicação.
 
-### Property Attributes
+### Atributos de Propriedades
 
-All properties have a name. In addition they also have a value.
+Todas as propriedades têm um nome e um valor.
 
-The value is one of the property's attributes.
+O valor é uma dos atributos de uma propriedade.
 
-Other attributes are: enumerable, configurable, and writable.
+Os outros atributos são: `enumerable`, `configurable` e `writable`.
 
-These attributes define how the property can be accessed \(is it readable?, is it writable?\)
+Estes atributos definem como a propriedade pode ser acessada \(é legível?,
+  é modificável?\).
 
-In JavaScript, all attributes can be read, but only the value attribute can be changed \(and only if the property is writable\).
+Em JavaScript, todos os atributos podem ser lidos, mas apenas o atributo de
+`value` pode ser modificado e apenas se a propriedade for `writeable`.
 
-\( ECMAScript 5 has methods for both getting and setting all property attributes\)
+\( ECMAScript 5 tem métodos para ler e modificar todos os atributos de uma
+  propriedade.\)
 
-### Prototype Properties
+### Propriedades de Protótipos
 
 JavaScript objects inherit the properties of their prototype.
 
