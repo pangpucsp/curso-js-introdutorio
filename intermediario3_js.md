@@ -213,32 +213,33 @@ x.idade = 10;           // Isto irá mudar tanto x.idade, quanto pessoa.idade
 
 Propriedades são a parte mais importante de qualquer objeto em JavaScript.
 
-### JavaScript Properties
+### Propriedades em JavaScript
 
-Properties are the values associated with a JavaScript object.
+Propriedades são os valores associados a um objeto JavaScript.
 
-A JavaScript object is a collection of unordered properties.
+Um objeto JavaScript é uma coleção de propriedades não ordenadas.
 
-Properties can usually be changed, added, and deleted, but some are read only.
+Propriedades podem, em geral, serem modificadas, adicionadas e removidas, mas
+algumas são de *apenas leitura*.
 
-### Accessing JavaScript Properties
+### Accesso a Propriedades em JavaScript
 
-The syntax for accessing the property of an object is:
+A sintaxe para acessar a propriedade de um objeto é:
 
 ```javascript
-objectName.property         // person.age
+nomeDoObjeto.propriedade         // pessoa.idade
 ```
 
-or
+ou
 
 ```javascript
-objectName["property"]      // person["age"]
+nomeDoObjeto["propriedade"]      // pessoa["idade"]
 ```
 
-or
+ou
 
 ```javascript
-objectName[expression]      // x = "age"; person[x]
+nomeDoObjeto[expressao]      // x = "idade"; pessoa[x]
 ```
 
 The expression must evaluate to a property name.
