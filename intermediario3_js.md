@@ -208,7 +208,7 @@ x.idade = 10;           // Isto irá mudar tanto x.idade, quanto pessoa.idade
 
 ## Propriedades de Objetos em JavaScript
 <!--
- (https://www.w3schools.com/js/js_object_properties.asp)
+ https://www.w3schools.com/js/js_object_properties.asp
  -->
 
 Propriedades são a parte mais importante de qualquer objeto em JavaScript.
@@ -345,210 +345,231 @@ Em JavaScript, todos os atributos podem ser lidos, mas apenas o atributo de
 
 ### Propriedades de Protótipos
 
-JavaScript objects inherit the properties of their prototype.
+Objetos em JavaScript herdam as propriedades de seu protótipo.
 
-The delete keyword does not delete inherited properties, but if you delete a prototype property, it will affect all objects inherited from the prototype.
+A palavra-chave `delete` não remove propriedades herdadas, mas se você remover
+uma propriedade de um protótipo, a remoção afetará todos os objetos que herdaram
+do protótipo.
 
-## JavaScript Object Methods (https://www.w3schools.com/js/js_object_methods.asp)
+## Métodos de Objetos em JavaScript
+<!--
+https://www.w3schools.com/js/js_object_methods.asp)
+-->
 
 #### Exemplo
+
 ```javascript
-var person = {
-  firstName: "John",
-  lastName : "Doe",
+var pessoa = {
+  nome: "José",
+  sobrenome : "da Silva",
   id       : 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
+  nomeCompleto : function() {
+    return this.nome + " " + this.sobrenome;
   }
 };
 ```
 
-### The **this** Keyword
+### A Palavra-Chave **`this`**
 
-In a function definition, **this** refers to the "owner" of the function.
+Na definição da função, **`this`** refere-se ao *proprietário* "da função.
 
-In the example above, this is the person object that "owns" the fullName function.
+No exemplo acima, `this` é o objeto `pessoa` que *possui* a função
+`nomeCompleto`.
 
-In other words, this.firstName means the firstName property of this object.
+Em outras palavras, `this.nome` significa a propriedade `nome` deste objeto.
 
-Read more about the this keyword at JS this Keyword.
+### Métodos em JavaScript
 
-### JavaScript Methods
+Métodos em JavaScript são ações que são realizadas sobre os objetos.
 
-JavaScript methods are actions that can be performed on objects.
+Um método em JavaScript é uma propriedade contendo a definição de uma função.
 
-A JavaScript method is a property containing a function definition.
-
-Property | Value
+Propriedade | Valor
 ---------|-------
-firstName | John
-lastName | Doe
-age | 50
-eyeColor | blue
-fullName | function\(\) {return this.firstName + " " + this.lastName;}
+nome | José
+sobrenome | da Silva
+idade | 50
+corDosOlhos | azul
+nomeCompleto | function\(\) {return this.nome + " " + this.sobrenome;}
 
-Methods are functions stored as object properties.
+Métodos são funções armazenadas como propriedades de objetos.
 
-### Accessing Object Methods
+### Métodos para Acessar Objetos
 
-You access an object method with the following syntax:
+Você pode acessar um método objeto com a seguinte sintaxe:
 
 ```javascript
-objectName.methodName()
+nomeDoObjeto.nomeDoMetodo()
 ```
 
-You will typically describe fullName\(\) as a method of the person object, and fullName as a property.
+Você descreve tipicamente `nomeCompleto()` como um método do objeto `pessoa` e
+`nomeCompleto` como uma propriedade.
 
-The fullName property will execute \(as a function\) when it is invoked with \(\).
+A propriedade `nomeCompleto` executa \(como uma função\) quando ela é invocada
+com \(\).
 
-This example accesses the fullName\(\) method of a person object:
+O exemplo a seguir acessa o método `nomeCompleto()` de um objeto `pessoa`:
+
+Exemplo
+
+```javascript
+nome = pessoa.nomeCompleto();
+```
+
+Se você acessar a propriedade `nomeCompleto`, sem \(\), a definição da função
+será retornada:
 
 Exemplo
 ```javascript
-name = person.fullName();
+nome = pessoa.nomeCompleto;
 ```
 
-If you access the fullName property, without \(\), it will return the function definition:
+### Uso de Métodos Internos
+
+Este Exemplo usa o método `toUpperCase()` do objeto String, para converter um
+texto para maiúsculas:
+
+```javascript
+var mensagem = "Alo Mundo!";
+var x = mensagem.toUpperCase();
+```
+
+O valor de x, após a execução do código acima será:
+
+  Alo Mundo!
+
+### Acréscimo de um Método a um Objeto
+
+Acrescentar um novo método a um objeto é fácil:
 
 Exemplo
-```javascript
-name = person.fullName;
-```
-
-### Using Built-In Methods
-
-This example uses the toUpperCase\(\) method of the String object, to convert a text to uppercase:
 
 ```javascript
-var message = "Hello world!";
-var x = message.toUpperCase();
-```
-
-The value of x, after execution of the code above will be:
-
-  HELLO WORLD!
-
-### Adding a Method to an Object
-
-Adding a new method to an object is easy:
-
-Exemplo
-```javascript
-person.name = function () {
-  return this.firstName + " " + this.lastName;
+pessoa.nomeC = function () {
+  return this.nome + " " + this.sobrenome;
 };
 ```
 
-## JavaScript Object Accessors (https://www.w3schools.com/js/js_object_accessors.asp)
+## Acessores de Objetos em JavaScript
+<!--
+https://www.w3schools.com/js/js_object_accessors.asp
+-->
 
-### JavaScript Accessors (Getters and Setters)
+### Acessores em JavaScript \(*Getters* e *Setters*\)
 
-ECMAScript 5 \(2009\) introduced Getter and Setters.
+ECMAScript 5 \(2009\) introduziu *Getter* e *Setters*.
 
-Getters and setters allow you to define Object Accessors \(Computed Properties\).
+*Getters* e *setters* permitem que você defina Acessores a Objetos
+\(Propriedades Calculadas\).
 
-#### JavaScript Getter \(The get Keyword\)
+#### *Getter* em JavaScript \(A Palavra-Chave `get`\)
 
-This example uses a lang property to get the value of the language property.
+O exemplo a seguir usa uma propriedade `lang` para obter o valor da propriedade
+`lingua`.
 
 Exemplo
 
 ```javascript
-// Create an object:
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  language : "en",
+// Cria um objeto:
+var pessoa = {
+  nome: "José",
+  sobrenome : "da Silva",
+  lingua : "pt",
   get lang() {
-    return this.language;
+    return this.lingua;
   }
 };
 
-// Display data from the object using a getter:
-document.getElementById("demo").innerHTML = person.lang;
+// Mostra dados de um objeto com o uso de um getter:
+document.getElementById("demo").innerHTML = pessoa.lang;
 ```
 
-#### JavaScript Setter \(The set Keyword\)
+#### *Setter* em JavaScript \(A Palavra-Chave `set`\)
 
-This example uses a lang property to set the value of the language property.
+Este exemplo usa uma propriedade `lang` para ajustar o valor da propriedade
+`lingua`.
 
 Exemplo
 ```javascript
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  language : "",
+var pessoa = {
+  nome: "José",
+  sobrenome : "da Silva",
+  lingua : "",
   set lang(lang) {
-    this.language = lang;
+    this.lingua = lang;
   }
 };
 
-// Set an object property using a setter:
-person.lang = "en";
+// Modifica a propriedade de um objeto com o uso de um setter:
+pessoa.lang = "pt";
 
-// Display data from the object:
-document.getElementById("demo").innerHTML = person.language;
+// Mostra dados de um objeto:
+document.getElementById("demo").innerHTML = pessoa.lingua;
 ```
 
-### JavaScript Function or Getter?
+### Função ou *Getter* em JavaScript?
 
-What is the differences between these two examples?
+Qual a diferença entre estes dois exemplos?
 
 Exemplo 1
+
 ```javascript
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
+var pessoa = {
+  nome         : "José",
+  sobrenome    : "da Silva",
+  nomeCompleto : function() {
+    return this.nome + " " + this.sobrenome;
   }
 };
 
-// Display data from the object using a method:
-document.getElementById("demo").innerHTML = person.fullName();
+// Mostra os dados de um objeto com o uso de um método:
+document.getElementById("demo").innerHTML = pessoa.nomeCompleto();
 ```
 
 Exemplo 2
+
 ```javascript
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  get fullName() {
-    return this.firstName + " " + this.lastName;
+var pessoa = {
+  nome      : "José",
+  sobrenome : "da Silva",
+  get nomeCompleto() {
+    return this.nome + " " + this.sobrenome;
   }
 };
 
 // Display data from the object using a getter:
-document.getElementById("demo").innerHTML = person.fullName;
+document.getElementById("demo").innerHTML = pessoa.nomeCompleto;
 ```
 
-Exemplo 1 access fullName as a function: person.fullName().
+Exemplo 1 acessa `nomeCompleto` como uma função: pessoa.nomeCompleto().
 
-Exemplo 2 access fullName as a property: person.fullName.
+Exemplo 2 acessa `nomeCompleto` como uma propriedade: pessoa.nomeCompleto.
 
-The second example provides simpler syntax.
+O segundo exemplo fornece uma sintaxe mais simples.
 
-### Data Quality
+### Qualidade dos Dados
 
-JavaScript can secure better data quality when using getters and setters.
+JavaScript pode assegurar uma qualidade de dados melhor ao usar *getters* e
+*setters*.
 
-Using the lang property, in this example, returns the value of the language property in upper case:
+Usar a propriedade `lang`, neste exemplo, retorna o valor da propriedade
+`lingua` em maiúsculas:
 
 #### Exemplo
 
 ```javascript
-// Create an object:
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  language : "en",
+// Cria um objeto:
+var pessoa = {
+  nome      : "José",
+  sobrenome : "da Silva",
+  lingua    : "pt",
   get lang() {
-    return this.language.toUpperCase();
+    return this.lingua.toUpperCase();
   }
 };
 
-// Display data from the object using a getter:
-document.getElementById("demo").innerHTML = person.lang;
+// Mostra os dados de um objeto com o uso de um getter:
+document.getElementById("demo").innerHTML = pessoa.lang;
 ```
 
 Using the lang property, in this example, stores an upper case value in the language property:
