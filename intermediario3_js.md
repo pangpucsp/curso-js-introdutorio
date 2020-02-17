@@ -492,9 +492,9 @@ Este exemplo usa uma propriedade `lang` para ajustar o valor da propriedade
 Exemplo
 ```javascript
 var pessoa = {
-  nome: "José",
+  nome      : "José",
   sobrenome : "da Silva",
-  lingua : "",
+  lingua   : "",
   set lang(lang) {
     this.lingua = lang;
   }
@@ -728,7 +728,7 @@ O acréscimo de uma propriedade a um objeto existente é simples:
 #### Exemplo
 
 ```javascript
-MeuPai.nacionalidade = "Português";
+meuPai.nacionalidade = "Português";
 ```
 
 A propriedade será acrescentada a `meuPai`. Não a `minhaMae`. \(Nem a nenhum
