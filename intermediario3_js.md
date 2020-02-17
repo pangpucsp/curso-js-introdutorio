@@ -371,7 +371,7 @@ var pessoa = {
 
 ### A Palavra-Chave **`this`**
 
-Na definição da função, **`this`** refere-se ao *proprietário* "da função.
+Na definição da função, **`this`** refere-se ao *proprietário* da função.
 
 No exemplo acima, `this` é o objeto `pessoa` que *possui* a função
 `nomeCompleto`.
@@ -390,7 +390,7 @@ nome | José
 sobrenome | da Silva
 idade | 50
 corDosOlhos | azul
-nomeCompleto | function\(\) {return this.nome + " " + this.sobrenome;}
+nomeCompleto | `function\(\) { return this.nome + " " + this.sobrenome; }`
 
 Métodos são funções armazenadas como propriedades de objetos.
 
@@ -537,7 +537,7 @@ var pessoa = {
   }
 };
 
-// Display data from the object using a getter:
+// Exibe os dados do objeto com o uso de um getter:
 document.getElementById("demo").innerHTML = pessoa.nomeCompleto;
 ```
 
@@ -572,16 +572,16 @@ var pessoa = {
 document.getElementById("demo").innerHTML = pessoa.lang;
 ```
 
-| propriedade `lang`, no exemplo a seguir, é usada para armazenar o valor em
+A propriedade `lang`, no exemplo a seguir, é usada para armazenar o valor em
 maiúsculas da propriedade `lingua`.
 
 #### Exemplo
 
 ```javascript
 var pessoa = {
-  nome: "José",
+  nome      : "José",
   sobrenome : "da Silva",
-  lingua : "",
+  lingua    : "",
   set lang(lang) {
     this.lingua = lang.toUpperCase();
   }
