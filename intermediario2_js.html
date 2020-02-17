@@ -1065,25 +1065,26 @@ Diferentes editores interpretam tabs diferentemente.</code></pre>
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">onblur</td>
-<td style="text-align: left;">onclick</td>
-<td style="text-align: left;">onerror</td>
-<td style="text-align: left;">onfocus</td>
+<td>onblur</td>
+<td>onclick</td>
+<td>onerror</td>
+<td>onfocus</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">onkeydown</td>
-<td style="text-align: left;">onkeypress</td>
-<td style="text-align: left;">onkeyup</td>
-<td style="text-align: left;">onmouseover</td>
+<td>onkeydown</td>
+<td>onkeypress</td>
+<td>onkeyup</td>
+<td>onmouseover</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">onload</td>
-<td style="text-align: left;">onmouseup</td>
-<td style="text-align: left;">onmousedown</td>
-<td style="text-align: left;">onsubmit</td>
+<td>onload</td>
+<td>onmouseup</td>
+<td>onmousedown</td>
+<td>onsubmit</td>
 </tr>
 </tbody>
 </table>
+<!----------  -----------  ------------  --------------------->
 <h2 id="json-httpswww.w3schools.comjsjs_json.asp">JSON (https://www.w3schools.com/js/js_json.asp)</h2>
 <p>JSON é um formato para armazenar e transferir dados.</p>
 <p>JSON é usado com frequência quando dados devem ser enviados de um servidor para uma página de Web.</p>
@@ -1141,9 +1142,9 @@ Diferentes editores interpretam tabs diferentemente.</code></pre>
 <p>Por simplicidade, isto pode ser demonstrado usando uma string como entrada.</p>
 <p>First, create a JavaScript string containing JSON syntax:</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb75-1"><a href="#cb75-1"></a><span class="er">var</span> <span class="er">texto</span> <span class="er">=</span> <span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;empregados&quot;</span> <span class="fu">:</span> <span class="ot">[</span><span class="er">&#39;</span> <span class="er">+</span></span>
-<span id="cb75-2"><a href="#cb75-2"></a><span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;João&quot;</span> <span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;da Silva&quot;</span> <span class="fu">}</span><span class="ot">,</span><span class="er">&#39;</span> <span class="er">+</span></span>
-<span id="cb75-3"><a href="#cb75-3"></a><span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;Ana&quot;</span> <span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;Carvalho&quot;</span> <span class="fu">}</span><span class="ot">,</span><span class="er">&#39;</span> <span class="er">+</span></span>
-<span id="cb75-4"><a href="#cb75-4"></a><span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;Pedro&quot;</span> <span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;Cavalcante&quot;</span> <span class="fu">}</span> <span class="ot">]</span><span class="fu">}</span><span class="er">&#39;;</span></span></code></pre></div>
+<span id="cb75-2"><a href="#cb75-2"></a>            <span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;João&quot;</span> <span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;da Silva&quot;</span> <span class="fu">}</span><span class="ot">,</span><span class="er">&#39;</span> <span class="er">+</span></span>
+<span id="cb75-3"><a href="#cb75-3"></a>            <span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;Ana&quot;</span> <span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;Carvalho&quot;</span> <span class="fu">}</span><span class="ot">,</span><span class="er">&#39;</span> <span class="er">+</span></span>
+<span id="cb75-4"><a href="#cb75-4"></a>            <span class="er">&#39;</span><span class="fu">{</span> <span class="dt">&quot;nome&quot;</span><span class="fu">:</span><span class="st">&quot;Pedro&quot;</span> <span class="fu">,</span> <span class="dt">&quot;sobrenome&quot;</span><span class="fu">:</span><span class="st">&quot;Cavalcante&quot;</span> <span class="fu">}</span> <span class="ot">]</span><span class="fu">}</span><span class="er">&#39;;</span></span></code></pre></div>
 <p>Em seguida, use a função interna do JavaScript <code>JSON.parse()</code> para converter a <em>string</em> num objeto JavaScript:</p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb76-1"><a href="#cb76-1"></a><span class="kw">var</span> obj <span class="op">=</span> <span class="va">JSON</span>.<span class="at">parse</span>(texto)<span class="op">;</span></span></code></pre></div>
 <p>Finalmente, use o novo objeto JavaScript na sua página:</p>
@@ -1337,6 +1338,34 @@ Diferentes editores interpretam tabs diferentemente.</code></pre>
 <h3 id="validação-de-restrições-em-propriedades-do-dom">Validação de Restrições em Propriedades do DOM</h3>
 <table>
 <colgroup>
+<col style="width: 55%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Propriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>validity</code></td>
+<td>Contém propriedades lógicas relacionadas à validade de um elemento de entrada.</td>
+</tr>
+<tr class="even">
+<td><code>validationMessage</code></td>
+<td>Contém a mensagem que um navegador mostrará quando a validade é falsa.</td>
+</tr>
+<tr class="odd">
+<td><code>willValidate</code></td>
+<td>Indica se um elemento de entrada será validado.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="propriedades-de-validação">Propriedades de Validação</h3>
+<p>A propriedade de validadede um elemento de entrada contém várias propriedades relacionadas com a validade dos dados:</p>
+<table>
+<colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
@@ -1348,92 +1377,64 @@ Diferentes editores interpretam tabs diferentemente.</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>validity</td>
-<td>Contém propriedades lógicas relacionadas à validade de um elemento de entrada.</td>
+<td><code>customError</code></td>
+<td>Verdadeiro, se uma mensagem de validade estiver configurada.</td>
 </tr>
 <tr class="even">
-<td>validationMessage</td>
-<td>Contém a mensagem que um navegador mostrará quando a validade é falsa.</td>
+<td><code>patternMismatch</code></td>
+<td>Verdadeiro, se o valor de um elemento não casa com o padrão de seu atributo.</td>
 </tr>
 <tr class="odd">
-<td>willValidate</td>
-<td>Indica se um elemento de entrada será validado.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="validity-properties">Validity Properties</h3>
-<p>The validity property of an input element contains a number of properties related to the validity of data:</p>
-<table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 64%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>customError</td>
-<td>Set to true, if a custom validity message is set.</td>
+<td><code>rangeOverflow</code></td>
+<td>Verdadeiro, se o valor de um elemento for maior do que o seu atributo <code>max</code>.</td>
 </tr>
 <tr class="even">
-<td>patternMismatch</td>
-<td>Set to true, if an element’s value does not match its pattern attribute.</td>
+<td><code>rangeUnderflow</code></td>
+<td>Verdadeiro, se o valor de um elemento for menor do que o seu atributo <code>min</code>.</td>
 </tr>
 <tr class="odd">
-<td>rangeOverflow</td>
-<td>Set to true, if an element’s value is greater than its max attribute.</td>
+<td><code>stepMismatch</code></td>
+<td>Verdadeiro, se o valor de um elemento for inválido por seu atributo <code>step</code>.</td>
 </tr>
 <tr class="even">
-<td>rangeUnderflow</td>
-<td>Set to true, if an element’s value is less than its min attribute.</td>
+<td><code>tooLong</code></td>
+<td>Verdadeiro, se o valor de um elemento excede o seu atributo <code>maxLength</code>.</td>
 </tr>
 <tr class="odd">
-<td>stepMismatch</td>
-<td>Set to true, if an element’s value is invalid per its step attribute.</td>
+<td><code>typeMismatch</code></td>
+<td>Verdadeiro, se o valor de um elemento for inválido devido ao atributo de <code>type</code>.</td>
 </tr>
 <tr class="even">
-<td>tooLong</td>
-<td>Set to true, if an element’s value exceeds its maxLength attribute.</td>
+<td><code>valueMissing</code></td>
+<td>Verdadeiro, se um elemento (com o atributo <code>required</code>) não tiver valor.</td>
 </tr>
 <tr class="odd">
-<td>typeMismatch</td>
-<td>Set to true, if an element’s value is invalid per its type attribute.</td>
-</tr>
-<tr class="even">
-<td>valueMissing</td>
-<td>Set to true, if an element (with a required attribute) has no value.</td>
-</tr>
-<tr class="odd">
-<td>valid</td>
-<td>Set to true, if an element’s value is valid.</td>
+<td><code>valid</code></td>
+<td>Verdadeiro, se o valor de uma elemento for válido.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="exemplos">Exemplos</h3>
-<p>If the number in an input field is greater than 100 (the input’s max attribute), display a message:</p>
-<h4 id="the-rangeoverflow-property">The rangeOverflow Property</h4>
+<p>Se o número de um campo de entrada for maior do que 100 (o atributo <code>max</code> de entrada), mostre a mensagem:</p>
+<h4 id="a-propriedade-rangeoverflow">A propriedade <code>rangeOverflow</code></h4>
 <div class="sourceCode" id="cb83"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb83-1"><a href="#cb83-1"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;id1&quot;</span><span class="ot"> type=</span><span class="st">&quot;number&quot;</span><span class="ot"> max=</span><span class="st">&quot;100&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb83-2"><a href="#cb83-2"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction()&quot;</span><span class="kw">&gt;</span>OK<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb83-2"><a href="#cb83-2"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;minhaFuncao()&quot;</span><span class="kw">&gt;</span>OK<span class="kw">&lt;/button&gt;</span></span>
 <span id="cb83-3"><a href="#cb83-3"></a></span>
 <span id="cb83-4"><a href="#cb83-4"></a><span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;demo&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
 <span id="cb83-5"><a href="#cb83-5"></a></span>
 <span id="cb83-6"><a href="#cb83-6"></a><span class="kw">&lt;script&gt;</span></span>
-<span id="cb83-7"><a href="#cb83-7"></a><span class="kw">function</span> <span class="at">myFunction</span>() <span class="op">{</span></span>
+<span id="cb83-7"><a href="#cb83-7"></a><span class="kw">function</span> <span class="at">minhaFuncao</span>() <span class="op">{</span></span>
 <span id="cb83-8"><a href="#cb83-8"></a>  <span class="kw">var</span> txt <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
 <span id="cb83-9"><a href="#cb83-9"></a>  <span class="cf">if</span> (<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;id1&quot;</span>).<span class="va">validity</span>.<span class="at">rangeOverflow</span>) <span class="op">{</span></span>
-<span id="cb83-10"><a href="#cb83-10"></a>    txt <span class="op">=</span> <span class="st">&quot;Value too large&quot;</span><span class="op">;</span></span>
+<span id="cb83-10"><a href="#cb83-10"></a>    txt <span class="op">=</span> <span class="st">&quot;Valor excessivamente grande&quot;</span><span class="op">;</span></span>
 <span id="cb83-11"><a href="#cb83-11"></a>  <span class="op">}</span></span>
 <span id="cb83-12"><a href="#cb83-12"></a>  <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> txt<span class="op">;</span></span>
 <span id="cb83-13"><a href="#cb83-13"></a><span class="op">}</span></span>
 <span id="cb83-14"><a href="#cb83-14"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
-<p>If the number in an input field is less than 100 (the input’s min attribute), display a message:</p>
-<h4 id="the-rangeunderflow-property">The rangeUnderflow Property</h4>
+<p>Se o número no campo de entrada for menor do que 100 (o atributo <code>min</code> de entrada), mostre a mensagem:</p>
+<h4 id="a-propriedade-rangeunderflow">A Propriedade <code>rangeUnderflow</code></h4>
 <div class="sourceCode" id="cb84"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb84-1"><a href="#cb84-1"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;id1&quot;</span><span class="ot"> type=</span><span class="st">&quot;number&quot;</span><span class="ot"> min=</span><span class="st">&quot;100&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb84-2"><a href="#cb84-2"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;myFunction()&quot;</span><span class="kw">&gt;</span>OK<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb84-2"><a href="#cb84-2"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;minhaFuncao()&quot;</span><span class="kw">&gt;</span>OK<span class="kw">&lt;/button&gt;</span></span>
 <span id="cb84-3"><a href="#cb84-3"></a></span>
 <span id="cb84-4"><a href="#cb84-4"></a><span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;demo&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
 <span id="cb84-5"><a href="#cb84-5"></a></span>
@@ -1441,7 +1442,7 @@ Diferentes editores interpretam tabs diferentemente.</code></pre>
 <span id="cb84-7"><a href="#cb84-7"></a><span class="kw">function</span> <span class="at">myFunction</span>() <span class="op">{</span></span>
 <span id="cb84-8"><a href="#cb84-8"></a>  <span class="kw">var</span> txt <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
 <span id="cb84-9"><a href="#cb84-9"></a>  <span class="cf">if</span> (<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;id1&quot;</span>).<span class="va">validity</span>.<span class="at">rangeUnderflow</span>) <span class="op">{</span></span>
-<span id="cb84-10"><a href="#cb84-10"></a>    txt <span class="op">=</span> <span class="st">&quot;Value too small&quot;</span><span class="op">;</span></span>
+<span id="cb84-10"><a href="#cb84-10"></a>    txt <span class="op">=</span> <span class="st">&quot;Valor muito pequeno&quot;</span><span class="op">;</span></span>
 <span id="cb84-11"><a href="#cb84-11"></a>  <span class="op">}</span></span>
 <span id="cb84-12"><a href="#cb84-12"></a>  <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;demo&quot;</span>).<span class="at">innerHTML</span> <span class="op">=</span> txt<span class="op">;</span></span>
 <span id="cb84-13"><a href="#cb84-13"></a><span class="op">}</span></span>

@@ -572,195 +572,209 @@ var pessoa = {
 document.getElementById("demo").innerHTML = pessoa.lang;
 ```
 
-Using the lang property, in this example, stores an upper case value in the language property:
+| propriedade `lang`, no exemplo a seguir, é usada para armazenar o valor em
+maiúsculas da propriedade `lingua`.
 
 #### Exemplo
 
 ```javascript
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  language : "",
+var pessoa = {
+  nome: "José",
+  sobrenome : "da Silva",
+  lingua : "",
   set lang(lang) {
-    this.language = lang.toUpperCase();
+    this.lingua = lang.toUpperCase();
   }
 };
 
-// Set an object property using a setter:
-person.lang = "en";
+// Modificação de propriedade de um objeto com um setter:
+pessoa.lang = "pt";
 
-// Display data from the object:
-document.getElementById("demo").innerHTML = person.language;
+// Exibe os dados do objeto:
+document.getElementById("demo").innerHTML = pessoa.lingua;
 ```
 
-### Why Using Getters and Setters?
+### Por que usar Getters e Setters?
 
-  * It gives simpler syntax
-  * It allows equal syntax for properties and methods
-  * It can secure better data quality
-  * It is useful for doing things behind-the-scenes
+  * A sintaxe é mais simples
+  * Permite sintaxe igual para propriedades e métodos
+  * Pode assegurar uma qualidade melhor de dados
+  * É útil para fazer as coisas atrás dos panos
 
-A Counter Exemplo
+Um Contra Exemplo
 
 #### Exemplo
 
 ```javascript
 var obj = {
-  counter : 0,
+  contador : 0,
   get reset() {
-    this.counter = 0;
+    this.contador = 0;
   },
-  get increment() {
-    this.counter++;
+  get incremente() {
+    this.contador++;
   },
-  get decrement() {
-    this.counter--;
+  get decremente() {
+    this.contador--;
   },
-  set add(value) {
-    this.counter += value;
+  set some(valor) {
+    this.contador += valor;
   },
-  set subtract(value) {
-    this.counter -= value;
+  set subtraia(valor) {
+    this.counter -= valor;
   }
 };
 
-// Play with the counter:
+// Uso do contador:
 obj.reset;
-obj.add = 5;
-obj.subtract = 1;
-obj.increment;
-obj.decrement;
+obj.some = 5;
+obj.subtraia = 1;
+obj.incremente;
+obj.decremente;
 ```
 
-### Object.defineProperty\(\)
+### `Object.defineProperty()`
 
-The Object.defineProperty\(\) method can also be used to add Getters and Setters:
+O método `Object.defineProperty()` pode ser usado para adicionar *Getters* e
+*Setters*:
 
 #### Exemplo
 
 ```javascript
-// Define object
-var obj = {counter : 0};
+// Defina o objeto
+var obj = {contador : 0};
 
 // Define setters
 Object.defineProperty(obj, "reset", {
-  get : function () {this.counter = 0;}
+  get : function () {this.contador = 0;}
 });
-Object.defineProperty(obj, "increment", {
-  get : function () {this.counter++;}
+Object.defineProperty(obj, "incremente", {
+  get : function () {this.contador++;}
 });
-Object.defineProperty(obj, "decrement", {
-  get : function () {this.counter--;}
+Object.defineProperty(obj, "decremente", {
+  get : function () {this.contador--;}
 });
-Object.defineProperty(obj, "add", {
-  set : function (value) {this.counter += value;}
+Object.defineProperty(obj, "some", {
+  set : function (valor) {this.contador += valor;}
 });
-Object.defineProperty(obj, "subtract", {
-  set : function (value) {this.counter -= value;}
+Object.defineProperty(obj, "subtraia", {
+  set : function (valor) {this.contador -= valor;}
 });
 
-// Play with the counter:
+// Uso do contador:
 obj.reset;
-obj.add = 5;
-obj.subtract = 1;
-obj.increment;
-obj.decrement;
+obj.some = 5;
+obj.subtraia = 1;
+obj.incremente;
+obj.decremente;
 ```
 
-## JavaScript Object Constructors (https://www.w3schools.com/js/js_object_constructors.asp)
+## Construtores de Objetos em JavaScript
+<!--
+https://www.w3schools.com/js/js_object_constructors.asp
+-->
 
 #### Exemplo
 
 ```javascript
-function Person(first, last, age, eye) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eye;
+function Pessoa(nome, sobre, idade, olho) {
+  this.nome = nome;
+  this.sobrenome = sobre;
+  this.idade = idade;
+  this.corDosOlhos = olho;
 }
 ```
 
-    It is considered good practice to name constructor functions with an upper-case first letter.
+> É considerado uma prática boa o nome de um construtor começar com uma letra
+> maiúscula.
 
-### Object Types \(Blueprints\) \(Classes\)
+### Tipo Objeto \(Gabarito\) \(Classe\)
 
-The examples from the previous chapters are limited. They only create single objects.
+Os exemplos das seções anteriores são limitados. Eles criam apenas um objeto.
 
-Sometimes we need a "blueprint" for creating many objects of the same "type".
+Algumas vezes precisamos de um *gabarito* para criar muitos objetos do mesmo
+*tipo*.
 
-The way to create an *object type*, is to use an **object constructor function**.
+A maneira de criar um *tipo objeto* é usar uma **função construtora de
+Objetos**.
 
-In the example above, function Person\(\) is an object constructor function.
+No exemplo acima, a função `Pessoa()` é uma função construtora de objetos.
 
-Objects of the same type are created by calling the constructor function with the **new** keyword:
+Objetos do mesmo tipo são criados chamando a função construtora com a
+palavra-chave **new**:
 
 ```javascript
-var myFather = new Person("John", "Doe", 50, "blue");
-var myMother = new Person("Sally", "Rally", 48, "green");
+var meuPai = new Pessoa("José", "da Silva", 50, "azul");
+var minhaMae = new Pessoa("Maria", "de Carvalho", 48, "verde");
 ```
 
-### The **this** Keyword
+### A Palavra-Chave **this**
 
-In JavaScript, the thing called **this** is the object that *owns* the code.
+Em JavaScript, a coisa chamada **this** é o objeto que *possui* o código.
 
-The value of this, when used in an object, is the object itself.
+O valor do `this`, quando usado dentro da definição de um objeto, é o próprio
+objeto.
 
-In a constructor function this does not have a value. It is a substitute for the new object. The value of this will become the new object when a new object is created.
+Num construtor, `this` não tem valor. Ele é um substituto para o novo objeto.
+O valor do `this` torna-se o novo objeto quando o novo objeto for criado.
 
-    Note that this is not a variable. It is a keyword.
-    You cannot change the value of this.
+> Observe que `this` não é uma variável. É uma palavra-chave. Você não pode
+> mudar o valor do `this`.
 
-### Adding a Property to an Object
+### Acréscimo de uma Propriedade a um Objeto
 
-Adding a new property to an existing object is easy:
+O acréscimo de uma propriedade a um objeto existente é simples:
 
 #### Exemplo
 
 ```javascript
-myFather.nationality = "English";
+MeuPai.nacionalidade = "Português";
 ```
 
-The property will be added to myFather. Not to myMother. (Not to any other person objects).
+A propriedade será acrescentada a `meuPai`. Não a `minhaMae`. \(Nem a nenhum
+  outro objeto\).
 
-### Adding a Property to a Constructor
+### Acréscimo de uma Propriedade a um Construtor
 
-You cannot add a new property to an object constructor the same way you add a new property to an existing object:
+Você não pode acrescentar uma nova propriedade a um construtor de objetos do
+mesmo modo que você o faz com um objeto existente:
 
-#### Exemplo
+#### Exemplo Errado
 
 ```javascript
-Person.nationality = "English";
+Pessoa.nacionalidade = "Português";
 ```
 
-To add a new property to a constructor, you must add it to the constructor function:
+Para acrescentar uma propriedade a um construtor, você precisa acrescentá-la na
+função construtora:
 
 Exemplo
 
 ```javascript
-function Person(first, last, age, eyecolor) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eyecolor;
-  this.nationality = "English";
+function Pessoa(nome, sobre, idade, olho) {
+  this.nome = nome;
+  this.sobrenome = sobre;
+  this.idade = idade;
+  this.corDosOlhos = olho;
+  this.nacionalidade = "Português";
 }
 ```
 
-This way object properties can have default values.
+Desta maneira, propriedades de objetos podem ter valores padrões.
 
-### Adding a Method to a Constructor
+### Acréscimo de um Método a um Construtor
 
-Your constructor function can also define methods:
+Sua função construtora também pode definir métodos:
 
 #### Exemplo
 
 ```javascript
-function Person(first, last, age, eyecolor) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eyecolor;
-  this.name = function() {return this.firstName + " " + this.lastName;};
+function Pessoa(nome, sobre, idade, olho) {
+  this.nome = nome;
+  this.sobrenome = sobre;
+  this.idade = idade;
+  this.corDosOlhos = olho;
+  this.nomeC = function() {return this.nome + " " + this.sobrenome;};
 }
 ```
 
