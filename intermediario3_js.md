@@ -360,9 +360,9 @@ https://www.w3schools.com/js/js_object_methods.asp)
 
 ```javascript
 var pessoa = {
-  nome: "José",
-  sobrenome : "da Silva",
-  id       : 5566,
+  nome         : "José",
+  sobrenome    : "da Silva",
+  id           : 5566,
   nomeCompleto : function() {
     return this.nome + " " + this.sobrenome;
   }
@@ -390,7 +390,7 @@ nome | José
 sobrenome | da Silva
 idade | 50
 corDosOlhos | azul
-nomeCompleto | `function\(\) { return this.nome + " " + this.sobrenome; }`
+nomeCompleto | `function() { return this.nome + " " + this.sobrenome; }`
 
 Métodos são funções armazenadas como propriedades de objetos.
 
