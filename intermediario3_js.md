@@ -748,7 +748,7 @@ Pessoa.nacionalidade = "Português";
 Para acrescentar uma propriedade a um construtor, você precisa acrescentá-la na
 função construtora:
 
-Exemplo
+Exemplo Correto
 
 ```javascript
 function Pessoa(nome, sobre, idade, olho) {
@@ -778,83 +778,88 @@ function Pessoa(nome, sobre, idade, olho) {
 }
 ```
 
-You cannot add a new method to an object constructor the same way you add a new method to an existing object.
+Você não pode acrescentar um novo método a um construtor do mesmo modo que
+acrescenta um novo método a um objeto existente.
 
-Adding methods to an object must be done inside the constructor function:
+O acréscimo de métodos a um objeto deve ser feito dentro da função construtora:
 
 #### Exemplo
 
 ```javascript
-function Person(firstName, lastName, age, eyeColor) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.age = age;
-  this.eyeColor = eyeColor;
-  this.changeName = function (name) {
-    this.lastName = name;
+function Pessoa(nome, sobre, idade, olho) {
+  this.nome = nome;
+  this.sobrenome = sobre;
+  this.idade = idade;
+  this.corDosOlhos = olho;
+  this.mudaNome = function (nome) {
+    this.sobrenome = nome;
   };
 }
 ```
 
-The changeName\(\) function assigns the value of name to the person's lastName property.
+A função `mudaNome()` atribui o valor de `nome` para a propriedade `sobrenome`.
 
-Now You Can Try:
+Agora você pode testar:
 
 ```javascript
-myMother.changeName("Doe");
+minhaMae.mudaNome("da  Silva");
 ```
 
-JavaScript knows which person you are talking about by "substituting" this with myMother.
+JavaScript sabe qual é a `pessoa` de quem você está falando e faz a substituição
+do `this` por `minhaMae`.
 
-### Built-in JavaScript Constructors
+### Construtores Internos do JavaScript
 
-JavaScript has built-in constructors for native objects:
+O JavaScript tem construtores internos para objetos nativos:
 
 #### Exemplo
 
 ```javascript
-var x1 = new Object();    // A new Object object
-var x2 = new String();    // A new String object
-var x3 = new Number();    // A new Number object
-var x4 = new Boolean();   // A new Boolean object
-var x5 = new Array();     // A new Array object
-var x6 = new RegExp();    // A new RegExp object
-var x7 = new Function();  // A new Function object
-var x8 = new Date();      // A new Date object
+var x1 = new Object();    // Um novo objeto Object
+var x2 = new String();    // Um novo objeto String
+var x3 = new Number();    // Um novo objeto Number
+var x4 = new Boolean();   // Um novo objeto Boolean
+var x5 = new Array();     // Um novo objeto Array
+var x6 = new RegExp();    // Um novo objeto RegExp
+var x7 = new Function();  // Um novo objeto Function
+var x8 = new Date();      // Um novo objeto Date
 ```
 
-The Math\(\) object is not in the list. Math is a global object. The new keyword cannot be used on Math.
+O objeto `Math()` não faz parte da lista. `Math` é um objeto global.
+A palavra-chave `new` não pode ser usada para `Math`.
 
-### Did You Know?
+### Você Sabia Que?
 
-As you can see above, JavaScript has object versions of the primitive data types String, Number, and Boolean. But there is no reason to create complex objects. Primitive values are much faster.
+Como você acaba de ver, JavaScript tem versões em objetos para os tipos
+primitivos de Dados `String`, `Number` e `Boolean`. Mas, não existe nenhuma
+razão para criar objetos complexos. Valores primitivos são muito mais rápidos.
 
-ALSO:
+Além disso:
 
-  Use object literals {} instead of new Object\(\).
+*  Use objetos literais com `{}` no lugar de `new Object()`.
 
-  Use string literals "" instead of new String\(\).
+*  Use `string` literais `""` no lugar de `new String()`.
 
-  Use number literals 12345 instead of new Number\(\).
+*  Use números literais `12345` no lugar de `new Number()`.
 
-  Use boolean literals true / false instead of new Boolean\(\).
+*  Use literais lógicas `true` / `false` no lugar de `new Boolean()`.
 
-  Use array literals [] instead of new Array\(\).
+*  Use *arrays* literais com `[]` no lugar de `new Array()`.
 
-  Use pattern literals /()/ instead of new RegExp\(\).
+*  Use padrões literais com `/()/` no lugar de `new RegExp()`.
 
-  Use function expressions () {} instead of new Function\(\).
+*  Use expressões de funções com `() {}` no lugar de `new Function()`.
 
 #### Exemplo
 
 ```javascript
-var x1 = {};            // new object
-var x2 = "";            // new primitive string
-var x3 = 0;             // new primitive number
-var x4 = false;         // new primitive boolean
-var x5 = [];            // new array object
-var x6 = /()/           // new regexp object
-var x7 = function(){};  // new function object
+var x1 = {};            // novo objeto
+var x2 = "";            // novo string primitivo
+var x3 = 0;             // novo número primitivo
+var x4 = false;         // novo booleano primitivo
+var x5 = [];            // novo array
+var x6 = /()/           // novo regexp
+var x7 = function(){};  // novo objeto função
 ```
 
 ### String Objects
